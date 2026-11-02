@@ -396,6 +396,7 @@ def legacy_estimate():
     raise HTTPException(410,'Cách ước tính thuế/phạt tự động cũ đã dừng vì nguồn thuế chưa đủ kiểm chứng. Dùng /api/v2/estimate với thuế suất do người dùng đối chiếu nhập vào.')
 
 web=ROOT/'web_dist'
+if (ROOT/'assets'/'images').exists():app.mount('/assets/images',StaticFiles(directory=ROOT/'assets'/'images'),name='root_images')
 if web.exists():app.mount('/assets',StaticFiles(directory=web/'assets'),name='assets')
 @app.get('/{path:path}',include_in_schema=False)
 def frontend(path:str):
