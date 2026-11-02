@@ -557,6 +557,39 @@ small {
   box-shadow: 0 6px 18px rgba(35, 76, 152, 0.35);
 }
 
+.btn.danger {
+  background: var(--accent-red);
+  border-color: #9E2420;
+  color: #FFFDF8;
+  box-shadow: 0 4px 14px rgba(185, 54, 50, 0.28);
+}
+
+.btn.danger:hover {
+  background: #9E2420;
+  border-color: #7D1B18;
+  color: #FFFDF8;
+}
+
+.icon-btn.danger {
+  color: var(--text-muted);
+}
+
+.icon-btn.danger:hover {
+  background: var(--accent-red-light);
+  color: var(--accent-red);
+  border-color: #F8B4AC;
+}
+
+.link.danger {
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+.link.danger:hover {
+  color: #9E2420;
+  text-decoration: underline;
+}
+
 .btn.subtle {
   border-color: transparent;
   background: var(--primary-light);

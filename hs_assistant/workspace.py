@@ -147,6 +147,81 @@ class Workspace:
                 elif f['source_kind']!='manual_declaration' or len(f['quote'].strip())<10:raise WorkspaceError('Thuộc tính thiếu chứng từ không được nâng thành đã xác minh; ghi xác nhận trực tiếp có căn cứ.')
             c.execute('UPDATE facts SET status=?,reviewer=?,updated_at=? WHERE id=?',(status,reviewer,now(),fact_id));self._invalidate(c,sku,reviewer,'Cập nhật xác minh thuộc tính')
         return self.get_sku(sku_id)
+    def delete_fact(self,sku_id,fact_id):
+        sku=self.get_sku(sku_id)
+        with self.lock,self.connect() as c:
+            f=c.execute('SELECT * FROM facts WHERE id=? AND sku_id=?',(fact_id,sku_id)).fetchone()
+            if not f:raise KeyError(fact_id)
+            c.execute('DELETE FROM facts WHERE id=? AND sku_id=?',(fact_id,sku_id))
+            self._invalidate(c,sku,'Người dùng','Xóa thuộc tính '+f['field'])
+        return self.get_sku(sku_id)
+    def delete_evidence(self,sku_id,evidence_id):
+        sku=self.get_sku(sku_id)
+        with self.lock,self.connect() as c:
+            ev=c.execute('SELECT * FROM evidence WHERE id=? AND sku_id=?',(evidence_id,sku_id)).fetchone()
+            if not ev:raise KeyError(evidence_id)
+            c.execute('DELETE FROM evidence WHERE id=? AND sku_id=?',(evidence_id,sku_id))
+            self._invalidate(c,sku,'Người dùng','Xóa căn cứ '+ev['title'])
+        return self.get_sku(sku_id)
+    def delete_sku(self,sku_id):
+        with self.lock,self.connect() as c:
+            sku=c.execute('SELECT * FROM skus WHERE id=?',(sku_id,)).fetchone()
+            if not sku:raise KeyError(sku_id)
+            case_id=sku['case_id']
+            dec_ids=[r[0] for r in c.execute('SELECT id FROM decisions WHERE sku_id=?',(sku_id,)).fetchall()]
+            for did in dec_ids:c.execute('DELETE FROM decision_snapshots WHERE decision_id=?',(did,))
+            c.execute('DELETE FROM decisions WHERE sku_id=?',(sku_id,))
+            c.execute('DELETE FROM tax_scenarios WHERE sku_id=?',(sku_id,))
+            c.execute('DELETE FROM comparisons WHERE sku_id=?',(sku_id,))
+            c.execute('DELETE FROM analyses WHERE sku_id=?',(sku_id,))
+            c.execute('DELETE FROM facts WHERE sku_id=?',(sku_id,))
+            c.execute('DELETE FROM evidence WHERE sku_id=?',(sku_id,))
+            c.execute('UPDATE documents SET sku_id=NULL WHERE sku_id=?',(sku_id,))
+            c.execute('DELETE FROM skus WHERE id=?',(sku_id,))
+            self.event(c,case_id,sku_id,'sku_deleted','Người dùng',{'sku_code':sku['sku_code'],'name':sku['name']})
+            self._case_status(c,case_id)
+        return {'deleted':True,'case_id':case_id}
+    def delete_case(self,case_id):
+        with self.lock,self.connect() as c:
+            cs=c.execute('SELECT * FROM cases WHERE id=?',(case_id,)).fetchone()
+            if not cs:raise KeyError(case_id)
+            skus=c.execute('SELECT id FROM skus WHERE case_id=?',(case_id,)).fetchall()
+            for s in skus:
+                sku_id=s[0]
+                dec_ids=[r[0] for r in c.execute('SELECT id FROM decisions WHERE sku_id=?',(sku_id,)).fetchall()]
+                for did in dec_ids:c.execute('DELETE FROM decision_snapshots WHERE decision_id=?',(did,))
+                c.execute('DELETE FROM decisions WHERE sku_id=?',(sku_id,))
+                c.execute('DELETE FROM tax_scenarios WHERE sku_id=?',(sku_id,))
+                c.execute('DELETE FROM comparisons WHERE sku_id=?',(sku_id,))
+                c.execute('DELETE FROM analyses WHERE sku_id=?',(sku_id,))
+                c.execute('DELETE FROM facts WHERE sku_id=?',(sku_id,))
+                c.execute('DELETE FROM evidence WHERE sku_id=?',(sku_id,))
+            c.execute('DELETE FROM skus WHERE case_id=?',(case_id,))
+            docs=c.execute('SELECT id,path FROM documents WHERE case_id=?',(case_id,)).fetchall()
+            for doc in docs:
+                c.execute('DELETE FROM pages WHERE document_id=?',(doc['id'],))
+                try:
+                    p=Path(doc['path'])
+                    if p.exists():p.unlink(missing_ok=True)
+                except Exception:pass
+            c.execute('DELETE FROM documents WHERE case_id=?',(case_id,))
+            c.execute('DELETE FROM events WHERE case_id=?',(case_id,))
+            c.execute('DELETE FROM cases WHERE id=?',(case_id,))
+        return {'deleted':True,'id':case_id}
+    def delete_document(self,document_id):
+        with self.lock,self.connect() as c:
+            doc=c.execute('SELECT * FROM documents WHERE id=?',(document_id,)).fetchone()
+            if not doc:raise KeyError(document_id)
+            c.execute('UPDATE facts SET document_id=NULL WHERE document_id=?',(document_id,))
+            c.execute('UPDATE evidence SET document_id=NULL WHERE document_id=?',(document_id,))
+            c.execute('DELETE FROM pages WHERE document_id=?',(document_id,))
+            c.execute('DELETE FROM documents WHERE id=?',(document_id,))
+            try:
+                p=Path(doc['path'])
+                if p.exists():p.unlink(missing_ok=True)
+            except Exception:pass
+            self.event(c,doc['case_id'],doc['sku_id'],'document_deleted','Người dùng',{'name':doc['name'],'document_id':document_id})
+        return {'deleted':True,'id':document_id}
     def add_evidence(self,sku_id,data):
         sku=self.get_sku(sku_id);i=uid('ev_');stamp=now()
         if data['kind'] not in {'tariff','chapter_note','section_note','ruling','technical','other'}:raise WorkspaceError('Loại căn cứ không hợp lệ.')

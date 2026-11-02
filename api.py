@@ -99,8 +99,12 @@ def get_case(case_id:str):return state['db'].get_case(case_id)
 @app.patch('/api/v2/cases/{case_id}',dependencies=[Depends(check_key)])
 def edit_case(case_id:str,inp:CaseIn):
     x=inp.model_dump(mode='json');return state['db'].update_case(case_id,x,inp.owner)
+@app.delete('/api/v2/cases/{case_id}',dependencies=[Depends(check_key)])
+def delete_case(case_id:str):return state['db'].delete_case(case_id)
 @app.post('/api/v2/cases/{case_id}/skus',dependencies=[Depends(check_key)])
 def add_sku(case_id:str,inp:SKUIn):return state['db'].add_sku(case_id,**inp.model_dump())
+@app.delete('/api/v2/skus/{sku_id}',dependencies=[Depends(check_key)])
+def delete_sku(sku_id:str):return state['db'].delete_sku(sku_id)
 @app.get('/api/v2/skus/{sku_id}',dependencies=[Depends(check_key)])
 def get_sku(sku_id:str):return state['db'].get_sku(sku_id)
 @app.patch('/api/v2/skus/{sku_id}',dependencies=[Depends(check_key)])
@@ -112,6 +116,8 @@ def fact(sku_id:str,inp:FactIn):
     return state['db'].add_fact(sku_id,**inp.model_dump())
 @app.patch('/api/v2/skus/{sku_id}/facts/{fact_id}',dependencies=[Depends(check_key)])
 def fact_review(sku_id:str,fact_id:str,inp:FactReview):return state['db'].update_fact(sku_id,fact_id,inp.status,inp.reviewer)
+@app.delete('/api/v2/skus/{sku_id}/facts/{fact_id}',dependencies=[Depends(check_key)])
+def delete_fact(sku_id:str,fact_id:str):return state['db'].delete_fact(sku_id,fact_id)
 @app.post('/api/v2/skus/{sku_id}/evidence',dependencies=[Depends(check_key)])
 def add_evidence(sku_id:str,inp:EvidenceIn):
     data=inp.model_dump()
@@ -124,6 +130,8 @@ def validate_target_codes(codes):
 @app.patch('/api/v2/skus/{sku_id}/evidence/{evidence_id}',dependencies=[Depends(check_key)])
 def review_evidence(sku_id:str,evidence_id:str,inp:EvidenceReviewIn):
     validate_target_codes(inp.target_codes);return state['db'].review_evidence(sku_id,evidence_id,**inp.model_dump())
+@app.delete('/api/v2/skus/{sku_id}/evidence/{evidence_id}',dependencies=[Depends(check_key)])
+def delete_evidence(sku_id:str,evidence_id:str):return state['db'].delete_evidence(sku_id,evidence_id)
 @app.post('/api/v2/skus/{sku_id}/analyze',dependencies=[Depends(check_key)])
 def analyze(sku_id:str,inp:AnalyzeIn):
     sku=state['db'].get_sku(sku_id)
@@ -163,6 +171,8 @@ def document_file(document_id:str):
     d=state['documents'].get(document_id,True);return FileResponse(d['path'],media_type=d['mime'],filename=d['name'],content_disposition_type='inline' if d['mime'] in {'application/pdf','image/png','image/jpeg'} else 'attachment',headers={'X-Content-Type-Options':'nosniff','Cache-Control':'no-store'})
 @app.post('/api/v2/documents/{document_id}/retry',dependencies=[Depends(check_key)])
 def retry_document(document_id:str):state['documents'].retry(document_id);return {'status':'queued'}
+@app.delete('/api/v2/documents/{document_id}',dependencies=[Depends(check_key)])
+def delete_document(document_id:str):return state['db'].delete_document(document_id)
 
 @app.get('/api/v2/catalogue',dependencies=[Depends(check_key)])
 def catalogue(q:str='',chapter:str|None=None,limit:int=20):return {'rows':state['catalogue'].search(q,max(1,min(limit,100)),chapter),'total_catalogue':len(state['catalogue'].rows),'score_is_probability':False}
