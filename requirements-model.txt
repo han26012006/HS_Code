@@ -1,0 +1,4 @@
+-r requirements.txt
+sentence-transformers>=3.3,<4
+rank_bm25==0.2.2
+# Install matching torch/CUDA wheels for your own GPU. Qwen has a separate extra.

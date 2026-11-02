@@ -1,0 +1,883 @@
+{
+  "version": "tax-v5.2",
+  "workbook_sha256": "b52a530d071bcb424443d2cf986b09fb870f71b4a2826c3b6b994a7c99b0e147",
+  "snapshot_date": "2026-04-05",
+  "rows_hs8": 11871,
+  "schemes": [
+    "ordinary",
+    "MFN",
+    "VAT",
+    "ACFTA",
+    "ATIGA",
+    "AJCEP",
+    "VJEPA",
+    "AKFTA",
+    "AANZFTA",
+    "AIFTA",
+    "VKFTA",
+    "VCFTA",
+    "VN-EAEU",
+    "CPTPP",
+    "AHKFTA",
+    "VNCU",
+    "EVFTA",
+    "UKVFTA",
+    "VN-LAO",
+    "VN-CAM",
+    "VIFTA",
+    "RCEP",
+    "EXCISE",
+    "EXPORT",
+    "EXPORT_CPTPP",
+    "EXPORT_EVFTA",
+    "EXPORT_UKVFTA",
+    "ENVIRONMENT"
+  ],
+  "sheets": [
+    {
+      "sheet": "BIA",
+      "rows_read": 1000,
+      "nonempty_rows": 0
+    },
+    {
+      "sheet": "HT",
+      "rows_read": 1000,
+      "nonempty_rows": 134
+    },
+    {
+      "sheet": "BT2026",
+      "rows_read": 19901,
+      "nonempty_rows": 19901
+    },
+    {
+      "sheet": "BANG",
+      "rows_read": 1000,
+      "nonempty_rows": 134
+    },
+    {
+      "sheet": "6QT",
+      "rows_read": 1000,
+      "nonempty_rows": 147
+    },
+    {
+      "sheet": "PL1",
+      "rows_read": 1000,
+      "nonempty_rows": 339
+    },
+    {
+      "sheet": "PL2",
+      "rows_read": 1000,
+      "nonempty_rows": 17
+    },
+    {
+      "sheet": "AC",
+      "rows_read": 18319,
+      "nonempty_rows": 18319
+    },
+    {
+      "sheet": "AT",
+      "rows_read": 18248,
+      "nonempty_rows": 18248
+    },
+    {
+      "sheet": "AJ",
+      "rows_read": 18304,
+      "nonempty_rows": 18304
+    },
+    {
+      "sheet": "VJ",
+      "rows_read": 18305,
+      "nonempty_rows": 18305
+    },
+    {
+      "sheet": "AK",
+      "rows_read": 18310,
+      "nonempty_rows": 18309
+    },
+    {
+      "sheet": "AANZ",
+      "rows_read": 18267,
+      "nonempty_rows": 18266
+    },
+    {
+      "sheet": "AI",
+      "rows_read": 18262,
+      "nonempty_rows": 18261
+    },
+    {
+      "sheet": "VK",
+      "rows_read": 18310,
+      "nonempty_rows": 18309
+    },
+    {
+      "sheet": "VC",
+      "rows_read": 18374,
+      "nonempty_rows": 18371
+    },
+    {
+      "sheet": "EAV",
+      "rows_read": 18348,
+      "nonempty_rows": 18344
+    },
+    {
+      "sheet": "CPTPP",
+      "rows_read": 18464,
+      "nonempty_rows": 18460
+    },
+    {
+      "sheet": "AKH",
+      "rows_read": 18341,
+      "nonempty_rows": 18338
+    },
+    {
+      "sheet": "EV-NK",
+      "rows_read": 18371,
+      "nonempty_rows": 18368
+    },
+    {
+      "sheet": "EU",
+      "rows_read": 1000,
+      "nonempty_rows": 32
+    },
+    {
+      "sheet": "VNCU",
+      "rows_read": 1088,
+      "nonempty_rows": 1086
+    },
+    {
+      "sheet": "UKV",
+      "rows_read": 18370,
+      "nonempty_rows": 18366
+    },
+    {
+      "sheet": "VI",
+      "rows_read": 17180,
+      "nonempty_rows": 17178
+    },
+    {
+      "sheet": "VNCAM",
+      "rows_read": 1000,
+      "nonempty_rows": 48
+    },
+    {
+      "sheet": "RCEPT-A",
+      "rows_read": 18335,
+      "nonempty_rows": 18332
+    },
+    {
+      "sheet": "B",
+      "rows_read": 18335,
+      "nonempty_rows": 18332
+    },
+    {
+      "sheet": "C",
+      "rows_read": 18333,
+      "nonempty_rows": 18330
+    },
+    {
+      "sheet": "D",
+      "rows_read": 18332,
+      "nonempty_rows": 18329
+    },
+    {
+      "sheet": "E",
+      "rows_read": 18337,
+      "nonempty_rows": 18334
+    },
+    {
+      "sheet": "F",
+      "rows_read": 18335,
+      "nonempty_rows": 18332
+    },
+    {
+      "sheet": "XK",
+      "rows_read": 2374,
+      "nonempty_rows": 2370
+    },
+    {
+      "sheet": "EV-XK",
+      "rows_read": 1271,
+      "nonempty_rows": 1271
+    },
+    {
+      "sheet": "UKV-XK",
+      "rows_read": 1275,
+      "nonempty_rows": 1272
+    },
+    {
+      "sheet": "CPTPP-XK",
+      "rows_read": 1000,
+      "nonempty_rows": 766
+    },
+    {
+      "sheet": "DB",
+      "rows_read": 1000,
+      "nonempty_rows": 101
+    },
+    {
+      "sheet": "MT",
+      "rows_read": 1000,
+      "nonempty_rows": 22
+    },
+    {
+      "sheet": "CU",
+      "rows_read": 10818,
+      "nonempty_rows": 10816
+    },
+    {
+      "sheet": "MOI",
+      "rows_read": 11419,
+      "nonempty_rows": 11417
+    }
+  ],
+  "problems": [
+    {
+      "row": 19069,
+      "code": "98041900",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19077,
+      "code": "98050000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19078,
+      "code": "98050000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19079,
+      "code": "98050000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19080,
+      "code": "98050000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19081,
+      "code": "98050000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19082,
+      "code": "98050000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19083,
+      "code": "98050000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19084,
+      "code": "98050000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19091,
+      "code": "98100010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19095,
+      "code": "98110010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19096,
+      "code": "98110010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19097,
+      "code": "98110010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19098,
+      "code": "98110010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19102,
+      "code": "98120010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19103,
+      "code": "98120010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19104,
+      "code": "98120010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19107,
+      "code": "98160000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19112,
+      "code": "98173010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19113,
+      "code": "98173010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19114,
+      "code": "98173010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19116,
+      "code": "98173090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19117,
+      "code": "98173090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19118,
+      "code": "98173090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19132,
+      "code": "98181310",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19153,
+      "code": "98182021",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19176,
+      "code": "98182410",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19178,
+      "code": "98182490",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19189,
+      "code": "98183200",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19190,
+      "code": "98183200",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19191,
+      "code": "98183200",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19200,
+      "code": "98213015",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19203,
+      "code": "98213025",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19205,
+      "code": "98213026",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19206,
+      "code": "98213026",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19209,
+      "code": "98213035",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19211,
+      "code": "98213036",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19212,
+      "code": "98213036",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19213,
+      "code": "98213036",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19216,
+      "code": "98213094",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19231,
+      "code": "98271090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19235,
+      "code": "98279090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19243,
+      "code": "98321000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19244,
+      "code": "98321000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19245,
+      "code": "98321000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19246,
+      "code": "98321000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19247,
+      "code": "98321000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19248,
+      "code": "98321000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19249,
+      "code": "98321000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19250,
+      "code": "98321000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19251,
+      "code": "98321000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19253,
+      "code": "98329000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19254,
+      "code": "98329000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19255,
+      "code": "98329000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19256,
+      "code": "98329000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19257,
+      "code": "98329000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19258,
+      "code": "98329000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19259,
+      "code": "98329000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19260,
+      "code": "98329000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19261,
+      "code": "98329000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19267,
+      "code": "98341210",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19269,
+      "code": "98341290",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19274,
+      "code": "98341600",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19276,
+      "code": "98341700",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19281,
+      "code": "98342100",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19285,
+      "code": "98342400",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19288,
+      "code": "98342600",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19296,
+      "code": "98343300",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19297,
+      "code": "98343300",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19298,
+      "code": "98343300",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19299,
+      "code": "98343300",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19305,
+      "code": "98343800",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19306,
+      "code": "98343800",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19307,
+      "code": "98343800",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19308,
+      "code": "98343800",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19309,
+      "code": "98343800",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19310,
+      "code": "98343800",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19311,
+      "code": "98343800",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19314,
+      "code": "98344000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19322,
+      "code": "98361090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19326,
+      "code": "98362010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19328,
+      "code": "98362020",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19330,
+      "code": "98362030",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19332,
+      "code": "98362040",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19334,
+      "code": "98362050",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19336,
+      "code": "98362090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19339,
+      "code": "98363010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19341,
+      "code": "98363020",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19343,
+      "code": "98363030",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19345,
+      "code": "98363040",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19347,
+      "code": "98363050",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19349,
+      "code": "98363060",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19351,
+      "code": "98363090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19355,
+      "code": "98364010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19357,
+      "code": "98364020",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19359,
+      "code": "98364030",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19361,
+      "code": "98364040",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19363,
+      "code": "98364050",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19365,
+      "code": "98364090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19368,
+      "code": "98365010",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19370,
+      "code": "98365020",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19372,
+      "code": "98365030",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19374,
+      "code": "98365040",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19376,
+      "code": "98365050",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19378,
+      "code": "98365060",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19380,
+      "code": "98365090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19383,
+      "code": "98369000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19385,
+      "code": "98370000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19392,
+      "code": "98401100",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19413,
+      "code": "98412000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19422,
+      "code": "98441090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19423,
+      "code": "98441090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19424,
+      "code": "98441090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19425,
+      "code": "98441090",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19453,
+      "code": "98480000",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19461,
+      "code": "98491211",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19462,
+      "code": "98491211",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19463,
+      "code": "98491211",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19609,
+      "code": "98492690",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19693,
+      "code": "98493290",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19726,
+      "code": "98493421",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19731,
+      "code": "98493424",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19733,
+      "code": "98493429",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19862,
+      "code": "98493810",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19864,
+      "code": "98493890",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19875,
+      "code": "98494022",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19878,
+      "code": "98494110",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19891,
+      "code": "98494321",
+      "error": "duplicate_code"
+    },
+    {
+      "row": 19897,
+      "code": "98494600",
+      "error": "duplicate_code"
+    }
+  ],
+  "all_rates_recertified_current": false,
+  "star_marker": "context dependent, never globally treated as tax exemption",
+  "tax_cost_used_for_classification": false
+}

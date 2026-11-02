@@ -1,0 +1,9 @@
+node_modules
+runtime
+artifacts
+artifacts_v4
+.env
+__pycache__
+.pytest_cache
+.git
+scripts/ui-snapshot.*

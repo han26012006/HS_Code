@@ -1,0 +1,19 @@
+{
+  "name": "hs-assistant-workspace",
+  "version": "2.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "vite build --config frontend/vite.config.js",
+    "test": "node --test tests/frontend_format.test.mjs"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "lucide-react": "0.468.0"
+  },
+  "devDependencies": {
+    "vite": "6.1.0"
+  }
+}

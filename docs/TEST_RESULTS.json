@@ -1,0 +1,77 @@
+{
+  "python": "3.12.14",
+  "python_tests": {
+    "total": 43,
+    "passed": 35,
+    "skipped": 8,
+    "failed": 0
+  },
+  "javascript_tests": {
+    "passed": 2,
+    "failed": 0,
+    "scope": "Vietnam business date and browser timezone invariance"
+  },
+  "frontend_build": "passed",
+  "paid_api_calls_real": 0,
+  "real_full_model_inference_verified": false,
+  "full_browser_workflow_verified": false,
+  "browser_visual_layout_verified": [
+    "overview desktop",
+    "SKU case desktop",
+    "SKU case 390px frame"
+  ],
+  "pdf_sample_render_verified": true,
+  "xlsx_all_8_sheets_render_verified": true,
+  "dependencies": {
+    "fastapi": "0.115.6",
+    "starlette": "0.41.3",
+    "pydantic": "2.14.1",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "reportlab": "4.4.9",
+    "openpyxl": "3.1.5",
+    "pypdf": "6.10.0",
+    "rank_bm25": "0.2.2",
+    "pytest": "8.4.2"
+  },
+  "skipped_cases": [
+    {
+      "name": "test_api_flow",
+      "reason": "Chưa có thư mục artifacts (chạy notebook pipeline trước)"
+    },
+    {
+      "name": "test_api_key_enforced",
+      "reason": "Chưa có thư mục artifacts (chạy notebook pipeline trước)"
+    },
+    {
+      "name": "test_label_space_schema",
+      "reason": "Chưa có thư mục artifacts (chạy notebook pipeline trước)"
+    },
+    {
+      "name": "test_no_label_leakage",
+      "reason": "Chưa có thư mục artifacts (chạy notebook pipeline trước)"
+    },
+    {
+      "name": "test_core_reproduces_notebook",
+      "reason": "Chưa có thư mục artifacts (chạy notebook pipeline trước)"
+    },
+    {
+      "name": "test_dossier_citations_and_set",
+      "reason": "Chưa có thư mục artifacts (chạy notebook pipeline trước)"
+    },
+    {
+      "name": "test_final_model_steps",
+      "reason": "Chưa có thư mục artifacts (chạy notebook pipeline trước)"
+    },
+    {
+      "name": "test_final_matches_predictions_final",
+      "reason": "Chưa có thư mục artifacts (chạy notebook pipeline trước)"
+    }
+  ],
+  "additional_checks": [
+    "disabled old tax/penalty function",
+    "unfrozen final stack rejected",
+    "OCR retry invalidates linked verified sources"
+  ]
+}

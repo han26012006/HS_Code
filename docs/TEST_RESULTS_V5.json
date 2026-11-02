@@ -1,0 +1,14 @@
+{
+  "app_version": "2.1.0",
+  "python_functional_tests_passed": 44,
+  "tests_skipped_without_weights": 8,
+  "frontend_tests_passed": 2,
+  "pipeline_guard_tests_passed": 7,
+  "real_paid_api_calls": 0,
+  "model_experiments": 16,
+  "selected": "M0",
+  "new_model_accuracy_improvement_proven": false,
+  "full_colab_corpus_rebuild_executed": false,
+  "browser_backend_e2e_completed": false,
+  "browser_ssr_visual_check_completed": true
+}

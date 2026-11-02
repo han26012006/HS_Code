@@ -1,0 +1,43 @@
+{
+  "as_of": "2026-11-01",
+  "rules": [
+    {
+      "id": "85/2026/TT-BTC",
+      "effective_from": "2026-09-15",
+      "source": "https://vanban.chinhphu.vn/?docid=218770&pageid=27160",
+      "local_file": "TT85_2026_official.pdf",
+      "role": "official_classification_procedure_reference",
+      "replaces": [
+        "14/2015/TT-BTC",
+        "17/2021/TT-BTC"
+      ],
+      "use_as_hs8_label": false,
+      "packaged_official_pdf": true,
+      "sha256": "c16f0efc4c60955221ce9aecf0247e95c06bbea04a5826af17508da718f41722"
+    },
+    {
+      "id": "121/2025/TT-BTC",
+      "source": "https://congbaocdn.chinhphu.vn/180507251028987904/2026/1/29/cong-bao-so-60-ngay-27-01-46958signed-1769648620477270334287.pdf",
+      "local_file": "TT121_2025_CongBao_official.pdf",
+      "role": "official_procedure_and_notice_form_reference",
+      "relevant_pdf_pages_1_based": [
+        6,
+        257,
+        258,
+        259
+      ],
+      "use_as_hs8_label": false,
+      "packaged_official_pdf": true,
+      "sha256": "cdcc49a24087f571f22abe4d660a1232fb0df10e6500bf8961620cfbb4febc55"
+    },
+    {
+      "id": "117/QD-CHQ",
+      "effective_from": "2026-02-01",
+      "local_file": "QD117_2026_tvpl.txt",
+      "role": "secondary_copy_not_yet_verified_against_official_signed_source",
+      "use_as_hs8_label": false,
+      "packaged_official_pdf": false
+    }
+  ],
+  "warning": "Apply law by relevant transaction/notice date; source verification does not certify no later amendment."
+}

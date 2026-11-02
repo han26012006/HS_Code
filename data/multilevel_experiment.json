@@ -1,0 +1,140 @@
+{
+  "version": "model-v5.2",
+  "selected": "M0",
+  "models_evaluated": 16,
+  "portable_model_saved": false,
+  "validation": {
+    "n": 109,
+    "confidence_is_calibrated": false,
+    "prefix_topk_definition": "first k distinct ancestors in ranked HS8 list",
+    "hs2_top1": 0.6238532110091743,
+    "hs2_top3": 0.8440366972477065,
+    "hs2_top5": 0.908256880733945,
+    "hs2_macro_f1": 0.33865453677483753,
+    "hs4_top1": 0.44954128440366975,
+    "hs4_top3": 0.6422018348623854,
+    "hs4_top5": 0.7614678899082569,
+    "hs4_macro_f1": 0.22953869047619047,
+    "hs6_top1": 0.3577981651376147,
+    "hs6_top3": 0.5045871559633027,
+    "hs6_top5": 0.5871559633027523,
+    "hs6_macro_f1": 0.17481150793650793,
+    "hs8_top1": 0.23853211009174313,
+    "hs8_top3": 0.3394495412844037,
+    "hs8_top5": 0.4036697247706422,
+    "hs8_macro_f1": 0.10792849126182458,
+    "hierarchical_f1": 0.41743119266055045,
+    "recall_at_10": 0.5045871559633027,
+    "recall_at_20": 0.5963302752293578,
+    "recall_at_50": 0.7431192660550459,
+    "recall_at_100": 0.8073394495412844,
+    "recall_at_200": 0.8990825688073395,
+    "mrr_at_200": 0.3284942237270609,
+    "ndcg_at_200": 0.43626599591362414,
+    "hs8_correct": 26,
+    "hs8_wilson95": [
+      0.16829659850969678,
+      0.32656991069971175
+    ],
+    "seen": {
+      "n": 55,
+      "hs8_correct": 26,
+      "hs8_top1": 0.4727272727272727
+    },
+    "unseen": {
+      "n": 54,
+      "hs8_correct": 0,
+      "hs8_top1": 0.0
+    }
+  },
+  "historical_test": {
+    "n": 109,
+    "confidence_is_calibrated": false,
+    "prefix_topk_definition": "first k distinct ancestors in ranked HS8 list",
+    "hs2_top1": 0.5963302752293578,
+    "hs2_top3": 0.8165137614678899,
+    "hs2_top5": 0.926605504587156,
+    "hs2_macro_f1": 0.34338772793690825,
+    "hs4_top1": 0.46788990825688076,
+    "hs4_top3": 0.6330275229357798,
+    "hs4_top5": 0.7247706422018348,
+    "hs4_macro_f1": 0.24101522471087689,
+    "hs6_top1": 0.3577981651376147,
+    "hs6_top3": 0.47706422018348627,
+    "hs6_top5": 0.5688073394495413,
+    "hs6_macro_f1": 0.15548668503213958,
+    "hs8_top1": 0.29357798165137616,
+    "hs8_top3": 0.3669724770642202,
+    "hs8_top5": 0.41284403669724773,
+    "hs8_macro_f1": 0.13664270739742437,
+    "hierarchical_f1": 0.4288990825688073,
+    "recall_at_10": 0.45871559633027525,
+    "recall_at_20": 0.5596330275229358,
+    "recall_at_50": 0.6788990825688074,
+    "recall_at_100": 0.7247706422018348,
+    "recall_at_200": 0.7798165137614679,
+    "mrr_at_200": 0.3557119825580734,
+    "ndcg_at_200": 0.43610973276011145,
+    "hs8_correct": 32,
+    "hs8_wilson95": [
+      0.216287038976965,
+      0.3849233630304628
+    ],
+    "seen": {
+      "n": 52,
+      "hs8_correct": 32,
+      "hs8_top1": 0.6153846153846154
+    },
+    "unseen": {
+      "n": 57,
+      "hs8_correct": 0,
+      "hs8_top1": 0.0
+    }
+  },
+  "baseline": {
+    "n": 109,
+    "confidence_is_calibrated": false,
+    "prefix_topk_definition": "first k distinct ancestors in ranked HS8 list",
+    "hs2_top1": 0.5963302752293578,
+    "hs2_top3": 0.8165137614678899,
+    "hs2_top5": 0.926605504587156,
+    "hs2_macro_f1": 0.34338772793690825,
+    "hs4_top1": 0.46788990825688076,
+    "hs4_top3": 0.6330275229357798,
+    "hs4_top5": 0.7247706422018348,
+    "hs4_macro_f1": 0.24101522471087689,
+    "hs6_top1": 0.3577981651376147,
+    "hs6_top3": 0.47706422018348627,
+    "hs6_top5": 0.5688073394495413,
+    "hs6_macro_f1": 0.15548668503213958,
+    "hs8_top1": 0.29357798165137616,
+    "hs8_top3": 0.3669724770642202,
+    "hs8_top5": 0.41284403669724773,
+    "hs8_macro_f1": 0.13664270739742437,
+    "hierarchical_f1": 0.4288990825688073,
+    "recall_at_10": 0.45871559633027525,
+    "recall_at_20": 0.5596330275229358,
+    "recall_at_50": 0.6788990825688074,
+    "recall_at_100": 0.7247706422018348,
+    "recall_at_200": 0.7798165137614679,
+    "mrr_at_200": 0.3557119825580734,
+    "ndcg_at_200": 0.43610973276011145,
+    "hs8_correct": 32,
+    "hs8_wilson95": [
+      0.216287038976965,
+      0.3849233630304628
+    ],
+    "seen": {
+      "n": 52,
+      "hs8_correct": 32,
+      "hs8_top1": 0.6153846153846154
+    },
+    "unseen": {
+      "n": 57,
+      "hs8_correct": 0,
+      "hs8_top1": 0.0
+    }
+  },
+  "production_ready": false,
+  "confidence_calibration": "No independent HS8 calibration cohort; ranking scores not probabilities"
+}
