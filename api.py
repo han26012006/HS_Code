@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Literal
 import pandas as pd
-from fastapi import FastAPI,Depends,Header,HTTPException,UploadFile,File,Form
+from fastapi import FastAPI,Depends,Header,HTTPException,UploadFile,File,Form,Query
 from fastapi.responses import FileResponse,Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel,Field
@@ -33,6 +33,8 @@ async def lifespan(app):
     directory=Path(os.environ.get('HS_WORKSPACE',ROOT/'runtime'));directory.mkdir(parents=True,exist_ok=True)
     db=Workspace(directory/'workspace.sqlite');cat=Catalogue(ROOT/'data/catalogue.jsonl',ROOT/'data/legal_notes.json');docs=DocumentService(db,directory/'uploads');inference=InferenceService(cat,find_artifacts(ROOT),directory/'instruction')
     state.update(db=db,catalogue=cat,documents=docs,inference=inference,dir=directory,tax=TaxEngine(ROOT/'data/tax'));docs.resume()
+    from hs_assistant.precedents import PrecedentLibrary
+    state['precedents']=PrecedentLibrary(ROOT/'data/precedent_index.jsonl')
     from hs_assistant.audit_log import AuditLog
     state['project_knowledge']=None
     if os.environ.get('HS_PROJECT_KNOWLEDGE_DIR'):
@@ -42,7 +44,7 @@ async def lifespan(app):
     yield
     docs.close();state.clear()
 
-app=FastAPI(title='HS Workspace — Trợ lý phân loại có kiểm chứng',version='2.1.0',lifespan=lifespan)
+app=FastAPI(title='HS Workspace — Trợ lý phân loại có kiểm chứng',version='2.2.0',lifespan=lifespan)
 @app.exception_handler(ConflictError)
 async def conflict_handler(request,e):
     from fastapi.responses import JSONResponse
@@ -58,6 +60,7 @@ async def missing_handler(request,e):
 
 class CaseIn(BaseModel):
     title:str=Field(min_length=3,max_length=250);owner:str=Field(min_length=2,max_length=100);trade_type:Literal['import','export']='import';classification_date:date=Field(default_factory=lambda:datetime.now(ZoneInfo("Asia/Ho_Chi_Minh")).date());notes:str=Field(default='',max_length=4000)
+    declaration_number:str=Field(default='',max_length=100);declaration_registered_date:date|None=None;legal_hold:bool=False
 class SKUIn(BaseModel):
     sku_code:str=Field(min_length=1,max_length=80);name:str=Field(min_length=3,max_length=300);description:str=Field(default='',max_length=10000);declared_code:str|None=Field(default=None,max_length=30);product_family:Literal['general','steel','feed','laser','machine','electronic','chemical','food']='general'
 class FactIn(BaseModel):
@@ -65,33 +68,37 @@ class FactIn(BaseModel):
 class FactReview(BaseModel):status:Literal['verified','unverified','conflict'];reviewer:str=Field(min_length=2,max_length=100)
 class EvidenceIn(BaseModel):
     kind:Literal['tariff','chapter_note','section_note','ruling','technical','other'];title:str=Field(min_length=3,max_length=400);source_url:str=Field(default='',max_length=2000);document_id:str|None=None;page_number:int|None=Field(default=None,ge=1);quote:str=Field(min_length=5,max_length=15000);role:Literal['reference','supports','excludes','not_applicable','conflict']='reference';jurisdiction:str=Field(default='VN',max_length=20);nomenclature:str=Field(default='AHTN2022',max_length=40);effective_from:date|None=None;effective_to:date|None=None;lifecycle:Literal['not_checked','active','withdrawn','superseded']='not_checked';reviewer:str|None=Field(default=None,max_length=100)
+    target_codes:list[str]=Field(default_factory=list,max_length=30)
+class EvidenceReviewIn(BaseModel):
+    role:Literal['reference','supports','excludes','not_applicable','conflict'];lifecycle:Literal['not_checked','active','withdrawn','superseded'];reviewer:str=Field(min_length=2,max_length=100);resolution_note:str=Field(min_length=10,max_length=4000);target_codes:list[str]=Field(default_factory=list,max_length=30)
 class AnalyzeIn(BaseModel):
     engine:Literal['catalogue','model','qwen','openai']='catalogue'
     allow_paid_api:bool=False
 class ReviewIn(BaseModel):
     code:str=Field(default='',max_length=8);reason:str=Field(min_length=5,max_length=8000);reviewer:str=Field(min_length=2,max_length=100);preparer:str=Field(min_length=2,max_length=100);evidence_ids:list[str]=Field(default_factory=list,max_length=100);expected_revision:int;action:Literal['approve','return']='approve'
+    expected_analysis_id:str|None=Field(default=None,max_length=80);alternative_code:str=Field(default='',max_length=8);alternative_reason:str=Field(default='',max_length=4000);classification_basis_confirmed:bool=False
 class CatalogItems(BaseModel):items:list[dict]=Field(min_length=2,max_length=5000);threshold:float=Field(default=.85,ge=.5,le=1.)
 class EstimateItem(BaseModel):code:str=Field(pattern=r'^\d{8}$');import_rate:float=Field(ge=0,le=2000);vat_rate:float=Field(ge=0,le=100);excise_amount:float=Field(default=0,ge=0);environmental_amount:float=Field(default=0,ge=0)
 class Estimate(BaseModel):customs_value:float=Field(gt=0);items:list[EstimateItem]=Field(min_length=1,max_length=10)
 
 @app.get('/health')
 def health():
-    s=state['inference'].status();return {'status':'ok','version':'2.1.0','phien_ban_mo_hinh':s['catalogue_version'],'so_dong_nhan':s['catalogue_rows'],'model_artifacts_available':s['model_artifacts_available'],'authentication_required':bool(API_KEY),'automatic_hs8_acceptance_enabled':False}
+    s=state['inference'].status();return {'status':'ok','version':'2.2.0','phien_ban_mo_hinh':s['catalogue_version'],'so_dong_nhan':s['catalogue_rows'],'model_artifacts_available':s['model_artifacts_available'],'authentication_required':bool(API_KEY),'automatic_hs8_acceptance_enabled':False}
 
 @app.get('/api/v2/status',dependencies=[Depends(check_key)])
-def status():return dict(state['inference'].status(),authentication_required=bool(API_KEY),identity_mode='shared_api_key' if API_KEY else 'local_operator_names_not_authenticated',workflow_version='2.1.0',jurisdiction='VN',nomenclature='AHTN2022')
+def status():return dict(state['inference'].status(),authentication_required=bool(API_KEY),identity_mode='shared_api_key' if API_KEY else 'local_operator_names_not_authenticated',workflow_version='2.2.0',jurisdiction='VN',nomenclature='AHTN2022')
 @app.get('/api/v2/summary',dependencies=[Depends(check_key)])
 def summary():return state['db'].summary()
 @app.get('/api/v2/cases',dependencies=[Depends(check_key)])
 def cases(q:str='',status:str|None=None):return state['db'].cases(q,status)
 @app.post('/api/v2/cases',dependencies=[Depends(check_key)])
 def create_case(inp:CaseIn):
-    x=inp.model_dump();x['classification_date']=str(x['classification_date']);return state['db'].create_case(**x)
+    x=inp.model_dump(mode='json');return state['db'].create_case(**x)
 @app.get('/api/v2/cases/{case_id}',dependencies=[Depends(check_key)])
 def get_case(case_id:str):return state['db'].get_case(case_id)
 @app.patch('/api/v2/cases/{case_id}',dependencies=[Depends(check_key)])
 def edit_case(case_id:str,inp:CaseIn):
-    x=inp.model_dump();x['classification_date']=str(x['classification_date']);return state['db'].update_case(case_id,x,inp.owner)
+    x=inp.model_dump(mode='json');return state['db'].update_case(case_id,x,inp.owner)
 @app.post('/api/v2/cases/{case_id}/skus',dependencies=[Depends(check_key)])
 def add_sku(case_id:str,inp:SKUIn):return state['db'].add_sku(case_id,**inp.model_dump())
 @app.get('/api/v2/skus/{sku_id}',dependencies=[Depends(check_key)])
@@ -110,7 +117,13 @@ def add_evidence(sku_id:str,inp:EvidenceIn):
     data=inp.model_dump()
     for k in ['effective_from','effective_to']:data[k]=str(data[k]) if data[k] else None
     if data['effective_from'] and data['effective_to'] and data['effective_from']>data['effective_to']:raise HTTPException(422,'Khoảng hiệu lực không hợp lệ.')
+    validate_target_codes(data['target_codes'])
     return state['db'].add_evidence(sku_id,data)
+def validate_target_codes(codes):
+    if any(not re.fullmatch(r'(?:\d{2}|\d{4}|\d{6}|\d{8})',x)or not any(c.startswith(x)for c in state['catalogue'].by_code)for x in codes):raise HTTPException(422,'Phạm vi căn cứ phải là mã 2/4/6/8 số có trong danh mục đã nạp.')
+@app.patch('/api/v2/skus/{sku_id}/evidence/{evidence_id}',dependencies=[Depends(check_key)])
+def review_evidence(sku_id:str,evidence_id:str,inp:EvidenceReviewIn):
+    validate_target_codes(inp.target_codes);return state['db'].review_evidence(sku_id,evidence_id,**inp.model_dump())
 @app.post('/api/v2/skus/{sku_id}/analyze',dependencies=[Depends(check_key)])
 def analyze(sku_id:str,inp:AnalyzeIn):
     sku=state['db'].get_sku(sku_id)
@@ -118,7 +131,20 @@ def analyze(sku_id:str,inp:AnalyzeIn):
     except ValueError as e:raise HTTPException(409,str(e))
     result['base_revision']=sku['revision'];return state['db'].save_analysis(sku_id,result)
 @app.post('/api/v2/skus/{sku_id}/review',dependencies=[Depends(check_key)])
-def review(sku_id:str,inp:ReviewIn):return state['db'].review(sku_id,**inp.model_dump(),catalogue=state['catalogue'].by_code)
+def review(sku_id:str,inp:ReviewIn):
+    from hs_assistant.archival import source_context
+    return state['db'].review(sku_id,**inp.model_dump(),catalogue=state['catalogue'].by_code,source_context=source_context(ROOT,state['catalogue'].version))
+
+@app.get('/api/v2/decisions/{decision_id}/snapshot',dependencies=[Depends(check_key)])
+def decision_snapshot(decision_id:str):return state['db'].snapshot(decision_id)
+
+@app.get('/api/v2/audit-integrity',dependencies=[Depends(check_key)])
+def audit_integrity():return state['db'].verify_events()
+
+@app.get('/api/v2/legal-status',dependencies=[Depends(check_key)])
+def legal_status(as_of:date):
+    from hs_assistant.legal import dated_registry
+    return dated_registry(json.loads((ROOT/'data/legal_sources.json').read_text()),as_of.isoformat())
 
 @app.post('/api/v2/cases/{case_id}/documents',dependencies=[Depends(check_key)])
 async def documents(case_id:str,files:list[UploadFile]=File(...),sku_id:str|None=Form(default=None)):
@@ -147,6 +173,15 @@ def catalogue_row(code:str):
     siblings=[x for x in state['catalogue'].rows if x['code'][:6]==code[:6]];return dict(row,siblings=siblings,notes=state['catalogue'].note_search('',scope=row['chapter'],limit=5))
 @app.get('/api/v2/knowledge',dependencies=[Depends(check_key)])
 def knowledge(q:str='',scope:str|None=None):return {'notes':state['catalogue'].note_search(q,scope),'legal_sources':json.loads((ROOT/'data/legal_sources.json').read_text()),'applicability_requires_review':True}
+
+@app.get('/api/v2/precedents',dependencies=[Depends(check_key)])
+def precedents(q:str=Query(default='',max_length=15000),as_of:date|None=None,heading:str|None=None,limit:int=8):
+    if heading and not re.fullmatch(r'\d{4}',heading):raise HTTPException(422,'Nhóm HS phải đủ 4 chữ số.')
+    day=(as_of or datetime.now(ZoneInfo('Asia/Ho_Chi_Minh')).date()).isoformat()
+    library=state['precedents']
+    return {'rows':library.search(q,day,[heading]if heading else None,max(1,min(limit,12))),
+            'corpus_version':library.version,'default_split':'train','all_source_records':len(library.rows),
+            'current_applicability_certified':False,'retrieval_is_classification':False}
 
 @app.get('/api/v2/legal-document/{source_id}',dependencies=[Depends(check_key)])
 def legal_document(source_id:str):
@@ -215,6 +250,32 @@ class TaxScenarioIn(BaseModel):
     reviewer:str=Field(min_length=2,max_length=100);operator_checked:bool=False
     sku_id:str|None=Field(default=None,max_length=80);expected_revision:int|None=None
 
+class ComparisonCandidateIn(BaseModel):
+    code:str=Field(pattern=r'^\d{8}$');scheme:str=Field(default='MFN',max_length=40)
+    duty_rate_percent:Decimal|None=Field(default=None,ge=0,le=2000,allow_inf_nan=False)
+    duty_rate_source:str=Field(default='',max_length=2000);rate_checked:bool=False
+    policy_status:Literal['unknown','none_identified','requirement_identified','prohibited']='unknown'
+    policy_source:str=Field(default='',max_length=2000);policy_note:str=Field(default='',max_length=4000);policy_checked:bool=False
+    distinguishing_attributes:str=Field(default='',max_length=4000);eligibility:dict=Field(default_factory=dict)
+class ComparisonIn(BaseModel):
+    expected_revision:int;expected_analysis_id:str|None=None
+    customs_value_vnd:Decimal|None=Field(default=None,gt=0,allow_inf_nan=False)
+    origin_country:str=Field(default='',max_length=100);reviewer:str=Field(min_length=2,max_length=100)
+    candidates:list[ComparisonCandidateIn]=Field(min_length=2,max_length=3)
+
+@app.post('/api/v2/skus/{sku_id}/comparisons',dependencies=[Depends(check_key)])
+def comparison(sku_id:str,inp:ComparisonIn):
+    from hs_assistant.comparison import compare_candidates
+    sku=state['db'].get_sku(sku_id);case=state['db'].get_case(sku['case_id'])
+    if inp.expected_revision!=sku['revision']or inp.expected_analysis_id!=sku['analysis_id']:raise ConflictError('SKU hoặc kết quả phân tích đã đổi; mở lại trước khi so sánh.')
+    data=inp.model_dump(mode='json')
+    try:result=compare_candidates(data,sku,case,state['catalogue'].by_code,state['tax'])
+    except (TaxError,ValueError,TypeError)as e:raise HTTPException(422,str(e))
+    return state['db'].save_comparison(sku_id,inp.expected_revision,inp.expected_analysis_id,data,result)
+
+@app.get('/api/v2/skus/{sku_id}/comparisons',dependencies=[Depends(check_key)])
+def comparison_history(sku_id:str):return state['db'].comparisons(sku_id)
+
 @app.get('/api/v2/tax/{code}',dependencies=[Depends(check_key)])
 def tax_lookup(code:str,as_of:date):
     if not re.fullmatch(r'\d{8}',code):raise HTTPException(422,'Mã HS8 phải đủ 8 chữ số.')
@@ -259,14 +320,28 @@ def quality():
     return {'multilevel_experiment':{'models_evaluated':multi['models_evaluated'],'selected':multi['selected'],'production_ready':False},'operations':s,'historical':metrics,'production_auto_classification_ready':False,'target_hs8_top1':.8,'reason':'Chưa có cohort độc lập và calibration HS8 đủ điều kiện phát hành tự động.','approval_rate_is_accuracy':False,'model_registry':state['inference'].status()}
 
 @app.get('/api/v2/cases/{case_id}/export/{kind}',dependencies=[Depends(check_key)])
-def export_case(case_id:str,kind:Literal['json','pdf','xlsx']):
+def export_case(case_id:str,kind:Literal['json','pdf','xlsx','zip']):
     case=state['db'].get_case(case_id);case['skus']=[state['db'].get_sku(x['id']) for x in case['skus']];case['exported_at']=now();
     with state['db'].connect() as c:
         case['events']=[state['db'].public_event(dict(x)) for x in c.execute('SELECT * FROM events WHERE case_id=? ORDER BY id',(case_id,))]
         case['analysis_history']=[dict(x, result=json.loads(x['result_json'])) for x in [dict(r) for r in c.execute('SELECT a.* FROM analyses a JOIN skus s ON s.id=a.sku_id WHERE s.case_id=? ORDER BY a.created_at',(case_id,))]]
         case['decision_history']=[dict(r) for r in c.execute('SELECT d.* FROM decisions d JOIN skus s ON s.id=d.sku_id WHERE s.case_id=? ORDER BY d.created_at',(case_id,))]
     with state['db'].connect() as c:case['tax_scenarios']=[json.loads(r[0])for r in c.execute('SELECT t.result_json FROM tax_scenarios t JOIN skus s ON s.id=t.sku_id WHERE s.case_id=? ORDER BY t.created_at',(case_id,))]
+    with state['db'].connect()as c:
+        decision_ids=[r[0]for r in c.execute('SELECT d.id FROM decisions d JOIN skus s ON s.id=d.sku_id WHERE s.case_id=? ORDER BY d.created_at',(case_id,))]
+    case['decision_snapshots']=[]
+    for i in decision_ids:
+        try:case['decision_snapshots'].append(state['db'].snapshot(i))
+        except KeyError:case['decision_snapshots'].append({'decision_id':i,'status':'legacy_decision_without_frozen_snapshot'})
+    case['comparisons']=[dict(row,sku_id=s['id'])for s in case['skus']for row in state['db'].comparisons(s['id'])]
     case['document_type']='internal_classification_dossier_not_customs_ruling';case['approved_decisions_are_training_gold']=False
+    if kind=='zip':
+        from hs_assistant.archival import build_case_archive
+        from starlette.background import BackgroundTask
+        import shutil
+        if any(s.get('integrity_matches')is False for s in case['decision_snapshots']):raise ConflictError('Bản chụp quyết định không khớp SHA256; cần kiểm tra trước khi xuất.')
+        archive,directory=build_case_archive(case,state['db'],ROOT)
+        return FileResponse(archive,media_type='application/zip',filename=archive.name,background=BackgroundTask(shutil.rmtree,directory,ignore_errors=True))
     if kind=='json':return Response(encode(case),media_type='application/json',headers={'Content-Disposition':f'attachment; filename="{case["reference"]}.json"'})
     from hs_assistant.workspace_export import case_pdf,case_excel
     data=case_pdf(case) if kind=='pdf' else case_excel(case)

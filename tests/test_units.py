@@ -40,6 +40,13 @@ def test_conformal_coverage_on_exchangeable_data():
     q = conformal_qhat(cal, 0.1)
     assert 0.88 <= (test <= q).mean() <= 0.93
 
+def test_conformal_uses_the_finite_sample_order_statistic():
+    scores=np.arange(1,11)/10
+    assert conformal_qhat(scores,.2)==.9
+    assert conformal_qhat([.1,.2],.01)==1.
+    for scores,alpha in [([float('nan')],.1),([1.1],.1),([.1],1.)]:
+        with pytest.raises(ValueError):conformal_qhat(scores,alpha)
+
 
 def test_scrub_contact_details():
     s = "Địa chỉ: 12 Lê Lợi, Quận 1; Điện thoại: 028 3822 1234; Email: abc@congty.vn; Ông Nguyễn Văn An ký"

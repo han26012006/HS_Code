@@ -3,7 +3,7 @@ from pathlib import Path
 from decimal import Decimal,InvalidOperation
 from datetime import date,datetime
 import argparse,hashlib,json,re
-VERSION='tax-v5.2'
+VERSION='tax-v5.3-chapter98-separated'
 SCHEMES={'K':'ordinary','N':'MFN','Q':'VAT','T':'ACFTA','W':'ATIGA','Z':'AJCEP','AC':'VJEPA','AF':'AKFTA','AI':'AANZFTA','AL':'AIFTA','AO':'VKFTA','AR':'VCFTA','AU':'VN-EAEU','AX':'CPTPP','BA':'AHKFTA','BD':'VNCU','BG':'EVFTA','BJ':'UKVFTA','BM':'VN-LAO','BP':'VN-CAM','BS':'VIFTA','BV':'RCEP','CG':'EXCISE','CJ':'EXPORT','CM':'EXPORT_CPTPP','CP':'EXPORT_EVFTA','CS':'EXPORT_UKVFTA','CV':'ENVIRONMENT'}
 def text(v):return v.isoformat()if isinstance(v,(date,datetime))else str(v).strip()if v is not None else''
 def parse_rate(raw):
@@ -27,17 +27,23 @@ def build_snapshot(workbook,out):
  out=Path(out);out.mkdir(parents=True,exist_ok=True);w=load_workbook(workbook,read_only=True,data_only=True,keep_links=False);s=w['BT2026'];seen=set();problems=[];count=0;h=hashlib.sha256(Path(workbook).read_bytes()).hexdigest();rcep_headers={letter(k):[]for k in range(ci('BV'),ci('CF')+1)}
  for row in s.iter_rows(min_row=3,max_row=6):
   for k in range(ci('BV'),ci('CF')+1):rcep_headers[letter(k)].append(text(row[k-1].value))
+ special=[]
  with(out/'tax_snapshot.jsonl').open('w')as f:
   for n,row in enumerate(s.iter_rows(min_row=7),7):
    if len(row)<6:continue
    code=code_of(row[5])
    if not code:continue
-   if code in seen:problems.append({'row':n,'code':code,'error':'duplicate_code'});continue
-   seen.add(code);rates={}
+   if code in seen and not code.startswith('98'):problems.append({'row':n,'code':code,'error':'duplicate_code'});continue
+   rates={}
    for col,scheme in SCHEMES.items():
     j=ci(col)-1;rates[scheme]={'rate':parse_rate(row[j].value),'source_cell':f'{col}{n}','legal_reference':text(row[j+1].value)if scheme!='RCEP'else'','effective_from_observed':text(row[j+2].value)if scheme!='RCEP'else'','legally_verified_current':False}
    rates['RCEP']['rate']={'kind':'conditional_country_schedule','raw':'RCEP: chọn biểu theo nước xuất xứ; không tự dùng cột đầu','country_cells':{f'{letter(k)}{n}':text(row[k-1].value)for k in range(ci('BV'),ci('CF')+1)},'country_header_rows_3_to_6':rcep_headers}
-   record={'code':code,'description':text(row[6].value),'unit':text(row[8].value),'snapshot_date':'2026-04-05','source_sheet':'BT2026','source_row':n,'source_sha256':h,'rates':rates,'goods_policy_observation':text(row[102].value)if len(row)>102 else'','vat_reduction_observation':text(row[103].value)if len(row)>103 else'','is_ground_truth_hs_label':False};f.write(json.dumps(record,ensure_ascii=False,separators=(',',':'))+'\n');count+=1
+   record={'code':code,'description':text(row[6].value),'unit':None if code.startswith('98')else text(row[8].value),'snapshot_date':'2026-04-05','source_sheet':'BT2026','source_row':n,'source_sha256':h,'rates':rates,'goods_policy_observation':text(row[102].value)if len(row)>102 else'','vat_reduction_observation':text(row[103].value)if len(row)>103 else'','is_ground_truth_hs_label':False}
+   if code.startswith('98'):
+    record.update(record_type='chapter98_conditional_reference',reference_code_observation=text(row[8].value),reference_code_source_cell=f'I{n}',requires_special_regime_review=True)
+    special.append(record);continue
+   seen.add(code);f.write(json.dumps(record,ensure_ascii=False,separators=(',',':'))+'\n');count+=1
+ (out/'chapter98_snapshot.jsonl').write_text('\n'.join(json.dumps(r,ensure_ascii=False,separators=(',',':'))for r in special)+'\n')
  sheets=[];aux=[]
  for ws in w:
   last=0;nonempty=0;lines=[]
@@ -47,7 +53,7 @@ def build_snapshot(workbook,out):
    if vals and ws.title in {'6QT','PL1','PL2','DB','MT','MOI','BANG','HT'}:lines.append({'row':n,'text':' | '.join(vals)})
   sheets.append({'sheet':ws.title,'rows_read':last,'nonempty_rows':nonempty})
   if lines:aux.append({'sheet':ws.title,'source_sha256':h,'rows':lines,'applicability_requires_review':True})
- w.close();(out/'tariff_auxiliary.json').write_text(json.dumps(aux,ensure_ascii=False,separators=(',',':')));receipt={'version':VERSION,'workbook_sha256':h,'snapshot_date':'2026-04-05','rows_hs8':count,'schemes':list(SCHEMES.values()),'sheets':sheets,'problems':problems,'all_rates_recertified_current':False,'star_marker':'context dependent, never globally treated as tax exemption','tax_cost_used_for_classification':False};(out/'TAX_SOURCE_RECEIPT.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2));print(json.dumps({'tariff_codes':count,'sheets_read':len(sheets),'problems':len(problems)}));return receipt
+ w.close();(out/'tariff_auxiliary.json').write_text(json.dumps(aux,ensure_ascii=False,separators=(',',':')));receipt={'version':VERSION,'workbook_sha256':h,'snapshot_date':'2026-04-05','rows_hs8':count,'chapter98_rows_retained':len(special),'chapter98_unique_codes':len({r['code']for r in special}),'chapter98_unit_column_is_reference':True,'schemes':list(SCHEMES.values()),'sheets':sheets,'problems':problems,'all_rates_recertified_current':False,'star_marker':'context dependent, never globally treated as tax exemption','tax_cost_used_for_classification':False};(out/'TAX_SOURCE_RECEIPT.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2));print(json.dumps({'tariff_codes':count,'chapter98_rows':len(special),'sheets_read':len(sheets),'problems':len(problems)}));return receipt
 class TaxError(ValueError):pass
 def amount(v,name):
  try:x=Decimal(str(v))
@@ -67,8 +73,17 @@ def customs_value(d):
 class TaxEngine:
  def __init__(self,root):
   self.root=Path(root);self.rows={r['code']:r for r in map(json.loads,(self.root/'tax_snapshot.jsonl').read_text().splitlines())};self.sources=json.loads((self.root/'TAX_LEGAL_REGISTRY.json').read_text())if(self.root/'TAX_LEGAL_REGISTRY.json').exists()else[]
+  self.special={}
+  special_path=self.root/'chapter98_snapshot.jsonl'
+  if special_path.exists():
+   for line in special_path.read_text().splitlines():
+    if line.strip():
+     row=json.loads(line);self.special.setdefault(row['code'],[]).append(row)
  def lookup(self,code,as_of):
   date.fromisoformat(as_of)
+  if code in self.special:
+   variants=self.special[code]
+   return {'code':code,'description':'Mã Chương 98 có điều kiện/phạm vi riêng','record_type':'chapter98_conditional_reference','as_of':as_of,'snapshot_date':'2026-04-05','source_sha256':variants[0]['source_sha256'],'source_sheet':'BT2026','source_row':None,'rates':{},'variants':variants,'requires_special_regime_review':True,'goods_policy_observation':'Cột I là mã tham chiếu quan sát trong workbook, không phải đơn vị tính. Không tự chuyển đổi sang mã thông thường hoặc tự chọn mức thuế.','vat_reduction_observation':'','official_references':self.sources,'automatic_current_rate_certified':False,'warnings':['Giữ mọi dòng nguồn của cùng mã Chương 98. Cần đối chiếu điều kiện pháp lý và mã thông thường tương ứng; chức năng tính hiện chưa hỗ trợ.']}
   if code not in self.rows:raise TaxError('Mã chưa có trong snapshot thuế đã nạp.')
   warnings=['Biểu tổng hợp ngày 05/04/2026; chưa xác nhận toàn bộ mức thuế hiện hành.','Thuế không được dùng để quyết định mã HS.']
   if as_of!='2026-04-05':warnings.append('Ngày giao dịch khác ngày snapshot: đối chiếu văn bản và thời kỳ áp dụng tương ứng.')
@@ -76,6 +91,7 @@ class TaxEngine:
   return dict(self.rows[code],as_of=as_of,warnings=warnings,official_references=self.sources,automatic_current_rate_certified=False)
  def calculate(self,d):
   code=str(d.get('code',''));day=d.get('classification_date');look=self.lookup(code,day);scheme=d.get('scheme','MFN');trade=d.get('trade_type','import')
+  if code.startswith('98')or look.get('requires_special_regime_review'):raise TaxError('Chương 98 cần xác định điều kiện và mã tham chiếu từng dòng; chưa hỗ trợ tự tính từ dòng đầu hoặc mức thấp nhất.')
   if trade not in {'import','export'}or scheme not in look['rates']or scheme in {'VAT','EXCISE','ENVIRONMENT'}:raise TaxError('Chọn đúng luồng và chế độ thuế XNK.')
   if(trade=='export')!=scheme.startswith('EXPORT'):raise TaxError('Chế độ thuế không khớp luồng XNK.')
   e=d.get('eligibility',{})

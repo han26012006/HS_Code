@@ -1,0 +1,54 @@
+BẢN TRÍCH XUẤT THAM KHẢO — CHƯA THAY THẾ CHỨNG TỪ GỐC
+20 BỘ CHỨNG TỪ (4)(1).zip
+20 BỘ CHỨNG TỪ (4)/mặt hàng Thép không gỉ cán nguội, dạng tấm/BỘ CHỨNG TỪ/Bộ chứng từ XNK/MILL TEST CERTIFICATE.pdf
+SHA256 chứng từ gốc: 81da718d274f38484decf6013e0b8a569d73123fccb8e0260cebd07d84c97f55
+
+[Trang / đơn vị 1]
+               产 品 质 量 证 明 书
+                                                               中国江苏省无锡市滨湖区
+    锡 万 宏 诺 不 锈 钢 有 限 公 司        MILL TEST CERTIFICATE                Binhu District, Wuxi City, Jiangsu Province, China
+        Wuxi Wanhongnuo Stainless Steel Company Limited           EN 10204:2004 3.1                                              Tel +86 17701510738
+ 客户名称                 中文产品名称                       订单号             证明书编号
+                 N2 CO., LTD                                      310s 2B 冷乳不锈钢板                              5238928                       3581201202
+  Customer                                          Product                                                   Order No.                               Certificate No.
+  合同号                  英文产品名称                      商检批次号            发货日期
+                WWN-RC/001/2024                               310s 2B Stainless Sheet Cold Rolled                                                            2024-04-08
+ Contract No.                                         Product                                                            Ins.Lot. No.                        Date of Delivery
+  发票号                  生产许可证号                       购单号              到站港
+                     20240328009                                                                                                                               Cat Lai Port
+ Invoice No.                                       License No.                                                 Purchase No.                             Destination
+  标准                   计重方式           检斤           总重量              船名      MAERSK
+              ASTM A240M                                                                                                23,100
+ Specification                                   Weight Mode                    Actual Weight                  Total Weight                               Vessel     NUSSFJORD
+
+                                    化学成分                 拉伸试验 Tensile Test
+  熔炼号
+          规格    重量                     件数                      Chemical Composition %                           弯曲   硬度
+   Heat No.                            Number                                屈服    抗拉   伸长率             Hardness                 (mm)         (Kg)         C      Si   Mn   P     S    Nb     Ti    B    V                                     Bend
+  板号                                         of                                                                        Y.S           T.S       EL                       Size         Weight                                                                                                                               Test
+  Sheet No.                                    Pieces
+                                                    Ni    Cr   Cu    As   N    Als   RE   Mo          Ksi  MPa   Ksi  MPa   %         HB   HV
+                                                       0.08   1.50   2.00   0.045  0.03  18S8059
+               2.95*9032*1552    330       70                                                               30    205    75    515     40  合格    217    95
+S8P140310P1                                                         20.1   25.2
+
+
+
+
+
+  备注
+  Remarks                                                              总毛重 (Kg)                                                                                                                                                                     23,100
+                                                                                                                                                                   Total Weight
+注释   Notes           Y.S = Yield Strength                     T.S = Tensile Strength                     EL = Elongation
+
+                                  发货单位                             出口目的港
+                                                锡万宏诺不锈钢有限公司
+本产品已按上述标准要求制造求制造和检验其结果符合要求特此证明。        Deliver                                                                   Export     上海港
+                                                                             Wuxi Wanhongnuo Stainless Steel Company Limited
+贵方查询有关问题，请与我公司联系。                                    Department                                                                    Destination
+
+We hereby certify that the material described herein has been manufactured   发货人      李志鹏                      总件数           70
+and tested with satisfactory results in accordance with the requirements of the       Deliverer                                                                      Total Pieces                                                    副厂长
+above material specification. If you have any questions, please contact our                                                                                                     Deputy Director
+company.                               检查人                              发行日期                                           黄耀雪                                                             2024-03-27
+                                                                                   Inspector                                                                    Issued date

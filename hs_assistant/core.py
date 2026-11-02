@@ -126,10 +126,13 @@ def sim(A, B) -> np.ndarray:
 def conformal_qhat(scores, alpha: float) -> float:
     """Ngưỡng split conformal: lượng tử bậc ceil((n+1)(1-alpha))/n của điểm không phù hợp."""
     s = np.asarray(scores, float)
+    if not 0 < alpha < 1 or s.ndim != 1 or np.any(~np.isfinite(s)) or np.any((s < 0) | (s > 1)):
+        raise ValueError("Expected finite nonconformity scores in [0, 1] and alpha in (0, 1).")
     n = len(s)
     if n == 0:
         return 1.0
-    return float(np.quantile(s, min(1.0, math.ceil((n + 1) * (1 - alpha)) / n), method="higher"))
+    k = math.ceil((n + 1) * (1 - alpha))
+    return float(np.sort(s)[k - 1]) if k <= n else 1.0
 
 
 class FastBM25:

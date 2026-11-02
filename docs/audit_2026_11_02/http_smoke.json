@@ -1,0 +1,10 @@
+{
+  "real_http_server_started": true,
+  "version": "2.2.0",
+  "frontend_entry_http": 200,
+  "compiled_asset_http": 200,
+  "new_ui_markers_present": true,
+  "legal_status_http": 200,
+  "tax_lookup_http": 200,
+  "browser_js_execution_tested": false
+}

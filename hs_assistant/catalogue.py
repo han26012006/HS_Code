@@ -84,7 +84,7 @@ class InferenceService:
             model_version=llm.get('model',engine);warnings.append('Model chỉ dẫn thử nghiệm của notebook 07; chưa vượt kiểm thử HS8 độc lập. Chú giải và GRI chưa được áp dụng đầy đủ trong prompt hiện tại.')
             if not llm.get('accepted'):warnings.append('Model chưa đưa ra gợi ý hợp lệ: '+llm['status']+'. Các dòng bên dưới vẫn là truy hồi BM25 để chuyên gia kiểm tra.')
         else:
-            candidates=self.catalogue.search(query,limit=10);model_version=self.catalogue.version;warnings.append('Đối chứng BM25 trên danh mục; chưa áp dụng đầy đủ GRI, chú giải hoặc suy luận phân loại.')
+            candidates=self.catalogue.search(query,limit=30);model_version=self.catalogue.version;warnings.append('Đối chứng BM25 trên danh mục; chưa áp dụng đầy đủ GRI, chú giải hoặc suy luận phân loại.')
         questions=[]
         if llm:
             for missing in llm.get('parsed',{}).get('missing_attributes',[]):questions.append({'field':'llm_requested','question':missing,'status':'missing'})
@@ -94,4 +94,13 @@ class InferenceService:
         if not candidates:warnings.append('Không truy hồi được dòng phù hợp; cần tra cứu bổ sung hoặc chuyển chuyên gia.')
         if candidates:
             questions.append({'field':'candidate_conditions','question':'Đối chiếu các điều kiện khác nhau trong mô tả các dòng cùng cấp; không mặc định chọn “Loại khác”.','status':'review','options':[{'code':x['code'],'condition':x['path']} for x in candidates[:3]]})
-        return {'engine':engine,'instruction_result':llm,'engine_label':{'model':'Model của dự án','qwen':'Qwen 4B · thử nghiệm 07','openai':'OpenAI · thử nghiệm 07','catalogue':'Tra cứu danh mục · BM25'}.get(engine,engine),'model_version':model_version,'input_hash':hashlib.sha256(query.encode()).hexdigest(),'input_text':query,'input_fact_ids':[f['id'] for f in facts],'candidates':candidates,'questions':questions,'warnings':warnings,'human_review_required':True,'calibrated_hs8_confidence':None,'auto_accept':False,'elapsed_ms':int((time.monotonic()-start)*1000),'source_notes':[{'id':x['id'],'title':x['title'],'scope':x['scope'],'kind':x['kind'],'text':x['text'],'verified_applicability':False} for x in self.catalogue.notes if candidates and x['scope']==candidates[0]['chapter']][:2],'precedent_references':legacy.get('tien_le_gan_nhat',[]) if legacy else []}
+        missing=sku.get('readiness',{}).get('missing_fields',[])
+        if missing or any(f['status']=='conflict'for f in sku['facts']):support_state='needs_information'
+        elif llm and not llm.get('accepted'):support_state='model_abstained_retrieval_only'
+        else:support_state='human_review_of_retrieval_required'
+        headings=[];seen=set()
+        for r in candidates:
+            if r['heading']not in seen:
+                seen.add(r['heading']);headings.append({'heading':r['heading'],'chapter':r['chapter'],'example_code':r['code'],'path':r['path'],'source_kind':'retrieved_candidate_not_legal_conclusion','notes':[{'id':x['id'],'title':x['title'],'text':x['text'],'verified_applicability':False}for x in self.catalogue.notes if x['scope']==r['chapter']][:2]})
+            if len(headings)==3:break
+        return {'decision_support_state':support_state,'heading_candidates':headings,'heading_topk_definition':'first three distinct ancestors of retrieved HS8 rows; not separately ranked HS4 model','candidate_ranking_is_legal_conclusion':False,'engine':engine,'instruction_result':llm,'engine_label':{'model':'Model của dự án','qwen':'Qwen 4B · thử nghiệm 07','openai':'OpenAI · thử nghiệm 07','catalogue':'Tra cứu danh mục · BM25'}.get(engine,engine),'model_version':model_version,'input_hash':hashlib.sha256(query.encode()).hexdigest(),'input_text':query,'input_fact_ids':[f['id'] for f in facts],'candidates':candidates,'questions':questions,'warnings':warnings,'human_review_required':True,'calibrated_hs8_confidence':None,'auto_accept':False,'elapsed_ms':int((time.monotonic()-start)*1000),'source_notes':[{'id':x['id'],'title':x['title'],'scope':x['scope'],'kind':x['kind'],'text':x['text'],'verified_applicability':False} for x in self.catalogue.notes if candidates and x['scope']==candidates[0]['chapter']][:2],'precedent_references':legacy.get('tien_le_gan_nhat',[]) if legacy else []}

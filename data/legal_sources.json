@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-01",
+  "as_of": "2026-11-02",
   "rules": [
     {
       "id": "85/2026/TT-BTC",
@@ -37,6 +37,51 @@
       "role": "secondary_copy_not_yet_verified_against_official_signed_source",
       "use_as_hs8_label": false,
       "packaged_official_pdf": false
+    },
+    {
+      "id": "169/2026/ND-CP",
+      "effective_from": "2026-07-01",
+      "source": "https://vanban.chinhphu.vn/?docid=218154&pageid=27160&typegroupid=4",
+      "local_file": "ND169_2026_official.pdf",
+      "role": "official_penalty_procedure_reference_not_penalty_calculator",
+      "replaces": [
+        "128/2020/ND-CP"
+      ],
+      "use_as_hs8_label": false,
+      "packaged_official_pdf": true,
+      "sha256": "412ce3a0a809096b964dd8893dc96a89335a0a03cef1625d476b22899f13560a",
+      "relevant_pdf_pages_1_based": [
+        4
+      ],
+      "note": "Điều 5: phân biệt thời hiệu xử phạt và nghĩa vụ nộp đủ thuế/tiền chậm nộp; không tự quy mọi sai mã thành một mức phạt."
+    },
+    {
+      "id": "128/2020/ND-CP",
+      "effective_to_exclusive": "2026-07-01",
+      "source": "https://www.mof.gov.vn/tin-hoc-thong-ke/thong-bao-5/hoan-thien-co-che-xu-phat-vi-pham-trong-linh-vuc-hai-quan-tren-moi-truong-dien-tu",
+      "role": "historical_replaced_reference",
+      "replaced_by": "169/2026/ND-CP",
+      "use_as_hs8_label": false,
+      "packaged_official_pdf": false
+    },
+    {
+      "id": "11/2026/QH16",
+      "effective_from": "2027-03-01",
+      "issued_on": "2026-08-23",
+      "source": "https://vanban.chinhphu.vn/?classid=0&docid=219299&pageid=27160",
+      "role": "future_law_metadata_reference",
+      "use_as_hs8_label": false,
+      "packaged_official_pdf": false,
+      "note": "Đã ban hành nhưng chưa có hiệu lực vào ngày 02/11/2026; không áp dụng sớm sửa đổi Điều 77."
+    },
+    {
+      "id": "54/VBHN-VPQH-2026",
+      "consolidated_on": "2026-03-23",
+      "source": "https://vanban.chinhphu.vn/?classid=2629&docid=217294&pageid=27160",
+      "role": "official_customs_law_consolidation_reference",
+      "use_as_hs8_label": false,
+      "packaged_official_pdf": false,
+      "note": "Bản hợp nhất không tự tạo ngày hiệu lực mới; đối chiếu hiệu lực từng luật sửa đổi. Điều 18(2)(đ), Điều 77(3) là căn cứ mốc lưu/kiểm tra 5 năm."
     }
   ],
   "warning": "Apply law by relevant transaction/notice date; source verification does not certify no later amendment."

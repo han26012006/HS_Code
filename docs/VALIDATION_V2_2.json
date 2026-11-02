@@ -1,0 +1,50 @@
+{
+  "application_version": "2.2.0",
+  "review_date": "2026-11-02",
+  "baseline": {
+    "python_passed": 44,
+    "python_skipped": 8
+  },
+  "python": {
+    "tests": 73,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 8,
+    "passed": 65,
+    "junit_file": "audit_2026_11_02/final_tests.xml"
+  },
+  "frontend": {
+    "node_tests_passed": 2,
+    "vite_production_build_passed": true,
+    "browser_end_to_end_tested": false,
+    "browser_limitation": "No browser binary available; automated download returned incomplete archives."
+  },
+  "http_smoke": {
+    "real_http_server_started": true,
+    "version": "2.2.0",
+    "frontend_entry_http": 200,
+    "compiled_asset_http": 200,
+    "new_ui_markers_present": true,
+    "legal_status_http": 200,
+    "tax_lookup_http": 200,
+    "browser_js_execution_tested": false
+  },
+  "classification_accuracy_newly_measured": false,
+  "gpu_inference_run": false,
+  "paid_api_calls": 0,
+  "all_original_pdfs_independently_ocr_reviewed": false,
+  "independent_customs_expert_validation_completed": false,
+  "production_ready": false,
+  "pdf_export_visual_qa": {
+    "sample_is_synthetic": true,
+    "pages": 3,
+    "all_pages_rendered_and_visually_reviewed": true,
+    "full_candidate_list_retained_in_json_xlsx_zip": true,
+    "browser_screenshot_saved_as_deliverable": false
+  },
+  "pdf_export_regressions_after_layout_change": {
+    "passed": 3,
+    "failures": 0,
+    "sample_qa_preserved_missing_original_warnings": true
+  }
+}

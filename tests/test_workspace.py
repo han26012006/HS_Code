@@ -26,7 +26,7 @@ def ready(c,sku):
     return verify(c,sku,'function','Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở')
 
 def evidence(c,sku,**overrides):
-    payload=dict(kind='tariff',title='Nguồn kiểm thử của chuyên gia',quote='Điều kiện dòng danh mục do người duyệt đối chiếu trong kiểm thử.',source_url='https://vanban.chinhphu.vn/',role='supports',jurisdiction='VN',nomenclature='AHTN2022',effective_from='2022-12-01',effective_to=None,lifecycle='active',reviewer='Người kiểm tra')
+    payload=dict(kind='tariff',title='Nguồn kiểm thử của chuyên gia',quote='Điều kiện dòng danh mục do người duyệt đối chiếu trong kiểm thử.',source_url='https://vanban.chinhphu.vn/',role='supports',target_codes=['85163100'],jurisdiction='VN',nomenclature='AHTN2022',effective_from='2022-12-01',effective_to=None,lifecycle='active',reviewer='Người kiểm tra')
     payload.update(overrides);r=c.post('/api/v2/skus/'+sku['id']+'/evidence',json=payload);assert r.status_code==200,r.text
     return r.json()
 
@@ -36,6 +36,10 @@ def analyze(c,sku):
 
 def approve(c,sku,**extra):
     payload={'code':'85163100','reason':'Đã đối chiếu bản chất, chức năng thiết kế và dòng danh mục áp dụng cho đúng SKU.','preparer':'Người lập','reviewer':'Người duyệt','expected_revision':sku['revision'],'evidence_ids':[e['id']for e in sku['evidence']]};payload.update(extra)
+    payload.setdefault('classification_basis_confirmed',True)
+    payload.setdefault('alternative_code',next((x['code']for x in (sku.get('analysis')or{}).get('candidates',[])if x['code']!=payload['code']),''))
+    payload.setdefault('alternative_reason','Phương án khác không đáp ứng chức năng và điều kiện của đúng SKU đang kiểm tra.')
+    payload.setdefault('expected_analysis_id',sku.get('analysis_id'))
     return c.post('/api/v2/skus/'+sku['id']+'/review',json=payload)
 
 def test_start_without_weights_and_no_silent_model_fallback(client):

@@ -1,3 +1,23 @@
+# Hướng dẫn bản 2.2 — cập nhật 02/11/2026
+
+Đọc README.md và docs/REVIEW_BOARD_2026-11-02.md cho trạng thái hiện tại. Các phần dưới giữ hướng dẫn cấu hình model từ 2.1; mô tả thay đổi mới ở đây được ưu tiên.
+
+Trong hồ sơ SKU, tab **So sánh mã HS** có thêm tra tiền lệ Việt Nam và **So sánh hệ quả giữa các mã**. Ghi các mã, trị giá chung và căn cứ từng mức thuế/chính sách. Để trống mức chưa xác định; unknown không có nghĩa không có yêu cầu. Phần so sánh chỉ tính thuế XNK theo tỷ lệ phần trăm, chưa phải tổng thuế.
+
+Trong **Căn cứ**, ghi mã/phạm vi 2/4/6/8 số mà nguồn hỗ trợ hoặc loại trừ. Khi có mâu thuẫn, dùng **Đối chiếu lại vai trò / hiệu lực**, ghi lý do xử lý và phân tích lại. Bản 2.2 chặn việc bỏ chọn một nguồn conflict để duyệt.
+
+Trong **Lập phiếu duyệt**, nêu một mã khác và lý do loại, xác nhận phân loại theo bản chất hàng và căn cứ. Quyết định tạo bản chụp có hash. Tab **Duyệt & lịch sử** cho tải bản chụp; **Xuất hồ sơ → Gói bằng chứng ZIP** giữ cả bản gốc đã tải vào case, JSON và manifest.
+
+Trong **Thông tin hồ sơ**, ghi ngày đăng ký tờ khai khi đã biết; mốc lưu tham chiếu 5 năm tính từ ngày đó. Có thể đánh dấu giữ tiếp vì kiểm tra/tranh chấp. Không tự xóa ở mốc 5 năm và không hiểu mốc đó là hết mọi nghĩa vụ thuế/kế toán.
+
+Trong **Thư viện căn cứ**, xem trạng thái văn bản theo ngày. Đây là registry có ngày đối chiếu, chưa theo dõi tự động mọi thay đổi. Luật 11/2026/QH16 chỉ hiệu lực từ 01/03/2027.
+
+Chương 98 đã được tách khỏi mã thông thường; giữ mọi dòng nguồn, không dùng cột I làm đơn vị tính, không tự tính theo một dòng/thuế thấp nhất. Người nghiệp vụ cần xác định điều kiện riêng.
+
+Nâng cấp: giữ runtime/HS_WORKSPACE hiện có, không chép runtime mẫu đè lên. Migration chỉ thêm cột/bảng. Căn cứ cũ cần bổ sung phạm vi mã trước lần duyệt mới; bản chụp không được tự dựng hồi tố cho quyết định cũ. Tên người lập/duyệt tự khai, chưa có chữ ký số hoặc SSO.
+
+---
+
 # HS Workspace 2.0
 
 Ứng dụng nâng cấp trực tiếp từ hs-assistant-app.zip của HSCode_AIProject. Giữ Python/FastAPI và lõi model; bổ sung giao diện React đóng gói sẵn, hồ sơ nhiều SKU, trích chứng từ theo trang và duyệt có căn cứ. Không phải bản model đã đạt HS8 >80%.

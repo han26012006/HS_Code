@@ -1,0 +1,18 @@
+{
+  "listed_entries": 2407,
+  "folders": 187,
+  "raw_pdf_direct_children": 961,
+  "existing_ocr_texts": 967,
+  "raw_records": 967,
+  "raw_record_originals_not_in_direct_pdf_folder": [
+    "4796_TB-TCHQ_2022-11-11.pdf",
+    "4903_TB-TCHQ_2022-11-18.pdf",
+    "4904_TB-TCHQ_2022-11-18.pdf",
+    "5420_TB-TCHQ_2022-12-14.pdf",
+    "5421_TB-TCHQ_2022-12-14.pdf",
+    "5437_TCHQ_2022_12_15.pdf"
+  ],
+  "downloaded_source_files": 204,
+  "ocr_all_originals_independently_repeated": false,
+  "model_inference_independently_repeated": false
+}
