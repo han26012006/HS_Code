@@ -13,4 +13,4 @@ if __name__=='__main__':
                 except Exception:time.sleep(.5)
         threading.Thread(target=open_when_ready,daemon=True).start()
     import uvicorn
-    uvicorn.run('api:app',host=a.host,port=a.port)
+    uvicorn.run('api:app',host=a.host,port=a.port,reload=True)
