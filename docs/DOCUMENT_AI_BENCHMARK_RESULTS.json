@@ -1,0 +1,1171 @@
+{
+  "scope": "Synthetic author-labelled regression measurements only; reserved_synthetic is not an independent blind real holdout.",
+  "real_reviewed_holdout_documents": 0,
+  "limitations": [
+    "Only explicitly annotated fields are scored.",
+    "Source grounding is not a human semantic hallucination judgement.",
+    "Matching is measured by exact document/product membership and per-case equality.",
+    "A perfect result on these small curated synthetic fixtures does not establish production accuracy."
+  ],
+  "baseline_source_hashes": {
+    "product_extraction.py": "002ba9ca09bc0f347570c2cf047e7cd2d70433b448fe6056607800d9c2b45c50",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "extractor.py": "5a3b6a5911e411fdce63d2752e099ba2feb081a27a219c6eec8f41227ed45923"
+  },
+  "results": {
+    "development": {
+      "before": {
+        "dataset": "tests/fixtures/document_ai/development.json",
+        "dataset_sha256": "a1d523e4e79ab0585e0f9c1159312fdd923d82c0995dc60c9dafd0946431681f",
+        "table_gold_sha256": "69ffdcbd7bdffc0d231e2460d234363ede5277f65f766ff34631599f2eec28ff",
+        "evaluator_sha256": "e9f60c734cf323780ccd1af7c3030486f4a0d1ae66b9408420639d8be1fdb169",
+        "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+        "metrics": {
+          "document_classification_accuracy": 0.846154,
+          "field_precision": 0.769231,
+          "field_recall": 0.37037,
+          "field_f1": 0.5,
+          "identifier_exact_match": 0.48,
+          "table_row_exact_recall": 0.0,
+          "table_row_exact_precision": null,
+          "table_row_identity_accuracy": 0.0,
+          "sku_precision": 0.888889,
+          "sku_recall": 1.0,
+          "cross_document_matching_case_accuracy": 1.0,
+          "cross_document_membership_jaccard": 1.0,
+          "citation_correctness": 1.0,
+          "unsupported_value_rate": 0.0,
+          "autofill_coverage": 0.37037
+        },
+        "counts": {
+          "class_correct": 11,
+          "documents": 13,
+          "field_tp": 20,
+          "field_fp": 6,
+          "field_fn": 34,
+          "id_correct": 12,
+          "id_total": 25,
+          "sku_tp": 8,
+          "sku_fp": 1,
+          "sku_fn": 0,
+          "citations_correct": 21,
+          "citations_total": 21,
+          "unsupported": 0,
+          "rows_correct": 0,
+          "rows_total": 7,
+          "rows_exact": 0,
+          "rows_predicted": 0,
+          "pair_tp": 12,
+          "pair_fp": 0,
+          "pair_fn": 0,
+          "matching_cases_correct": 10,
+          "matching_cases_total": 10,
+          "coverage_hits": 20,
+          "coverage_total": 54
+        },
+        "details": [
+          {
+            "case_id": "steel-trade",
+            "expected_skus": [
+              "ST-21",
+              "ST-22"
+            ],
+            "actual_skus": [
+              "ST-21",
+              "ST-22"
+            ],
+            "missing_fields": [
+              [
+                "document",
+                "steel-inv",
+                "contract_number",
+                "CT-800"
+              ],
+              [
+                "document",
+                "steel-inv",
+                "exporter",
+                "Alloy Works Ltd"
+              ],
+              [
+                "document",
+                "steel-inv",
+                "importer",
+                "Metro Fabrication Ltd"
+              ],
+              [
+                "product",
+                "ST-21",
+                "amount",
+                "500.00"
+              ],
+              [
+                "product",
+                "ST-21",
+                "gross_weight",
+                "25 kg"
+              ],
+              [
+                "product",
+                "ST-21",
+                "material",
+                "Stainless steel"
+              ],
+              [
+                "product",
+                "ST-21",
+                "net_weight",
+                "23 kg"
+              ],
+              [
+                "product",
+                "ST-21",
+                "packages",
+                "2 cartons"
+              ],
+              [
+                "product",
+                "ST-21",
+                "quantity",
+                "40"
+              ],
+              [
+                "product",
+                "ST-21",
+                "unit",
+                "PCS"
+              ],
+              [
+                "product",
+                "ST-21",
+                "unit_price",
+                "12.50"
+              ],
+              [
+                "product",
+                "ST-22",
+                "amount",
+                "900.00"
+              ],
+              [
+                "product",
+                "ST-22",
+                "gross_weight",
+                "34 kg"
+              ],
+              [
+                "product",
+                "ST-22",
+                "material",
+                "Stainless steel"
+              ],
+              [
+                "product",
+                "ST-22",
+                "net_weight",
+                "32 kg"
+              ],
+              [
+                "product",
+                "ST-22",
+                "packages",
+                "3 cartons"
+              ],
+              [
+                "product",
+                "ST-22",
+                "quantity",
+                "60"
+              ],
+              [
+                "product",
+                "ST-22",
+                "unit",
+                "PCS"
+              ],
+              [
+                "product",
+                "ST-22",
+                "unit_price",
+                "15.00"
+              ]
+            ],
+            "unexpected_fields": [
+              [
+                "document",
+                "steel-inv",
+                "exporter",
+                "Alloy Works Ltd\nBuyer"
+              ],
+              [
+                "document",
+                "steel-inv",
+                "importer",
+                "Metro Fabrication Ltd\nContract No"
+              ]
+            ]
+          },
+          {
+            "case_id": "chemical-certificates",
+            "expected_skus": [
+              "RES-51"
+            ],
+            "actual_skus": [
+              "RES-51"
+            ],
+            "missing_fields": [
+              [
+                "product",
+                "RES-51",
+                "specifications",
+                "Density 0.90 g/cm3"
+              ]
+            ],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "food-origin",
+            "expected_skus": [
+              "FD-51"
+            ],
+            "actual_skus": [
+              "FD-51"
+            ],
+            "missing_fields": [
+              [
+                "document",
+                "food-co",
+                "invoice_number",
+                "FOOD-51"
+              ],
+              [
+                "product",
+                "FD-51",
+                "quantity",
+                "100"
+              ],
+              [
+                "product",
+                "FD-51",
+                "unit",
+                "KG"
+              ]
+            ],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "transport",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [
+              [
+                "document",
+                "bl",
+                "bl_number",
+                "OCEAN-96"
+              ],
+              [
+                "document",
+                "bl",
+                "consignee",
+                "Textile Import Ltd"
+              ],
+              [
+                "document",
+                "bl",
+                "port_of_discharge",
+                "Haiphong"
+              ],
+              [
+                "document",
+                "bl",
+                "port_of_loading",
+                "Bangkok"
+              ],
+              [
+                "document",
+                "bl",
+                "shipper",
+                "Textile Export Ltd"
+              ],
+              [
+                "document",
+                "bl",
+                "total_packages",
+                "20 cartons"
+              ]
+            ],
+            "unexpected_fields": [
+              [
+                "document",
+                "bl",
+                "port_of_discharge",
+                "Haiphong\nPackages"
+              ],
+              [
+                "document",
+                "bl",
+                "port_of_loading",
+                "Bangkok\nPort of discharge"
+              ]
+            ]
+          },
+          {
+            "case_id": "contract",
+            "expected_skus": [
+              "WOOD-7"
+            ],
+            "actual_skus": [
+              "WOOD-7"
+            ],
+            "missing_fields": [
+              [
+                "document",
+                "ct",
+                "contract_number",
+                "CN-25"
+              ],
+              [
+                "document",
+                "ct",
+                "exporter",
+                "Wood Export Ltd"
+              ],
+              [
+                "document",
+                "ct",
+                "importer",
+                "Furniture Ltd"
+              ],
+              [
+                "product",
+                "WOOD-7",
+                "quantity",
+                "200"
+              ],
+              [
+                "product",
+                "WOOD-7",
+                "unit",
+                "M3"
+              ]
+            ],
+            "unexpected_fields": [
+              [
+                "document",
+                "ct",
+                "exporter",
+                "Wood Export Ltd\nBuyer"
+              ],
+              [
+                "document",
+                "ct",
+                "importer",
+                "Furniture Ltd\nSKU"
+              ]
+            ]
+          },
+          {
+            "case_id": "catalogue",
+            "expected_skus": [
+              "PUMP-1",
+              "PUMP-2"
+            ],
+            "actual_skus": [
+              "PUMP-1",
+              "PUMP-2"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "customs",
+            "expected_skus": [
+              "CP-2"
+            ],
+            "actual_skus": [
+              "CP-2"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "legal-negative",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "unknown-negative",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "single-signal-negative",
+            "expected_skus": [],
+            "actual_skus": [
+              "A-1"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          }
+        ]
+      },
+      "after": {
+        "dataset": "tests/fixtures/document_ai/development.json",
+        "dataset_sha256": "a1d523e4e79ab0585e0f9c1159312fdd923d82c0995dc60c9dafd0946431681f",
+        "table_gold_sha256": "69ffdcbd7bdffc0d231e2460d234363ede5277f65f766ff34631599f2eec28ff",
+        "evaluator_sha256": "e9f60c734cf323780ccd1af7c3030486f4a0d1ae66b9408420639d8be1fdb169",
+        "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+        "metrics": {
+          "document_classification_accuracy": 1.0,
+          "field_precision": 1.0,
+          "field_recall": 1.0,
+          "field_f1": 1.0,
+          "identifier_exact_match": 1.0,
+          "table_row_exact_recall": 1.0,
+          "table_row_exact_precision": 1.0,
+          "table_row_identity_accuracy": 1.0,
+          "sku_precision": 1.0,
+          "sku_recall": 1.0,
+          "cross_document_matching_case_accuracy": 1.0,
+          "cross_document_membership_jaccard": 1.0,
+          "citation_correctness": 1.0,
+          "unsupported_value_rate": 0.0,
+          "autofill_coverage": 1.0
+        },
+        "counts": {
+          "class_correct": 13,
+          "documents": 13,
+          "field_tp": 54,
+          "field_fp": 0,
+          "field_fn": 0,
+          "id_correct": 25,
+          "id_total": 25,
+          "sku_tp": 8,
+          "sku_fp": 0,
+          "sku_fn": 0,
+          "citations_correct": 61,
+          "citations_total": 61,
+          "unsupported": 0,
+          "rows_correct": 7,
+          "rows_total": 7,
+          "rows_exact": 7,
+          "rows_predicted": 7,
+          "pair_tp": 12,
+          "pair_fp": 0,
+          "pair_fn": 0,
+          "matching_cases_correct": 10,
+          "matching_cases_total": 10,
+          "coverage_hits": 54,
+          "coverage_total": 54
+        },
+        "details": [
+          {
+            "case_id": "steel-trade",
+            "expected_skus": [
+              "ST-21",
+              "ST-22"
+            ],
+            "actual_skus": [
+              "ST-21",
+              "ST-22"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "chemical-certificates",
+            "expected_skus": [
+              "RES-51"
+            ],
+            "actual_skus": [
+              "RES-51"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "food-origin",
+            "expected_skus": [
+              "FD-51"
+            ],
+            "actual_skus": [
+              "FD-51"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "transport",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "contract",
+            "expected_skus": [
+              "WOOD-7"
+            ],
+            "actual_skus": [
+              "WOOD-7"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "catalogue",
+            "expected_skus": [
+              "PUMP-1",
+              "PUMP-2"
+            ],
+            "actual_skus": [
+              "PUMP-1",
+              "PUMP-2"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "customs",
+            "expected_skus": [
+              "CP-2"
+            ],
+            "actual_skus": [
+              "CP-2"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "legal-negative",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "unknown-negative",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "single-signal-negative",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          }
+        ]
+      }
+    },
+    "reserved_synthetic": {
+      "before": {
+        "dataset": "tests/fixtures/document_ai/reserved_synthetic.json",
+        "dataset_sha256": "11867c15a9f855ae2f2691385398e99ef4ccc1d982a4d6ddfb5ed86119bd70b9",
+        "table_gold_sha256": "69ffdcbd7bdffc0d231e2460d234363ede5277f65f766ff34631599f2eec28ff",
+        "evaluator_sha256": "e9f60c734cf323780ccd1af7c3030486f4a0d1ae66b9408420639d8be1fdb169",
+        "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+        "metrics": {
+          "document_classification_accuracy": 0.857143,
+          "field_precision": 0.8,
+          "field_recall": 0.222222,
+          "field_f1": 0.347826,
+          "identifier_exact_match": 0.285714,
+          "table_row_exact_recall": 0.0,
+          "table_row_exact_precision": null,
+          "table_row_identity_accuracy": 0.0,
+          "sku_precision": 1.0,
+          "sku_recall": 0.333333,
+          "cross_document_matching_case_accuracy": 0.8,
+          "cross_document_membership_jaccard": 0.333333,
+          "citation_correctness": 1.0,
+          "unsupported_value_rate": 0.0,
+          "autofill_coverage": 0.222222
+        },
+        "counts": {
+          "class_correct": 6,
+          "documents": 7,
+          "field_tp": 4,
+          "field_fp": 1,
+          "field_fn": 14,
+          "id_correct": 2,
+          "id_total": 7,
+          "sku_tp": 1,
+          "sku_fp": 0,
+          "sku_fn": 2,
+          "citations_correct": 7,
+          "citations_total": 7,
+          "unsupported": 0,
+          "rows_correct": 0,
+          "rows_total": 4,
+          "rows_exact": 0,
+          "rows_predicted": 0,
+          "pair_tp": 2,
+          "pair_fp": 0,
+          "pair_fn": 4,
+          "matching_cases_correct": 4,
+          "matching_cases_total": 5,
+          "coverage_hits": 4,
+          "coverage_total": 18
+        },
+        "details": [
+          {
+            "case_id": "textile-shipment",
+            "expected_skus": [
+              "FAB-8",
+              "FAB-9"
+            ],
+            "actual_skus": [],
+            "missing_fields": [
+              [
+                "product",
+                "FAB-8",
+                "amount",
+                "672.00"
+              ],
+              [
+                "product",
+                "FAB-8",
+                "name",
+                "Woven cotton fabric"
+              ],
+              [
+                "product",
+                "FAB-8",
+                "quantity",
+                "320"
+              ],
+              [
+                "product",
+                "FAB-8",
+                "unit",
+                "M"
+              ],
+              [
+                "product",
+                "FAB-8",
+                "unit_price",
+                "2.10"
+              ],
+              [
+                "product",
+                "FAB-9",
+                "amount",
+                "540.00"
+              ],
+              [
+                "product",
+                "FAB-9",
+                "name",
+                "Woven cotton fabric"
+              ],
+              [
+                "product",
+                "FAB-9",
+                "quantity",
+                "180"
+              ],
+              [
+                "product",
+                "FAB-9",
+                "unit",
+                "M"
+              ],
+              [
+                "product",
+                "FAB-9",
+                "unit_price",
+                "3.00"
+              ]
+            ],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "optics",
+            "expected_skus": [
+              "OPT-30"
+            ],
+            "actual_skus": [
+              "OPT-30"
+            ],
+            "missing_fields": [
+              [
+                "product",
+                "OPT-30",
+                "specifications",
+                "Diameter 30 mm"
+              ]
+            ],
+            "unexpected_fields": [
+              [
+                "product",
+                "OPT-30",
+                "specifications",
+                "Technical specifications: Diameter 30 mm"
+              ]
+            ]
+          },
+          {
+            "case_id": "air-shipment",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [
+              [
+                "document",
+                "air",
+                "bl_number",
+                "AIR-880"
+              ],
+              [
+                "document",
+                "air",
+                "consignee",
+                "Laboratory Ltd"
+              ],
+              [
+                "document",
+                "air",
+                "shipper",
+                "Device Export Ltd"
+              ]
+            ],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "legal-en",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "unknown-ocr",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          }
+        ]
+      },
+      "after": {
+        "dataset": "tests/fixtures/document_ai/reserved_synthetic.json",
+        "dataset_sha256": "11867c15a9f855ae2f2691385398e99ef4ccc1d982a4d6ddfb5ed86119bd70b9",
+        "table_gold_sha256": "69ffdcbd7bdffc0d231e2460d234363ede5277f65f766ff34631599f2eec28ff",
+        "evaluator_sha256": "e9f60c734cf323780ccd1af7c3030486f4a0d1ae66b9408420639d8be1fdb169",
+        "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+        "metrics": {
+          "document_classification_accuracy": 1.0,
+          "field_precision": 1.0,
+          "field_recall": 1.0,
+          "field_f1": 1.0,
+          "identifier_exact_match": 1.0,
+          "table_row_exact_recall": 1.0,
+          "table_row_exact_precision": 1.0,
+          "table_row_identity_accuracy": 1.0,
+          "sku_precision": 1.0,
+          "sku_recall": 1.0,
+          "cross_document_matching_case_accuracy": 1.0,
+          "cross_document_membership_jaccard": 1.0,
+          "citation_correctness": 1.0,
+          "unsupported_value_rate": 0.0,
+          "autofill_coverage": 1.0
+        },
+        "counts": {
+          "class_correct": 7,
+          "documents": 7,
+          "field_tp": 18,
+          "field_fp": 0,
+          "field_fn": 0,
+          "id_correct": 7,
+          "id_total": 7,
+          "sku_tp": 3,
+          "sku_fp": 0,
+          "sku_fn": 0,
+          "citations_correct": 31,
+          "citations_total": 31,
+          "unsupported": 0,
+          "rows_correct": 4,
+          "rows_total": 4,
+          "rows_exact": 4,
+          "rows_predicted": 4,
+          "pair_tp": 6,
+          "pair_fp": 0,
+          "pair_fn": 0,
+          "matching_cases_correct": 5,
+          "matching_cases_total": 5,
+          "coverage_hits": 18,
+          "coverage_total": 18
+        },
+        "details": [
+          {
+            "case_id": "textile-shipment",
+            "expected_skus": [
+              "FAB-8",
+              "FAB-9"
+            ],
+            "actual_skus": [
+              "FAB-8",
+              "FAB-9"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "optics",
+            "expected_skus": [
+              "OPT-30"
+            ],
+            "actual_skus": [
+              "OPT-30"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "air-shipment",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "legal-en",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "unknown-ocr",
+            "expected_skus": [],
+            "actual_skus": [],
+            "missing_fields": [],
+            "unexpected_fields": []
+          }
+        ]
+      }
+    },
+    "adversarial_development": {
+      "before": {
+        "dataset": "tests/fixtures/document_ai/adversarial_development.json",
+        "dataset_sha256": "f9d25dfa6f1745273df0fe9a1d9c38dfb1b6895b991164e0a49ef9c6d8b91ec2",
+        "table_gold_sha256": "69ffdcbd7bdffc0d231e2460d234363ede5277f65f766ff34631599f2eec28ff",
+        "evaluator_sha256": "e9f60c734cf323780ccd1af7c3030486f4a0d1ae66b9408420639d8be1fdb169",
+        "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+        "metrics": {
+          "document_classification_accuracy": 1.0,
+          "field_precision": 0.285714,
+          "field_recall": 0.125,
+          "field_f1": 0.173913,
+          "identifier_exact_match": null,
+          "table_row_exact_recall": null,
+          "table_row_exact_precision": null,
+          "table_row_identity_accuracy": null,
+          "sku_precision": 0.4,
+          "sku_recall": 0.333333,
+          "cross_document_matching_case_accuracy": 0.0,
+          "cross_document_membership_jaccard": 0.181818,
+          "citation_correctness": 0.333333,
+          "unsupported_value_rate": 0.0,
+          "autofill_coverage": 0.125
+        },
+        "counts": {
+          "class_correct": 6,
+          "documents": 6,
+          "field_tp": 2,
+          "field_fp": 5,
+          "field_fn": 14,
+          "id_correct": 0,
+          "id_total": 0,
+          "sku_tp": 2,
+          "sku_fp": 3,
+          "sku_fn": 4,
+          "citations_correct": 3,
+          "citations_total": 9,
+          "unsupported": 0,
+          "rows_correct": 0,
+          "rows_total": 0,
+          "rows_exact": 0,
+          "rows_predicted": 0,
+          "pair_tp": 2,
+          "pair_fp": 4,
+          "pair_fn": 5,
+          "matching_cases_correct": 0,
+          "matching_cases_total": 3,
+          "coverage_hits": 2,
+          "coverage_total": 16
+        },
+        "details": [
+          {
+            "case_id": "composite-positive",
+            "expected_skus": [
+              "g1"
+            ],
+            "actual_skus": [
+              "cand_24ea680ca7ab",
+              "cand_b792954ee367"
+            ],
+            "missing_fields": [
+              [
+                "product",
+                "g1",
+                "name",
+                "Hydraulic fitting"
+              ],
+              [
+                "product",
+                "g1",
+                "quantity",
+                "24"
+              ],
+              [
+                "product",
+                "g1",
+                "unit",
+                "PCS"
+              ]
+            ],
+            "unexpected_fields": [
+              [
+                "product",
+                "cand_24ea680ca7ab",
+                "name",
+                "Hydraulic fitting"
+              ],
+              [
+                "product",
+                "cand_b792954ee367",
+                "name",
+                "Hydraulic fitting"
+              ]
+            ]
+          },
+          {
+            "case_id": "conflicting-variant-negative",
+            "expected_skus": [
+              "g2a",
+              "g2b"
+            ],
+            "actual_skus": [
+              "VAL-4"
+            ],
+            "missing_fields": [
+              [
+                "product",
+                "g2a",
+                "name",
+                "Valve"
+              ],
+              [
+                "product",
+                "g2a",
+                "specifications",
+                "Diameter 30 mm"
+              ],
+              [
+                "product",
+                "g2b",
+                "name",
+                "Valve"
+              ],
+              [
+                "product",
+                "g2b",
+                "specifications",
+                "Diameter 50 mm"
+              ]
+            ],
+            "unexpected_fields": [
+              [
+                "product",
+                "VAL-4",
+                "name",
+                "Valve"
+              ],
+              [
+                "product",
+                "VAL-4",
+                "specifications",
+                "Specifications: Diameter 30 mm"
+              ],
+              [
+                "product",
+                "VAL-4",
+                "specifications",
+                "Specifications: Diameter 50 mm"
+              ]
+            ]
+          },
+          {
+            "case_id": "ambiguous-duplicate-negative",
+            "expected_skus": [
+              "g3a",
+              "g3b",
+              "g3c"
+            ],
+            "actual_skus": [
+              "g3a",
+              "g3c"
+            ],
+            "missing_fields": [
+              [
+                "product",
+                "g3a",
+                "quantity",
+                "12"
+              ],
+              [
+                "product",
+                "g3a",
+                "unit",
+                "PCS"
+              ],
+              [
+                "product",
+                "g3b",
+                "name",
+                "Gear"
+              ],
+              [
+                "product",
+                "g3b",
+                "quantity",
+                "12"
+              ],
+              [
+                "product",
+                "g3b",
+                "unit",
+                "PCS"
+              ],
+              [
+                "product",
+                "g3c",
+                "quantity",
+                "12"
+              ],
+              [
+                "product",
+                "g3c",
+                "unit",
+                "PCS"
+              ]
+            ],
+            "unexpected_fields": []
+          }
+        ]
+      },
+      "after": {
+        "dataset": "tests/fixtures/document_ai/adversarial_development.json",
+        "dataset_sha256": "f9d25dfa6f1745273df0fe9a1d9c38dfb1b6895b991164e0a49ef9c6d8b91ec2",
+        "table_gold_sha256": "69ffdcbd7bdffc0d231e2460d234363ede5277f65f766ff34631599f2eec28ff",
+        "evaluator_sha256": "e9f60c734cf323780ccd1af7c3030486f4a0d1ae66b9408420639d8be1fdb169",
+        "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+        "metrics": {
+          "document_classification_accuracy": 1.0,
+          "field_precision": 1.0,
+          "field_recall": 1.0,
+          "field_f1": 1.0,
+          "identifier_exact_match": null,
+          "table_row_exact_recall": null,
+          "table_row_exact_precision": null,
+          "table_row_identity_accuracy": null,
+          "sku_precision": 1.0,
+          "sku_recall": 1.0,
+          "cross_document_matching_case_accuracy": 1.0,
+          "cross_document_membership_jaccard": 1.0,
+          "citation_correctness": 1.0,
+          "unsupported_value_rate": 0.0,
+          "autofill_coverage": 1.0
+        },
+        "counts": {
+          "class_correct": 6,
+          "documents": 6,
+          "field_tp": 16,
+          "field_fp": 0,
+          "field_fn": 0,
+          "id_correct": 0,
+          "id_total": 0,
+          "sku_tp": 6,
+          "sku_fp": 0,
+          "sku_fn": 0,
+          "citations_correct": 21,
+          "citations_total": 21,
+          "unsupported": 0,
+          "rows_correct": 0,
+          "rows_total": 0,
+          "rows_exact": 0,
+          "rows_predicted": 0,
+          "pair_tp": 7,
+          "pair_fp": 0,
+          "pair_fn": 0,
+          "matching_cases_correct": 3,
+          "matching_cases_total": 3,
+          "coverage_hits": 16,
+          "coverage_total": 16
+        },
+        "details": [
+          {
+            "case_id": "composite-positive",
+            "expected_skus": [
+              "g1"
+            ],
+            "actual_skus": [
+              "g1"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "conflicting-variant-negative",
+            "expected_skus": [
+              "g2a",
+              "g2b"
+            ],
+            "actual_skus": [
+              "g2a",
+              "g2b"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          },
+          {
+            "case_id": "ambiguous-duplicate-negative",
+            "expected_skus": [
+              "g3a",
+              "g3b",
+              "g3c"
+            ],
+            "actual_skus": [
+              "g3a",
+              "g3b",
+              "g3c"
+            ],
+            "missing_fields": [],
+            "unexpected_fields": []
+          }
+        ]
+      }
+    }
+  },
+  "implementation_source_hashes": {
+    "document_layout.py": "226a964b935734fad50810da445ed91ed671be9be992544a00fca5f89c3edab1",
+    "documents.py": "7b6fcfa5cdc9dfe90c606d9e4291716432d81afc4e7929dde903e2d595707399",
+    "product_extraction.py": "c05efa124ed6a1251200dbb8f5216db13e9754b0766612d9b34414220f324229",
+    "document_reconciliation.py": "7eab327fa67d12b35bb16d4d61e769ee5d80494d6b4c7bfdfab33f74490b9856",
+    "document_classification.py": "a0f7e22d79971627813547a452b3efafbfe1337008ce7cd43cb9b52fb642635d",
+    "extractor.py": "24afaee3b0d827492fb572a64ab15d9655f685db84afd48041d6d5baf3e041b5",
+    "assisted_extraction.py": "9fcd60917dc67e106cfd9532e433bb26f8e94833822212ce5db711083b66b316",
+    "document_schema.py": "19a24d35242a5993905614102c16869d14a562d6ef58b467a8d20786389509c9",
+    "workspace.py": "991154bf7fc229807a953702dffb910e18e9e1ee0bee6e19866f53f23c9a41fb",
+    "ocr_layout.py": "8e7006b77c7f1227311b77fb24dafa4315a48cd44cd07ecf61ffab87688a4e55",
+    "document_text.py": "215f5e803ae315ce3f1905edc9361a8ca311a1c49d45b836aa00c4f85a2a61fc"
+  }
+}

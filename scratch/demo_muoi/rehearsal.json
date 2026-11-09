@@ -1,0 +1,151 @@
+{
+  "sku_count": 1,
+  "facts": 15,
+  "readiness": {
+    "verified_fields": [
+      "amount",
+      "currency",
+      "function",
+      "gross_weight",
+      "name",
+      "net_weight",
+      "origin",
+      "quantity",
+      "unit",
+      "unit_price"
+    ],
+    "required_fields": [
+      "function",
+      "name"
+    ],
+    "missing_fields": [],
+    "unverified_fact_ids": [],
+    "can_analyze": true,
+    "conflicting_fields": [],
+    "human_review_required": true
+  },
+  "candidate_top10": [
+    [
+      "76061220",
+      "Đế bản nhôm, chưa nhạy, dùng trong công nghệ in"
+    ],
+    [
+      "25010020",
+      "Muối mỏ chưa chế biến"
+    ],
+    [
+      "89012073",
+      "Tổng dung tích (gross tonnage) trên 30.000 nhưng không quá 50.000"
+    ],
+    [
+      "04022930",
+      "Đóng gói với khối lượng tịnh từ 2 kg trở xuống"
+    ],
+    [
+      "04021092",
+      "Đóng gói với khối lượng tịnh từ 2 kg trở xuống"
+    ],
+    [
+      "84669330",
+      "Dùng cho máy thuộc các phân nhóm 8456.11.10, 8456.12.10, 8456.20.00, hoặc 8456.30.00, loại chỉ sử dụng hoặc chủ yếu sử dụng để sản xuất mạch in, mạch in đã lắp ráp, bộ phận của máy móc thuộc nhóm 85.17, hoặc bộ phận của máy xử lý dữ liệu tự động của nhóm 84.71; dùng cho máy thuộc các phân nhóm 8457.10, 8458.91.00, 8459.21.00, 8459.29.10, 8459.61.00, 8459.69.10, hoặc 8461.50.00, loại chỉ được sử dụng hoặc chủ yếu để sản xuất bộ phận của máy móc thuộc nhóm 85.17, hoặc bộ phận của máy xử lý dữ liệu tự động của nhóm 84.71"
+    ],
+    [
+      "04022130",
+      "Đóng gói với khối lượng tịnh từ 2 kg trở xuống"
+    ],
+    [
+      "04021042",
+      "Đóng gói với khối lượng tịnh từ 2 kg trở xuống"
+    ],
+    [
+      "89012071",
+      "Tổng dung tích (gross tonnage) trên 5.000 nhưng không quá 20.000"
+    ],
+    [
+      "89012072",
+      "Tổng dung tích (gross tonnage) trên 20.000 nhưng không quá 30.000"
+    ]
+  ],
+  "status": {
+    "qwen_enabled": false,
+    "openai_enabled": false,
+    "openai_model": "gpt-5.4-mini-2026-03-17",
+    "api_max_calls": 12,
+    "api_max_usd_estimate": 0.5,
+    "challenger_validation_passed": false,
+    "catalogue_rows": 11414,
+    "catalogue_version": "319a18ba1bd1",
+    "model_artifacts_available": false,
+    "artifact_manifest_sha256": null,
+    "artifact_integrity_verified": false,
+    "model_loaded": false,
+    "model_error": null,
+    "automatic_hs8_acceptance_enabled": false,
+    "default_engine": "catalogue",
+    "score_is_probability": false,
+    "artifact_version": "not_loaded",
+    "authentication_required": false,
+    "identity_mode": "local_operator_names_not_authenticated",
+    "workflow_version": "2.5.0",
+    "jurisdiction": "VN",
+    "nomenclature": "AHTN2022"
+  },
+  "tax_lookup": {
+    "code": "25010020",
+    "warnings": [
+      "Biểu tổng hợp ngày 05/04/2026; chưa xác nhận toàn bộ mức thuế hiện hành.",
+      "Thuế không được dùng để quyết định mã HS.",
+      "Ngày giao dịch khác ngày snapshot: đối chiếu văn bản và thời kỳ áp dụng tương ứng."
+    ],
+    "snapshot_date": "2026-04-05",
+    "mfn": {
+      "rate": {
+        "kind": "conditional_or_unparsed",
+        "raw": "30 (NHN: 60)",
+        "manual_review_required": true
+      },
+      "source_cell": "N3020",
+      "legal_reference": "26/2023/NĐ-CP",
+      "effective_from_observed": "15/07/2023",
+      "legally_verified_current": false
+    },
+    "aifta": {
+      "rate": {
+        "kind": "marker_requires_interpretation",
+        "raw": "*",
+        "meaning_depends_on_schedule": true
+      },
+      "source_cell": "AL3020",
+      "legal_reference": "122/2022/NĐ-CP",
+      "effective_from_observed": "30/12/2022",
+      "legally_verified_current": false
+    }
+  },
+  "review_state": "returned",
+  "exports": {
+    "json": {
+      "status": 200,
+      "bytes": 181882
+    },
+    "pdf": {
+      "status": 200,
+      "bytes": 60392
+    },
+    "xlsx": {
+      "status": 200,
+      "bytes": 24073
+    },
+    "zip": {
+      "status": 200,
+      "bytes": 19004556
+    }
+  },
+  "audit_integrity": {
+    "events_checked": 38,
+    "integrity_matches": true,
+    "invalid_event_ids": [],
+    "last_hash": "3e6a24209af2bee390b9ca780091eff7b42d09c485e559255b692a8736727bfe",
+    "trusted_external_anchor": false,
+    "tamper_proof_against_administrator": false
+  }
+}

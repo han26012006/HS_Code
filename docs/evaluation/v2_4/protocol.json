@@ -1,0 +1,71 @@
+{
+  "input_scope": "archived descriptions, not app verified fields",
+  "recipes": {
+    "guided_v1": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1,
+        "prior_char": 1
+      },
+      60,
+      true
+    ],
+    "prior_word": [
+      {
+        "prior_word": 1
+      },
+      40,
+      false
+    ],
+    "hybrid_equal": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1,
+        "prior_char_clean": 1,
+        "prior_word": 1
+      },
+      40,
+      false
+    ],
+    "hybrid_prior2": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1,
+        "prior_char_clean": 2,
+        "prior_word": 2
+      },
+      40,
+      false
+    ],
+    "hybrid_prior2_expand": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1,
+        "prior_char_clean": 2,
+        "prior_word": 2
+      },
+      40,
+      true
+    ],
+    "hybrid_plus_bigram": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1,
+        "prior_char_clean": 1,
+        "prior_word": 1,
+        "catalogue_word": 2
+      },
+      20,
+      false
+    ]
+  },
+  "source_sha256": "6d8bf15db20e5091882e4de40f241b3eb0f8102ab229bcb2c556f50912135e92",
+  "experiment_sha256": "58ed3d7eedff94223187930b398f8d4bd1f7be9499333f644858b1914feba46f",
+  "manifest_sha256": "e3eacfecb3274aa50d0b67d9daf947a9e6859f4684008aa9b7664ddba3f5fc83",
+  "index_sha256": "80547cd4e3078b4eba11c7124b83a528b28a2c0bfcf5dcaaabc62350b3115588",
+  "catalogue_sha256": "319a18ba1bd1acf066ed043f5678e8c8d7a22bc6b3ad490c1759f217907501bc",
+  "selection": "Improve Recall@30 by at least 2 cases; preserve HS8 Top1 and HS4 Top3 against guided_v1. Maximize Recall@30.",
+  "test_used_for_selection": false,
+  "labels_provisional": true,
+  "test_seen_before_study": true
+}

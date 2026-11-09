@@ -55,29 +55,58 @@ class InferenceService:
         self.catalogue=catalogue;self.artifact=Path(artifact_path) if artifact_path else None;self.assistant=None;self.model_error=None;self.lock=threading.RLock()
         from .instruction_adapter import InstructionAdapter
         self.instruction=InstructionAdapter(catalogue,instruction_out or Path('runtime/instruction'))
+        self.guided = None
+        self.artifact_profile = None
+        if self.artifact and (self.artifact/'ranker.joblib').is_file():
+            from .model_registry import validate_artifacts
+            try:
+                self.artifact_profile = validate_artifacts(self.artifact)
+            except (ValueError, OSError, KeyError) as error:
+                self.model_error = f'Artifact integrity: {error}'
     def status(self):
-        available=bool(self.artifact and (self.artifact/'ranker.joblib').is_file())
-        return dict(self.instruction.status(),**{'catalogue_rows':len(self.catalogue.rows),'catalogue_version':self.catalogue.version,'model_artifacts_available':available,'model_loaded':self.assistant is not None,'model_error':self.model_error,'automatic_hs8_acceptance_enabled':False,'default_engine':'catalogue','score_is_probability':False,'artifact_version':'v4' if self.artifact and (self.artifact/'pipeline_manifest.json').exists() else ('legacy' if available else 'not_loaded')})
-    def analyze(self,sku,engine='catalogue',allow_paid_api=False):
-        facts=[f for f in sku['facts'] if f['status']=='verified'];fields={f['field'] for f in facts}
+        available = self.artifact_profile is not None
+        return dict(self.instruction.status(),**{'catalogue_rows':len(self.catalogue.rows),'catalogue_version':self.catalogue.version,'model_artifacts_available':available,'artifact_manifest_sha256':(self.artifact_profile or {}).get('manifest_sha256'),'artifact_integrity_verified':(self.artifact_profile or {}).get('verified_integrity',False),'model_loaded':self.assistant is not None,'model_error':self.model_error,'automatic_hs8_acceptance_enabled':False,'default_engine':'catalogue','score_is_probability':False,'artifact_version':'v4' if self.artifact and (self.artifact/'pipeline_manifest.json').exists() else ('legacy' if available else 'not_loaded')})
+    def analyze(self,sku,engine='catalogue',allow_paid_api=False,*,classification_date=None):
+        from .legal import AHTN2022_START
+        if classification_date and classification_date < AHTN2022_START:
+            raise ValueError('Ngày phân loại trước 30/12/2022. Cần đối chiếu danh mục Việt Nam có hiệu lực tại thời điểm đó.')
+        facts=[f for f in sku['facts'] if f['status']=='verified' and not f.get('document_scope_mismatch')];fields={f['field'] for f in facts}
         if not {'name','function'}<=fields:raise ValueError('Xác minh tên/bản chất hàng và công dụng trước khi lấy gợi ý. Nội dung OCR chưa kiểm tra không tự đi vào model.')
         query='\n'.join(f"{f['field']}: {f['value']}" for f in facts)
         # Explicit HS references are not product attributes.
         query=re.sub(r'(?i)(?:HS(?:\s*code)?|mã\s*(?:HS|số))\s*[:.\-]?\s*\d[\d .]{3,18}','[MÃ ĐÃ TÁCH]',query)
-        start=time.monotonic();warnings=[];legacy=None;llm=None
+        missing=sku.get('readiness',{}).get('missing_fields',[])
+        has_conflict=any(f['status']=='conflict' for f in sku['facts'])
+        if engine in {'qwen','openai'} and (missing or has_conflict):
+            raise ValueError('Bổ sung thuộc tính bắt buộc và xử lý mâu thuẫn trước khi dùng LLM. Có thể tra cứu bằng phương pháp danh mục.')
+        start=time.monotonic();warnings=[];legacy=None;llm=None;retrieval_sources=None
         if engine=='model':
-            if not self.status()['model_artifacts_available']:raise ValueError('Chưa có artifact model. Đặt HS_ART trỏ tới artifact đã hoàn tất; tra cứu danh mục vẫn dùng được.')
+            if not self.status()['model_artifacts_available']:raise ValueError(self.model_error or 'Chưa có artifact model. Đặt HS_ART trỏ tới artifact đã hoàn tất; tra cứu danh mục vẫn dùng được.')
             with self.lock:
                 try:
                     if self.assistant is None:
                         from .core import HSAssistant
                         self.assistant=HSAssistant(str(self.artifact),precedent_splits=('train',))
-                    legacy=self.assistant.classify(query,k=10)
+                    cutoff=self.assistant.model_data_through
+                    date_eligible=not classification_date or bool(cutoff and classification_date > cutoff)
+                    if date_eligible:
+                        legacy=self.assistant.classify(query,k=10)
                 except Exception as e:
                     self.model_error=type(e).__name__+': '+str(e)[:300]
                     raise ValueError('Không chạy được model đã cấu hình. Xem trạng thái vận hành; không tự đổi engine hoặc cắt dữ liệu.') from e
+            if not date_eligible:
+                raise ValueError('Ngày hồ sơ chưa sau mốc dữ liệu của model. Dùng truy hồi theo ngày hoặc đối chiếu thủ công.')
             candidates=[dict(self.catalogue.by_code[x['ma8']],rank=i+1,model_score=x['xac_suat'],score_is_probability=False) for i,x in enumerate(legacy['ma_de_xuat']) if x['ma8'] in self.catalogue.by_code]
             model_version=legacy['phien_ban_mo_hinh'];warnings.append('Điểm xếp hạng và độ tin cậy HS4 không phải xác suất đúng HS8.')
+        elif engine=='guided':
+            if self.guided is None or not classification_date:
+                raise ValueError('Truy hồi có tham chiếu cần ngày phân loại và chỉ mục nội bộ.')
+            from .retrieval_experiment import RECIPE
+            candidates=self.guided.search(query,classification_date,limit=30)
+            model_version=RECIPE
+            retrieval_sources={'catalogue':self.catalogue.version,'precedents_sha256':self.guided.precedents.version,
+                               'precedent_lifecycle_sha256':self.guided.precedents.lifecycle_version,'classification_date':classification_date}
+            warnings.append('Kết hợp BM25, từ/cụm hai từ, n-gram ký tự và thông báo trước ngày phân loại. Cần đối chiếu bản gốc và điều kiện áp dụng.')
         elif engine in {'qwen','openai'}:
             try:candidates,llm=self.instruction.rerank(query,engine,allow_paid_api)
             except Exception as e:raise ValueError(str(e)[:700]) from e
@@ -90,12 +119,14 @@ class InferenceService:
             for missing in llm.get('parsed',{}).get('missing_attributes',[]):questions.append({'field':'llm_requested','question':missing,'status':'missing'})
         for field,text in QUESTIONS.get(sku.get('product_family'),[('material','Vật liệu/thành phần, trạng thái hàng và thông số nào phân biệt các dòng đang xem?'),('construction','Có tài liệu về cấu tạo và công dụng thiết kế không?')]):
             if field not in fields:questions.append({'field':field,'question':text,'status':'missing'})
-        if any(f['status']=='conflict' for f in sku['facts']):warnings.append('Có thuộc tính đang mâu thuẫn; chưa thể duyệt mã.')
+        if any(f.get('document_scope_mismatch') for f in sku['facts']):
+            warnings.append('Có thuộc tính trích từ chứng từ của SKU khác. Kiểm tra lại nguồn trước khi dùng.')
+        if has_conflict:warnings.append('Có thuộc tính đang mâu thuẫn; chưa thể duyệt mã.')
         if not candidates:warnings.append('Không truy hồi được dòng phù hợp; cần tra cứu bổ sung hoặc chuyển chuyên gia.')
         if candidates:
             questions.append({'field':'candidate_conditions','question':'Đối chiếu các điều kiện khác nhau trong mô tả các dòng cùng cấp; không mặc định chọn “Loại khác”.','status':'review','options':[{'code':x['code'],'condition':x['path']} for x in candidates[:3]]})
-        missing=sku.get('readiness',{}).get('missing_fields',[])
-        if missing or any(f['status']=='conflict'for f in sku['facts']):support_state='needs_information'
+        if missing or has_conflict:support_state='needs_information'
+        elif not candidates:support_state='no_candidates'
         elif llm and not llm.get('accepted'):support_state='model_abstained_retrieval_only'
         else:support_state='human_review_of_retrieval_required'
         headings=[];seen=set()
@@ -103,4 +134,4 @@ class InferenceService:
             if r['heading']not in seen:
                 seen.add(r['heading']);headings.append({'heading':r['heading'],'chapter':r['chapter'],'example_code':r['code'],'path':r['path'],'source_kind':'retrieved_candidate_not_legal_conclusion','notes':[{'id':x['id'],'title':x['title'],'text':x['text'],'verified_applicability':False}for x in self.catalogue.notes if x['scope']==r['chapter']][:2]})
             if len(headings)==3:break
-        return {'decision_support_state':support_state,'heading_candidates':headings,'heading_topk_definition':'first three distinct ancestors of retrieved HS8 rows; not separately ranked HS4 model','candidate_ranking_is_legal_conclusion':False,'engine':engine,'instruction_result':llm,'engine_label':{'model':'Model của dự án','qwen':'Qwen 4B · thử nghiệm 07','openai':'OpenAI · thử nghiệm 07','catalogue':'Tra cứu danh mục · BM25'}.get(engine,engine),'model_version':model_version,'input_hash':hashlib.sha256(query.encode()).hexdigest(),'input_text':query,'input_fact_ids':[f['id'] for f in facts],'candidates':candidates,'questions':questions,'warnings':warnings,'human_review_required':True,'calibrated_hs8_confidence':None,'auto_accept':False,'elapsed_ms':int((time.monotonic()-start)*1000),'source_notes':[{'id':x['id'],'title':x['title'],'scope':x['scope'],'kind':x['kind'],'text':x['text'],'verified_applicability':False} for x in self.catalogue.notes if candidates and x['scope']==candidates[0]['chapter']][:2],'precedent_references':legacy.get('tien_le_gan_nhat',[]) if legacy else []}
+        return {'decision_support_state':support_state,'heading_candidates':headings,'heading_topk_definition':'first three distinct ancestors of retrieved HS8 rows; not separately ranked HS4 model','candidate_ranking_is_legal_conclusion':False,'engine':engine,'instruction_result':llm,'classification_guidance':[x for x in self.catalogue.notes if x['id'] in {'TT31_GRI_1','TT31_GRI_6'}],'engine_label':{'guided':'Truy hồi kết hợp · có tham chiếu','model':'Model của dự án','qwen':'Qwen 4B · thử nghiệm 07','openai':'OpenAI · thử nghiệm 07','catalogue':'Tra cứu danh mục · BM25'}.get(engine,engine),'model_version':model_version,'retrieval_sources':retrieval_sources,'input_hash':hashlib.sha256(query.encode()).hexdigest(),'input_text':query,'input_fact_ids':[f['id'] for f in facts],'candidates':candidates,'questions':questions,'warnings':warnings,'human_review_required':True,'calibrated_hs8_confidence':None,'auto_accept':False,'elapsed_ms':int((time.monotonic()-start)*1000),'source_notes':[{'id':x['id'],'title':x['title'],'scope':x['scope'],'kind':x['kind'],'text':x['text'],'verified_applicability':False} for x in self.catalogue.notes if candidates and x['scope']==candidates[0]['chapter']][:2],'precedent_references':legacy.get('tien_le_gan_nhat',[]) if legacy else []}

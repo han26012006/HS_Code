@@ -1,0 +1,188 @@
+{
+  "dataset": "tests/fixtures/document_ai/reserved_synthetic.json",
+  "dataset_sha256": "11867c15a9f855ae2f2691385398e99ef4ccc1d982a4d6ddfb5ed86119bd70b9",
+  "table_gold_sha256": "69ffdcbd7bdffc0d231e2460d234363ede5277f65f766ff34631599f2eec28ff",
+  "evaluator_sha256": "e9f60c734cf323780ccd1af7c3030486f4a0d1ae66b9408420639d8be1fdb169",
+  "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+  "metrics": {
+    "document_classification_accuracy": 0.857143,
+    "field_precision": 0.8,
+    "field_recall": 0.222222,
+    "field_f1": 0.347826,
+    "identifier_exact_match": 0.285714,
+    "table_row_exact_recall": 0.0,
+    "table_row_exact_precision": null,
+    "table_row_identity_accuracy": 0.0,
+    "sku_precision": 1.0,
+    "sku_recall": 0.333333,
+    "cross_document_matching_case_accuracy": 0.8,
+    "cross_document_membership_jaccard": 0.333333,
+    "citation_correctness": 1.0,
+    "unsupported_value_rate": 0.0,
+    "autofill_coverage": 0.222222
+  },
+  "counts": {
+    "class_correct": 6,
+    "documents": 7,
+    "field_tp": 4,
+    "field_fp": 1,
+    "field_fn": 14,
+    "id_correct": 2,
+    "id_total": 7,
+    "sku_tp": 1,
+    "sku_fp": 0,
+    "sku_fn": 2,
+    "citations_correct": 7,
+    "citations_total": 7,
+    "unsupported": 0,
+    "rows_correct": 0,
+    "rows_total": 4,
+    "rows_exact": 0,
+    "rows_predicted": 0,
+    "pair_tp": 2,
+    "pair_fp": 0,
+    "pair_fn": 4,
+    "matching_cases_correct": 4,
+    "matching_cases_total": 5,
+    "coverage_hits": 4,
+    "coverage_total": 18
+  },
+  "details": [
+    {
+      "case_id": "textile-shipment",
+      "expected_skus": [
+        "FAB-8",
+        "FAB-9"
+      ],
+      "actual_skus": [],
+      "missing_fields": [
+        [
+          "product",
+          "FAB-8",
+          "amount",
+          "672.00"
+        ],
+        [
+          "product",
+          "FAB-8",
+          "name",
+          "Woven cotton fabric"
+        ],
+        [
+          "product",
+          "FAB-8",
+          "quantity",
+          "320"
+        ],
+        [
+          "product",
+          "FAB-8",
+          "unit",
+          "M"
+        ],
+        [
+          "product",
+          "FAB-8",
+          "unit_price",
+          "2.10"
+        ],
+        [
+          "product",
+          "FAB-9",
+          "amount",
+          "540.00"
+        ],
+        [
+          "product",
+          "FAB-9",
+          "name",
+          "Woven cotton fabric"
+        ],
+        [
+          "product",
+          "FAB-9",
+          "quantity",
+          "180"
+        ],
+        [
+          "product",
+          "FAB-9",
+          "unit",
+          "M"
+        ],
+        [
+          "product",
+          "FAB-9",
+          "unit_price",
+          "3.00"
+        ]
+      ],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "optics",
+      "expected_skus": [
+        "OPT-30"
+      ],
+      "actual_skus": [
+        "OPT-30"
+      ],
+      "missing_fields": [
+        [
+          "product",
+          "OPT-30",
+          "specifications",
+          "Diameter 30 mm"
+        ]
+      ],
+      "unexpected_fields": [
+        [
+          "product",
+          "OPT-30",
+          "specifications",
+          "Technical specifications: Diameter 30 mm"
+        ]
+      ]
+    },
+    {
+      "case_id": "air-shipment",
+      "expected_skus": [],
+      "actual_skus": [],
+      "missing_fields": [
+        [
+          "document",
+          "air",
+          "bl_number",
+          "AIR-880"
+        ],
+        [
+          "document",
+          "air",
+          "consignee",
+          "Laboratory Ltd"
+        ],
+        [
+          "document",
+          "air",
+          "shipper",
+          "Device Export Ltd"
+        ]
+      ],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "legal-en",
+      "expected_skus": [],
+      "actual_skus": [],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "unknown-ocr",
+      "expected_skus": [],
+      "actual_skus": [],
+      "missing_fields": [],
+      "unexpected_fields": []
+    }
+  ]
+}

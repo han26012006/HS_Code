@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "inputs": [
+    "01_Ho_so_ky_thuat_DEMO.pdf",
+    "06_TT31_2022_Phan_551_552_nguon_CongBao.pdf"
+  ],
+  "total_pages": 105,
+  "sku_codes": [
+    "DEMO-DRY-1200",
+    "DEMO-DRY-1600"
+  ],
+  "case_id": "case_d77bb4a1a3434b5f",
+  "workflow": "browser upload → review → commit → API load → browser reload",
+  "page_errors": []
+}

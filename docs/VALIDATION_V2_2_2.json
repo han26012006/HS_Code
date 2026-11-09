@@ -1,0 +1,9 @@
+{
+  "release": "2.2.2",
+  "frontend": {"format_tests_passed": 2, "vite_build_passed": true},
+  "runtime_smoke": ["/health", "/api/v2/status", "/api/v2/quality", "/"],
+  "test_scope": "research evidence display and API metadata; no fresh GPU or browser interaction",
+  "automatic_hs8_acceptance": false,
+  "paid_api_calls_in_release_testing": 0,
+  "current_runtime_accuracy_measured": false
+}

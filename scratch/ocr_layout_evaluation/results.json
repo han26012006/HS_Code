@@ -1,0 +1,30 @@
+{
+  "scope": "one generated clean English scan; not real-world OCR accuracy",
+  "engine": "existing Tesseract, psm 6",
+  "default_enabled": false,
+  "results": {
+    "plain_text": {
+      "recognized_text": "COMMERCIAL INVOICE\n\nInvoice No: SCAN-92\n\nSKU Description Qty Unit\nMECH-8 Mechanical coupling 24 PCS\nCHEM-9 Polymer granules 80 KG\n",
+      "word_boxes": 19,
+      "expected_row_identifiers": [
+        "MECH-8",
+        "CHEM-9"
+      ],
+      "extracted_row_identifiers": [],
+      "row_identifiers_correct": 0
+    },
+    "tsv_layout": {
+      "recognized_text": "COMMERCIAL   INVOICE\nInvoice No: SCAN-92\nSKU                 Description                                      Qty                 Unit\nMECH-8              Mechanical coupling                              24                  PCS\nCHEM-9              Polymer granules                                 80                  KG",
+      "word_boxes": 19,
+      "expected_row_identifiers": [
+        "MECH-8",
+        "CHEM-9"
+      ],
+      "extracted_row_identifiers": [
+        "MECH-8",
+        "CHEM-9"
+      ],
+      "row_identifiers_correct": 2
+    }
+  }
+}

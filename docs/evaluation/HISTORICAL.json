@@ -1,0 +1,18 @@
+{
+  "catalogue_bm25": {
+    "n": 94,
+    "hs4_top1": 20,
+    "hs4_top3": 41,
+    "hs8_top1": 0,
+    "recall30": 23,
+    "recall200": 41
+  },
+  "fusion_equal_hs6": {
+    "n": 94,
+    "hs4_top1": 30,
+    "hs4_top3": 46,
+    "hs8_top1": 11,
+    "recall30": 42,
+    "recall200": 68
+  }
+}

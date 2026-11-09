@@ -238,6 +238,9 @@ class HSAssistant:
             E_all = self.emb.encode(docs_all.tolist())
         mask = self.prec_all.split.isin(precedent_splits).values
         self.prec = self.prec_all[mask].reset_index(drop=True)
+        snapshot_dates = self.prec_all.get("ngay", pd.Series(dtype="object"))
+        dates = pd.to_datetime(snapshot_dates, errors="coerce")
+        self.model_data_through = dates.max().date().isoformat() if len(dates) and dates.notna().all() else None
         self.E_prec = E_all[np.where(mask)[0]]
         self.bm_lab = FastBM25(self.labels.duong_dan.tolist())
         _j = lambda f: json.load(open(os.path.join(art_dir, f), encoding="utf-8")) if os.path.exists(os.path.join(art_dir, f)) else {}
@@ -507,10 +510,17 @@ class HSAssistant:
     def features_for(self, q: str, qvec, exclude=None):
         lb = self.bm_lab.get_scores(q); lb = lb / (lb.max() + 1e-9)
         lv = np.asarray(sim(qvec, self.E_lab)).ravel()
-        pb = self.bm_prec.get_scores(q); pb = pb / (pb.max() + 1e-9)
+        pb = self.bm_prec.get_scores(q)
         pv = np.asarray(sim(qvec, self.E_prec)).ravel()
+        allowed = np.ones(len(pb), dtype=bool)
         if exclude is not None:
-            pb[exclude] = -1; pv[exclude] = -1
+            allowed[exclude] = False
+        if allowed.any():
+            pb[allowed] /= pb[allowed].max() + 1e-9
+        pb[~allowed] = -1
+        pv[~allowed] = -1
+        pb_candidates = [j for j in np.argsort(-pb) if allowed[j]]
+        pv_candidates = [j for j in np.argsort(-pv) if allowed[j]]
         nv = np.asarray(sim(qvec, self.E_note)).ravel()
         pc = self.prec.hs8.values
         best_pb, best_pv, best_pb4, best_pv4 = {}, {}, {}, {}
@@ -542,7 +552,7 @@ class HSAssistant:
         lv_rank = np.empty(len(lv)); lv_rank[np.argsort(-lv)] = np.arange(1, len(lv) + 1)
         K = self.K_SRC
         cand = list(self.lab_codes[np.argsort(-lb)[:K]]) + list(self.lab_codes[np.argsort(-lv)[:K]])
-        cand += self._rank_unique(pc[np.argsort(-pb)], 10) + self._rank_unique(pc[np.argsort(-pv)], 10)
+        cand += self._rank_unique(pc[pb_candidates], 10) + self._rank_unique(pc[pv_candidates], 10)
         for h in self.notes.nhom.values[np.argsort(-nv)[:3]]:
             sub = self.nhom_idx.get(h, np.array([], dtype=int))
             cand += list(self.lab_codes[sub[np.argsort(-lv[sub])[:5]]])

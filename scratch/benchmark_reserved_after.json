@@ -1,0 +1,92 @@
+{
+  "dataset": "tests/fixtures/document_ai/reserved_synthetic.json",
+  "dataset_sha256": "11867c15a9f855ae2f2691385398e99ef4ccc1d982a4d6ddfb5ed86119bd70b9",
+  "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+  "metrics": {
+    "document_classification_accuracy": 1.0,
+    "field_precision": 1.0,
+    "field_recall": 1.0,
+    "field_f1": 1.0,
+    "identifier_exact_match": 1.0,
+    "table_row_exact_recall": 1.0,
+    "table_row_exact_precision": 1.0,
+    "table_row_identity_accuracy": 1.0,
+    "sku_precision": 1.0,
+    "sku_recall": 1.0,
+    "cross_document_membership_jaccard": 1.0,
+    "citation_correctness": 1.0,
+    "unsupported_value_rate": 0.0,
+    "autofill_coverage": 1.0
+  },
+  "counts": {
+    "class_correct": 7,
+    "documents": 7,
+    "field_tp": 18,
+    "field_fp": 0,
+    "field_fn": 0,
+    "id_correct": 7,
+    "id_total": 7,
+    "sku_tp": 3,
+    "sku_fp": 0,
+    "sku_fn": 0,
+    "citations_correct": 31,
+    "citations_total": 31,
+    "unsupported": 0,
+    "rows_correct": 4,
+    "rows_total": 4,
+    "rows_exact": 4,
+    "rows_predicted": 4,
+    "pair_tp": 6,
+    "pair_fp": 0,
+    "pair_fn": 0,
+    "coverage_hits": 18,
+    "coverage_total": 18
+  },
+  "details": [
+    {
+      "case_id": "textile-shipment",
+      "expected_skus": [
+        "FAB-8",
+        "FAB-9"
+      ],
+      "actual_skus": [
+        "FAB-8",
+        "FAB-9"
+      ],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "optics",
+      "expected_skus": [
+        "OPT-30"
+      ],
+      "actual_skus": [
+        "OPT-30"
+      ],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "air-shipment",
+      "expected_skus": [],
+      "actual_skus": [],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "legal-en",
+      "expected_skus": [],
+      "actual_skus": [],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "unknown-ocr",
+      "expected_skus": [],
+      "actual_skus": [],
+      "missing_fields": [],
+      "unexpected_fields": []
+    }
+  ]
+}

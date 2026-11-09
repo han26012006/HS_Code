@@ -1,0 +1,213 @@
+{
+  "selected": "m0",
+  "best_challenger_by_hs8": "pairwise_plus_m0",
+  "eligible": [],
+  "validation": {
+    "m0": {
+      "all": {
+        "n": 97,
+        "hs8_top1": 23,
+        "hs6_top1": 30,
+        "hs4_top3": 66,
+        "recall30": 59,
+        "recall200": 79
+      },
+      "unseen_hs8": {
+        "n": 51,
+        "hs8_top1": 0,
+        "hs6_top1": 5,
+        "hs4_top3": 28,
+        "recall30": 13,
+        "recall200": 33
+      },
+      "heldout_company": {
+        "n": 81,
+        "hs8_top1": 17,
+        "hs6_top1": 23,
+        "hs4_top3": 57,
+        "recall30": 53,
+        "recall200": 70
+      },
+      "strict_historical_slice": {
+        "n": 77,
+        "hs8_top1": 13,
+        "hs6_top1": 19,
+        "hs4_top3": 53,
+        "recall30": 49,
+        "recall200": 66
+      }
+    },
+    "pairwise_hs8": {
+      "all": {
+        "n": 97,
+        "hs8_top1": 13,
+        "hs6_top1": 17,
+        "hs4_top3": 42,
+        "recall30": 56,
+        "recall200": 79
+      },
+      "unseen_hs8": {
+        "n": 51,
+        "hs8_top1": 0,
+        "hs6_top1": 2,
+        "hs4_top3": 13,
+        "recall30": 12,
+        "recall200": 33
+      },
+      "heldout_company": {
+        "n": 81,
+        "hs8_top1": 10,
+        "hs6_top1": 14,
+        "hs4_top3": 35,
+        "recall30": 47,
+        "recall200": 70
+      },
+      "strict_historical_slice": {
+        "n": 77,
+        "hs8_top1": 7,
+        "hs6_top1": 11,
+        "hs4_top3": 31,
+        "recall30": 43,
+        "recall200": 66
+      }
+    },
+    "pairwise_hierarchy": {
+      "all": {
+        "n": 97,
+        "hs8_top1": 17,
+        "hs6_top1": 24,
+        "hs4_top3": 45,
+        "recall30": 35,
+        "recall200": 79
+      },
+      "unseen_hs8": {
+        "n": 51,
+        "hs8_top1": 0,
+        "hs6_top1": 4,
+        "hs4_top3": 17,
+        "recall30": 6,
+        "recall200": 33
+      },
+      "heldout_company": {
+        "n": 81,
+        "hs8_top1": 13,
+        "hs6_top1": 19,
+        "hs4_top3": 37,
+        "recall30": 28,
+        "recall200": 70
+      },
+      "strict_historical_slice": {
+        "n": 77,
+        "hs8_top1": 10,
+        "hs6_top1": 16,
+        "hs4_top3": 33,
+        "recall30": 24,
+        "recall200": 66
+      }
+    },
+    "hist_gradient": {
+      "all": {
+        "n": 97,
+        "hs8_top1": 18,
+        "hs6_top1": 28,
+        "hs4_top3": 50,
+        "recall30": 50,
+        "recall200": 79
+      },
+      "unseen_hs8": {
+        "n": 51,
+        "hs8_top1": 0,
+        "hs6_top1": 5,
+        "hs4_top3": 20,
+        "recall30": 4,
+        "recall200": 33
+      },
+      "heldout_company": {
+        "n": 81,
+        "hs8_top1": 13,
+        "hs6_top1": 22,
+        "hs4_top3": 42,
+        "recall30": 44,
+        "recall200": 70
+      },
+      "strict_historical_slice": {
+        "n": 77,
+        "hs8_top1": 9,
+        "hs6_top1": 18,
+        "hs4_top3": 38,
+        "recall30": 40,
+        "recall200": 66
+      }
+    },
+    "pairwise_plus_m0": {
+      "all": {
+        "n": 97,
+        "hs8_top1": 23,
+        "hs6_top1": 32,
+        "hs4_top3": 55,
+        "recall30": 60,
+        "recall200": 79
+      },
+      "unseen_hs8": {
+        "n": 51,
+        "hs8_top1": 0,
+        "hs6_top1": 5,
+        "hs4_top3": 21,
+        "recall30": 14,
+        "recall200": 33
+      },
+      "heldout_company": {
+        "n": 81,
+        "hs8_top1": 18,
+        "hs6_top1": 26,
+        "hs4_top3": 47,
+        "recall30": 52,
+        "recall200": 70
+      },
+      "strict_historical_slice": {
+        "n": 77,
+        "hs8_top1": 14,
+        "hs6_top1": 22,
+        "hs4_top3": 43,
+        "recall30": 48,
+        "recall200": 66
+      }
+    },
+    "hierarchy_plus_m0": {
+      "all": {
+        "n": 97,
+        "hs8_top1": 23,
+        "hs6_top1": 31,
+        "hs4_top3": 56,
+        "recall30": 59,
+        "recall200": 79
+      },
+      "unseen_hs8": {
+        "n": 51,
+        "hs8_top1": 0,
+        "hs6_top1": 6,
+        "hs4_top3": 23,
+        "recall30": 13,
+        "recall200": 33
+      },
+      "heldout_company": {
+        "n": 81,
+        "hs8_top1": 18,
+        "hs6_top1": 25,
+        "hs4_top3": 48,
+        "recall30": 52,
+        "recall200": 70
+      },
+      "strict_historical_slice": {
+        "n": 77,
+        "hs8_top1": 14,
+        "hs6_top1": 21,
+        "hs4_top3": 44,
+        "recall30": 48,
+        "recall200": 66
+      }
+    }
+  },
+  "test_used_for_selection": false,
+  "train_cases_with_gold_in_fixed_pool": 322
+}

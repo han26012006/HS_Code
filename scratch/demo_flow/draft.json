@@ -1,0 +1,617 @@
+{
+  "draft_id": "draft_6c04e49059cc",
+  "created_at": "2026-11-04T21:20:53.064593",
+  "status": "review_required",
+  "files": [
+    {
+      "name": "01_Ho_so_ky_thuat_DEMO.txt",
+      "size": 714,
+      "sha256": "6c0c9692ff6b7ec85b8c569dd85513681820284e66aba91d3bdc4ed3c0dc0b65"
+    },
+    {
+      "name": "03_Xac_nhan_bo_sung_DEMO.txt",
+      "size": 231,
+      "sha256": "34374570617fc72bd5b485e3c10b282d895a278387d8522b7e0f43d93c09ee7c"
+    },
+    {
+      "name": "04_OCR_English_DEMO.txt",
+      "size": 291,
+      "sha256": "515c933127aa624633439213d3130a8fd41fff77e027c3672eab6b8a3e31f52f"
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc_6c330266ffa5",
+      "name": "01_Ho_so_ky_thuat_DEMO.txt",
+      "sha256": "6c0c9692ff6b7ec85b8c569dd85513681820284e66aba91d3bdc4ed3c0dc0b65",
+      "size": 714,
+      "pages": [
+        {
+          "number": 1,
+          "text": "DEMO-DRY-1200\nMáy sấy tóc cầm tay gia dụng, dùng điện.\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.\nĐiện áp 220 V; tần số 50 Hz; công suất 1200 W.\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.\n\nDEMO-DRY-1600\nMáy sấy tóc cầm tay gia dụng, dùng điện.\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.\nĐiện áp 220 V; tần số 50 Hz; công suất 1600 W.\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+          "method": "plain_text",
+          "layout": {
+            "schema_fields": [],
+            "version": 1,
+            "document_id": "doc_6c330266ffa5",
+            "page": 1,
+            "blocks": [
+              {
+                "id": "b0",
+                "text": "DEMO-DRY-1200",
+                "start": 0,
+                "end": 13,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b1",
+                "text": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+                "start": 14,
+                "end": 54,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b2",
+                "text": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+                "start": 55,
+                "end": 113,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b3",
+                "text": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+                "start": 114,
+                "end": 175,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b4",
+                "text": "Điện áp 220 V; tần số 50 Hz; công suất 1200 W.",
+                "start": 176,
+                "end": 222,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b5",
+                "text": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+                "start": 223,
+                "end": 273,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b7",
+                "text": "DEMO-DRY-1600",
+                "start": 275,
+                "end": 288,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b8",
+                "text": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+                "start": 289,
+                "end": 329,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b9",
+                "text": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+                "start": 330,
+                "end": 388,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b10",
+                "text": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+                "start": 389,
+                "end": 450,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b11",
+                "text": "Điện áp 220 V; tần số 50 Hz; công suất 1600 W.",
+                "start": 451,
+                "end": 497,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b12",
+                "text": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+                "start": 498,
+                "end": 548,
+                "document_id": "doc_6c330266ffa5",
+                "page": 1,
+                "bbox": null
+              }
+            ],
+            "tables": [],
+            "key_values": [
+              {
+                "label": "DEMO-DRY-1200",
+                "value": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+                "quote": "DEMO-DRY-1200\nMáy sấy tóc cầm tay gia dụng, dùng điện.",
+                "block_ids": [
+                  "b0",
+                  "b1"
+                ],
+                "start": 0,
+                "end": 54
+              },
+              {
+                "label": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+                "value": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+                "quote": "Máy sấy tóc cầm tay gia dụng, dùng điện.\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+                "block_ids": [
+                  "b1",
+                  "b2"
+                ],
+                "start": 14,
+                "end": 113
+              },
+              {
+                "label": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+                "value": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+                "quote": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+                "block_ids": [
+                  "b2",
+                  "b3"
+                ],
+                "start": 55,
+                "end": 175
+              },
+              {
+                "label": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+                "value": "Điện áp 220 V; tần số 50 Hz; công suất 1200 W.",
+                "quote": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.\nĐiện áp 220 V; tần số 50 Hz; công suất 1200 W.",
+                "block_ids": [
+                  "b3",
+                  "b4"
+                ],
+                "start": 114,
+                "end": 222
+              },
+              {
+                "label": "Điện áp 220 V; tần số 50 Hz; công suất 1200 W.",
+                "value": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+                "quote": "Điện áp 220 V; tần số 50 Hz; công suất 1200 W.\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+                "block_ids": [
+                  "b4",
+                  "b5"
+                ],
+                "start": 176,
+                "end": 273
+              },
+              {
+                "label": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+                "value": "DEMO-DRY-1600",
+                "quote": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.\n\nDEMO-DRY-1600",
+                "block_ids": [
+                  "b5",
+                  "b7"
+                ],
+                "start": 223,
+                "end": 288
+              },
+              {
+                "label": "DEMO-DRY-1600",
+                "value": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+                "quote": "DEMO-DRY-1600\nMáy sấy tóc cầm tay gia dụng, dùng điện.",
+                "block_ids": [
+                  "b7",
+                  "b8"
+                ],
+                "start": 275,
+                "end": 329
+              },
+              {
+                "label": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+                "value": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+                "quote": "Máy sấy tóc cầm tay gia dụng, dùng điện.\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+                "block_ids": [
+                  "b8",
+                  "b9"
+                ],
+                "start": 289,
+                "end": 388
+              },
+              {
+                "label": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+                "value": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+                "quote": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+                "block_ids": [
+                  "b9",
+                  "b10"
+                ],
+                "start": 330,
+                "end": 450
+              },
+              {
+                "label": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+                "value": "Điện áp 220 V; tần số 50 Hz; công suất 1600 W.",
+                "quote": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.\nĐiện áp 220 V; tần số 50 Hz; công suất 1600 W.",
+                "block_ids": [
+                  "b10",
+                  "b11"
+                ],
+                "start": 389,
+                "end": 497
+              },
+              {
+                "label": "Điện áp 220 V; tần số 50 Hz; công suất 1600 W.",
+                "value": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+                "quote": "Điện áp 220 V; tần số 50 Hz; công suất 1600 W.\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+                "block_ids": [
+                  "b11",
+                  "b12"
+                ],
+                "start": 451,
+                "end": 548
+              }
+            ],
+            "geometry": [],
+            "geometry_status": "not_available",
+            "warnings": []
+          }
+        }
+      ],
+      "detected_type": {
+        "kind": "other",
+        "type": "other",
+        "role": "unknown",
+        "confidence": null,
+        "signals": [],
+        "status": "needs_review",
+        "label": "Chứng từ khác",
+        "classification_status": "unknown"
+      },
+      "role": "unknown",
+      "kind": "other",
+      "document_type": "other",
+      "document_type_name": "Chứng từ khác",
+      "confidence": null,
+      "type_confidence": null,
+      "signals": [],
+      "filename": "01_Ho_so_ky_thuat_DEMO.txt",
+      "text_content": "DEMO-DRY-1200\nMáy sấy tóc cầm tay gia dụng, dùng điện.\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.\nĐiện áp 220 V; tần số 50 Hz; công suất 1200 W.\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.\n\nDEMO-DRY-1600\nMáy sấy tóc cầm tay gia dụng, dùng điện.\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.\nĐiện áp 220 V; tần số 50 Hz; công suất 1600 W.\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+      "text": "DEMO-DRY-1200\nMáy sấy tóc cầm tay gia dụng, dùng điện.\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.\nĐiện áp 220 V; tần số 50 Hz; công suất 1200 W.\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.\n\nDEMO-DRY-1600\nMáy sấy tóc cầm tay gia dụng, dùng điện.\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.\nĐiện áp 220 V; tần số 50 Hz; công suất 1600 W.\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+      "_kind": "other"
+    },
+    {
+      "id": "doc_fd84b14744e0",
+      "name": "03_Xac_nhan_bo_sung_DEMO.txt",
+      "sha256": "34374570617fc72bd5b485e3c10b282d895a278387d8522b7e0f43d93c09ee7c",
+      "size": 231,
+      "pages": [
+        {
+          "number": 1,
+          "text": "Biên bản giả lập bổ sung\nSau đối chiếu hồ sơ kỹ thuật, xác nhận hàng là máy sấy tóc hoàn chỉnh, chưa qua sử dụng.\nKhông dùng biên bản này làm kết luận phân loại của Hải quan.\n",
+          "method": "plain_text",
+          "layout": {
+            "schema_fields": [],
+            "version": 1,
+            "document_id": "doc_fd84b14744e0",
+            "page": 1,
+            "blocks": [
+              {
+                "id": "b0",
+                "text": "Biên bản giả lập bổ sung",
+                "start": 0,
+                "end": 24,
+                "document_id": "doc_fd84b14744e0",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b1",
+                "text": "Sau đối chiếu hồ sơ kỹ thuật, xác nhận hàng là máy sấy tóc hoàn chỉnh, chưa qua sử dụng.",
+                "start": 25,
+                "end": 113,
+                "document_id": "doc_fd84b14744e0",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b2",
+                "text": "Không dùng biên bản này làm kết luận phân loại của Hải quan.",
+                "start": 114,
+                "end": 174,
+                "document_id": "doc_fd84b14744e0",
+                "page": 1,
+                "bbox": null
+              }
+            ],
+            "tables": [],
+            "key_values": [
+              {
+                "label": "Biên bản giả lập bổ sung",
+                "value": "Sau đối chiếu hồ sơ kỹ thuật, xác nhận hàng là máy sấy tóc hoàn chỉnh, chưa qua sử dụng.",
+                "quote": "Biên bản giả lập bổ sung\nSau đối chiếu hồ sơ kỹ thuật, xác nhận hàng là máy sấy tóc hoàn chỉnh, chưa qua sử dụng.",
+                "block_ids": [
+                  "b0",
+                  "b1"
+                ],
+                "start": 0,
+                "end": 113
+              }
+            ],
+            "geometry": [],
+            "geometry_status": "not_available",
+            "warnings": []
+          }
+        }
+      ],
+      "detected_type": {
+        "kind": "other",
+        "type": "other",
+        "role": "unknown",
+        "confidence": null,
+        "signals": [],
+        "status": "needs_review",
+        "label": "Chứng từ khác",
+        "classification_status": "unknown"
+      },
+      "role": "unknown",
+      "kind": "other",
+      "document_type": "other",
+      "document_type_name": "Chứng từ khác",
+      "confidence": null,
+      "type_confidence": null,
+      "signals": [],
+      "filename": "03_Xac_nhan_bo_sung_DEMO.txt",
+      "text_content": "Biên bản giả lập bổ sung\nSau đối chiếu hồ sơ kỹ thuật, xác nhận hàng là máy sấy tóc hoàn chỉnh, chưa qua sử dụng.\nKhông dùng biên bản này làm kết luận phân loại của Hải quan.",
+      "text": "Biên bản giả lập bổ sung\nSau đối chiếu hồ sơ kỹ thuật, xác nhận hàng là máy sấy tóc hoàn chỉnh, chưa qua sử dụng.\nKhông dùng biên bản này làm kết luận phân loại của Hải quan.",
+      "_kind": "other"
+    },
+    {
+      "id": "doc_2f40a6cafa08",
+      "name": "04_OCR_English_DEMO.txt",
+      "sha256": "515c933127aa624633439213d3130a8fd41fff77e027c3672eab6b8a3e31f52f",
+      "size": 291,
+      "pages": [
+        {
+          "number": 1,
+          "text": "SYNTHETIC DEMO TECHNICAL RECORD\nPortable household electric hair dryer.\nMain function: drying hair with heated air.\nPower: 1200 W. Supply: 220 V, 50 Hz.\nComplete appliance with motor, fan and electric heating element.\nThis is simulated technical information for software demonstration only.\n",
+          "method": "plain_text",
+          "layout": {
+            "schema_fields": [],
+            "version": 1,
+            "document_id": "doc_2f40a6cafa08",
+            "page": 1,
+            "blocks": [
+              {
+                "id": "b0",
+                "text": "SYNTHETIC DEMO TECHNICAL RECORD",
+                "start": 0,
+                "end": 31,
+                "document_id": "doc_2f40a6cafa08",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b1",
+                "text": "Portable household electric hair dryer.",
+                "start": 32,
+                "end": 71,
+                "document_id": "doc_2f40a6cafa08",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b2",
+                "text": "Main function: drying hair with heated air.",
+                "start": 72,
+                "end": 115,
+                "document_id": "doc_2f40a6cafa08",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b3",
+                "text": "Power: 1200 W. Supply: 220 V, 50 Hz.",
+                "start": 116,
+                "end": 152,
+                "document_id": "doc_2f40a6cafa08",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b4",
+                "text": "Complete appliance with motor, fan and electric heating element.",
+                "start": 153,
+                "end": 217,
+                "document_id": "doc_2f40a6cafa08",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b5",
+                "text": "This is simulated technical information for software demonstration only.",
+                "start": 218,
+                "end": 290,
+                "document_id": "doc_2f40a6cafa08",
+                "page": 1,
+                "bbox": null
+              }
+            ],
+            "tables": [],
+            "key_values": [
+              {
+                "label": "Main function",
+                "value": "drying hair with heated air.",
+                "quote": "Main function: drying hair with heated air.",
+                "block_ids": [
+                  "b2"
+                ],
+                "start": 72,
+                "end": 115
+              },
+              {
+                "label": "Power",
+                "value": "1200 W. Supply: 220 V, 50 Hz.",
+                "quote": "Power: 1200 W. Supply: 220 V, 50 Hz.",
+                "block_ids": [
+                  "b3"
+                ],
+                "start": 116,
+                "end": 152
+              },
+              {
+                "label": "SYNTHETIC DEMO TECHNICAL RECORD",
+                "value": "Portable household electric hair dryer.",
+                "quote": "SYNTHETIC DEMO TECHNICAL RECORD\nPortable household electric hair dryer.",
+                "block_ids": [
+                  "b0",
+                  "b1"
+                ],
+                "start": 0,
+                "end": 71
+              },
+              {
+                "label": "Portable household electric hair dryer.",
+                "value": "Main function: drying hair with heated air.",
+                "quote": "Portable household electric hair dryer.\nMain function: drying hair with heated air.",
+                "block_ids": [
+                  "b1",
+                  "b2"
+                ],
+                "start": 32,
+                "end": 115
+              },
+              {
+                "label": "Complete appliance with motor, fan and electric heating element.",
+                "value": "This is simulated technical information for software demonstration only.",
+                "quote": "Complete appliance with motor, fan and electric heating element.\nThis is simulated technical information for software demonstration only.",
+                "block_ids": [
+                  "b4",
+                  "b5"
+                ],
+                "start": 153,
+                "end": 290
+              }
+            ],
+            "geometry": [],
+            "geometry_status": "not_available",
+            "warnings": []
+          }
+        }
+      ],
+      "detected_type": {
+        "kind": "other",
+        "type": "other",
+        "role": "unknown",
+        "confidence": null,
+        "signals": [],
+        "status": "needs_review",
+        "label": "Chứng từ khác",
+        "classification_status": "unknown"
+      },
+      "role": "unknown",
+      "kind": "other",
+      "document_type": "other",
+      "document_type_name": "Chứng từ khác",
+      "confidence": null,
+      "type_confidence": null,
+      "signals": [],
+      "filename": "04_OCR_English_DEMO.txt",
+      "text_content": "SYNTHETIC DEMO TECHNICAL RECORD\nPortable household electric hair dryer.\nMain function: drying hair with heated air.\nPower: 1200 W. Supply: 220 V, 50 Hz.\nComplete appliance with motor, fan and electric heating element.\nThis is simulated technical information for software demonstration only.",
+      "text": "SYNTHETIC DEMO TECHNICAL RECORD\nPortable household electric hair dryer.\nMain function: drying hair with heated air.\nPower: 1200 W. Supply: 220 V, 50 Hz.\nComplete appliance with motor, fan and electric heating element.\nThis is simulated technical information for software demonstration only.",
+      "_kind": "other"
+    }
+  ],
+  "dossier_fields": {},
+  "extracted_case": {
+    "title": "Hồ sơ phân loại 01 Ho so ky thuat DEMO",
+    "importer_name": "",
+    "exporter_name": "",
+    "invoice_number": "",
+    "invoice_date": "",
+    "declaration_number": "",
+    "port_of_loading": "",
+    "port_of_discharge": "",
+    "origin_country": "",
+    "currency": "",
+    "incoterms": "",
+    "total_value": "",
+    "total_gross_weight": "",
+    "total_net_weight": "",
+    "total_packages": ""
+  },
+  "system_defaults": {
+    "classification_date": "user_review_required",
+    "title": "Hồ sơ phân loại 01 Ho so ky thuat DEMO"
+  },
+  "skus": [],
+  "proposed_skus": [],
+  "warnings": [],
+  "reconciliations": [],
+  "reconciliation": [],
+  "summary": {
+    "total_files": 3,
+    "total_pages": 3,
+    "total_skus": 0,
+    "total_fields": 0,
+    "conflicts_count": 0
+  },
+  "diagnostics": [
+    {
+      "document_id": "doc_6c330266ffa5",
+      "stage": "classification",
+      "status": "unknown",
+      "kind": "other"
+    },
+    {
+      "document_id": "doc_fd84b14744e0",
+      "stage": "classification",
+      "status": "unknown",
+      "kind": "other"
+    },
+    {
+      "document_id": "doc_2f40a6cafa08",
+      "stage": "classification",
+      "status": "unknown",
+      "kind": "other"
+    },
+    {
+      "document_id": "doc_6c330266ffa5",
+      "page": 1,
+      "stage": "layout",
+      "status": "no_table_detected",
+      "table_count": 0
+    },
+    {
+      "document_id": "doc_fd84b14744e0",
+      "page": 1,
+      "stage": "layout",
+      "status": "no_table_detected",
+      "table_count": 0
+    },
+    {
+      "document_id": "doc_2f40a6cafa08",
+      "page": 1,
+      "stage": "layout",
+      "status": "no_table_detected",
+      "table_count": 0
+    }
+  ]
+}

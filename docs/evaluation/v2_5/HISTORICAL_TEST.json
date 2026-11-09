@@ -1,0 +1,79 @@
+{
+  "metrics": {
+    "m0": {
+      "all": {
+        "n": 94,
+        "hs8_top1": 24,
+        "hs6_top1": 33,
+        "hs4_top3": 66,
+        "recall30": 59,
+        "recall200": 73
+      },
+      "unseen_hs8": {
+        "n": 51,
+        "hs8_top1": 0,
+        "hs6_top1": 3,
+        "hs4_top3": 28,
+        "recall30": 16,
+        "recall200": 30
+      },
+      "heldout_company": {
+        "n": 74,
+        "hs8_top1": 18,
+        "hs6_top1": 23,
+        "hs4_top3": 49,
+        "recall30": 43,
+        "recall200": 54
+      },
+      "strict_historical_slice": {
+        "n": 65,
+        "hs8_top1": 12,
+        "hs6_top1": 15,
+        "hs4_top3": 41,
+        "recall30": 35,
+        "recall200": 45
+      }
+    },
+    "pairwise_plus_m0": {
+      "all": {
+        "n": 94,
+        "hs8_top1": 22,
+        "hs6_top1": 27,
+        "hs4_top3": 55,
+        "recall30": 59,
+        "recall200": 73
+      },
+      "unseen_hs8": {
+        "n": 51,
+        "hs8_top1": 0,
+        "hs6_top1": 0,
+        "hs4_top3": 19,
+        "recall30": 16,
+        "recall200": 30
+      },
+      "heldout_company": {
+        "n": 74,
+        "hs8_top1": 16,
+        "hs6_top1": 18,
+        "hs4_top3": 39,
+        "recall30": 42,
+        "recall200": 54
+      },
+      "strict_historical_slice": {
+        "n": 65,
+        "hs8_top1": 11,
+        "hs6_top1": 12,
+        "hs4_top3": 31,
+        "recall30": 34,
+        "recall200": 45
+      }
+    }
+  },
+  "paired_top1": {
+    "pairwise_plus_m0": {
+      "wins": 1,
+      "losses": 3,
+      "exploratory_exact_p_unclustered": 0.625
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "release": "2.3.0",
+  "python_suite": {
+    "passed": 66,
+    "skipped": 9,
+    "warnings": 2
+  },
+  "release_followup_tests": {
+    "guided_flow_and_official_pdf": 2,
+    "passed": 2
+  },
+  "frontend_format_tests_passed": 2,
+  "vite_build_passed": true,
+  "paid_api_calls_in_release_testing": 0,
+  "real_browser_flow_verified": false,
+  "research_results": "docs/evaluation/HISTORICAL.json",
+  "historical_predictions_are_runtime_accuracy": false
+}

@@ -1,0 +1,14 @@
+{
+  "checked_on":"2026-11-04",
+  "after_historical_cutoff":"2026-09-21",
+  "policy":"Secondary discoveries are leads only. Retrieve original customs PDF, verify issuer, date, code and amendments, hash bytes, link related notices, then reserve the group before any training.",
+  "verified_source_changes":[
+    {"notice":"638/TB-TCHQ","relation":"replaces 5523/TB-TCHQ","official_url":"https://files.customs.gov.vn/CustomsCMS/TONG_CUC/2025/2/14/TB.638.pdf#page=5","training_ingested":false}
+  ],
+  "pending_official_document":[
+    {"notice":"22584/TB-CHQ","related":"23123/TB-CHQ","lead":"https://thuvienphapluat.vn/van-ban/Xuat-nhap-khau/Thong-bao-23123-TB-CHQ-2026-dinh-chinh-thong-bao-ket-qua-xac-dinh-truoc-ma-so-730481.aspx?tab=7"},
+    {"notice":"23043/TB-CHQ","lead":"https://congluatviet.vn/van-ban/thong-bao-2026-ket-qua-xac-dinh-truoc-ma-so-cap-tin-hieu-co-luoi-1prx1-0mm2-23043-tb-chq"},
+    {"notice":"23348/TB-CHQ","lead":"https://luatonline.vn/van-ban/van-ban-xuat-nhap-khau-van-ban-thong-bao-23348tb-chq-nam-2026-ve-ket-qua-xac-dinh-truoc-ma-so-doi-voi-module-diode-phat-quang-led-dung-san-xuat-den-chieu-sang-cop-xe-may-do-cuc-truong-cuc-hai-quan-ban/"}
+  ],
+  "new_gold_labels":0
+}

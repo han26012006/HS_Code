@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/dev.mjs",
+    "prebuild": "node scripts/sync-review-assets.mjs",
     "build": "vite build --config frontend/vite.config.js",
-    "test": "node --test tests/frontend_format.test.mjs"
+    "test": "node --test tests/frontend_format.test.mjs tests/frontend_fact_review.test.mjs tests/frontend_review_candidates.test.mjs"
   },
   "dependencies": {
     "react": "18.3.1",

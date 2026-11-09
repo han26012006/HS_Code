@@ -1,0 +1,204 @@
+{
+  "dataset": "tests/fixtures/document_ai/adversarial_development.json",
+  "dataset_sha256": "f9d25dfa6f1745273df0fe9a1d9c38dfb1b6895b991164e0a49ef9c6d8b91ec2",
+  "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+  "metrics": {
+    "document_classification_accuracy": 1.0,
+    "field_precision": 0.285714,
+    "field_recall": 0.125,
+    "field_f1": 0.173913,
+    "identifier_exact_match": null,
+    "table_row_exact_recall": null,
+    "table_row_exact_precision": null,
+    "table_row_identity_accuracy": null,
+    "sku_precision": 0.4,
+    "sku_recall": 0.333333,
+    "cross_document_membership_jaccard": 0.181818,
+    "citation_correctness": 0.333333,
+    "unsupported_value_rate": 0.0,
+    "autofill_coverage": 0.125
+  },
+  "counts": {
+    "class_correct": 6,
+    "documents": 6,
+    "field_tp": 2,
+    "field_fp": 5,
+    "field_fn": 14,
+    "id_correct": 0,
+    "id_total": 0,
+    "sku_tp": 2,
+    "sku_fp": 3,
+    "sku_fn": 4,
+    "citations_correct": 3,
+    "citations_total": 9,
+    "unsupported": 0,
+    "rows_correct": 0,
+    "rows_total": 0,
+    "rows_exact": 0,
+    "rows_predicted": 0,
+    "pair_tp": 2,
+    "pair_fp": 4,
+    "pair_fn": 5,
+    "coverage_hits": 2,
+    "coverage_total": 16
+  },
+  "details": [
+    {
+      "case_id": "composite-positive",
+      "expected_skus": [
+        "g1"
+      ],
+      "actual_skus": [
+        "cand_24ea680ca7ab",
+        "cand_b792954ee367"
+      ],
+      "missing_fields": [
+        [
+          "product",
+          "g1",
+          "name",
+          "Hydraulic fitting"
+        ],
+        [
+          "product",
+          "g1",
+          "quantity",
+          "24"
+        ],
+        [
+          "product",
+          "g1",
+          "unit",
+          "PCS"
+        ]
+      ],
+      "unexpected_fields": [
+        [
+          "product",
+          "cand_24ea680ca7ab",
+          "name",
+          "Hydraulic fitting"
+        ],
+        [
+          "product",
+          "cand_b792954ee367",
+          "name",
+          "Hydraulic fitting"
+        ]
+      ]
+    },
+    {
+      "case_id": "conflicting-variant-negative",
+      "expected_skus": [
+        "g2a",
+        "g2b"
+      ],
+      "actual_skus": [
+        "VAL-4"
+      ],
+      "missing_fields": [
+        [
+          "product",
+          "g2a",
+          "name",
+          "Valve"
+        ],
+        [
+          "product",
+          "g2a",
+          "specifications",
+          "Diameter 30 mm"
+        ],
+        [
+          "product",
+          "g2b",
+          "name",
+          "Valve"
+        ],
+        [
+          "product",
+          "g2b",
+          "specifications",
+          "Diameter 50 mm"
+        ]
+      ],
+      "unexpected_fields": [
+        [
+          "product",
+          "VAL-4",
+          "name",
+          "Valve"
+        ],
+        [
+          "product",
+          "VAL-4",
+          "specifications",
+          "Specifications: Diameter 30 mm"
+        ],
+        [
+          "product",
+          "VAL-4",
+          "specifications",
+          "Specifications: Diameter 50 mm"
+        ]
+      ]
+    },
+    {
+      "case_id": "ambiguous-duplicate-negative",
+      "expected_skus": [
+        "g3a",
+        "g3b",
+        "g3c"
+      ],
+      "actual_skus": [
+        "g3a",
+        "g3c"
+      ],
+      "missing_fields": [
+        [
+          "product",
+          "g3a",
+          "quantity",
+          "12"
+        ],
+        [
+          "product",
+          "g3a",
+          "unit",
+          "PCS"
+        ],
+        [
+          "product",
+          "g3b",
+          "name",
+          "Gear"
+        ],
+        [
+          "product",
+          "g3b",
+          "quantity",
+          "12"
+        ],
+        [
+          "product",
+          "g3b",
+          "unit",
+          "PCS"
+        ],
+        [
+          "product",
+          "g3c",
+          "quantity",
+          "12"
+        ],
+        [
+          "product",
+          "g3c",
+          "unit",
+          "PCS"
+        ]
+      ],
+      "unexpected_fields": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "checked_on": "2026-11-04",
+  "scope": "spot checks of published decisions, not expert-adjudicated independent gold",
+  "model_input": false,
+  "changes_to_frozen_labels": 0,
+  "decisions": [
+    {
+      "notice": "8976/TB-CHQ",
+      "issued_on": "2025-06-12",
+      "source": "https://files.customs.gov.vn/CustomsCMS/TONG_CUC/2025/6/16/VB_8976.pdf#page=3",
+      "snapshot_filename": "8976_TB-CHQ_2025-06-12.pdf",
+      "drive_scan_sha256": "1c185a6ae58103cc50b68e5983f297ccd437ed1c2d80b75108f4ad3a1793cd31",
+      "legacy_raw_code": "39072900",
+      "current_v4_raw_code": "39072990",
+      "official_observed_code": "39072990",
+      "conclusion_page": 3,
+      "disposition": "priority_recovery_review_outside_frozen_cohort",
+      "requires_group_and_lifecycle_review": true,
+      "auto_train": false
+    },
+    {
+      "notice": "354/TB-CHQ",
+      "issued_on": "2025-03-21",
+      "source": "https://files.customs.gov.vn/CustomsCMS/TONG_CUC/2025/3/24/VB_354.pdf#page=2",
+      "official_observed_code": "85444299",
+      "disposition": "matches_current_train_snapshot"
+    },
+    {
+      "notice": "977/TB-CHQ",
+      "issued_on": "2025-04-02",
+      "source": "https://files.customs.gov.vn/CustomsCMS/TONG_CUC/2025/4/4/VB_977.pdf",
+      "official_observed_code": "38249999",
+      "disposition": "matches_current_train_snapshot"
+    }
+  ]
+}

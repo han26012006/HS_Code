@@ -1,0 +1,46 @@
+invalid pdf header: b'%PDF '
+EOF marker not found
+
+--- Running tests.test_extraction_safety ---
+PASS test_commit_load_and_reject_wrong_source
+PASS test_full_pdf_pages
+PASS test_invoice_packing_and_missing
+PASS test_invoice_table
+PASS test_pages_legal_order_and_identity
+Summary for tests.test_extraction_safety: Total=5, Passed=5, Skipped=0, Failed=0
+
+--- Running tests.test_document_first ---
+PASS test_tc01_single_sku_1200w_provenance
+PASS test_tc02_multi_sku_1200w_and_1600w
+PASS test_tc03_missing_attributes_readiness_gate
+PASS test_tc04_ocr_edit_preserves_provenance
+PASS test_tc05_cross_document_conflict_detection
+PASS test_tc06_manual_creation_preserved
+PASS test_tc07_incremental_upload_does_not_overwrite_verified
+PASS test_tc08_observed_hs_code_non_predictive
+PASS test_tc09_source_invalidation
+PASS test_tc10_export_integrity
+PASS test_tc11_idempotency_and_rollback
+PASS test_tc12_regression_existing_functionality
+Summary for tests.test_document_first: Total=12, Passed=12, Skipped=0, Failed=0
+
+--- Running tests.test_units ---
+PASS test_conformal_coverage_on_exchangeable_data
+PASS test_conformal_uses_the_finite_sample_order_statistic
+SKIP test_fast_bm25_matches_rank_bm25_order: Skipping: rank_bm25 is not installed
+PASS test_legacy_tax_penalty_estimate_is_disabled
+PASS test_scrub_contact_details
+PASS test_scrub_removes_codes_and_identities
+PASS test_softmax_and_short_path
+PASS test_unaccent_and_tokens
+PASS test_unfrozen_final_stack_not_automatically_promoted
+PASS test_vat_rate_parsing
+Summary for tests.test_units: Total=10, Passed=9, Skipped=1, Failed=0
+
+--- Running tests.test_decision_support ---
+Traceback (most recent call last):
+  File "/Users/hanna/Downloads/hs-assistant 2/run_tests.py", line 152, in <module>
+    mod = __import__(m, fromlist=['*'])
+  File "/Users/hanna/Downloads/hs-assistant 2/tests/test_decision_support.py", line 8, in <module>
+    from test_workspace import client, dossier, ready, evidence, analyze, approve, verify
+ModuleNotFoundError: No module named 'test_workspace'

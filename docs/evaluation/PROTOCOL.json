@@ -1,0 +1,68 @@
+{
+  "recipes": {
+    "catalogue_bm25": [
+      {
+        "catalogue_bm25": 1
+      },
+      false
+    ],
+    "catalogue_char": [
+      {
+        "catalogue_char": 1
+      },
+      false
+    ],
+    "prior_char": [
+      {
+        "prior_char": 1
+      },
+      false
+    ],
+    "catalogue_fusion": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1
+      },
+      false
+    ],
+    "fusion_equal": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1,
+        "prior_char": 1
+      },
+      false
+    ],
+    "fusion_prior2": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1,
+        "prior_char": 2
+      },
+      false
+    ],
+    "fusion_equal_hs6": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1,
+        "prior_char": 1
+      },
+      true
+    ],
+    "fusion_prior2_hs6": [
+      {
+        "catalogue_bm25": 1,
+        "catalogue_char": 1,
+        "prior_char": 2
+      },
+      true
+    ]
+  },
+  "manifest_sha256": "e3eacfecb3274aa50d0b67d9daf947a9e6859f4684008aa9b7664ddba3f5fc83",
+  "catalogue_sha256": "319a18ba1bd1acf066ed043f5678e8c8d7a22bc6b3ad490c1759f217907501bc",
+  "precedents_sha256": "80547cd4e3078b4eba11c7124b83a528b28a2c0bfcf5dcaaabc62350b3115588",
+  "labels_provisional": true,
+  "test_previously_seen": true,
+  "input_scope": "archived descriptions, not verified fact UI payloads",
+  "selection": "Protect BM25 HS4 and HS8 Top1; maximize Recall@200, then HS4 Top3, then HS8 Top1"
+}

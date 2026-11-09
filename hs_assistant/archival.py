@@ -7,6 +7,7 @@ import re
 import tempfile
 import zipfile
 from pathlib import Path
+from . import __version__
 from .workspace import WorkspaceError
 
 MAX_ARCHIVE_BYTES = 512 * 1024**2
@@ -20,8 +21,8 @@ def source_context(root, catalogue_version):
     root = Path(root)
     files = ['data/catalogue.jsonl', 'data/legal_notes.json', 'data/legal_sources.json',
              'data/tax/TAX_SOURCE_RECEIPT.json', 'data/tax/TAX_LEGAL_REGISTRY.json',
-             'data/precedent_index.jsonl']
-    return {'application_version': '2.2.0', 'catalogue_version': catalogue_version,
+             'data/precedent_index.jsonl', 'data/precedent_lifecycle.json']
+    return {'application_version': __version__, 'catalogue_version': catalogue_version,
             'files': {p: hashlib.sha256((root/p).read_bytes()).hexdigest()
                       for p in files if (root/p).is_file()},
             'legal_registry': json.loads((root/'data/legal_sources.json').read_text()),
@@ -69,6 +70,9 @@ def build_case_archive(case, workspace, root):
                 manifest['file_hashes'][name] = digest.hexdigest()
             payloads = {'dossier.json': case, 'legal_registry.json': sources,
                         'audit_chain_check.json': workspace.verify_events()}
+            lifecycle = root/'data/precedent_lifecycle.json'
+            if lifecycle.is_file():
+                payloads['precedent_lifecycle.json'] = json.loads(lifecycle.read_text(encoding='utf-8'))
             for name, value in payloads.items():
                 content = canonical(value); z.writestr(name, content)
                 manifest['file_hashes'][name] = hashlib.sha256(content).hexdigest()

@@ -1,0 +1,1627 @@
+{
+  "documents": [
+    {
+      "id": "doc_00fdab9ddfa4",
+      "name": "opaque.pdf",
+      "sha256": "ead5056dcf6268fdcdbe18c2868c2a6735ca8cef7208b034ebe32a65d5e77026",
+      "size": 148918,
+      "pages": [
+        {
+          "pdf_tables": [],
+          "number": 1,
+          "text": "YW Toe+=r an a =\nSRSA Ra AIR a)\n-H EB] |) SESS UCER 258-2685, 137%\nSHANGHAI EAST BEST FOREIGN TRADE CO.,LTD\nRM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031\nAHA\nPACKING LIST Date 01/Apr/2024\nKae SHE\nInvoice N\\EA77TTC24F 303\nHH ORAS fn Bor Ra CD EH (AA) GH (AA)\nMarks & Nos. Quality No. QUANTIT’ PKGS_ Gross Weight (Kgs Net Weight (Kgs.)\nN/M\n1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS 11 PKGS 28230 KGS 28230 KGS\nSBaelii—a\nTOTAL: 11 PKGS 28230 KGS 28230 KGS\nSHANGHAI EAST BEST FOREIGN\nTRADE CO., LTD.-1\nZ ene\n",
+          "method": "ocr_eng",
+          "warnings": [
+            {
+              "stage": "text_extraction",
+              "status": "needs_review",
+              "message": "Sparse text overlay on image page; OCR required"
+            },
+            {
+              "stage": "ocr",
+              "status": "needs_review",
+              "message": "OCR recognition requires review; TSV layout is opt-in"
+            }
+          ],
+          "layout": {
+            "version": 1,
+            "document_id": "doc_00fdab9ddfa4",
+            "page": 1,
+            "blocks": [
+              {
+                "id": "b0",
+                "text": "YW Toe+=r an a =",
+                "start": 0,
+                "end": 16,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b1",
+                "text": "SRSA Ra AIR a)",
+                "start": 17,
+                "end": 31,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b2",
+                "text": "-H EB] |) SESS UCER 258-2685, 137%",
+                "start": 32,
+                "end": 66,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b3",
+                "text": "SHANGHAI EAST BEST FOREIGN TRADE CO.,LTD",
+                "start": 67,
+                "end": 107,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b4",
+                "text": "RM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031",
+                "start": 108,
+                "end": 167,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b5",
+                "text": "AHA",
+                "start": 168,
+                "end": 171,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b6",
+                "text": "PACKING LIST Date 01/Apr/2024",
+                "start": 172,
+                "end": 201,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b7",
+                "text": "Kae SHE",
+                "start": 202,
+                "end": 209,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b8",
+                "text": "Invoice N\\EA77TTC24F 303",
+                "start": 210,
+                "end": 234,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b9",
+                "text": "HH ORAS fn Bor Ra CD EH (AA) GH (AA)",
+                "start": 235,
+                "end": 271,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b10",
+                "text": "Marks & Nos. Quality No. QUANTIT’ PKGS_ Gross Weight (Kgs Net Weight (Kgs.)",
+                "start": 272,
+                "end": 347,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b11",
+                "text": "N/M",
+                "start": 348,
+                "end": 351,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b12",
+                "text": "1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS 11 PKGS 28230 KGS 28230 KGS",
+                "start": 352,
+                "end": 427,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b13",
+                "text": "SBaelii—a",
+                "start": 428,
+                "end": 437,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b14",
+                "text": "TOTAL: 11 PKGS 28230 KGS 28230 KGS",
+                "start": 438,
+                "end": 472,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b15",
+                "text": "SHANGHAI EAST BEST FOREIGN",
+                "start": 473,
+                "end": 499,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b16",
+                "text": "TRADE CO., LTD.-1",
+                "start": 500,
+                "end": 517,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b17",
+                "text": "Z ene",
+                "start": 518,
+                "end": 523,
+                "document_id": "doc_00fdab9ddfa4",
+                "page": 1,
+                "bbox": null
+              }
+            ],
+            "tables": [],
+            "key_values": [
+              {
+                "label": "YW Toe+",
+                "value": "r an a =",
+                "quote": "YW Toe+=r an a =",
+                "block_ids": [
+                  "b0"
+                ],
+                "start": 0,
+                "end": 16
+              },
+              {
+                "label": "TOTAL",
+                "value": "11 PKGS 28230 KGS 28230 KGS",
+                "quote": "TOTAL: 11 PKGS 28230 KGS 28230 KGS",
+                "block_ids": [
+                  "b14"
+                ],
+                "start": 438,
+                "end": 472
+              },
+              {
+                "label": "SRSA Ra AIR a)",
+                "value": "-H EB] |) SESS UCER 258-2685, 137%",
+                "quote": "SRSA Ra AIR a)\n-H EB] |) SESS UCER 258-2685, 137%",
+                "block_ids": [
+                  "b1",
+                  "b2"
+                ],
+                "start": 17,
+                "end": 66
+              },
+              {
+                "label": "-H EB] |) SESS UCER 258-2685, 137%",
+                "value": "SHANGHAI EAST BEST FOREIGN TRADE CO.,LTD",
+                "quote": "-H EB] |) SESS UCER 258-2685, 137%\nSHANGHAI EAST BEST FOREIGN TRADE CO.,LTD",
+                "block_ids": [
+                  "b2",
+                  "b3"
+                ],
+                "start": 32,
+                "end": 107
+              },
+              {
+                "label": "SHANGHAI EAST BEST FOREIGN TRADE CO.,LTD",
+                "value": "RM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031",
+                "quote": "SHANGHAI EAST BEST FOREIGN TRADE CO.,LTD\nRM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031",
+                "block_ids": [
+                  "b3",
+                  "b4"
+                ],
+                "start": 67,
+                "end": 167
+              },
+              {
+                "label": "RM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031",
+                "value": "AHA",
+                "quote": "RM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031\nAHA",
+                "block_ids": [
+                  "b4",
+                  "b5"
+                ],
+                "start": 108,
+                "end": 171
+              },
+              {
+                "label": "AHA",
+                "value": "PACKING LIST Date 01/Apr/2024",
+                "quote": "AHA\nPACKING LIST Date 01/Apr/2024",
+                "block_ids": [
+                  "b5",
+                  "b6"
+                ],
+                "start": 168,
+                "end": 201
+              },
+              {
+                "label": "PACKING LIST Date 01/Apr/2024",
+                "value": "Kae SHE",
+                "quote": "PACKING LIST Date 01/Apr/2024\nKae SHE",
+                "block_ids": [
+                  "b6",
+                  "b7"
+                ],
+                "start": 172,
+                "end": 209
+              },
+              {
+                "label": "Kae SHE",
+                "value": "Invoice N\\EA77TTC24F 303",
+                "quote": "Kae SHE\nInvoice N\\EA77TTC24F 303",
+                "block_ids": [
+                  "b7",
+                  "b8"
+                ],
+                "start": 202,
+                "end": 234
+              },
+              {
+                "label": "Invoice N\\EA77TTC24F 303",
+                "value": "HH ORAS fn Bor Ra CD EH (AA) GH (AA)",
+                "quote": "Invoice N\\EA77TTC24F 303\nHH ORAS fn Bor Ra CD EH (AA) GH (AA)",
+                "block_ids": [
+                  "b8",
+                  "b9"
+                ],
+                "start": 210,
+                "end": 271
+              },
+              {
+                "label": "HH ORAS fn Bor Ra CD EH (AA) GH (AA)",
+                "value": "Marks & Nos. Quality No. QUANTIT’ PKGS_ Gross Weight (Kgs Net Weight (Kgs.)",
+                "quote": "HH ORAS fn Bor Ra CD EH (AA) GH (AA)\nMarks & Nos. Quality No. QUANTIT’ PKGS_ Gross Weight (Kgs Net Weight (Kgs.)",
+                "block_ids": [
+                  "b9",
+                  "b10"
+                ],
+                "start": 235,
+                "end": 347
+              },
+              {
+                "label": "N/M",
+                "value": "1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS 11 PKGS 28230 KGS 28230 KGS",
+                "quote": "N/M\n1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS 11 PKGS 28230 KGS 28230 KGS",
+                "block_ids": [
+                  "b11",
+                  "b12"
+                ],
+                "start": 348,
+                "end": 427
+              },
+              {
+                "label": "SBaelii—a",
+                "value": "TOTAL: 11 PKGS 28230 KGS 28230 KGS",
+                "quote": "SBaelii—a\nTOTAL: 11 PKGS 28230 KGS 28230 KGS",
+                "block_ids": [
+                  "b13",
+                  "b14"
+                ],
+                "start": 428,
+                "end": 472
+              },
+              {
+                "label": "SHANGHAI EAST BEST FOREIGN",
+                "value": "TRADE CO., LTD.-1",
+                "quote": "SHANGHAI EAST BEST FOREIGN\nTRADE CO., LTD.-1",
+                "block_ids": [
+                  "b15",
+                  "b16"
+                ],
+                "start": 473,
+                "end": 517
+              },
+              {
+                "label": "TRADE CO., LTD.-1",
+                "value": "Z ene",
+                "quote": "TRADE CO., LTD.-1\nZ ene",
+                "block_ids": [
+                  "b16",
+                  "b17"
+                ],
+                "start": 500,
+                "end": 523
+              }
+            ],
+            "geometry": [
+              {
+                "text": "YW",
+                "bbox": [
+                  995,
+                  216,
+                  1051,
+                  243
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "Toe+=r",
+                "bbox": [
+                  1112,
+                  217,
+                  1201,
+                  244
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "an",
+                "bbox": [
+                  1232,
+                  219,
+                  1256,
+                  244
+                ],
+                "recognition_confidence": 26.713028,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "a",
+                "bbox": [
+                  1296,
+                  219,
+                  1338,
+                  243
+                ],
+                "recognition_confidence": 48.074585,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "=",
+                "bbox": [
+                  1524,
+                  231,
+                  1568,
+                  236
+                ],
+                "recognition_confidence": 80.407616,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "SRSA",
+                "bbox": [
+                  937,
+                  217,
+                  1404,
+                  274
+                ],
+                "recognition_confidence": 7.806149,
+                "block": "1",
+                "paragraph": "1",
+                "line": "2"
+              },
+              {
+                "text": "Ra",
+                "bbox": [
+                  1249,
+                  213,
+                  1332,
+                  289
+                ],
+                "recognition_confidence": 7.806149,
+                "block": "1",
+                "paragraph": "1",
+                "line": "2"
+              },
+              {
+                "text": "AIR",
+                "bbox": [
+                  1409,
+                  219,
+                  1577,
+                  274
+                ],
+                "recognition_confidence": 34.105156,
+                "block": "1",
+                "paragraph": "1",
+                "line": "2"
+              },
+              {
+                "text": "a)",
+                "bbox": [
+                  1522,
+                  213,
+                  1579,
+                  289
+                ],
+                "recognition_confidence": 35.769287,
+                "block": "1",
+                "paragraph": "1",
+                "line": "2"
+              },
+              {
+                "text": "-H",
+                "bbox": [
+                  990,
+                  285,
+                  1014,
+                  314
+                ],
+                "recognition_confidence": 13.735695,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "EB]",
+                "bbox": [
+                  1023,
+                  285,
+                  1047,
+                  314
+                ],
+                "recognition_confidence": 46.780853,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "|)",
+                "bbox": [
+                  1062,
+                  285,
+                  1124,
+                  314
+                ],
+                "recognition_confidence": 14.73052,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "SESS",
+                "bbox": [
+                  1140,
+                  281,
+                  1196,
+                  323
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "UCER",
+                "bbox": [
+                  1206,
+                  281,
+                  1263,
+                  323
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "258-2685,",
+                "bbox": [
+                  1276,
+                  285,
+                  1437,
+                  314
+                ],
+                "recognition_confidence": 34.547421,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "137%",
+                "bbox": [
+                  1464,
+                  285,
+                  1529,
+                  314
+                ],
+                "recognition_confidence": 68.513092,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "SHANGHAI",
+                "bbox": [
+                  555,
+                  339,
+                  856,
+                  382
+                ],
+                "recognition_confidence": 84.970383,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "EAST",
+                "bbox": [
+                  881,
+                  339,
+                  1028,
+                  382
+                ],
+                "recognition_confidence": 96.038902,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "BEST",
+                "bbox": [
+                  1049,
+                  339,
+                  1200,
+                  382
+                ],
+                "recognition_confidence": 95.723244,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "FOREIGN",
+                "bbox": [
+                  1220,
+                  339,
+                  1478,
+                  382
+                ],
+                "recognition_confidence": 95.72702,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "TRADE",
+                "bbox": [
+                  1501,
+                  339,
+                  1695,
+                  382
+                ],
+                "recognition_confidence": 96.032135,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "CO.,LTD",
+                "bbox": [
+                  1733,
+                  339,
+                  1960,
+                  391
+                ],
+                "recognition_confidence": 73.419075,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "RM101",
+                "bbox": [
+                  693,
+                  400,
+                  789,
+                  424
+                ],
+                "recognition_confidence": 81.733047,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "13FL,",
+                "bbox": [
+                  808,
+                  400,
+                  889,
+                  425
+                ],
+                "recognition_confidence": 81.733047,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "258-268",
+                "bbox": [
+                  913,
+                  400,
+                  1031,
+                  425
+                ],
+                "recognition_confidence": 93.290237,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "ZHAOJIABANG",
+                "bbox": [
+                  1043,
+                  400,
+                  1272,
+                  425
+                ],
+                "recognition_confidence": 77.124779,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "ROAD",
+                "bbox": [
+                  1285,
+                  400,
+                  1376,
+                  425
+                ],
+                "recognition_confidence": 96.536087,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "SHANGHAI,",
+                "bbox": [
+                  1397,
+                  400,
+                  1583,
+                  429
+                ],
+                "recognition_confidence": 87.843018,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "CHINA",
+                "bbox": [
+                  1596,
+                  400,
+                  1697,
+                  424
+                ],
+                "recognition_confidence": 93.790009,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "200031",
+                "bbox": [
+                  1716,
+                  400,
+                  1818,
+                  425
+                ],
+                "recognition_confidence": 96.598076,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "AHA",
+                "bbox": [
+                  1824,
+                  516,
+                  1886,
+                  542
+                ],
+                "recognition_confidence": 35.14489,
+                "block": "1",
+                "paragraph": "1",
+                "line": "6"
+              },
+              {
+                "text": "PACKING",
+                "bbox": [
+                  1184,
+                  549,
+                  1478,
+                  598
+                ],
+                "recognition_confidence": 95.481438,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "LIST",
+                "bbox": [
+                  1506,
+                  549,
+                  1643,
+                  598
+                ],
+                "recognition_confidence": 95.481438,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "Date",
+                "bbox": [
+                  1817,
+                  570,
+                  1890,
+                  598
+                ],
+                "recognition_confidence": 89.587936,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "01/Apr/2024",
+                "bbox": [
+                  1930,
+                  573,
+                  2104,
+                  603
+                ],
+                "recognition_confidence": 49.580772,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "Kae",
+                "bbox": [
+                  1784,
+                  676,
+                  1850,
+                  726
+                ],
+                "recognition_confidence": 35.726742,
+                "block": "1",
+                "paragraph": "1",
+                "line": "8"
+              },
+              {
+                "text": "SHE",
+                "bbox": [
+                  1867,
+                  681,
+                  1918,
+                  714
+                ],
+                "recognition_confidence": 28.524364,
+                "block": "1",
+                "paragraph": "1",
+                "line": "8"
+              },
+              {
+                "text": "Invoice",
+                "bbox": [
+                  1765,
+                  728,
+                  1875,
+                  756
+                ],
+                "recognition_confidence": 90.130692,
+                "block": "1",
+                "paragraph": "1",
+                "line": "9"
+              },
+              {
+                "text": "N\\EA77TTC24F",
+                "bbox": [
+                  1890,
+                  729,
+                  2204,
+                  756
+                ],
+                "recognition_confidence": 4.279089,
+                "block": "1",
+                "paragraph": "1",
+                "line": "9"
+              },
+              {
+                "text": "303",
+                "bbox": [
+                  2150,
+                  724,
+                  2206,
+                  765
+                ],
+                "recognition_confidence": 96.448364,
+                "block": "1",
+                "paragraph": "1",
+                "line": "9"
+              },
+              {
+                "text": "HH",
+                "bbox": [
+                  329,
+                  834,
+                  357,
+                  881
+                ],
+                "recognition_confidence": 62.847534,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "ORAS",
+                "bbox": [
+                  372,
+                  838,
+                  542,
+                  871
+                ],
+                "recognition_confidence": 19.188442,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "fn",
+                "bbox": [
+                  796,
+                  834,
+                  828,
+                  882
+                ],
+                "recognition_confidence": 37.462612,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "Bor",
+                "bbox": [
+                  1154,
+                  838,
+                  1222,
+                  871
+                ],
+                "recognition_confidence": 61.312428,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "Ra",
+                "bbox": [
+                  1289,
+                  838,
+                  1359,
+                  871
+                ],
+                "recognition_confidence": 54.321445,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "CD",
+                "bbox": [
+                  1382,
+                  838,
+                  1449,
+                  871
+                ],
+                "recognition_confidence": 60.171272,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "EH",
+                "bbox": [
+                  1529,
+                  838,
+                  1598,
+                  870
+                ],
+                "recognition_confidence": 13.898869,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "(AA)",
+                "bbox": [
+                  1621,
+                  838,
+                  1725,
+                  871
+                ],
+                "recognition_confidence": 47.792374,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "GH",
+                "bbox": [
+                  1835,
+                  838,
+                  1904,
+                  871
+                ],
+                "recognition_confidence": 46.688301,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "(AA)",
+                "bbox": [
+                  1927,
+                  838,
+                  2032,
+                  871
+                ],
+                "recognition_confidence": 71.100449,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "Marks",
+                "bbox": [
+                  327,
+                  899,
+                  423,
+                  926
+                ],
+                "recognition_confidence": 90.706459,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "&",
+                "bbox": [
+                  436,
+                  899,
+                  458,
+                  926
+                ],
+                "recognition_confidence": 90.706459,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "Nos.",
+                "bbox": [
+                  472,
+                  899,
+                  541,
+                  926
+                ],
+                "recognition_confidence": 96.612877,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "Quality",
+                "bbox": [
+                  744,
+                  899,
+                  855,
+                  933
+                ],
+                "recognition_confidence": 96.073227,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "No.",
+                "bbox": [
+                  868,
+                  899,
+                  918,
+                  926
+                ],
+                "recognition_confidence": 96.949066,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "QUANTIT’",
+                "bbox": [
+                  1098,
+                  899,
+                  1265,
+                  927
+                ],
+                "recognition_confidence": 77.961166,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "PKGS_",
+                "bbox": [
+                  1330,
+                  898,
+                  1427,
+                  926
+                ],
+                "recognition_confidence": 51.088951,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "Gross",
+                "bbox": [
+                  1473,
+                  899,
+                  1567,
+                  926
+                ],
+                "recognition_confidence": 96.860092,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "Weight",
+                "bbox": [
+                  1580,
+                  899,
+                  1693,
+                  933
+                ],
+                "recognition_confidence": 96.002655,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "(Kgs",
+                "bbox": [
+                  1707,
+                  898,
+                  1778,
+                  933
+                ],
+                "recognition_confidence": 96.142868,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "Net",
+                "bbox": [
+                  1800,
+                  899,
+                  1854,
+                  926
+                ],
+                "recognition_confidence": 96.803932,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "Weight",
+                "bbox": [
+                  1866,
+                  899,
+                  1979,
+                  933
+                ],
+                "recognition_confidence": 93.252983,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "(Kgs.)",
+                "bbox": [
+                  1992,
+                  898,
+                  2086,
+                  933
+                ],
+                "recognition_confidence": 92.113678,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "N/M",
+                "bbox": [
+                  370,
+                  998,
+                  444,
+                  1031
+                ],
+                "recognition_confidence": 96.044365,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "1",
+                "bbox": [
+                  417,
+                  1052,
+                  427,
+                  1078
+                ],
+                "recognition_confidence": 80.336975,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "AUTOMATIC",
+                "bbox": [
+                  446,
+                  1059,
+                  596,
+                  1078
+                ],
+                "recognition_confidence": 80.336975,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "FOLDER",
+                "bbox": [
+                  607,
+                  1059,
+                  710,
+                  1078
+                ],
+                "recognition_confidence": 93.268738,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "GLUER",
+                "bbox": [
+                  719,
+                  1059,
+                  806,
+                  1079
+                ],
+                "recognition_confidence": 93.047966,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "STITCHER",
+                "bbox": [
+                  815,
+                  1059,
+                  942,
+                  1078
+                ],
+                "recognition_confidence": 90.688904,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "MACHINE",
+                "bbox": [
+                  952,
+                  1059,
+                  1067,
+                  1078
+                ],
+                "recognition_confidence": 90.490623,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "1",
+                "bbox": [
+                  1125,
+                  1052,
+                  1134,
+                  1078
+                ],
+                "recognition_confidence": 66.675674,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "PCS",
+                "bbox": [
+                  1157,
+                  1052,
+                  1228,
+                  1078
+                ],
+                "recognition_confidence": 66.675674,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "11",
+                "bbox": [
+                  1324,
+                  1052,
+                  1353,
+                  1078
+                ],
+                "recognition_confidence": 89.254883,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "PKGS",
+                "bbox": [
+                  1377,
+                  1052,
+                  1474,
+                  1079
+                ],
+                "recognition_confidence": 89.254883,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "28230",
+                "bbox": [
+                  1565,
+                  1052,
+                  1663,
+                  1079
+                ],
+                "recognition_confidence": 96.448822,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "KGS",
+                "bbox": [
+                  1682,
+                  1052,
+                  1754,
+                  1079
+                ],
+                "recognition_confidence": 92.837067,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "28230",
+                "bbox": [
+                  1812,
+                  1052,
+                  1910,
+                  1078
+                ],
+                "recognition_confidence": 92.117004,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "KGS",
+                "bbox": [
+                  1928,
+                  1051,
+                  2001,
+                  1078
+                ],
+                "recognition_confidence": 94.880104,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "SBaelii—a",
+                "bbox": [
+                  448,
+                  1096,
+                  740,
+                  1131
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "14"
+              },
+              {
+                "text": "TOTAL:",
+                "bbox": [
+                  563,
+                  1562,
+                  686,
+                  1603
+                ],
+                "recognition_confidence": 96.446671,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "11",
+                "bbox": [
+                  1303,
+                  1567,
+                  1332,
+                  1593
+                ],
+                "recognition_confidence": 69.559647,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "PKGS",
+                "bbox": [
+                  1377,
+                  1566,
+                  1474,
+                  1594
+                ],
+                "recognition_confidence": 69.559647,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "28230",
+                "bbox": [
+                  1565,
+                  1567,
+                  1663,
+                  1593
+                ],
+                "recognition_confidence": 95.762695,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "KGS",
+                "bbox": [
+                  1682,
+                  1566,
+                  1754,
+                  1593
+                ],
+                "recognition_confidence": 88.261208,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "28230",
+                "bbox": [
+                  1812,
+                  1566,
+                  1910,
+                  1593
+                ],
+                "recognition_confidence": 88.261208,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "KGS",
+                "bbox": [
+                  1928,
+                  1566,
+                  2001,
+                  1594
+                ],
+                "recognition_confidence": 95.543098,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "SHANGHAI",
+                "bbox": [
+                  1569,
+                  1763,
+                  1694,
+                  1795
+                ],
+                "recognition_confidence": 96.527557,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "EAST",
+                "bbox": [
+                  1707,
+                  1761,
+                  1770,
+                  1792
+                ],
+                "recognition_confidence": 95.827965,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "BEST",
+                "bbox": [
+                  1784,
+                  1760,
+                  1843,
+                  1791
+                ],
+                "recognition_confidence": 96.756714,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "FOREIGN",
+                "bbox": [
+                  1856,
+                  1757,
+                  1955,
+                  1789
+                ],
+                "recognition_confidence": 96.947021,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "TRADE",
+                "bbox": [
+                  1620,
+                  1799,
+                  1718,
+                  1830
+                ],
+                "recognition_confidence": 92.026947,
+                "block": "1",
+                "paragraph": "1",
+                "line": "17"
+              },
+              {
+                "text": "CO.,",
+                "bbox": [
+                  1734,
+                  1797,
+                  1792,
+                  1830
+                ],
+                "recognition_confidence": 90.463737,
+                "block": "1",
+                "paragraph": "1",
+                "line": "17"
+              },
+              {
+                "text": "LTD.-1",
+                "bbox": [
+                  1809,
+                  1795,
+                  1906,
+                  1826
+                ],
+                "recognition_confidence": 83.483688,
+                "block": "1",
+                "paragraph": "1",
+                "line": "17"
+              },
+              {
+                "text": "Z",
+                "bbox": [
+                  1658,
+                  1856,
+                  1692,
+                  1944
+                ],
+                "recognition_confidence": 61.58091,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "ene",
+                "bbox": [
+                  1709,
+                  1836,
+                  1897,
+                  1934
+                ],
+                "recognition_confidence": 32.586216,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              }
+            ],
+            "geometry_status": "available",
+            "warnings": []
+          }
+        }
+      ],
+      "detected_type": {
+        "kind": "other",
+        "type": "other",
+        "role": "unknown",
+        "confidence": null,
+        "signals": [],
+        "status": "needs_review",
+        "label": "Chứng từ khác",
+        "classification_status": "unknown"
+      },
+      "role": "unknown",
+      "kind": "other",
+      "document_type": "other",
+      "document_type_name": "Chứng từ khác",
+      "confidence": null,
+      "type_confidence": null,
+      "signals": [],
+      "filename": "opaque.pdf",
+      "text_content": "YW Toe+=r an a =\nSRSA Ra AIR a)\n-H EB] |) SESS UCER 258-2685, 137%\nSHANGHAI EAST BEST FOREIGN TRADE CO.,LTD\nRM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031\nAHA\nPACKING LIST Date 01/Apr/2024\nKae SHE\nInvoice N\\EA77TTC24F 303\nHH ORAS fn Bor Ra CD EH (AA) GH (AA)\nMarks & Nos. Quality No. QUANTIT’ PKGS_ Gross Weight (Kgs Net Weight (Kgs.)\nN/M\n1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS 11 PKGS 28230 KGS 28230 KGS\nSBaelii—a\nTOTAL: 11 PKGS 28230 KGS 28230 KGS\nSHANGHAI EAST BEST FOREIGN\nTRADE CO., LTD.-1\nZ ene",
+      "text": "YW Toe+=r an a =\nSRSA Ra AIR a)\n-H EB] |) SESS UCER 258-2685, 137%\nSHANGHAI EAST BEST FOREIGN TRADE CO.,LTD\nRM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031\nAHA\nPACKING LIST Date 01/Apr/2024\nKae SHE\nInvoice N\\EA77TTC24F 303\nHH ORAS fn Bor Ra CD EH (AA) GH (AA)\nMarks & Nos. Quality No. QUANTIT’ PKGS_ Gross Weight (Kgs Net Weight (Kgs.)\nN/M\n1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS 11 PKGS 28230 KGS 28230 KGS\nSBaelii—a\nTOTAL: 11 PKGS 28230 KGS 28230 KGS\nSHANGHAI EAST BEST FOREIGN\nTRADE CO., LTD.-1\nZ ene",
+      "_kind": "other"
+    }
+  ],
+  "skus": [],
+  "dossier_fields": {}
+}

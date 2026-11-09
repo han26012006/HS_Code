@@ -1,0 +1,2184 @@
+{
+  "documents": [
+    {
+      "id": "doc_027879c92cdf",
+      "name": "opaque.pdf",
+      "sha256": "d3c1f36983c198fdf1cdbebc2502ce48cefc0d3f8ad539ad88c515c3b3cbcb43",
+      "size": 221285,
+      "pages": [
+        {
+          "pdf_tables": [],
+          "number": 1,
+          "text": "ya S432 BO ES] =\nEj = aT ADB Ro)\nPLR] Lt SSAC 258-2685, 13%\nSHANGHAI EAST BEST FOREIGN TRADE CO.,LTD\nRM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031\nTo: Invoice No. EA771TTC24F303\nCONG TY TNHH QUOC TE HOP HUNG VIET I NVOICE Aa EU Baas\nNAM Sales Confirmation N EA77TTC24F303\nAs\nDate 01/Apr /2024\nBehl O Fe Hie\nFLOM ummm NGDAO CHINA cm Oe rmmmaen LETNAM nnnnnninnnnnmnnnmnnnnennnn\niS Re Fri Aes\nPaymentTerms: T/T. Issued by\nRS Burt Neh FAP AT\nlarks & Number Quantities and Descriptions Unit Price Amount\nCIF VIETNAM\nN/M 1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS USD 183230.00 USD  183230.00\nSABE\nFOB VALUE:USD 163230\nINSURANCE:USD214\nFREIGHT CHARGE:USD 19786\nTOTAL: USD 183230.00\nSHANGHAI EAST BEST FOREIGN\nTRADE CO., LTD.-1\nZ Naive\n",
+          "method": "ocr_eng",
+          "warnings": [
+            {
+              "stage": "text_extraction",
+              "status": "needs_review",
+              "message": "Sparse text overlay on image page; OCR required"
+            },
+            {
+              "stage": "ocr",
+              "status": "needs_review",
+              "message": "OCR recognition requires review; TSV layout is opt-in"
+            }
+          ],
+          "layout": {
+            "version": 1,
+            "document_id": "doc_027879c92cdf",
+            "page": 1,
+            "blocks": [
+              {
+                "id": "b0",
+                "text": "ya S432 BO ES] =",
+                "start": 0,
+                "end": 16,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b1",
+                "text": "Ej = aT ADB Ro)",
+                "start": 17,
+                "end": 32,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b2",
+                "text": "PLR] Lt SSAC 258-2685, 13%",
+                "start": 33,
+                "end": 59,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b3",
+                "text": "SHANGHAI EAST BEST FOREIGN TRADE CO.,LTD",
+                "start": 60,
+                "end": 100,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b4",
+                "text": "RM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031",
+                "start": 101,
+                "end": 160,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b5",
+                "text": "To: Invoice No. EA771TTC24F303",
+                "start": 161,
+                "end": 191,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b6",
+                "text": "CONG TY TNHH QUOC TE HOP HUNG VIET I NVOICE Aa EU Baas",
+                "start": 192,
+                "end": 246,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b7",
+                "text": "NAM Sales Confirmation N EA77TTC24F303",
+                "start": 247,
+                "end": 285,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b8",
+                "text": "As",
+                "start": 286,
+                "end": 288,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b9",
+                "text": "Date 01/Apr /2024",
+                "start": 289,
+                "end": 306,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b10",
+                "text": "Behl O Fe Hie",
+                "start": 307,
+                "end": 320,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b11",
+                "text": "FLOM ummm NGDAO CHINA cm Oe rmmmaen LETNAM nnnnnninnnnnmnnnmnnnnennnn",
+                "start": 321,
+                "end": 390,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b12",
+                "text": "iS Re Fri Aes",
+                "start": 391,
+                "end": 404,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b13",
+                "text": "PaymentTerms: T/T. Issued by",
+                "start": 405,
+                "end": 433,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b14",
+                "text": "RS Burt Neh FAP AT",
+                "start": 434,
+                "end": 452,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b15",
+                "text": "larks & Number Quantities and Descriptions Unit Price Amount",
+                "start": 453,
+                "end": 513,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b16",
+                "text": "CIF VIETNAM",
+                "start": 514,
+                "end": 525,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b17",
+                "text": "N/M 1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS USD 183230.00 USD  183230.00",
+                "start": 526,
+                "end": 606,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b18",
+                "text": "SABE",
+                "start": 607,
+                "end": 611,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b19",
+                "text": "FOB VALUE:USD 163230",
+                "start": 612,
+                "end": 632,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b20",
+                "text": "INSURANCE:USD214",
+                "start": 633,
+                "end": 649,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b21",
+                "text": "FREIGHT CHARGE:USD 19786",
+                "start": 650,
+                "end": 674,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b22",
+                "text": "TOTAL: USD 183230.00",
+                "start": 675,
+                "end": 695,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b23",
+                "text": "SHANGHAI EAST BEST FOREIGN",
+                "start": 696,
+                "end": 722,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b24",
+                "text": "TRADE CO., LTD.-1",
+                "start": 723,
+                "end": 740,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b25",
+                "text": "Z Naive",
+                "start": 741,
+                "end": 748,
+                "document_id": "doc_027879c92cdf",
+                "page": 1,
+                "bbox": null
+              }
+            ],
+            "tables": [],
+            "key_values": [
+              {
+                "label": "ya S432 BO ES]",
+                "value": "Ej = aT ADB Ro)",
+                "quote": "ya S432 BO ES] =\nEj = aT ADB Ro)",
+                "block_ids": [
+                  "b0",
+                  "b1"
+                ],
+                "start": 0,
+                "end": 32,
+                "layout_status": "needs_review"
+              },
+              {
+                "label": "Ej",
+                "value": "aT ADB Ro)",
+                "quote": "Ej = aT ADB Ro)",
+                "block_ids": [
+                  "b1"
+                ],
+                "start": 17,
+                "end": 32
+              },
+              {
+                "label": "To",
+                "value": "Invoice No. EA771TTC24F303",
+                "quote": "To: Invoice No. EA771TTC24F303",
+                "block_ids": [
+                  "b5"
+                ],
+                "start": 161,
+                "end": 191
+              },
+              {
+                "label": "PaymentTerms",
+                "value": "T/T. Issued by",
+                "quote": "PaymentTerms: T/T. Issued by",
+                "block_ids": [
+                  "b13"
+                ],
+                "start": 405,
+                "end": 433
+              },
+              {
+                "label": "FOB VALUE",
+                "value": "USD 163230",
+                "quote": "FOB VALUE:USD 163230",
+                "block_ids": [
+                  "b19"
+                ],
+                "start": 612,
+                "end": 632
+              },
+              {
+                "label": "INSURANCE",
+                "value": "USD214",
+                "quote": "INSURANCE:USD214",
+                "block_ids": [
+                  "b20"
+                ],
+                "start": 633,
+                "end": 649
+              },
+              {
+                "label": "FREIGHT CHARGE",
+                "value": "USD 19786",
+                "quote": "FREIGHT CHARGE:USD 19786",
+                "block_ids": [
+                  "b21"
+                ],
+                "start": 650,
+                "end": 674
+              },
+              {
+                "label": "TOTAL",
+                "value": "USD 183230.00",
+                "quote": "TOTAL: USD 183230.00",
+                "block_ids": [
+                  "b22"
+                ],
+                "start": 675,
+                "end": 695
+              },
+              {
+                "label": "PLR] Lt SSAC 258-2685, 13%",
+                "value": "SHANGHAI EAST BEST FOREIGN TRADE CO.,LTD",
+                "quote": "PLR] Lt SSAC 258-2685, 13%\nSHANGHAI EAST BEST FOREIGN TRADE CO.,LTD",
+                "block_ids": [
+                  "b2",
+                  "b3"
+                ],
+                "start": 33,
+                "end": 100
+              },
+              {
+                "label": "SHANGHAI EAST BEST FOREIGN TRADE CO.,LTD",
+                "value": "RM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031",
+                "quote": "SHANGHAI EAST BEST FOREIGN TRADE CO.,LTD\nRM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031",
+                "block_ids": [
+                  "b3",
+                  "b4"
+                ],
+                "start": 60,
+                "end": 160
+              },
+              {
+                "label": "RM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031",
+                "value": "To: Invoice No. EA771TTC24F303",
+                "quote": "RM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031\nTo: Invoice No. EA771TTC24F303",
+                "block_ids": [
+                  "b4",
+                  "b5"
+                ],
+                "start": 101,
+                "end": 191
+              },
+              {
+                "label": "CONG TY TNHH QUOC TE HOP HUNG VIET I NVOICE Aa EU Baas",
+                "value": "NAM Sales Confirmation N EA77TTC24F303",
+                "quote": "CONG TY TNHH QUOC TE HOP HUNG VIET I NVOICE Aa EU Baas\nNAM Sales Confirmation N EA77TTC24F303",
+                "block_ids": [
+                  "b6",
+                  "b7"
+                ],
+                "start": 192,
+                "end": 285
+              },
+              {
+                "label": "NAM Sales Confirmation N EA77TTC24F303",
+                "value": "As",
+                "quote": "NAM Sales Confirmation N EA77TTC24F303\nAs",
+                "block_ids": [
+                  "b7",
+                  "b8"
+                ],
+                "start": 247,
+                "end": 288
+              },
+              {
+                "label": "As",
+                "value": "Date 01/Apr /2024",
+                "quote": "As\nDate 01/Apr /2024",
+                "block_ids": [
+                  "b8",
+                  "b9"
+                ],
+                "start": 286,
+                "end": 306
+              },
+              {
+                "label": "Date 01/Apr /2024",
+                "value": "Behl O Fe Hie",
+                "quote": "Date 01/Apr /2024\nBehl O Fe Hie",
+                "block_ids": [
+                  "b9",
+                  "b10"
+                ],
+                "start": 289,
+                "end": 320
+              },
+              {
+                "label": "Behl O Fe Hie",
+                "value": "FLOM ummm NGDAO CHINA cm Oe rmmmaen LETNAM nnnnnninnnnnmnnnmnnnnennnn",
+                "quote": "Behl O Fe Hie\nFLOM ummm NGDAO CHINA cm Oe rmmmaen LETNAM nnnnnninnnnnmnnnmnnnnennnn",
+                "block_ids": [
+                  "b10",
+                  "b11"
+                ],
+                "start": 307,
+                "end": 390
+              },
+              {
+                "label": "FLOM ummm NGDAO CHINA cm Oe rmmmaen LETNAM nnnnnninnnnnmnnnmnnnnennnn",
+                "value": "iS Re Fri Aes",
+                "quote": "FLOM ummm NGDAO CHINA cm Oe rmmmaen LETNAM nnnnnninnnnnmnnnmnnnnennnn\niS Re Fri Aes",
+                "block_ids": [
+                  "b11",
+                  "b12"
+                ],
+                "start": 321,
+                "end": 404
+              },
+              {
+                "label": "iS Re Fri Aes",
+                "value": "PaymentTerms: T/T. Issued by",
+                "quote": "iS Re Fri Aes\nPaymentTerms: T/T. Issued by",
+                "block_ids": [
+                  "b12",
+                  "b13"
+                ],
+                "start": 391,
+                "end": 433
+              },
+              {
+                "label": "RS Burt Neh FAP AT",
+                "value": "larks & Number Quantities and Descriptions Unit Price Amount",
+                "quote": "RS Burt Neh FAP AT\nlarks & Number Quantities and Descriptions Unit Price Amount",
+                "block_ids": [
+                  "b14",
+                  "b15"
+                ],
+                "start": 434,
+                "end": 513
+              },
+              {
+                "label": "larks & Number Quantities and Descriptions Unit Price Amount",
+                "value": "CIF VIETNAM",
+                "quote": "larks & Number Quantities and Descriptions Unit Price Amount\nCIF VIETNAM",
+                "block_ids": [
+                  "b15",
+                  "b16"
+                ],
+                "start": 453,
+                "end": 525
+              },
+              {
+                "label": "CIF VIETNAM",
+                "value": "N/M 1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS USD 183230.00 USD  183230.00",
+                "quote": "CIF VIETNAM\nN/M 1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS USD 183230.00 USD  183230.00",
+                "block_ids": [
+                  "b16",
+                  "b17"
+                ],
+                "start": 514,
+                "end": 606
+              },
+              {
+                "label": "SABE",
+                "value": "FOB VALUE:USD 163230",
+                "quote": "SABE\nFOB VALUE:USD 163230",
+                "block_ids": [
+                  "b18",
+                  "b19"
+                ],
+                "start": 607,
+                "end": 632
+              },
+              {
+                "label": "SHANGHAI EAST BEST FOREIGN",
+                "value": "TRADE CO., LTD.-1",
+                "quote": "SHANGHAI EAST BEST FOREIGN\nTRADE CO., LTD.-1",
+                "block_ids": [
+                  "b23",
+                  "b24"
+                ],
+                "start": 696,
+                "end": 740
+              },
+              {
+                "label": "TRADE CO., LTD.-1",
+                "value": "Z Naive",
+                "quote": "TRADE CO., LTD.-1\nZ Naive",
+                "block_ids": [
+                  "b24",
+                  "b25"
+                ],
+                "start": 723,
+                "end": 748
+              }
+            ],
+            "geometry": [
+              {
+                "text": "ya",
+                "bbox": [
+                  989,
+                  217,
+                  1049,
+                  276
+                ],
+                "recognition_confidence": 10.660191,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "S432",
+                "bbox": [
+                  1113,
+                  216,
+                  1208,
+                  247
+                ],
+                "recognition_confidence": 2.419758,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "BO",
+                "bbox": [
+                  1241,
+                  218,
+                  1295,
+                  245
+                ],
+                "recognition_confidence": 12.524099,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "ES]",
+                "bbox": [
+                  1309,
+                  219,
+                  1354,
+                  245
+                ],
+                "recognition_confidence": 45.060715,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "=",
+                "bbox": [
+                  1551,
+                  232,
+                  1597,
+                  236
+                ],
+                "recognition_confidence": 95.984558,
+                "block": "1",
+                "paragraph": "1",
+                "line": "1"
+              },
+              {
+                "text": "Ej",
+                "bbox": [
+                  927,
+                  218,
+                  1001,
+                  276
+                ],
+                "recognition_confidence": 61.887074,
+                "block": "1",
+                "paragraph": "1",
+                "line": "2"
+              },
+              {
+                "text": "=",
+                "bbox": [
+                  1011,
+                  252,
+                  1038,
+                  263
+                ],
+                "recognition_confidence": 74.010651,
+                "block": "1",
+                "paragraph": "1",
+                "line": "2"
+              },
+              {
+                "text": "aT",
+                "bbox": [
+                  1051,
+                  216,
+                  1235,
+                  277
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "2"
+              },
+              {
+                "text": "ADB",
+                "bbox": [
+                  1259,
+                  216,
+                  1397,
+                  277
+                ],
+                "recognition_confidence": 31.183195,
+                "block": "1",
+                "paragraph": "1",
+                "line": "2"
+              },
+              {
+                "text": "Ro)",
+                "bbox": [
+                  1440,
+                  219,
+                  1607,
+                  278
+                ],
+                "recognition_confidence": 31.183195,
+                "block": "1",
+                "paragraph": "1",
+                "line": "2"
+              },
+              {
+                "text": "PLR]",
+                "bbox": [
+                  980,
+                  289,
+                  1042,
+                  321
+                ],
+                "recognition_confidence": 27.104959,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "Lt",
+                "bbox": [
+                  1058,
+                  289,
+                  1124,
+                  321
+                ],
+                "recognition_confidence": 36.800938,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "SSAC",
+                "bbox": [
+                  1138,
+                  289,
+                  1275,
+                  321
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "258-2685,",
+                "bbox": [
+                  1288,
+                  290,
+                  1461,
+                  321
+                ],
+                "recognition_confidence": 47.819942,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "13%",
+                "bbox": [
+                  1491,
+                  289,
+                  1560,
+                  321
+                ],
+                "recognition_confidence": 45.301773,
+                "block": "1",
+                "paragraph": "1",
+                "line": "3"
+              },
+              {
+                "text": "SHANGHAI",
+                "bbox": [
+                  515,
+                  341,
+                  838,
+                  388
+                ],
+                "recognition_confidence": 96.235909,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "EAST",
+                "bbox": [
+                  864,
+                  341,
+                  1023,
+                  387
+                ],
+                "recognition_confidence": 95.781334,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "BEST",
+                "bbox": [
+                  1046,
+                  341,
+                  1207,
+                  388
+                ],
+                "recognition_confidence": 96.191589,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "FOREIGN",
+                "bbox": [
+                  1230,
+                  341,
+                  1504,
+                  388
+                ],
+                "recognition_confidence": 95.697586,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "TRADE",
+                "bbox": [
+                  1528,
+                  342,
+                  1736,
+                  387
+                ],
+                "recognition_confidence": 95.697586,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "CO.,LTD",
+                "bbox": [
+                  1778,
+                  341,
+                  2020,
+                  396
+                ],
+                "recognition_confidence": 81.822929,
+                "block": "1",
+                "paragraph": "1",
+                "line": "4"
+              },
+              {
+                "text": "RM101",
+                "bbox": [
+                  662,
+                  408,
+                  766,
+                  434
+                ],
+                "recognition_confidence": 88.86792,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "13FL,",
+                "bbox": [
+                  786,
+                  408,
+                  872,
+                  434
+                ],
+                "recognition_confidence": 82.606636,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "258-268",
+                "bbox": [
+                  899,
+                  408,
+                  1026,
+                  434
+                ],
+                "recognition_confidence": 93.087074,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "ZHAOJIABANG",
+                "bbox": [
+                  1039,
+                  408,
+                  1284,
+                  434
+                ],
+                "recognition_confidence": 90.218239,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "ROAD",
+                "bbox": [
+                  1298,
+                  408,
+                  1395,
+                  434
+                ],
+                "recognition_confidence": 95.65049,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "SHANGHAI,",
+                "bbox": [
+                  1419,
+                  408,
+                  1617,
+                  438
+                ],
+                "recognition_confidence": 94.3004,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "CHINA",
+                "bbox": [
+                  1632,
+                  407,
+                  1739,
+                  434
+                ],
+                "recognition_confidence": 95.950005,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "200031",
+                "bbox": [
+                  1760,
+                  408,
+                  1871,
+                  434
+                ],
+                "recognition_confidence": 96.736145,
+                "block": "1",
+                "paragraph": "1",
+                "line": "5"
+              },
+              {
+                "text": "To:",
+                "bbox": [
+                  320,
+                  526,
+                  378,
+                  571
+                ],
+                "recognition_confidence": 96.357933,
+                "block": "1",
+                "paragraph": "1",
+                "line": "6"
+              },
+              {
+                "text": "Invoice",
+                "bbox": [
+                  1533,
+                  532,
+                  1650,
+                  561
+                ],
+                "recognition_confidence": 96.606697,
+                "block": "1",
+                "paragraph": "1",
+                "line": "6"
+              },
+              {
+                "text": "No.",
+                "bbox": [
+                  1666,
+                  533,
+                  1720,
+                  561
+                ],
+                "recognition_confidence": 96.703873,
+                "block": "1",
+                "paragraph": "1",
+                "line": "6"
+              },
+              {
+                "text": "EA771TTC24F303",
+                "bbox": [
+                  1944,
+                  535,
+                  2214,
+                  561
+                ],
+                "recognition_confidence": 32.073662,
+                "block": "1",
+                "paragraph": "1",
+                "line": "6"
+              },
+              {
+                "text": "CONG",
+                "bbox": [
+                  426,
+                  600,
+                  516,
+                  623
+                ],
+                "recognition_confidence": 95.039169,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "TY",
+                "bbox": [
+                  527,
+                  601,
+                  566,
+                  623
+                ],
+                "recognition_confidence": 93.245308,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "TNHH",
+                "bbox": [
+                  577,
+                  601,
+                  660,
+                  623
+                ],
+                "recognition_confidence": 91.900665,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "QUOC",
+                "bbox": [
+                  673,
+                  600,
+                  765,
+                  624
+                ],
+                "recognition_confidence": 96.298561,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "TE",
+                "bbox": [
+                  775,
+                  601,
+                  813,
+                  623
+                ],
+                "recognition_confidence": 96.298561,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "HOP",
+                "bbox": [
+                  827,
+                  600,
+                  890,
+                  623
+                ],
+                "recognition_confidence": 94.975822,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "HUNG",
+                "bbox": [
+                  903,
+                  600,
+                  991,
+                  623
+                ],
+                "recognition_confidence": 96.500465,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "VIET",
+                "bbox": [
+                  1002,
+                  601,
+                  1071,
+                  623
+                ],
+                "recognition_confidence": 96.332764,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "I",
+                "bbox": [
+                  1119,
+                  566,
+                  1128,
+                  616
+                ],
+                "recognition_confidence": 66.026878,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "NVOICE",
+                "bbox": [
+                  1139,
+                  566,
+                  1400,
+                  618
+                ],
+                "recognition_confidence": 91.508797,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "Aa",
+                "bbox": [
+                  1531,
+                  588,
+                  1559,
+                  620
+                ],
+                "recognition_confidence": 8.564825,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "EU",
+                "bbox": [
+                  1577,
+                  588,
+                  1657,
+                  620
+                ],
+                "recognition_confidence": 33.320107,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "Baas",
+                "bbox": [
+                  1679,
+                  589,
+                  1772,
+                  620
+                ],
+                "recognition_confidence": 13.044624,
+                "block": "1",
+                "paragraph": "1",
+                "line": "7"
+              },
+              {
+                "text": "NAM",
+                "bbox": [
+                  426,
+                  640,
+                  491,
+                  663
+                ],
+                "recognition_confidence": 96.669594,
+                "block": "1",
+                "paragraph": "1",
+                "line": "8"
+              },
+              {
+                "text": "Sales",
+                "bbox": [
+                  1531,
+                  645,
+                  1624,
+                  674
+                ],
+                "recognition_confidence": 96.728233,
+                "block": "1",
+                "paragraph": "1",
+                "line": "8"
+              },
+              {
+                "text": "Confirmation",
+                "bbox": [
+                  1639,
+                  645,
+                  1856,
+                  673
+                ],
+                "recognition_confidence": 93.284065,
+                "block": "1",
+                "paragraph": "1",
+                "line": "8"
+              },
+              {
+                "text": "N",
+                "bbox": [
+                  1873,
+                  645,
+                  1894,
+                  673
+                ],
+                "recognition_confidence": 88.36171,
+                "block": "1",
+                "paragraph": "1",
+                "line": "8"
+              },
+              {
+                "text": "EA77TTC24F303",
+                "bbox": [
+                  1906,
+                  650,
+                  2145,
+                  674
+                ],
+                "recognition_confidence": 88.36171,
+                "block": "1",
+                "paragraph": "1",
+                "line": "8"
+              },
+              {
+                "text": "As",
+                "bbox": [
+                  1536,
+                  694,
+                  1597,
+                  725
+                ],
+                "recognition_confidence": 14.719696,
+                "block": "1",
+                "paragraph": "1",
+                "line": "9"
+              },
+              {
+                "text": "Date",
+                "bbox": [
+                  1532,
+                  740,
+                  1610,
+                  769
+                ],
+                "recognition_confidence": 96.812965,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "01/Apr",
+                "bbox": [
+                  1970,
+                  743,
+                  2061,
+                  774
+                ],
+                "recognition_confidence": 63.797173,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "/2024",
+                "bbox": [
+                  2073,
+                  743,
+                  2157,
+                  768
+                ],
+                "recognition_confidence": 63.797173,
+                "block": "1",
+                "paragraph": "1",
+                "line": "10"
+              },
+              {
+                "text": "Behl",
+                "bbox": [
+                  320,
+                  808,
+                  394,
+                  844
+                ],
+                "recognition_confidence": 29.463039,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "O",
+                "bbox": [
+                  413,
+                  813,
+                  419,
+                  840
+                ],
+                "recognition_confidence": 3.340864,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "Fe",
+                "bbox": [
+                  437,
+                  808,
+                  471,
+                  844
+                ],
+                "recognition_confidence": 36.746143,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "Hie",
+                "bbox": [
+                  1189,
+                  802,
+                  2224,
+                  843
+                ],
+                "recognition_confidence": 52.099937,
+                "block": "1",
+                "paragraph": "1",
+                "line": "11"
+              },
+              {
+                "text": "FLOM",
+                "bbox": [
+                  321,
+                  856,
+                  406,
+                  884
+                ],
+                "recognition_confidence": 41.259933,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "ummm",
+                "bbox": [
+                  467,
+                  894,
+                  477,
+                  899
+                ],
+                "recognition_confidence": 10.666037,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "NGDAO",
+                "bbox": [
+                  726,
+                  853,
+                  848,
+                  899
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "CHINA",
+                "bbox": [
+                  894,
+                  853,
+                  1031,
+                  899
+                ],
+                "recognition_confidence": 4.228354,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "cm",
+                "bbox": [
+                  1083,
+                  894,
+                  1173,
+                  899
+                ],
+                "recognition_confidence": 22.65769,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "Oe",
+                "bbox": [
+                  1181,
+                  856,
+                  1302,
+                  899
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "rmmmaen",
+                "bbox": [
+                  1319,
+                  894,
+                  1423,
+                  900
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "LETNAM",
+                "bbox": [
+                  1451,
+                  853,
+                  1583,
+                  899
+                ],
+                "recognition_confidence": 62.611549,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "nnnnnninnnnnmnnnmnnnnennnn",
+                "bbox": [
+                  1573,
+                  854,
+                  2224,
+                  899
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "12"
+              },
+              {
+                "text": "iS",
+                "bbox": [
+                  320,
+                  894,
+                  469,
+                  930
+                ],
+                "recognition_confidence": 26.295265,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "Re",
+                "bbox": [
+                  481,
+                  889,
+                  512,
+                  940
+                ],
+                "recognition_confidence": 26.295265,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "Fri",
+                "bbox": [
+                  1182,
+                  889,
+                  1233,
+                  940
+                ],
+                "recognition_confidence": 0.20299,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "Aes",
+                "bbox": [
+                  1263,
+                  894,
+                  1334,
+                  930
+                ],
+                "recognition_confidence": 0.20299,
+                "block": "1",
+                "paragraph": "1",
+                "line": "13"
+              },
+              {
+                "text": "PaymentTerms:",
+                "bbox": [
+                  321,
+                  948,
+                  570,
+                  984
+                ],
+                "recognition_confidence": 68.013702,
+                "block": "1",
+                "paragraph": "1",
+                "line": "14"
+              },
+              {
+                "text": "T/T.",
+                "bbox": [
+                  715,
+                  944,
+                  852,
+                  990
+                ],
+                "recognition_confidence": 51.574821,
+                "block": "1",
+                "paragraph": "1",
+                "line": "14"
+              },
+              {
+                "text": "Issued",
+                "bbox": [
+                  1029,
+                  948,
+                  1291,
+                  990
+                ],
+                "recognition_confidence": 49.459557,
+                "block": "1",
+                "paragraph": "1",
+                "line": "14"
+              },
+              {
+                "text": "by",
+                "bbox": [
+                  1291,
+                  941,
+                  2224,
+                  990
+                ],
+                "recognition_confidence": 39.426136,
+                "block": "1",
+                "paragraph": "1",
+                "line": "14"
+              },
+              {
+                "text": "RS",
+                "bbox": [
+                  357,
+                  1029,
+                  469,
+                  1064
+                ],
+                "recognition_confidence": 24.803295,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "Burt",
+                "bbox": [
+                  904,
+                  1024,
+                  974,
+                  1073
+                ],
+                "recognition_confidence": 51.772911,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "Neh",
+                "bbox": [
+                  993,
+                  1024,
+                  1092,
+                  1073
+                ],
+                "recognition_confidence": 27.009567,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "FAP",
+                "bbox": [
+                  1535,
+                  1024,
+                  1613,
+                  1074
+                ],
+                "recognition_confidence": 22.777338,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "AT",
+                "bbox": [
+                  1948,
+                  1029,
+                  2021,
+                  1064
+                ],
+                "recognition_confidence": 53.426628,
+                "block": "1",
+                "paragraph": "1",
+                "line": "15"
+              },
+              {
+                "text": "larks",
+                "bbox": [
+                  313,
+                  1083,
+                  400,
+                  1112
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "&",
+                "bbox": [
+                  415,
+                  1083,
+                  438,
+                  1112
+                ],
+                "recognition_confidence": 93.116287,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "Number",
+                "bbox": [
+                  453,
+                  1083,
+                  588,
+                  1112
+                ],
+                "recognition_confidence": 96.491013,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "Quantities",
+                "bbox": [
+                  764,
+                  1083,
+                  935,
+                  1114
+                ],
+                "recognition_confidence": 96.552048,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "and",
+                "bbox": [
+                  949,
+                  1083,
+                  1010,
+                  1112
+                ],
+                "recognition_confidence": 96.173782,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "Descriptions",
+                "bbox": [
+                  1026,
+                  1083,
+                  1235,
+                  1119
+                ],
+                "recognition_confidence": 96.173782,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "Unit",
+                "bbox": [
+                  1495,
+                  1084,
+                  1560,
+                  1112
+                ],
+                "recognition_confidence": 96.553207,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "Price",
+                "bbox": [
+                  1574,
+                  1083,
+                  1658,
+                  1112
+                ],
+                "recognition_confidence": 96.73703,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "Amount",
+                "bbox": [
+                  1917,
+                  1083,
+                  2051,
+                  1112
+                ],
+                "recognition_confidence": 96.382896,
+                "block": "1",
+                "paragraph": "1",
+                "line": "16"
+              },
+              {
+                "text": "CIF",
+                "bbox": [
+                  1532,
+                  1160,
+                  1597,
+                  1192
+                ],
+                "recognition_confidence": 95.904297,
+                "block": "1",
+                "paragraph": "1",
+                "line": "17"
+              },
+              {
+                "text": "VIETNAM",
+                "bbox": [
+                  1612,
+                  1160,
+                  1800,
+                  1191
+                ],
+                "recognition_confidence": 96.477562,
+                "block": "1",
+                "paragraph": "1",
+                "line": "17"
+              },
+              {
+                "text": "N/M",
+                "bbox": [
+                  321,
+                  1243,
+                  386,
+                  1272
+                ],
+                "recognition_confidence": 95.911278,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "1",
+                "bbox": [
+                  472,
+                  1243,
+                  482,
+                  1271
+                ],
+                "recognition_confidence": 52.43214,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "AUTOMATIC",
+                "bbox": [
+                  502,
+                  1251,
+                  661,
+                  1271
+                ],
+                "recognition_confidence": 90.333229,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "FOLDER",
+                "bbox": [
+                  672,
+                  1251,
+                  779,
+                  1271
+                ],
+                "recognition_confidence": 93.292595,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "GLUER",
+                "bbox": [
+                  789,
+                  1251,
+                  881,
+                  1272
+                ],
+                "recognition_confidence": 92.05439,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "STITCHER",
+                "bbox": [
+                  890,
+                  1251,
+                  1024,
+                  1272
+                ],
+                "recognition_confidence": 91.340263,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "MACHINE",
+                "bbox": [
+                  1035,
+                  1251,
+                  1156,
+                  1272
+                ],
+                "recognition_confidence": 96.405098,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "1",
+                "bbox": [
+                  1254,
+                  1243,
+                  1265,
+                  1271
+                ],
+                "recognition_confidence": 14.646873,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "PCS",
+                "bbox": [
+                  1290,
+                  1242,
+                  1365,
+                  1271
+                ],
+                "recognition_confidence": 14.646873,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "USD",
+                "bbox": [
+                  1417,
+                  1242,
+                  1494,
+                  1271
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "183230.00",
+                "bbox": [
+                  1544,
+                  1243,
+                  1721,
+                  1272
+                ],
+                "recognition_confidence": 83.917198,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "USD",
+                "bbox": [
+                  1810,
+                  1242,
+                  1887,
+                  1271
+                ],
+                "recognition_confidence": 29.817852,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": " 183230.00",
+                "bbox": [
+                  1935,
+                  1243,
+                  2113,
+                  1272
+                ],
+                "recognition_confidence": 29.817852,
+                "block": "1",
+                "paragraph": "1",
+                "line": "18"
+              },
+              {
+                "text": "SABE",
+                "bbox": [
+                  505,
+                  1293,
+                  815,
+                  1331
+                ],
+                "recognition_confidence": 0.0,
+                "block": "1",
+                "paragraph": "1",
+                "line": "19"
+              },
+              {
+                "text": "FOB",
+                "bbox": [
+                  507,
+                  1400,
+                  582,
+                  1428
+                ],
+                "recognition_confidence": 93.227753,
+                "block": "1",
+                "paragraph": "1",
+                "line": "20"
+              },
+              {
+                "text": "VALUE:USD",
+                "bbox": [
+                  595,
+                  1400,
+                  813,
+                  1428
+                ],
+                "recognition_confidence": 91.479065,
+                "block": "1",
+                "paragraph": "1",
+                "line": "20"
+              },
+              {
+                "text": "163230",
+                "bbox": [
+                  830,
+                  1400,
+                  953,
+                  1429
+                ],
+                "recognition_confidence": 96.693657,
+                "block": "1",
+                "paragraph": "1",
+                "line": "20"
+              },
+              {
+                "text": "INSURANCE:USD214",
+                "bbox": [
+                  507,
+                  1451,
+                  889,
+                  1480
+                ],
+                "recognition_confidence": 91.587959,
+                "block": "1",
+                "paragraph": "1",
+                "line": "21"
+              },
+              {
+                "text": "FREIGHT",
+                "bbox": [
+                  507,
+                  1502,
+                  674,
+                  1531
+                ],
+                "recognition_confidence": 93.265656,
+                "block": "1",
+                "paragraph": "1",
+                "line": "22"
+              },
+              {
+                "text": "CHARGE:USD",
+                "bbox": [
+                  688,
+                  1502,
+                  944,
+                  1531
+                ],
+                "recognition_confidence": 91.002243,
+                "block": "1",
+                "paragraph": "1",
+                "line": "22"
+              },
+              {
+                "text": "19786",
+                "bbox": [
+                  961,
+                  1502,
+                  1063,
+                  1531
+                ],
+                "recognition_confidence": 96.811569,
+                "block": "1",
+                "paragraph": "1",
+                "line": "22"
+              },
+              {
+                "text": "TOTAL:",
+                "bbox": [
+                  773,
+                  1646,
+                  906,
+                  1688
+                ],
+                "recognition_confidence": 96.131775,
+                "block": "1",
+                "paragraph": "1",
+                "line": "23"
+              },
+              {
+                "text": "USD",
+                "bbox": [
+                  1810,
+                  1650,
+                  1887,
+                  1679
+                ],
+                "recognition_confidence": 53.435154,
+                "block": "1",
+                "paragraph": "1",
+                "line": "23"
+              },
+              {
+                "text": "183230.00",
+                "bbox": [
+                  1935,
+                  1650,
+                  2113,
+                  1678
+                ],
+                "recognition_confidence": 49.952705,
+                "block": "1",
+                "paragraph": "1",
+                "line": "23"
+              },
+              {
+                "text": "SHANGHAI",
+                "bbox": [
+                  1522,
+                  1883,
+                  1662,
+                  1918
+                ],
+                "recognition_confidence": 96.51458,
+                "block": "1",
+                "paragraph": "1",
+                "line": "24"
+              },
+              {
+                "text": "EAST",
+                "bbox": [
+                  1676,
+                  1881,
+                  1747,
+                  1914
+                ],
+                "recognition_confidence": 96.94529,
+                "block": "1",
+                "paragraph": "1",
+                "line": "24"
+              },
+              {
+                "text": "BEST",
+                "bbox": [
+                  1762,
+                  1880,
+                  1827,
+                  1913
+                ],
+                "recognition_confidence": 96.825661,
+                "block": "1",
+                "paragraph": "1",
+                "line": "24"
+              },
+              {
+                "text": "FOREIGN",
+                "bbox": [
+                  1842,
+                  1877,
+                  1952,
+                  1911
+                ],
+                "recognition_confidence": 96.869255,
+                "block": "1",
+                "paragraph": "1",
+                "line": "24"
+              },
+              {
+                "text": "TRADE",
+                "bbox": [
+                  1579,
+                  1922,
+                  1688,
+                  1954
+                ],
+                "recognition_confidence": 93.291443,
+                "block": "1",
+                "paragraph": "1",
+                "line": "25"
+              },
+              {
+                "text": "CO.,",
+                "bbox": [
+                  1707,
+                  1920,
+                  1771,
+                  1955
+                ],
+                "recognition_confidence": 92.20359,
+                "block": "1",
+                "paragraph": "1",
+                "line": "25"
+              },
+              {
+                "text": "LTD.-1",
+                "bbox": [
+                  1790,
+                  1917,
+                  1898,
+                  1950
+                ],
+                "recognition_confidence": 85.89489,
+                "block": "1",
+                "paragraph": "1",
+                "line": "25"
+              },
+              {
+                "text": "Z",
+                "bbox": [
+                  1622,
+                  1982,
+                  1660,
+                  2075
+                ],
+                "recognition_confidence": 77.783295,
+                "block": "1",
+                "paragraph": "1",
+                "line": "26"
+              },
+              {
+                "text": "Naive",
+                "bbox": [
+                  1678,
+                  1961,
+                  1888,
+                  2064
+                ],
+                "recognition_confidence": 50.567741,
+                "block": "1",
+                "paragraph": "1",
+                "line": "26"
+              }
+            ],
+            "geometry_status": "available",
+            "warnings": []
+          }
+        }
+      ],
+      "detected_type": {
+        "kind": "other",
+        "type": "other",
+        "role": "unknown",
+        "confidence": null,
+        "signals": [],
+        "status": "needs_review",
+        "label": "Chứng từ khác",
+        "classification_status": "unknown"
+      },
+      "role": "unknown",
+      "kind": "other",
+      "document_type": "other",
+      "document_type_name": "Chứng từ khác",
+      "confidence": null,
+      "type_confidence": null,
+      "signals": [],
+      "filename": "opaque.pdf",
+      "text_content": "ya S432 BO ES] =\nEj = aT ADB Ro)\nPLR] Lt SSAC 258-2685, 13%\nSHANGHAI EAST BEST FOREIGN TRADE CO.,LTD\nRM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031\nTo: Invoice No. EA771TTC24F303\nCONG TY TNHH QUOC TE HOP HUNG VIET I NVOICE Aa EU Baas\nNAM Sales Confirmation N EA77TTC24F303\nAs\nDate 01/Apr /2024\nBehl O Fe Hie\nFLOM ummm NGDAO CHINA cm Oe rmmmaen LETNAM nnnnnninnnnnmnnnmnnnnennnn\niS Re Fri Aes\nPaymentTerms: T/T. Issued by\nRS Burt Neh FAP AT\nlarks & Number Quantities and Descriptions Unit Price Amount\nCIF VIETNAM\nN/M 1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS USD 183230.00 USD  183230.00\nSABE\nFOB VALUE:USD 163230\nINSURANCE:USD214\nFREIGHT CHARGE:USD 19786\nTOTAL: USD 183230.00\nSHANGHAI EAST BEST FOREIGN\nTRADE CO., LTD.-1\nZ Naive",
+      "text": "ya S432 BO ES] =\nEj = aT ADB Ro)\nPLR] Lt SSAC 258-2685, 13%\nSHANGHAI EAST BEST FOREIGN TRADE CO.,LTD\nRM101 13FL, 258-268 ZHAOJIABANG ROAD SHANGHAI, CHINA 200031\nTo: Invoice No. EA771TTC24F303\nCONG TY TNHH QUOC TE HOP HUNG VIET I NVOICE Aa EU Baas\nNAM Sales Confirmation N EA77TTC24F303\nAs\nDate 01/Apr /2024\nBehl O Fe Hie\nFLOM ummm NGDAO CHINA cm Oe rmmmaen LETNAM nnnnnninnnnnmnnnmnnnnennnn\niS Re Fri Aes\nPaymentTerms: T/T. Issued by\nRS Burt Neh FAP AT\nlarks & Number Quantities and Descriptions Unit Price Amount\nCIF VIETNAM\nN/M 1 AUTOMATIC FOLDER GLUER STITCHER MACHINE 1 PCS USD 183230.00 USD  183230.00\nSABE\nFOB VALUE:USD 163230\nINSURANCE:USD214\nFREIGHT CHARGE:USD 19786\nTOTAL: USD 183230.00\nSHANGHAI EAST BEST FOREIGN\nTRADE CO., LTD.-1\nZ Naive",
+      "_kind": "other"
+    }
+  ],
+  "skus": [],
+  "dossier_fields": {}
+}

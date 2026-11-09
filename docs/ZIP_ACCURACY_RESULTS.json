@@ -1,0 +1,161 @@
+{
+  "scope": "Original bytes from user ZIP, single-engineer source review; small samples, not accuracy of all archive files.",
+  "archive_sha256": "c2ee851d4547600a780c788649451591efe22d7ae237c9259508a91aac432e8a",
+  "archive_files": 239,
+  "archive_groups": 17,
+  "development_cases": [
+    {
+      "name": "Commercial Invoice.docx.pdf",
+      "sha256": "9a91b2bde6b7ea5f528ce59a6d9f1c49af5b227b2a20da6256ac5fd5bc10c4bf",
+      "expected_sku_count": 1,
+      "before_sku_count": 2,
+      "after_sku_count": 1,
+      "before_kind": "commercial_invoice",
+      "after_kind": "commercial_invoice"
+    },
+    {
+      "name": "Packing List.pdf",
+      "sha256": "6a9c2f429b2926b4e678d7962c1e92ffbf67c68675cc631f9170fe2906894ca2",
+      "expected_sku_count": 1,
+      "before_sku_count": 1,
+      "after_sku_count": 1,
+      "before_kind": "packing_list",
+      "after_kind": "packing_list"
+    },
+    {
+      "name": "1. COMERCIAL INVOICE.pdf",
+      "sha256": "01a89645b1893e40f2bf2680f147b2689749d7b5dcf59c4e7779b609e80a555b",
+      "expected_sku_count": 46,
+      "before_sku_count": 1,
+      "after_sku_count": 46,
+      "before_kind": "commercial_invoice",
+      "after_kind": "commercial_invoice"
+    },
+    {
+      "name": "4. PACKING LIST.pdf",
+      "sha256": "147f24566025c1a7fbf2a409277147ec38e04dc8a7a6065ecde4db9ce694eb18",
+      "expected_sku_count": 46,
+      "before_sku_count": 0,
+      "after_sku_count": 46,
+      "before_kind": "other",
+      "after_kind": "packing_list"
+    },
+    {
+      "name": "PACKING LIST.pdf",
+      "sha256": "254374c4e13aa73ca0d09a0b02c1d85eafb8f59fdc216dfcc74c53df44dde110",
+      "expected_sku_count": 9,
+      "before_sku_count": 1,
+      "after_sku_count": 9,
+      "before_kind": "packing_list",
+      "after_kind": "packing_list"
+    },
+    {
+      "name": "INVOICE.pdf",
+      "sha256": "3b3cede5e57f2aed5b1655a64de87b03d0d9bab8de605192d778f83c19a8d412",
+      "expected_sku_count": 1,
+      "before_sku_count": 0,
+      "after_sku_count": 1,
+      "before_kind": "commercial_invoice",
+      "after_kind": "commercial_invoice"
+    },
+    {
+      "name": "PACKING LIST.pdf",
+      "sha256": "b53e37f6b22c4eefeac2e59fde166e00fed8649c5c5bdd847284c63f6f7f9dad",
+      "expected_sku_count": 1,
+      "before_sku_count": 0,
+      "after_sku_count": 1,
+      "before_kind": "packing_list",
+      "after_kind": "packing_list"
+    },
+    {
+      "name": "ToKhaiHQ7N_.xlsx",
+      "sha256": "28862cb221cab5a50e5d3580b7bdb10315ebe01da0ed46db3c3710a9920717c5",
+      "expected_sku_count": 1,
+      "before_sku_count": 0,
+      "after_sku_count": 1,
+      "before_kind": "other",
+      "after_kind": "customs_declaration"
+    },
+    {
+      "name": "INVOICE.pdf",
+      "sha256": "d3c1f36983c198fdf1cdbebc2502ce48cefc0d3f8ad539ad88c515c3b3cbcb43",
+      "expected_sku_count": 1,
+      "before_sku_count": 0,
+      "after_sku_count": 0,
+      "before_kind": "other",
+      "after_kind": "other"
+    },
+    {
+      "name": "PACKING LIST.pdf",
+      "sha256": "ead5056dcf6268fdcdbe18c2868c2a6735ca8cef7208b034ebe32a65d5e77026",
+      "expected_sku_count": 1,
+      "before_sku_count": 0,
+      "after_sku_count": 0,
+      "before_kind": "other",
+      "after_kind": "other"
+    }
+  ],
+  "development_count_exact_before": 1,
+  "development_count_exact_after": 8,
+  "fresh_holdout_v2": {
+    "group": "Thuốc lá điếu",
+    "files": 3,
+    "classification_correct_before": 1,
+    "classification_correct_after": 2,
+    "sku_count_correct_before": 0,
+    "sku_count_correct_after": 0,
+    "note": "All three have one goods line in source; neither version extracted it. Do not claim SKU improvement on this holdout."
+  },
+  "initial_reserved_v1_note": "Six files first evaluated after v1 code freeze. Failures were then used for v2 scalar/container safety fixes, so those six files are now diagnostics/development, not final holdout.",
+  "source_hashes_v2": {
+    "legal.py": "b3dba27ad632be95c8fe54032a3319ffcd08a7eccba98bc7a90e16978579f734",
+    "tax.py": "bc9cb3fb3da86b191f34815f04028db24c8188f7fd827f695ebd61ff08c0070f",
+    "workspace_export.py": "91941b89237a9f0d5e469b435bd5b2dcc88ec04cef03bd408f3a1dd6432e23ab",
+    "pdf_tables.py": "13f9c547f2224083295597aade6e9b65d9e4df9da9cab147dd8e6e50b3db8965",
+    "monitor.py": "c343c6deb77ee6bd21d17d67c6e9d50e11c9c65f8297e38ea1dcd8633255f10e",
+    "document_layout.py": "a66ad4cdd9dc0a46314f85808128183bb65f4a9e7c21c0ab5869cd9aeeb11d23",
+    "spreadsheet_layout.py": "afe6767789c6d1e8d959eae4908e21e864fe75b1cf75dfeec0d9843437147cfd",
+    "documents.py": "329a8a18250108c76a5114fc844ef01fc998b29659421c7344504ba405b94bec",
+    "product_extraction.py": "5de3f3ed620cc9c1652b05b843ce0380014ef4fd72c317b620ece61a81be708f",
+    "retrieval_experiment.py": "58ed3d7eedff94223187930b398f8d4bd1f7be9499333f644858b1914feba46f",
+    "field_validation.py": "f8842aa29e067ddc4749e82676da808adf4469ecaaeae7034f1fda574a787ba4",
+    "source_dates.py": "cf4a71eda498733fe3b49dd6add27eb1b81a33bf66d50c7b4bcfd03253f5d8a2",
+    "__init__.py": "940b6c8770af7e881ec9d3343dad9bab1b60e3829ea1936af8a1d2ab74880c73",
+    "document_reconciliation.py": "7eab327fa67d12b35bb16d4d61e769ee5d80494d6b4c7bfdfab33f74490b9856",
+    "document_classification.py": "55a16e6a59c403958de5c418212c2ddf3e3c4029f3378e4833f74d8406ffd824",
+    "core.py": "ef36ddee66964d261cc7cfb1c7630773e9a730cb417f26b87db4acc7934be7c2",
+    "export.py": "5707cad3fe6d805e578f9adb716dcc8b70d0f63dff09ecc5c8bac15d0f49521f",
+    "extractor.py": "3f06b35a5891c8668612e5310e31e5605440ab1ca39322825ae1a61eaf8db646",
+    "instruction_adapter.py": "91358d0367a4fc6984e388f19055f3d20039fea4fc72d37cf8b41730e3ffa7d7",
+    "comparison.py": "7f206ff9d4d817633dea1b3076b6143bd49fc0ae0a5066401ddc8568d96bf88f",
+    "assisted_extraction.py": "9fcd60917dc67e106cfd9532e433bb26f8e94833822212ce5db711083b66b316",
+    "document_schema.py": "137b630548c8446b654ff032d4b922b83fd1286cc9fcfa1359b83b96cfdb8cd0",
+    "guided_retrieval.py": "cacca71927969572ff58c99b9f8d442db9f2a0501e2815c331dd71cad851451c",
+    "precedents.py": "feb02a16f9ac5437efdbe29cccb637fc8b11fdf603a6bdd97e9953993ed23543",
+    "archival.py": "e45f5d2d595b36435be02ec55ff5d79d4ecf93774677b8a8fc3c59d8a32c5745",
+    "instruction_protocol.py": "035ef85667d93e7386baad43c20f2da11f87180f01a47e0cea5b1dc948f2233e",
+    "workspace.py": "991154bf7fc229807a953702dffb910e18e9e1ee0bee6e19866f53f23c9a41fb",
+    "project_knowledge.py": "1bbbd603664783166d68ff3d078ac11aabc764a6a2183c95f9c37d1e401a5af1",
+    "demo.py": "0f4cd00febbd18f7825e5362d029b99a0fd875ab69df62e38d0fc44de4aba12f",
+    "model_registry.py": "ec4bdb1ef6b12646f14962970f608e79c9a0f932ce8b83b624792a833a85f441",
+    "audit_log.py": "b1a8cff5657bbd8a8e2592a012651efa36b2e4659defda36fc06f89adb552763",
+    "ocr_layout.py": "8e7006b77c7f1227311b77fb24dafa4315a48cd44cd07ecf61ffab87688a4e55",
+    "document_text.py": "59723fe7d523f0b111590d3426e514462ff19e8902c1cffcaa3799410cdf1da3",
+    "catalogue.py": "371a3b4569988a20b963abaefab7abd73aeefac717f1936c24eab27de624bb38"
+  },
+  "warnings": [
+    "SKU count agreement does not prove every field is correct.",
+    "The 3-file final holdout is too small for a general accuracy claim.",
+    "Not all 239 files have been manually annotated or OCR-validated."
+  ],
+  "new_regression_tests": "scratch/zip_final_targeted_tests.txt",
+  "full_suite": "scratch/zip_all_tests.txt",
+  "validation": {
+    "full_suite_passed": 122,
+    "full_suite_skipped": 9,
+    "full_suite_failed": 0,
+    "new_zip_api_tests_passed": 7,
+    "frontend_build": "passed",
+    "frontend_format_tests_passed": 2
+  }
+}

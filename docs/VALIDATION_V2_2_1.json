@@ -1,0 +1,32 @@
+{
+  "version": "2.2.1",
+  "checked_at_local": "2026-11-04",
+  "colab_run": "multilevel_v5_20261103_174530",
+  "artifact_manifest_sha256": "e3eacfecb3274aa50d0b67d9daf947a9e6859f4684008aa9b7664ddba3f5fc83",
+  "python_tests": {
+    "passed": 64,
+    "skipped": 9,
+    "gpu_executed": false,
+    "suite": "tests"
+  },
+  "frontend_tests": {
+    "passed": 2,
+    "vite_build_passed": true
+  },
+  "smoke_with_matching_artifact": [
+    "health",
+    "web entry HTML",
+    "status integrity",
+    "offline snapshot does not apply to runtime"
+  ],
+  "cached_embedding_replay": {
+    "valid_top1_same": "96/97",
+    "test_top1_same": "94/94",
+    "valid_top10_same": "85/97",
+    "test_top10_same": "77/94",
+    "fresh_encoder_executed": false
+  },
+  "reference_label_basis": "provisional OCR/manual audit, no independent gold",
+  "paid_api_calls_during_review": 0,
+  "auto_hs8_acceptance": false
+}

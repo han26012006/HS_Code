@@ -1,6 +1,8 @@
 """A dated registry status is not a guarantee that all law changes are known."""
 from datetime import date
 
+AHTN2022_START = '2022-12-30'
+
 
 def dated_registry(registry, as_of):
     date.fromisoformat(as_of)

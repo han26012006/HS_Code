@@ -1,0 +1,19 @@
+{
+  "manifest_sha256": "e3eacfecb3274aa50d0b67d9daf947a9e6859f4684008aa9b7664ddba3f5fc83",
+  "code_sha256": "447f72e2a06efc73b835ae7de11429e368ef80fd72c7214586e4c70d22f7077b",
+  "audit_sha256": "d413d5aa55bc4eb3a7bc22d0170c3aa92f788c093710316be7e3c8c9fcab9991",
+  "pool": "fixed M0 top 200, no insertion of gold into validation or test",
+  "models": [
+    "m0",
+    "pairwise_hs8",
+    "pairwise_hierarchy",
+    "hist_gradient",
+    "pairwise_plus_m0",
+    "hierarchy_plus_m0"
+  ],
+  "random_seed": 20261104,
+  "gate": "Gain >=2 HS8 Top 1 on validation, no regression on HS4 Top 3, HS6 Top 1, Recall@30, unseen HS8 Top 1 or heldout-company HS8 Top 1",
+  "test_historically_seen": true,
+  "production_promotion": false,
+  "gold_is_provisional": true
+}

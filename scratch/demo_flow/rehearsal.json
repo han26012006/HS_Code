@@ -1,0 +1,29 @@
+{
+  "created_skus": 2,
+  "source_shared": true,
+  "readiness": {
+    "verified_fields": [
+      "construction",
+      "function",
+      "name",
+      "specifications"
+    ],
+    "required_fields": [
+      "construction",
+      "function",
+      "name",
+      "specifications"
+    ],
+    "missing_fields": [],
+    "unverified_fact_ids": [],
+    "can_analyze": true,
+    "conflicting_fields": [],
+    "human_review_required": true
+  },
+  "top3": [
+    "85163100",
+    "85163300",
+    "85163200"
+  ],
+  "manual_create_ui_warning": "docfirst manual form lacks owner required by CaseIn"
+}

@@ -19,3 +19,6 @@ libarchive-c>=5,<6
 xlrd>=2.0,<3
 python-pptx>=1.0,<2
 striprtf>=0.0.29,<1
+
+# Ruled-cell geometry evaluated against real ZIP invoices/packing lists.
+pdfplumber==0.11.7

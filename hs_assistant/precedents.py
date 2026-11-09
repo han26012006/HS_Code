@@ -16,8 +16,21 @@ class PrecedentLibrary:
         self.path = Path(path)
         self.rows = [json.loads(l) for l in self.path.read_text().splitlines() if l.strip()]
         self.version = sha(self.path)
+        lifecycle = self.path.with_name("precedent_lifecycle.json")
+        self.corrections = json.loads(lifecycle.read_text(encoding="utf-8"))["corrections"] if lifecycle.is_file() else {}
+        self.lifecycle_version = sha(lifecycle) if lifecycle.is_file() else None
+        for correction in self.corrections.values():
+            date.fromisoformat(correction["effective_from"])
         self.index = None
         self.lock = threading.Lock()
+
+    def available(self, row, as_of):
+        if row["split"] != "train" or row["lifecycle_observed"] != "not_flagged_in_project":
+            return False
+        issued = row["notice_date"]
+        correction = self.corrections.get(row["source_name"])
+        return bool(issued and issued < as_of and
+                    (not correction or as_of < correction["effective_from"]))
 
     def search(self, query, as_of, headings=None, limit=8):
         day = date.fromisoformat(as_of)
@@ -38,7 +51,7 @@ class PrecedentLibrary:
         for idx in np.argsort(-scores, kind='stable'):
             r = self.rows[int(idx)]
             if scores[idx] <= 0: break
-            if r['split'] != 'train' or r['notice_date'] > as_of or r['lifecycle_observed'] != 'not_flagged_in_project': continue
+            if not self.available(r, as_of): continue
             if headings and r['reported_hs8'][:4] not in headings: continue
             issued = date.fromisoformat(r['notice_date'])
             try: anniversary = issued.replace(year=issued.year+3)

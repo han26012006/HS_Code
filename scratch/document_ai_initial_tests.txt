@@ -1,0 +1,239 @@
+.F......FF..F..F.....                                                    [100%]
+=================================== FAILURES ===================================
+_______________________ test_invoice_packing_and_missing _______________________
+
+tmp_path = PosixPath('/private/var/folders/j_/q_87cdj52n5gqgjtql245yqc0000gn/T/pytest-of-hanna/pytest-6/test_invoice_packing_and_missi0')
+
+    def test_invoice_packing_and_missing(tmp_path):
+        m=manager(tmp_path)
+        inv='COMMERCIAL INVOICE\nInvoice No: INV-001\nItem 1: Model AA-1 Dryer\nPower: 1200 W\nItem 2: Model AA-2 Dryer\nPower: 1600 W\n'
+        pack='PACKING LIST\nModel: AA-1\nPackaging: Paper box\n'
+        d=m.create_draft([('a.txt',inv.encode()),('b.txt',pack.encode())])
+        assert len(d['skus'])==2
+>       assert len({f['document_id'] for f in d['skus'][0]['facts']})==2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = len({'doc_d0cc0023509e'})
+
+tests/test_extraction_safety.py:40: AssertionError
+____________________ test_tc01_single_sku_1200w_provenance _____________________
+
+ws = <hs_assistant.workspace.Workspace object at 0x10f073130>
+draft_mgr = <hs_assistant.extractor.AutoFillDraftManager object at 0x10f073240>
+doc_svc = <hs_assistant.documents.DocumentService object at 0x10f056c10>
+
+    def test_tc01_single_sku_1200w_provenance(ws, draft_mgr, doc_svc):
+        """TC01: Single SKU with 1200W hair dryer. Verifies exact quote substring and provenance."""
+        invoice_text = (
+            "COMMERCIAL INVOICE\n"
+            "Invoice No: INV-2026-001\n"
+            "Date: 2026-03-15\n"
+            "Seller: Tokyo Electric Corp, Japan\n"
+            "Buyer: Hanoi Trading JSC, Vietnam\n"
+            "Item 1: Hair Dryer Model HD-1200\n"
+            "Rated Power: 1200W, 220V 50Hz\n"
+            "Quantity: 500 PCS\n"
+            "Total Amount: USD 15,000\n"
+            "Incoterms: CIF Haiphong\n"
+        )
+    
+        files = [("Invoice_HD1200.txt", invoice_text.encode("utf-8"))]
+        draft = draft_mgr.create_draft(files)
+    
+        assert draft["status"] == "review_required"
+        assert len(draft["documents"]) == 1
+        doc = draft["documents"][0]
+        assert doc["kind"] == "commercial_invoice"
+        assert doc["type_confidence"] is None
+        assert doc["signals"]
+    
+        # Check dossier fields
+        fields = draft["dossier_fields"]
+        assert "Tokyo Electric Corp" in fields.get("exporter", {}).get("value", "")
+        assert "Hanoi Trading JSC" in fields.get("importer", {}).get("value", "")
+        assert fields.get("invoice_number", {}).get("value") == "INV-2026-001"
+        assert "USD" in fields.get("currency", {}).get("value")
+        assert "CIF" in fields.get("incoterms", {}).get("value")
+    
+        # Check candidate SKU
+        assert len(draft["skus"]) >= 1
+        sku = draft["skus"][0]
+        facts = {f["field"]: f for f in sku.get("facts", [])}
+    
+        assert "specifications" in facts
+        assert "1200W" in facts["specifications"]["value"]
+        # Verify strict provenance: quote is exact substring
+        quote = facts["specifications"]["quote"]
+        assert quote in invoice_text
+        assert facts["specifications"]["status"] == "unverified"
+    
+        # Commit draft
+        payload = {
+            "owner": "Chuyên viên Nguyễn Văn A",
+            "title": "Lô hàng máy sấy tóc HD-1200",
+            "trade_type": "import",
+            "classification_date": "2026-03-20",
+            "skus": draft["skus"]
+        }
+>       committed_case = draft_mgr.commit_draft(draft["draft_id"], payload, doc_svc)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_document_first.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hs_assistant/extractor.py:697: in commit_draft
+    self.db.save_extracted_fields(case_id, draft.get('dossier_fields',{}), doc_id_mapping)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hs_assistant.workspace.Workspace object at 0x10f073130>
+case_id = 'case_59272fbd53da40e1'
+fields = {'invoice_number': {'field': 'invoice_number', 'value': 'INV-2026-001', 'unit': None, 'source_document_id': 'doc_562b4...ue': {'field': 'total_value', 'value': 'USD 15,000', 'unit': None, 'source_document_id': 'doc_562b45fe9968', ...}, ...}
+document_mapping = {'doc_562b45fe9968': 'doc_7850d0da62ed4dff'}
+
+    def save_extracted_fields(self,case_id,fields,document_mapping):
+        with self.lock,self.connect() as c:
+            for field,candidate in fields.items():
+                for fact in candidate.get('sources',candidate.get('alternatives',[candidate])):
+                    value=fact.get('value','')
+                    if not value:continue
+                    original_doc=fact.get('source_document_id')
+                    doc_id=document_mapping.get(original_doc)
+                    if not doc_id:raise WorkspaceError('Thiếu chứng từ gốc cho thông tin hồ sơ.')
+                    page=c.execute('SELECT text FROM pages WHERE document_id=? AND number=?',(doc_id,fact.get('source_page'))).fetchone()
+                    quote=fact.get('source_quote') or fact.get('source_excerpt','')
+                    from .document_layout import norm
+                    if not page or not quote or norm(quote) not in norm(page['text']):raise WorkspaceError('Thông tin hồ sơ sai trích dẫn nguồn.')
+                    status='conflict' if candidate.get('status')=='conflicting' else 'unverified'
+                    provenance={**fact,'source_document_id':doc_id,'value_origin':'document_extracted'}
+>                   c.execute('INSERT INTO case_extracted_fields VALUES(?,?,?,?,?,?,?,?,?,?)',(uid('cf_'),case_id,field,value,doc_id,fact['source_page'],quote,status,encode(provenance)))
+E                   sqlite3.OperationalError: table case_extracted_fields has 9 columns but 10 values were supplied
+
+hs_assistant/workspace.py:114: OperationalError
+_____________________ test_tc02_multi_sku_1200w_and_1600w ______________________
+
+draft_mgr = <hs_assistant.extractor.AutoFillDraftManager object at 0x10f780250>
+doc_svc = <hs_assistant.documents.DocumentService object at 0x10f06aea0>
+
+    def test_tc02_multi_sku_1200w_and_1600w(draft_mgr, doc_svc):
+        """TC02: Multi-SKU (1200W and 1600W) in a single document set. Separated cleanly."""
+        doc_text = (
+            "COMMERCIAL INVOICE & PACKING LIST\n"
+            "Invoice No: INV-MULTI-99\n"
+            "Shipper: Global Appliance Co., Ltd\n"
+            "Consignee: VN Import Export Ltd\n"
+            "Item 1: Model HD-1200 Compact Hair Dryer, 1200W motor, 2 heat settings\n"
+            "Quantity: 200 Units\n"
+            "Item 2: Model HD-1600 Pro Salon Hair Dryer, 1600W ionic ceramic, 3 heat settings\n"
+            "Quantity: 300 Units\n"
+            "Total Quantity: 500 Units\n"
+        )
+    
+        files = [("Invoice_MultiSKU.txt", doc_text.encode("utf-8"))]
+        draft = draft_mgr.create_draft(files)
+    
+        assert len(draft["skus"]) == 2
+        sku_codes = [s["sku_code"] for s in draft["skus"]]
+        assert any("1200" in c for c in sku_codes)
+        assert any("1600" in c for c in sku_codes)
+    
+        sku1200 = next(s for s in draft["skus"] if "1200" in s["sku_code"])
+        sku1600 = next(s for s in draft["skus"] if "1600" in s["sku_code"])
+    
+        f1200 = {f["field"]: f for f in sku1200["facts"]}
+        f1600 = {f["field"]: f for f in sku1600["facts"]}
+    
+        assert "1200" in f1200["specifications"]["value"]
+        assert "1600" in f1600["specifications"]["value"]
+    
+        # Commit both SKUs into case
+        payload = {
+            "owner": "Nguyễn Thị B",
+            "title": "Hồ sơ nhập khẩu 2 dòng máy sấy tóc",
+            "trade_type": "import",
+            "skus": draft["skus"]
+        }
+>       committed = draft_mgr.commit_draft(draft["draft_id"], payload, doc_svc)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_document_first.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hs_assistant/extractor.py:697: in commit_draft
+    self.db.save_extracted_fields(case_id, draft.get('dossier_fields',{}), doc_id_mapping)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hs_assistant.workspace.Workspace object at 0x10f780050>
+case_id = 'case_5d1f58554aaa4d17'
+fields = {'invoice_number': {'field': 'invoice_number', 'value': 'INV-MULTI-99', 'unit': None, 'source_document_id': 'doc_ef8d1...: {'field': 'consignee', 'value': 'VN Import Export Ltd', 'unit': None, 'source_document_id': 'doc_ef8d1ab798ad', ...}}
+document_mapping = {'doc_ef8d1ab798ad': 'doc_027568dea4dc4c85'}
+
+    def save_extracted_fields(self,case_id,fields,document_mapping):
+        with self.lock,self.connect() as c:
+            for field,candidate in fields.items():
+                for fact in candidate.get('sources',candidate.get('alternatives',[candidate])):
+                    value=fact.get('value','')
+                    if not value:continue
+                    original_doc=fact.get('source_document_id')
+                    doc_id=document_mapping.get(original_doc)
+                    if not doc_id:raise WorkspaceError('Thiếu chứng từ gốc cho thông tin hồ sơ.')
+                    page=c.execute('SELECT text FROM pages WHERE document_id=? AND number=?',(doc_id,fact.get('source_page'))).fetchone()
+                    quote=fact.get('source_quote') or fact.get('source_excerpt','')
+                    from .document_layout import norm
+                    if not page or not quote or norm(quote) not in norm(page['text']):raise WorkspaceError('Thông tin hồ sơ sai trích dẫn nguồn.')
+                    status='conflict' if candidate.get('status')=='conflicting' else 'unverified'
+                    provenance={**fact,'source_document_id':doc_id,'value_origin':'document_extracted'}
+>                   c.execute('INSERT INTO case_extracted_fields VALUES(?,?,?,?,?,?,?,?,?,?)',(uid('cf_'),case_id,field,value,doc_id,fact['source_page'],quote,status,encode(provenance)))
+E                   sqlite3.OperationalError: table case_extracted_fields has 9 columns but 10 values were supplied
+
+hs_assistant/workspace.py:114: OperationalError
+_________________ test_tc05_cross_document_conflict_detection __________________
+
+draft_mgr = <hs_assistant.extractor.AutoFillDraftManager object at 0x10f4b1310>
+
+    def test_tc05_cross_document_conflict_detection(draft_mgr):
+        """TC05: Conflicting data between documents (e.g. Invoice 1200W vs Spec 1600W)."""
+        inv_text = "COMMERCIAL INVOICE\nModel: HD-1\nItem: Hair Dryer\nRated Power: 1200W\nGross Weight: 500 KGS\n"
+        spec_text = "TECHNICAL SPECIFICATION\nModel: HD-1\nProduct: Hair Dryer\nPower Consumption: 1600W\nGross Weight: 500 KGS\n"
+    
+        files = [
+            ("Invoice.txt", inv_text.encode("utf-8")),
+            ("SpecSheet.txt", spec_text.encode("utf-8"))
+        ]
+        draft = draft_mgr.create_draft(files)
+    
+        reconciliations = draft["reconciliations"]
+        conflicts = [r for r in reconciliations if r["status"] == "conflict"]
+>       assert len(conflicts) >= 1
+E       assert 0 >= 1
+E        +  where 0 = len([])
+
+tests/test_document_first.py:231: AssertionError
+__________________ test_tc08_observed_hs_code_non_predictive ___________________
+
+draft_mgr = <hs_assistant.extractor.AutoFillDraftManager object at 0x10f42bd90>
+ws = <hs_assistant.workspace.Workspace object at 0x10f4954a0>
+
+    def test_tc08_observed_hs_code_non_predictive(draft_mgr, ws):
+        """TC08: Extracted HS code stored only as declared_code, never auto-approving or biasing prediction."""
+        invoice_text = (
+            "CUSTOMS INVOICE\n"
+            "Item: Hair Dryer\n"
+            "HS Code: 8516.31.00\n"
+            "Power: 1200W\n"
+        )
+        draft = draft_mgr.create_draft([("inv.txt", invoice_text.encode("utf-8"))])
+>       sku = draft["skus"][0]
+              ^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests/test_document_first.py:300: IndexError
+=============================== warnings summary ===============================
+../../../../Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/starlette/testclient.py:40
+  /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/starlette/testclient.py:40: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_extraction_safety.py::test_invoice_packing_and_missing - As...
+FAILED tests/test_document_first.py::test_tc01_single_sku_1200w_provenance - ...
+FAILED tests/test_document_first.py::test_tc02_multi_sku_1200w_and_1600w - sq...
+FAILED tests/test_document_first.py::test_tc05_cross_document_conflict_detection
+FAILED tests/test_document_first.py::test_tc08_observed_hs_code_non_predictive
+5 failed, 16 passed, 1 warning in 3.31s

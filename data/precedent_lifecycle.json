@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-11-04",
+  "scope": "source-level corrections, not a comprehensive registry",
+  "corrections": {
+    "5523_TB-TCHQ_2024-11-08.pdf": {
+      "effective_from": "2025-02-12",
+      "replaced_by": "638/TB-TCHQ",
+      "source_url": "https://files.customs.gov.vn/CustomsCMS/TONG_CUC/2025/2/14/TB.638.pdf#page=5",
+      "document_page": 5,
+      "date_reference": "https://thuvienphapluat.vn/van-ban/Xuat-nhap-khau/Thong-bao-638-TB-TCHQ-2025-ket-qua-xac-dinh-truoc-ma-so-Ageloc-TRME-Trimshake-Power-643252.aspx",
+      "use_as_training_gold": false
+    }
+  }
+}

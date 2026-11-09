@@ -1,0 +1,17 @@
+[
+  {
+    "sha256": "6a9c2f429b2926b4e678d7962c1e92ffbf67c68675cc631f9170fe2906894ca2",
+    "name": "Packing List.pdf",
+    "usage": "development: source inspected and used for extraction regression/layout design"
+  },
+  {
+    "sha256": "58b075b973fc95fd98a2922b606dca2cd1912ce22f80cf8b8bc2b77d0c616d9f",
+    "name": "01_Ho_so_ky_thuat_DEMO.pdf",
+    "usage": "development: source inspected and used for extraction regression/layout design"
+  },
+  {
+    "sha256": "22478ef571331d284fb1484adaa468562185a8643cd47808e7f807b30e8d4d25",
+    "name": "06_TT31_2022_Phan_551_552_nguon_CongBao.pdf",
+    "usage": "development: source inspected and used for extraction regression/layout design"
+  }
+]

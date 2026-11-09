@@ -1,6 +1,6 @@
 """Build a portable source + web_dist ZIP, excluding secrets, runtime and model weights."""
 from pathlib import Path
-import argparse,hashlib,json,zipfile
+import argparse,hashlib,json,zipfile,runpy
 ROOT=Path(__file__).resolve().parent.parent
 ROOT_FILES={'api.py','app_streamlit.py','serve.py','track_mlflow.py','README.md','HUONG_DAN_CHAY.md','THIRD_PARTY_NOTICES.txt','Dockerfile','.dockerignore','.env.example','run_windows.bat','run_local.sh','package.json','package-lock.json'}
 FOLDERS={'hs_assistant','frontend','web_dist','data','docs','tests','legacy','.github'}
@@ -17,7 +17,7 @@ def chosen():
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--output',required=True);args=parser.parse_args();target=Path(args.output).resolve();target.parent.mkdir(parents=True,exist_ok=True)
     files=[p for p in chosen()if p.name!='RELEASE_MANIFEST.json'];hashes={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()for p in files}
-    manifest={'version':'2.2.0','release_date':'2026-11-02','application':'HS Workspace','jurisdiction':'VN','nomenclature':'AHTN2022','model_accuracy_newly_verified':False,'real_paid_api_calls_in_release_testing':0,'sha256':hashes}
+    manifest={'version':runpy.run_path(str(ROOT/'hs_assistant/__init__.py'))['__version__'],'release_date':'2026-11-04','application':'HS Workspace','jurisdiction':'VN','nomenclature':'AHTN2022','model_accuracy_newly_verified':False,'real_paid_api_calls_in_release_testing':0,'sha256':hashes}
     payload=(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n').encode();(ROOT/'RELEASE_MANIFEST.json').write_bytes(payload)
     with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED,compresslevel=9)as z:
         for p in files:z.write(p,'hs-assistant/'+p.relative_to(ROOT).as_posix())

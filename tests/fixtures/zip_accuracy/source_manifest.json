@@ -1,0 +1,30 @@
+[
+  {
+    "fixture": "01a89645.pdf",
+    "sha256": "01a89645b1893e40f2bf2680f147b2689749d7b5dcf59c4e7779b609e80a555b",
+    "source_member": "20 BỘ CHỨNG TỪ/mặt hàng Đồ chơi trẻ em/BỘ CHỨNG TỪ NHẬP KHẨU/1. COMERCIAL INVOICE.pdf",
+    "split": "development_real",
+    "review": "single engineer, original PDF rendering/cell values; not independent double review"
+  },
+  {
+    "fixture": "254374c4.pdf",
+    "sha256": "254374c4e13aa73ca0d09a0b02c1d85eafb8f59fdc216dfcc74c53df44dde110",
+    "source_member": "20 BỘ CHỨNG TỪ/mặt hàng Bộ máy tính để bàn/BỘ CHỨNG TỪ/PACKING LIST.pdf",
+    "split": "development_real",
+    "review": "single engineer, original PDF rendering/cell values; not independent double review"
+  },
+  {
+    "fixture": "28862cb2.xlsx",
+    "sha256": "28862cb221cab5a50e5d3580b7bdb10315ebe01da0ed46db3c3710a9920717c5",
+    "source_member": "20 BỘ CHỨNG TỪ/mặt hàng Tôm hùm giống/Bộ Chứng từ/ToKhaiHQ7N_.xlsx",
+    "split": "development_real",
+    "review": "single engineer, original PDF rendering/cell values; not independent double review"
+  },
+  {
+    "fixture": "d3c1f369.pdf",
+    "sha256": "d3c1f36983c198fdf1cdbebc2502ce48cefc0d3f8ad539ad88c515c3b3cbcb43",
+    "source_member": "20 BỘ CHỨNG TỪ/mặt hàng Máy móc, thiết bị đã qua sử dụng/BỘ CHỨNG TỪ/INVOICE.pdf",
+    "split": "development_real",
+    "review": "single engineer, original PDF rendering/cell values; not independent double review"
+  }
+]

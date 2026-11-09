@@ -1,0 +1,21 @@
+                                        DELIVERY ORDER
+Release Date: 2024-05-07
+Shipping Line Code: HLC
+Bill of Lading No:         HLCUSS5151006368
+Consignee:                 AURORA HIMALAYA JOINT STOCK         Notify          SAME AS CONSIGNEE*
+                           COMPANY                                             TEL: +84 964 767 771
+                           8/42 DINH BO LINH STREET, WARD
+                           24, BINH THANH
+                           DISTRICT, HO CHI MINH CITY,
+                           VIETNAM
+
+Vessel Voy No.:            AL NASRIYAH 029E                    Arrived         CATLAI TERMINAL
+                                                               Terminal
+Release No:                HLCUSS5151006368                    ETA             20240507 1300
+SECURE CODE                JAX824                              Valid to date   20240520
+From                       MUNDRA PORT, INDIA                  To              CAT LAI PORT, VIETNAM
+Cntr NO                               SIZE/TYPE                         Seal NO
+CLHU 3209737                          20 GP                             LT1185165
+CLHU 3309478                          20 GP                             LT0917623
+Total G.Wegiht: 50200 KGM               Total Measure: 26.32 CBM        Total Packages: 2000 BAGS
+

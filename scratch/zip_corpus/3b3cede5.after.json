@@ -1,0 +1,3909 @@
+{
+  "documents": [
+    {
+      "id": "doc_ca8c45e92cc3",
+      "name": "opaque.pdf",
+      "sha256": "3b3cede5e57f2aed5b1655a64de87b03d0d9bab8de605192d778f83c19a8d412",
+      "size": 150783,
+      "pages": [
+        {
+          "pdf_tables": [
+            {
+              "id": "g0",
+              "page": 1,
+              "header": [
+                {
+                  "text": "MARKS & NUMBER",
+                  "field": null,
+                  "column": 0,
+                  "bbox": [
+                    23.58857142857143,
+                    347.28,
+                    77.75999999999999,
+                    390.21913043478264
+                  ]
+                },
+                {
+                  "text": "DESCRIPTION OF GOODS",
+                  "field": "name",
+                  "column": 1,
+                  "bbox": [
+                    77.75999999999999,
+                    347.28,
+                    198.48000000000002,
+                    390.21913043478264
+                  ]
+                },
+                {
+                  "text": "HS CODE",
+                  "field": "declared_code",
+                  "column": 2,
+                  "bbox": [
+                    198.48000000000002,
+                    347.28,
+                    247.92000000000002,
+                    390.21913043478264
+                  ]
+                },
+                {
+                  "text": "COUNTRY OF ORIGIN",
+                  "field": "origin",
+                  "column": 3,
+                  "bbox": [
+                    247.92000000000002,
+                    347.28,
+                    304.90666666666664,
+                    390.21913043478264
+                  ]
+                },
+                {
+                  "text": "QUANTITY (PCS)",
+                  "field": "quantity",
+                  "column": 4,
+                  "bbox": [
+                    304.90666666666664,
+                    347.28,
+                    354.24,
+                    390.21913043478264
+                  ]
+                },
+                {
+                  "text": "NO. OF PKGS",
+                  "field": "packages",
+                  "column": 5,
+                  "bbox": [
+                    354.24,
+                    347.28,
+                    389.76,
+                    390.21913043478264
+                  ]
+                },
+                {
+                  "text": "",
+                  "field": null,
+                  "column": 6,
+                  "bbox": null
+                },
+                {
+                  "text": "NET WEIGHT (KGS)",
+                  "field": "net_weight",
+                  "column": 7,
+                  "bbox": [
+                    389.76,
+                    347.28,
+                    453.6,
+                    390.21913043478264
+                  ]
+                },
+                {
+                  "text": "UNIT PRICE(USD)",
+                  "field": "unit_price",
+                  "column": 8,
+                  "bbox": [
+                    453.6,
+                    347.28,
+                    517.2,
+                    390.21913043478264
+                  ]
+                },
+                {
+                  "text": "TOTAL VALUE",
+                  "field": "amount",
+                  "column": 9,
+                  "bbox": [
+                    517.2,
+                    347.28,
+                    587.16,
+                    390.21913043478264
+                  ]
+                }
+              ],
+              "header_block_id": null,
+              "header_block_ids": [],
+              "rows": [
+                {
+                  "id": "g0r0",
+                  "page": 1,
+                  "start": 174,
+                  "end": 2258,
+                  "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+                  "block_ids": [
+                    "b5",
+                    "b7",
+                    "b8",
+                    "b9",
+                    "b13",
+                    "b15",
+                    "b17",
+                    "b19",
+                    "b21",
+                    "b23",
+                    "b28",
+                    "b29",
+                    "b30",
+                    "b36",
+                    "b37",
+                    "b39",
+                    "b42",
+                    "b43",
+                    "b45",
+                    "b47",
+                    "b49",
+                    "b53"
+                  ],
+                  "bbox": [
+                    23.58857142857143,
+                    390.21913043478264,
+                    587.16,
+                    537.3808695652173
+                  ],
+                  "cells": [
+                    {
+                      "field": "name",
+                      "text": "COLD-ROLLED STAINLESS STEEL SHEET 310S 2B",
+                      "column": 1,
+                      "header": "DESCRIPTION OF GOODS",
+                      "bbox": [
+                        77.75999999999999,
+                        390.21913043478264,
+                        198.48000000000002,
+                        537.3808695652173
+                      ],
+                      "value_fragments": [
+                        "COLD-ROLLED STAINLESS",
+                        "STEEL SHEET 310S 2B"
+                      ],
+                      "source_block_id": "b5"
+                    },
+                    {
+                      "field": "declared_code",
+                      "text": "72193300",
+                      "column": 2,
+                      "header": "HS CODE",
+                      "bbox": [
+                        198.48000000000002,
+                        390.21913043478264,
+                        247.92000000000002,
+                        537.3808695652173
+                      ],
+                      "value_fragments": [
+                        "72193300"
+                      ],
+                      "source_block_id": "b5"
+                    },
+                    {
+                      "field": "origin",
+                      "text": "CHINA",
+                      "column": 3,
+                      "header": "COUNTRY OF ORIGIN",
+                      "bbox": [
+                        247.92000000000002,
+                        390.21913043478264,
+                        304.90666666666664,
+                        537.3808695652173
+                      ],
+                      "value_fragments": [
+                        "CHINA"
+                      ],
+                      "source_block_id": "b5"
+                    },
+                    {
+                      "field": "quantity",
+                      "text": "70",
+                      "column": 4,
+                      "header": "QUANTITY (PCS)",
+                      "bbox": [
+                        304.90666666666664,
+                        390.21913043478264,
+                        354.24,
+                        537.3808695652173
+                      ],
+                      "value_fragments": [
+                        "70"
+                      ],
+                      "source_block_id": "b5",
+                      "header_unit": "PCS"
+                    },
+                    {
+                      "field": "packages",
+                      "text": "7",
+                      "column": 5,
+                      "header": "NO. OF PKGS",
+                      "bbox": [
+                        354.24,
+                        390.21913043478264,
+                        389.76,
+                        537.3808695652173
+                      ],
+                      "value_fragments": [
+                        "7"
+                      ],
+                      "source_block_id": "b5"
+                    },
+                    {
+                      "field": "net_weight",
+                      "text": "23100",
+                      "column": 7,
+                      "header": "NET WEIGHT (KGS)",
+                      "bbox": [
+                        389.76,
+                        390.21913043478264,
+                        453.6,
+                        537.3808695652173
+                      ],
+                      "value_fragments": [
+                        "23100"
+                      ],
+                      "source_block_id": "b5",
+                      "header_unit": "KGS"
+                    },
+                    {
+                      "field": "unit_price",
+                      "text": "$0.88",
+                      "column": 8,
+                      "header": "UNIT PRICE(USD)",
+                      "bbox": [
+                        453.6,
+                        390.21913043478264,
+                        517.2,
+                        537.3808695652173
+                      ],
+                      "value_fragments": [
+                        "$0.88"
+                      ],
+                      "source_block_id": "b5",
+                      "header_unit": "USD"
+                    },
+                    {
+                      "field": "amount",
+                      "text": "$20 328",
+                      "column": 9,
+                      "header": "TOTAL VALUE",
+                      "bbox": [
+                        517.2,
+                        390.21913043478264,
+                        587.16,
+                        537.3808695652173
+                      ],
+                      "value_fragments": [
+                        "$20 328"
+                      ],
+                      "source_block_id": "b5"
+                    }
+                  ],
+                  "document_id": "doc_ca8c45e92cc3"
+                }
+              ],
+              "totals": [],
+              "continuation": false,
+              "header_source_page": 1,
+              "bbox": [
+                23.58857142857143,
+                81.99999999999997,
+                587.16,
+                765.9428571428571
+              ],
+              "method": "pdf_ruled_cells",
+              "shared_cells": [],
+              "document_id": "doc_ca8c45e92cc3"
+            }
+          ],
+          "number": 1,
+          "text": "                                               COMMERCIAL INVOICE\n\nDATE OF EXPORTATION. APR 01, 2024          INVOICE No. 20240328009                     B/L NO. 333021547\n\n\nSHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140\n\f",
+          "method": "pdftotext",
+          "warnings": [],
+          "layout": {
+            "version": 1,
+            "document_id": "doc_ca8c45e92cc3",
+            "page": 1,
+            "blocks": [
+              {
+                "id": "b0",
+                "text": "                                               COMMERCIAL INVOICE",
+                "start": 0,
+                "end": 65,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b2",
+                "text": "DATE OF EXPORTATION. APR 01, 2024          INVOICE No. 20240328009                     B/L NO. 333021547",
+                "start": 67,
+                "end": 171,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b5",
+                "text": "SHIPPER                                                               CONSIGNEE",
+                "start": 174,
+                "end": 253,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b7",
+                "text": "Company Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD",
+                "start": 255,
+                "end": 350,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b8",
+                "text": "Address: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,",
+                "start": 351,
+                "end": 477,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b9",
+                "text": "JIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM",
+                "start": 478,
+                "end": 574,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b10",
+                "text": "Contact: MR. JOHNNY                                                   Contact: MR. DAN",
+                "start": 575,
+                "end": 661,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b11",
+                "text": "Telephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370",
+                "start": 662,
+                "end": 757,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b13",
+                "text": "PORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM",
+                "start": 759,
+                "end": 870,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b15",
+                "text": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE",
+                "start": 872,
+                "end": 973,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b17",
+                "text": "FINAL DESTINATION: CATLAI PORT",
+                "start": 975,
+                "end": 1005,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b19",
+                "text": "  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL",
+                "start": 1007,
+                "end": 1136,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b20",
+                "text": "    &                                        CODE",
+                "start": 1137,
+                "end": 1186,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b21",
+                "text": "                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE",
+                "start": 1187,
+                "end": 1316,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b22",
+                "text": " NUMBER",
+                "start": 1317,
+                "end": 1324,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b23",
+                "text": "    S",
+                "start": 1325,
+                "end": 1330,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b28",
+                "text": "             COLD-ROLLED STAINLESS",
+                "start": 1335,
+                "end": 1369,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b29",
+                "text": "    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328",
+                "start": 1370,
+                "end": 1497,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b30",
+                "text": "             STEEL SHEET 310S 2B",
+                "start": 1498,
+                "end": 1530,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b35",
+                "text": "TT payment:",
+                "start": 1535,
+                "end": 1546,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b36",
+                "text": "                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD",
+                "start": 1547,
+                "end": 1671,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b37",
+                "text": "Beneficiary name: WUXI WANHONGNUO STAINLESS STEEL",
+                "start": 1672,
+                "end": 1721,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b38",
+                "text": "CO., LTD",
+                "start": 1722,
+                "end": 1730,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b39",
+                "text": "                                                                      SIGNATURE OF SHIPPER",
+                "start": 1731,
+                "end": 1821,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b40",
+                "text": "Beneficiary account number: 0101000111902562381",
+                "start": 1822,
+                "end": 1869,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b42",
+                "text": "Beneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,",
+                "start": 1871,
+                "end": 1938,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b43",
+                "text": "Jiangsu Province, China",
+                "start": 1939,
+                "end": 1962,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b45",
+                "text": "Beneficiary bank: Industrial & Commercial Bank of China",
+                "start": 1964,
+                "end": 2019,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b47",
+                "text": "Beneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China",
+                "start": 2021,
+                "end": 2085,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b49",
+                "text": "Beneficiary bank swift code: ICBKCNBJ",
+                "start": 2087,
+                "end": 2124,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b51",
+                "text": "Beneficiary country: CN",
+                "start": 2126,
+                "end": 2149,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b52",
+                "text": "                                                                      DATE: MAR 28, 2024",
+                "start": 2150,
+                "end": 2238,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b53",
+                "text": "Postal code: 100140",
+                "start": 2239,
+                "end": 2258,
+                "document_id": "doc_ca8c45e92cc3",
+                "page": 1,
+                "bbox": null
+              }
+            ],
+            "tables": [
+              {
+                "id": "g0",
+                "page": 1,
+                "header": [
+                  {
+                    "text": "MARKS & NUMBER",
+                    "field": null,
+                    "column": 0,
+                    "bbox": [
+                      23.58857142857143,
+                      347.28,
+                      77.75999999999999,
+                      390.21913043478264
+                    ]
+                  },
+                  {
+                    "text": "DESCRIPTION OF GOODS",
+                    "field": "name",
+                    "column": 1,
+                    "bbox": [
+                      77.75999999999999,
+                      347.28,
+                      198.48000000000002,
+                      390.21913043478264
+                    ]
+                  },
+                  {
+                    "text": "HS CODE",
+                    "field": "declared_code",
+                    "column": 2,
+                    "bbox": [
+                      198.48000000000002,
+                      347.28,
+                      247.92000000000002,
+                      390.21913043478264
+                    ]
+                  },
+                  {
+                    "text": "COUNTRY OF ORIGIN",
+                    "field": "origin",
+                    "column": 3,
+                    "bbox": [
+                      247.92000000000002,
+                      347.28,
+                      304.90666666666664,
+                      390.21913043478264
+                    ]
+                  },
+                  {
+                    "text": "QUANTITY (PCS)",
+                    "field": "quantity",
+                    "column": 4,
+                    "bbox": [
+                      304.90666666666664,
+                      347.28,
+                      354.24,
+                      390.21913043478264
+                    ]
+                  },
+                  {
+                    "text": "NO. OF PKGS",
+                    "field": "packages",
+                    "column": 5,
+                    "bbox": [
+                      354.24,
+                      347.28,
+                      389.76,
+                      390.21913043478264
+                    ]
+                  },
+                  {
+                    "text": "",
+                    "field": null,
+                    "column": 6,
+                    "bbox": null
+                  },
+                  {
+                    "text": "NET WEIGHT (KGS)",
+                    "field": "net_weight",
+                    "column": 7,
+                    "bbox": [
+                      389.76,
+                      347.28,
+                      453.6,
+                      390.21913043478264
+                    ]
+                  },
+                  {
+                    "text": "UNIT PRICE(USD)",
+                    "field": "unit_price",
+                    "column": 8,
+                    "bbox": [
+                      453.6,
+                      347.28,
+                      517.2,
+                      390.21913043478264
+                    ]
+                  },
+                  {
+                    "text": "TOTAL VALUE",
+                    "field": "amount",
+                    "column": 9,
+                    "bbox": [
+                      517.2,
+                      347.28,
+                      587.16,
+                      390.21913043478264
+                    ]
+                  }
+                ],
+                "header_block_id": null,
+                "header_block_ids": [],
+                "rows": [
+                  {
+                    "id": "g0r0",
+                    "page": 1,
+                    "start": 174,
+                    "end": 2258,
+                    "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+                    "block_ids": [
+                      "b5",
+                      "b7",
+                      "b8",
+                      "b9",
+                      "b13",
+                      "b15",
+                      "b17",
+                      "b19",
+                      "b21",
+                      "b23",
+                      "b28",
+                      "b29",
+                      "b30",
+                      "b36",
+                      "b37",
+                      "b39",
+                      "b42",
+                      "b43",
+                      "b45",
+                      "b47",
+                      "b49",
+                      "b53"
+                    ],
+                    "bbox": [
+                      23.58857142857143,
+                      390.21913043478264,
+                      587.16,
+                      537.3808695652173
+                    ],
+                    "cells": [
+                      {
+                        "field": "name",
+                        "text": "COLD-ROLLED STAINLESS STEEL SHEET 310S 2B",
+                        "column": 1,
+                        "header": "DESCRIPTION OF GOODS",
+                        "bbox": [
+                          77.75999999999999,
+                          390.21913043478264,
+                          198.48000000000002,
+                          537.3808695652173
+                        ],
+                        "value_fragments": [
+                          "COLD-ROLLED STAINLESS",
+                          "STEEL SHEET 310S 2B"
+                        ],
+                        "source_block_id": "b5"
+                      },
+                      {
+                        "field": "declared_code",
+                        "text": "72193300",
+                        "column": 2,
+                        "header": "HS CODE",
+                        "bbox": [
+                          198.48000000000002,
+                          390.21913043478264,
+                          247.92000000000002,
+                          537.3808695652173
+                        ],
+                        "value_fragments": [
+                          "72193300"
+                        ],
+                        "source_block_id": "b5"
+                      },
+                      {
+                        "field": "origin",
+                        "text": "CHINA",
+                        "column": 3,
+                        "header": "COUNTRY OF ORIGIN",
+                        "bbox": [
+                          247.92000000000002,
+                          390.21913043478264,
+                          304.90666666666664,
+                          537.3808695652173
+                        ],
+                        "value_fragments": [
+                          "CHINA"
+                        ],
+                        "source_block_id": "b5"
+                      },
+                      {
+                        "field": "quantity",
+                        "text": "70",
+                        "column": 4,
+                        "header": "QUANTITY (PCS)",
+                        "bbox": [
+                          304.90666666666664,
+                          390.21913043478264,
+                          354.24,
+                          537.3808695652173
+                        ],
+                        "value_fragments": [
+                          "70"
+                        ],
+                        "source_block_id": "b5",
+                        "header_unit": "PCS"
+                      },
+                      {
+                        "field": "packages",
+                        "text": "7",
+                        "column": 5,
+                        "header": "NO. OF PKGS",
+                        "bbox": [
+                          354.24,
+                          390.21913043478264,
+                          389.76,
+                          537.3808695652173
+                        ],
+                        "value_fragments": [
+                          "7"
+                        ],
+                        "source_block_id": "b5"
+                      },
+                      {
+                        "field": "net_weight",
+                        "text": "23100",
+                        "column": 7,
+                        "header": "NET WEIGHT (KGS)",
+                        "bbox": [
+                          389.76,
+                          390.21913043478264,
+                          453.6,
+                          537.3808695652173
+                        ],
+                        "value_fragments": [
+                          "23100"
+                        ],
+                        "source_block_id": "b5",
+                        "header_unit": "KGS"
+                      },
+                      {
+                        "field": "unit_price",
+                        "text": "$0.88",
+                        "column": 8,
+                        "header": "UNIT PRICE(USD)",
+                        "bbox": [
+                          453.6,
+                          390.21913043478264,
+                          517.2,
+                          537.3808695652173
+                        ],
+                        "value_fragments": [
+                          "$0.88"
+                        ],
+                        "source_block_id": "b5",
+                        "header_unit": "USD"
+                      },
+                      {
+                        "field": "amount",
+                        "text": "$20 328",
+                        "column": 9,
+                        "header": "TOTAL VALUE",
+                        "bbox": [
+                          517.2,
+                          390.21913043478264,
+                          587.16,
+                          537.3808695652173
+                        ],
+                        "value_fragments": [
+                          "$20 328"
+                        ],
+                        "source_block_id": "b5"
+                      }
+                    ],
+                    "document_id": "doc_ca8c45e92cc3"
+                  }
+                ],
+                "totals": [],
+                "continuation": false,
+                "header_source_page": 1,
+                "bbox": [
+                  23.58857142857143,
+                  81.99999999999997,
+                  587.16,
+                  765.9428571428571
+                ],
+                "method": "pdf_ruled_cells",
+                "shared_cells": [],
+                "document_id": "doc_ca8c45e92cc3"
+              }
+            ],
+            "key_values": [
+              {
+                "label": "Company Name",
+                "value": "WUXI WANHONGNUO STAINLESS STEEL CO., LTD",
+                "quote": "Company Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD",
+                "block_ids": [
+                  "b7"
+                ],
+                "start": 255,
+                "end": 309
+              },
+              {
+                "label": "Company Name",
+                "value": "N2 CO., LTD",
+                "quote": "Company Name: N2 CO., LTD",
+                "block_ids": [
+                  "b7"
+                ],
+                "start": 325,
+                "end": 350
+              },
+              {
+                "label": "Address",
+                "value": "168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,",
+                "quote": "Address: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,",
+                "block_ids": [
+                  "b8"
+                ],
+                "start": 351,
+                "end": 406
+              },
+              {
+                "label": "Address",
+                "value": "1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,",
+                "quote": "Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,",
+                "block_ids": [
+                  "b8"
+                ],
+                "start": 421,
+                "end": 477
+              },
+              {
+                "label": "Contact",
+                "value": "MR. JOHNNY",
+                "quote": "Contact: MR. JOHNNY",
+                "block_ids": [
+                  "b10"
+                ],
+                "start": 575,
+                "end": 594
+              },
+              {
+                "label": "Contact",
+                "value": "MR. DAN",
+                "quote": "Contact: MR. DAN",
+                "block_ids": [
+                  "b10"
+                ],
+                "start": 645,
+                "end": 661
+              },
+              {
+                "label": "Telephone",
+                "value": ": 86-177-0151-0738",
+                "quote": "Telephone: : 86-177-0151-0738",
+                "block_ids": [
+                  "b11"
+                ],
+                "start": 662,
+                "end": 691
+              },
+              {
+                "label": "Telephone",
+                "value": "84-94-634-2370",
+                "quote": "Telephone: 84-94-634-2370",
+                "block_ids": [
+                  "b11"
+                ],
+                "start": 732,
+                "end": 757
+              },
+              {
+                "label": "PORT OF LOADING",
+                "value": "SHANGHAI PORT, CHINA",
+                "quote": "PORT OF LOADING: SHANGHAI PORT, CHINA",
+                "block_ids": [
+                  "b13"
+                ],
+                "start": 759,
+                "end": 796
+              },
+              {
+                "label": "TERMS OF PRICE",
+                "value": "CIF CAT LAI PORT, VIETNAM",
+                "quote": "TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM",
+                "block_ids": [
+                  "b13"
+                ],
+                "start": 829,
+                "end": 870
+              },
+              {
+                "label": "PORT OF DISCHARGE",
+                "value": "CATLAI PORT, VIETNAM",
+                "quote": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM",
+                "block_ids": [
+                  "b15"
+                ],
+                "start": 872,
+                "end": 911
+              },
+              {
+                "label": "TERMS OF PAYMENT",
+                "value": "TT IN ADVANCE",
+                "quote": "TERMS OF PAYMENT: TT IN ADVANCE",
+                "block_ids": [
+                  "b15"
+                ],
+                "start": 942,
+                "end": 973
+              },
+              {
+                "label": "FINAL DESTINATION",
+                "value": "CATLAI PORT",
+                "quote": "FINAL DESTINATION: CATLAI PORT",
+                "block_ids": [
+                  "b17"
+                ],
+                "start": 975,
+                "end": 1005
+              },
+              {
+                "label": "TT payment",
+                "value": "COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD",
+                "quote": "TT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD",
+                "block_ids": [
+                  "b35",
+                  "b36"
+                ],
+                "start": 1535,
+                "end": 1671,
+                "layout_status": "needs_review"
+              },
+              {
+                "label": "COMPANY NAME",
+                "value": "WUXI WANHONGNUO STAINLESS STEEL CO., LTD",
+                "quote": "COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD",
+                "block_ids": [
+                  "b36"
+                ],
+                "start": 1617,
+                "end": 1671
+              },
+              {
+                "label": "Beneficiary name",
+                "value": "WUXI WANHONGNUO STAINLESS STEEL",
+                "quote": "Beneficiary name: WUXI WANHONGNUO STAINLESS STEEL",
+                "block_ids": [
+                  "b37"
+                ],
+                "start": 1672,
+                "end": 1721
+              },
+              {
+                "label": "Beneficiary account number",
+                "value": "0101000111902562381",
+                "quote": "Beneficiary account number: 0101000111902562381",
+                "block_ids": [
+                  "b40"
+                ],
+                "start": 1822,
+                "end": 1869
+              },
+              {
+                "label": "Beneficiary address",
+                "value": "168 Qiangao Road, Liangxi District, Wuxi City,",
+                "quote": "Beneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,",
+                "block_ids": [
+                  "b42"
+                ],
+                "start": 1871,
+                "end": 1938
+              },
+              {
+                "label": "Beneficiary bank",
+                "value": "Industrial & Commercial Bank of China",
+                "quote": "Beneficiary bank: Industrial & Commercial Bank of China",
+                "block_ids": [
+                  "b45"
+                ],
+                "start": 1964,
+                "end": 2019
+              },
+              {
+                "label": "Beneficiary bank address",
+                "value": "55 Fuxingmennei Avenue, Beijing, China",
+                "quote": "Beneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China",
+                "block_ids": [
+                  "b47"
+                ],
+                "start": 2021,
+                "end": 2085
+              },
+              {
+                "label": "Beneficiary bank swift code",
+                "value": "ICBKCNBJ",
+                "quote": "Beneficiary bank swift code: ICBKCNBJ",
+                "block_ids": [
+                  "b49"
+                ],
+                "start": 2087,
+                "end": 2124
+              },
+              {
+                "label": "Beneficiary country",
+                "value": "CN",
+                "quote": "Beneficiary country: CN",
+                "block_ids": [
+                  "b51"
+                ],
+                "start": 2126,
+                "end": 2149
+              },
+              {
+                "label": "DATE",
+                "value": "MAR 28, 2024",
+                "quote": "DATE: MAR 28, 2024",
+                "block_ids": [
+                  "b52"
+                ],
+                "start": 2220,
+                "end": 2238
+              },
+              {
+                "label": "Postal code",
+                "value": "100140",
+                "quote": "Postal code: 100140",
+                "block_ids": [
+                  "b53"
+                ],
+                "start": 2239,
+                "end": 2258
+              },
+              {
+                "label": "COMMERCIAL INVOICE",
+                "value": "DATE OF EXPORTATION. APR 01, 2024          INVOICE No. 20240328009                     B/L NO. 333021547",
+                "quote": "COMMERCIAL INVOICE\n\nDATE OF EXPORTATION. APR 01, 2024          INVOICE No. 20240328009                     B/L NO. 333021547",
+                "block_ids": [
+                  "b0",
+                  "b2"
+                ],
+                "start": 0,
+                "end": 171
+              }
+            ],
+            "geometry": [
+              {
+                "text": "COMMERCIAL",
+                "bbox": [
+                  218.142576,
+                  94.351999,
+                  323.85744,
+                  116.473647
+                ]
+              },
+              {
+                "text": "INVOICE",
+                "bbox": [
+                  330.5652,
+                  94.351999,
+                  392.458416,
+                  116.473647
+                ]
+              },
+              {
+                "text": "DATE",
+                "bbox": [
+                  24.479981,
+                  140.01072,
+                  48.865037,
+                  152.23152
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  51.283704,
+                  140.01072,
+                  63.756216,
+                  152.23152
+                ]
+              },
+              {
+                "text": "EXPORTATION.",
+                "bbox": [
+                  66.132072,
+                  140.01072,
+                  133.174752,
+                  152.23152
+                ]
+              },
+              {
+                "text": "APR",
+                "bbox": [
+                  135.640368,
+                  140.16384,
+                  151.716,
+                  152.47152
+                ]
+              },
+              {
+                "text": "01,",
+                "bbox": [
+                  153.936264,
+                  140.16384,
+                  166.5426,
+                  152.47152
+                ]
+              },
+              {
+                "text": "2024",
+                "bbox": [
+                  168.784392,
+                  140.16384,
+                  189.0966,
+                  152.47152
+                ]
+              },
+              {
+                "text": "INVOICE",
+                "bbox": [
+                  200.010024,
+                  138.33072,
+                  236.783688,
+                  150.55152
+                ]
+              },
+              {
+                "text": "No.",
+                "bbox": [
+                  239.016624,
+                  138.33072,
+                  253.355088,
+                  150.55152
+                ]
+              },
+              {
+                "text": "20240328009",
+                "bbox": [
+                  256.026624,
+                  138.48384,
+                  311.820528,
+                  150.79152
+                ]
+              },
+              {
+                "text": "B/L",
+                "bbox": [
+                  369.12,
+                  140.01072,
+                  382.894848,
+                  152.23152
+                ]
+              },
+              {
+                "text": "NO.",
+                "bbox": [
+                  385.6296,
+                  140.01072,
+                  401.766528,
+                  152.23152
+                ]
+              },
+              {
+                "text": "333021547",
+                "bbox": [
+                  404.33088,
+                  140.16384,
+                  449.587344,
+                  152.47152
+                ]
+              },
+              {
+                "text": "SHIPPER",
+                "bbox": [
+                  25.03003,
+                  168.57072,
+                  64.621774,
+                  180.79152
+                ]
+              },
+              {
+                "text": "CONSIGNEE",
+                "bbox": [
+                  306.13008,
+                  168.57072,
+                  360.235392,
+                  180.79152
+                ]
+              },
+              {
+                "text": "Company",
+                "bbox": [
+                  24.479981,
+                  190.80384,
+                  62.485613,
+                  203.11152
+                ]
+              },
+              {
+                "text": "Name:",
+                "bbox": [
+                  64.701197,
+                  190.80384,
+                  91.288205,
+                  203.11152
+                ]
+              },
+              {
+                "text": "WUXI",
+                "bbox": [
+                  93.523949,
+                  190.80384,
+                  116.170685,
+                  203.11152
+                ]
+              },
+              {
+                "text": "WANHONGNUO",
+                "bbox": [
+                  118.406429,
+                  190.80384,
+                  183.947597,
+                  203.11152
+                ]
+              },
+              {
+                "text": "STAINLESS",
+                "bbox": [
+                  186.153101,
+                  190.80384,
+                  228.138317,
+                  203.11152
+                ]
+              },
+              {
+                "text": "STEEL",
+                "bbox": [
+                  230.353901,
+                  190.80384,
+                  253.715309,
+                  203.11152
+                ]
+              },
+              {
+                "text": "CO.,",
+                "bbox": [
+                  255.940973,
+                  190.80384,
+                  272.751389,
+                  203.11152
+                ]
+              },
+              {
+                "text": "LTD",
+                "bbox": [
+                  274.987133,
+                  190.80384,
+                  290.135357,
+                  203.11152
+                ]
+              },
+              {
+                "text": "Company",
+                "bbox": [
+                  305.28,
+                  190.80384,
+                  343.285632,
+                  203.11152
+                ]
+              },
+              {
+                "text": "Name:",
+                "bbox": [
+                  345.501216,
+                  190.80384,
+                  372.088224,
+                  203.11152
+                ]
+              },
+              {
+                "text": "N2",
+                "bbox": [
+                  374.35224,
+                  190.80384,
+                  385.844448,
+                  203.11152
+                ]
+              },
+              {
+                "text": "CO.,",
+                "bbox": [
+                  388.0632,
+                  190.80384,
+                  404.873616,
+                  203.11152
+                ]
+              },
+              {
+                "text": "LTD",
+                "bbox": [
+                  407.10936,
+                  190.80384,
+                  422.257584,
+                  203.11152
+                ]
+              },
+              {
+                "text": "Address:",
+                "bbox": [
+                  24.479981,
+                  210.72384,
+                  59.276141,
+                  223.03152
+                ]
+              },
+              {
+                "text": "168",
+                "bbox": [
+                  61.516104,
+                  210.72384,
+                  76.763112,
+                  223.03152
+                ]
+              },
+              {
+                "text": "QIANGAO",
+                "bbox": [
+                  78.98676,
+                  210.72384,
+                  118.599144,
+                  223.03152
+                ]
+              },
+              {
+                "text": "ROAD,",
+                "bbox": [
+                  120.812712,
+                  210.72384,
+                  146.841288,
+                  223.03152
+                ]
+              },
+              {
+                "text": "LIANGXI",
+                "bbox": [
+                  149.085096,
+                  210.72384,
+                  181.4802,
+                  223.03152
+                ]
+              },
+              {
+                "text": "DISTRICT,",
+                "bbox": [
+                  183.724008,
+                  210.72384,
+                  222.0018,
+                  223.03152
+                ]
+              },
+              {
+                "text": "WUXI",
+                "bbox": [
+                  224.245608,
+                  210.72384,
+                  246.88932,
+                  223.03152
+                ]
+              },
+              {
+                "text": "CITY,",
+                "bbox": [
+                  249.133128,
+                  210.72384,
+                  268.922184,
+                  223.03152
+                ]
+              },
+              {
+                "text": "Address:",
+                "bbox": [
+                  305.28,
+                  210.72384,
+                  340.07616,
+                  223.03152
+                ]
+              },
+              {
+                "text": "1",
+                "bbox": [
+                  342.31392,
+                  210.72384,
+                  347.42448,
+                  223.03152
+                ]
+              },
+              {
+                "text": "VO",
+                "bbox": [
+                  349.64208,
+                  210.72384,
+                  361.7784,
+                  223.03152
+                ]
+              },
+              {
+                "text": "VAN",
+                "bbox": [
+                  363.98592,
+                  210.72384,
+                  381.59568,
+                  223.03152
+                ]
+              },
+              {
+                "text": "NGAN",
+                "bbox": [
+                  383.8032,
+                  210.72384,
+                  408.51936,
+                  223.03152
+                ]
+              },
+              {
+                "text": "STREET,",
+                "bbox": [
+                  410.72688,
+                  210.72384,
+                  442.49904,
+                  223.03152
+                ]
+              },
+              {
+                "text": "LINH",
+                "bbox": [
+                  444.7368,
+                  210.72384,
+                  463.9896,
+                  223.03152
+                ]
+              },
+              {
+                "text": "CHIEU",
+                "bbox": [
+                  466.19712,
+                  210.72384,
+                  491.47776,
+                  223.03152
+                ]
+              },
+              {
+                "text": "WARD,",
+                "bbox": [
+                  493.68528,
+                  210.72384,
+                  521.98992,
+                  223.03152
+                ]
+              },
+              {
+                "text": "THU",
+                "bbox": [
+                  524.22768,
+                  210.72384,
+                  541.66608,
+                  223.03152
+                ]
+              },
+              {
+                "text": "DUC,",
+                "bbox": [
+                  543.8736,
+                  210.72384,
+                  564.12432,
+                  223.03152
+                ]
+              },
+              {
+                "text": "JIANGSU",
+                "bbox": [
+                  24.479981,
+                  230.88384,
+                  59.266061,
+                  243.19152
+                ]
+              },
+              {
+                "text": "PROVINCE,",
+                "bbox": [
+                  61.473581,
+                  230.88384,
+                  105.492941,
+                  243.19152
+                ]
+              },
+              {
+                "text": "CHINA",
+                "bbox": [
+                  107.730701,
+                  230.88384,
+                  133.767341,
+                  243.19152
+                ]
+              },
+              {
+                "text": "HO",
+                "bbox": [
+                  305.28,
+                  230.88384,
+                  318.063456,
+                  243.19152
+                ]
+              },
+              {
+                "text": "CHI",
+                "bbox": [
+                  320.275008,
+                  230.88384,
+                  334.28016,
+                  243.19152
+                ]
+              },
+              {
+                "text": "MINH",
+                "bbox": [
+                  336.521952,
+                  230.88384,
+                  360.03456,
+                  243.19152
+                ]
+              },
+              {
+                "text": "CITY,",
+                "bbox": [
+                  362.2428,
+                  230.88384,
+                  382.03176,
+                  243.19152
+                ]
+              },
+              {
+                "text": "VIET",
+                "bbox": [
+                  384.273552,
+                  230.88384,
+                  402.00528,
+                  243.19152
+                ]
+              },
+              {
+                "text": "NAM",
+                "bbox": [
+                  404.236992,
+                  230.88384,
+                  424.763904,
+                  243.19152
+                ]
+              },
+              {
+                "text": "Contact:",
+                "bbox": [
+                  24.97998,
+                  250.80384,
+                  58.912284,
+                  263.11152
+                ]
+              },
+              {
+                "text": "MR.",
+                "bbox": [
+                  61.161624,
+                  250.80384,
+                  77.400504,
+                  263.11152
+                ]
+              },
+              {
+                "text": "JOHNNY",
+                "bbox": [
+                  79.638264,
+                  250.80384,
+                  112.982904,
+                  263.11152
+                ]
+              },
+              {
+                "text": "Contact:",
+                "bbox": [
+                  306.18,
+                  250.80384,
+                  340.112304,
+                  263.11152
+                ]
+              },
+              {
+                "text": "MR.",
+                "bbox": [
+                  342.36144,
+                  250.80384,
+                  358.60032,
+                  263.11152
+                ]
+              },
+              {
+                "text": "DAN",
+                "bbox": [
+                  360.83808,
+                  250.80384,
+                  378.974016,
+                  263.11152
+                ]
+              },
+              {
+                "text": "Telephone:",
+                "bbox": [
+                  24.97998,
+                  270.96384,
+                  70.313772,
+                  283.27152
+                ]
+              },
+              {
+                "text": ":",
+                "bbox": [
+                  72.533688,
+                  270.96384,
+                  75.184728,
+                  283.27152
+                ]
+              },
+              {
+                "text": "86-177-0151-0738",
+                "bbox": [
+                  77.421384,
+                  270.96384,
+                  152.53644,
+                  283.27152
+                ]
+              },
+              {
+                "text": "Telephone:",
+                "bbox": [
+                  306.18,
+                  270.96384,
+                  351.513792,
+                  283.27152
+                ]
+              },
+              {
+                "text": "84-94-634-2370",
+                "bbox": [
+                  353.7336,
+                  270.96384,
+                  418.711872,
+                  283.27152
+                ]
+              },
+              {
+                "text": "PORT",
+                "bbox": [
+                  24.97998,
+                  295.29072,
+                  49.896732,
+                  307.51152
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  52.23072,
+                  295.29072,
+                  64.753392,
+                  307.51152
+                ]
+              },
+              {
+                "text": "LOADING:",
+                "bbox": [
+                  67.080816,
+                  295.29072,
+                  109.772904,
+                  307.51152
+                ]
+              },
+              {
+                "text": "SHANGHAI",
+                "bbox": [
+                  112.343016,
+                  295.44384,
+                  155.626536,
+                  307.75152
+                ]
+              },
+              {
+                "text": "PORT,",
+                "bbox": [
+                  157.880136,
+                  295.44384,
+                  182.124552,
+                  307.75152
+                ]
+              },
+              {
+                "text": "CHINA",
+                "bbox": [
+                  184.36836,
+                  295.44384,
+                  210.396936,
+                  307.75152
+                ]
+              },
+              {
+                "text": "TERMS",
+                "bbox": [
+                  306.18,
+                  292.41072,
+                  337.755264,
+                  304.63152
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  340.168416,
+                  292.41072,
+                  352.743072,
+                  304.63152
+                ]
+              },
+              {
+                "text": "PRICE:",
+                "bbox": [
+                  355.165344,
+                  292.41072,
+                  385.21968,
+                  304.63152
+                ]
+              },
+              {
+                "text": "CIF",
+                "bbox": [
+                  387.78984,
+                  292.56384,
+                  400.216464,
+                  304.87152
+                ]
+              },
+              {
+                "text": "CAT",
+                "bbox": [
+                  402.44304,
+                  292.56384,
+                  418.296864,
+                  304.87152
+                ]
+              },
+              {
+                "text": "LAI",
+                "bbox": [
+                  420.522528,
+                  292.56384,
+                  432.808032,
+                  304.87152
+                ]
+              },
+              {
+                "text": "PORT,",
+                "bbox": [
+                  435.043776,
+                  292.56384,
+                  459.292224,
+                  304.87152
+                ]
+              },
+              {
+                "text": "VIETNAM",
+                "bbox": [
+                  461.527968,
+                  292.56384,
+                  499.76544,
+                  304.87152
+                ]
+              },
+              {
+                "text": "PORT",
+                "bbox": [
+                  24.97998,
+                  314.25072,
+                  49.896732,
+                  326.47152
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  52.23072,
+                  314.25072,
+                  64.753392,
+                  326.47152
+                ]
+              },
+              {
+                "text": "DISCHARGE:",
+                "bbox": [
+                  67.080816,
+                  314.25072,
+                  122.684544,
+                  326.47152
+                ]
+              },
+              {
+                "text": "CATLAI",
+                "bbox": [
+                  125.03736,
+                  314.40384,
+                  153.14544,
+                  326.71152
+                ]
+              },
+              {
+                "text": "PORT,",
+                "bbox": [
+                  155.381184,
+                  314.40384,
+                  179.629632,
+                  326.71152
+                ]
+              },
+              {
+                "text": "VIETNAM",
+                "bbox": [
+                  181.865376,
+                  314.40384,
+                  220.102848,
+                  326.71152
+                ]
+              },
+              {
+                "text": "TERMS",
+                "bbox": [
+                  305.77992,
+                  311.37072,
+                  337.355184,
+                  323.59152
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  339.78048,
+                  311.37072,
+                  352.353312,
+                  323.59152
+                ]
+              },
+              {
+                "text": "PAYMENT:",
+                "bbox": [
+                  354.781056,
+                  311.37072,
+                  400.8204,
+                  323.59152
+                ]
+              },
+              {
+                "text": "TT",
+                "bbox": [
+                  403.28592,
+                  311.52384,
+                  412.988928,
+                  323.83152
+                ]
+              },
+              {
+                "text": "IN",
+                "bbox": [
+                  415.21464,
+                  311.52384,
+                  424.087056,
+                  323.83152
+                ]
+              },
+              {
+                "text": "ADVANCE",
+                "bbox": [
+                  426.298608,
+                  311.52384,
+                  465.854544,
+                  323.83152
+                ]
+              },
+              {
+                "text": "FINAL",
+                "bbox": [
+                  24.479981,
+                  332.25072,
+                  49.844525,
+                  344.47152
+                ]
+              },
+              {
+                "text": "DESTINATION:",
+                "bbox": [
+                  52.175597,
+                  332.25072,
+                  114.650333,
+                  344.47152
+                ]
+              },
+              {
+                "text": "CATLAI",
+                "bbox": [
+                  118.757328,
+                  332.40384,
+                  146.865408,
+                  344.71152
+                ]
+              },
+              {
+                "text": "PORT",
+                "bbox": [
+                  149.101152,
+                  332.40384,
+                  170.911248,
+                  344.71152
+                ]
+              },
+              {
+                "text": "MARKS",
+                "bbox": [
+                  34.902101,
+                  353.13072,
+                  67.989461,
+                  365.35152
+                ]
+              },
+              {
+                "text": "&",
+                "bbox": [
+                  48.45336,
+                  364.89072,
+                  54.5364,
+                  377.11152
+                ]
+              },
+              {
+                "text": "NUMBER",
+                "bbox": [
+                  31.128907,
+                  376.65072,
+                  71.722027,
+                  388.87152
+                ]
+              },
+              {
+                "text": "S",
+                "bbox": [
+                  48.378408,
+                  388.41072,
+                  54.461448,
+                  400.63152
+                ]
+              },
+              {
+                "text": "SP",
+                "bbox": [
+                  41.325197,
+                  455.52384,
+                  50.971757,
+                  467.83152
+                ]
+              },
+              {
+                "text": "DESCRIPTION",
+                "bbox": [
+                  107.7522,
+                  357.21072,
+                  168.86532,
+                  369.43152
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  114.203856,
+                  372.33072,
+                  126.726528,
+                  384.55152
+                ]
+              },
+              {
+                "text": "GOODS",
+                "bbox": [
+                  129.002208,
+                  372.33072,
+                  162.385056,
+                  384.55152
+                ]
+              },
+              {
+                "text": "COLD-ROLLED",
+                "bbox": [
+                  79.37988,
+                  450.00384,
+                  135.852816,
+                  462.31152
+                ]
+              },
+              {
+                "text": "STAINLESS",
+                "bbox": [
+                  138.05664,
+                  450.00384,
+                  180.04992,
+                  462.31152
+                ]
+              },
+              {
+                "text": "STEEL",
+                "bbox": [
+                  79.37988,
+                  462.24384,
+                  102.74532,
+                  474.55152
+                ]
+              },
+              {
+                "text": "SHEET",
+                "bbox": [
+                  104.965824,
+                  462.24384,
+                  130.327104,
+                  474.55152
+                ]
+              },
+              {
+                "text": "310S",
+                "bbox": [
+                  132.553704,
+                  462.24384,
+                  152.324616,
+                  474.55152
+                ]
+              },
+              {
+                "text": "2B",
+                "bbox": [
+                  154.548264,
+                  462.24384,
+                  165.009288,
+                  474.55152
+                ]
+              },
+              {
+                "text": "HS",
+                "bbox": [
+                  215.960928,
+                  357.21072,
+                  228.543792,
+                  369.43152
+                ]
+              },
+              {
+                "text": "CODE",
+                "bbox": [
+                  210.959952,
+                  368.49072,
+                  237.643248,
+                  380.71152
+                ]
+              },
+              {
+                "text": "COUNTRY",
+                "bbox": [
+                  254.590584,
+                  356.25072,
+                  298.569048,
+                  368.47152
+                ]
+              },
+              {
+                "text": "QUANTITY",
+                "bbox": [
+                  308.02992,
+                  355.29072,
+                  353.262384,
+                  367.51152
+                ]
+              },
+              {
+                "text": "NO.",
+                "bbox": [
+                  356.83536,
+                  355.29072,
+                  372.771648,
+                  367.51152
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  375.146496,
+                  355.29072,
+                  387.67008,
+                  367.51152
+                ]
+              },
+              {
+                "text": "NET",
+                "bbox": [
+                  394.46712,
+                  355.29072,
+                  412.446288,
+                  367.51152
+                ]
+              },
+              {
+                "text": "WEIGHT",
+                "bbox": [
+                  414.76728,
+                  355.29072,
+                  450.58608,
+                  367.51152
+                ]
+              },
+              {
+                "text": "(PCS)",
+                "bbox": [
+                  318.45528,
+                  371.13072,
+                  342.800208,
+                  383.35152
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  253.440408,
+                  372.33072,
+                  265.91292,
+                  384.55152
+                ]
+              },
+              {
+                "text": "ORIGIN",
+                "bbox": [
+                  268.140024,
+                  372.33072,
+                  299.731704,
+                  384.55152
+                ]
+              },
+              {
+                "text": "72193300",
+                "bbox": [
+                  200.459952,
+                  455.52384,
+                  241.04808,
+                  467.83152
+                ]
+              },
+              {
+                "text": "CHINA",
+                "bbox": [
+                  249.689952,
+                  455.52384,
+                  275.72256,
+                  467.83152
+                ]
+              },
+              {
+                "text": "70",
+                "bbox": [
+                  306.78,
+                  455.52384,
+                  316.95888,
+                  467.83152
+                ]
+              },
+              {
+                "text": "PKGS",
+                "bbox": [
+                  359.47992,
+                  371.13072,
+                  384.866352,
+                  383.35152
+                ]
+              },
+              {
+                "text": "7",
+                "bbox": [
+                  356.46,
+                  455.52384,
+                  361.57056,
+                  467.83152
+                ]
+              },
+              {
+                "text": "(KGS)",
+                "bbox": [
+                  410.08992,
+                  371.13072,
+                  434.936448,
+                  383.35152
+                ]
+              },
+              {
+                "text": "23100",
+                "bbox": [
+                  391.74,
+                  455.52384,
+                  417.12408,
+                  467.83152
+                ]
+              },
+              {
+                "text": "UNIT",
+                "bbox": [
+                  474.98136,
+                  355.29072,
+                  496.058592,
+                  367.51152
+                ]
+              },
+              {
+                "text": "TOTAL",
+                "bbox": [
+                  537.99264,
+                  355.29072,
+                  567.260544,
+                  367.51152
+                ]
+              },
+              {
+                "text": "PRICE(USD)",
+                "bbox": [
+                  454.9788,
+                  371.13072,
+                  515.17104,
+                  383.35152
+                ]
+              },
+              {
+                "text": "VALUE",
+                "bbox": [
+                  539.61336,
+                  371.13072,
+                  569.807856,
+                  383.35152
+                ]
+              },
+              {
+                "text": "$0.88",
+                "bbox": [
+                  455.58,
+                  455.52384,
+                  478.342992,
+                  467.83152
+                ]
+              },
+              {
+                "text": "$20",
+                "bbox": [
+                  518.97,
+                  455.52384,
+                  534.217104,
+                  467.83152
+                ]
+              },
+              {
+                "text": "328",
+                "bbox": [
+                  536.440752,
+                  455.52384,
+                  551.68776,
+                  467.83152
+                ]
+              },
+              {
+                "text": "TT",
+                "bbox": [
+                  24.97998,
+                  535.812,
+                  39.59238,
+                  551.892
+                ]
+              },
+              {
+                "text": "payment:",
+                "bbox": [
+                  42.773928,
+                  535.812,
+                  94.591128,
+                  551.892
+                ]
+              },
+              {
+                "text": "Beneficiary",
+                "bbox": [
+                  24.97998,
+                  558.57072,
+                  70.06926,
+                  570.79152
+                ]
+              },
+              {
+                "text": "name:",
+                "bbox": [
+                  72.451896,
+                  558.57072,
+                  97.69788,
+                  570.79152
+                ]
+              },
+              {
+                "text": "WUXI",
+                "bbox": [
+                  100.26636,
+                  558.57072,
+                  123.948264,
+                  570.79152
+                ]
+              },
+              {
+                "text": "WANHONGNUO",
+                "bbox": [
+                  126.51828,
+                  558.57072,
+                  195.046872,
+                  570.79152
+                ]
+              },
+              {
+                "text": "STAINLESS",
+                "bbox": [
+                  197.553048,
+                  558.57072,
+                  247.550712,
+                  570.79152
+                ]
+              },
+              {
+                "text": "STEEL",
+                "bbox": [
+                  250.075128,
+                  558.57072,
+                  278.8542,
+                  570.79152
+                ]
+              },
+              {
+                "text": "CO.,",
+                "bbox": [
+                  25.03003,
+                  576.57072,
+                  43.722382,
+                  588.79152
+                ]
+              },
+              {
+                "text": "LTD",
+                "bbox": [
+                  46.29787,
+                  576.57072,
+                  63.483598,
+                  588.79152
+                ]
+              },
+              {
+                "text": "COMPANY",
+                "bbox": [
+                  305.28,
+                  552.09072,
+                  351.173664,
+                  564.31152
+                ]
+              },
+              {
+                "text": "NAME:",
+                "bbox": [
+                  353.58624,
+                  552.09072,
+                  382.52448,
+                  564.31152
+                ]
+              },
+              {
+                "text": "WUXI",
+                "bbox": [
+                  384.69024,
+                  552.24384,
+                  407.336976,
+                  564.55152
+                ]
+              },
+              {
+                "text": "WANHONGNUO",
+                "bbox": [
+                  409.57272,
+                  552.24384,
+                  475.113888,
+                  564.55152
+                ]
+              },
+              {
+                "text": "STAINLESS",
+                "bbox": [
+                  477.319392,
+                  552.24384,
+                  519.304608,
+                  564.55152
+                ]
+              },
+              {
+                "text": "STEEL",
+                "bbox": [
+                  521.520192,
+                  552.24384,
+                  544.8816,
+                  564.55152
+                ]
+              },
+              {
+                "text": "CO.,",
+                "bbox": [
+                  547.107264,
+                  552.24384,
+                  563.91768,
+                  564.55152
+                ]
+              },
+              {
+                "text": "LTD",
+                "bbox": [
+                  566.153424,
+                  552.24384,
+                  581.301648,
+                  564.55152
+                ]
+              },
+              {
+                "text": "SIGNATURE",
+                "bbox": [
+                  306.42984,
+                  581.85072,
+                  358.601712,
+                  594.07152
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  360.92184,
+                  581.85072,
+                  373.440864,
+                  594.07152
+                ]
+              },
+              {
+                "text": "SHIPPER",
+                "bbox": [
+                  375.770112,
+                  581.85072,
+                  415.060896,
+                  594.07152
+                ]
+              },
+              {
+                "text": "Beneficiary",
+                "bbox": [
+                  24.97998,
+                  598.17072,
+                  70.06926,
+                  610.39152
+                ]
+              },
+              {
+                "text": "account",
+                "bbox": [
+                  72.451896,
+                  598.17072,
+                  104.315352,
+                  610.39152
+                ]
+              },
+              {
+                "text": "number:",
+                "bbox": [
+                  106.774656,
+                  598.17072,
+                  140.124672,
+                  610.39152
+                ]
+              },
+              {
+                "text": "0101000111902562381",
+                "bbox": [
+                  142.691664,
+                  598.17072,
+                  238.756272,
+                  610.39152
+                ]
+              },
+              {
+                "text": "Beneficiary",
+                "bbox": [
+                  24.97998,
+                  619.77072,
+                  70.06926,
+                  631.99152
+                ]
+              },
+              {
+                "text": "address:",
+                "bbox": [
+                  72.451896,
+                  619.77072,
+                  107.356152,
+                  631.99152
+                ]
+              },
+              {
+                "text": "168",
+                "bbox": [
+                  109.921872,
+                  619.77072,
+                  125.103024,
+                  631.99152
+                ]
+              },
+              {
+                "text": "Qiangao",
+                "bbox": [
+                  127.634736,
+                  619.77072,
+                  162.024432,
+                  631.99152
+                ]
+              },
+              {
+                "text": "Road,",
+                "bbox": [
+                  164.556144,
+                  619.77072,
+                  188.808048,
+                  631.99152
+                ]
+              },
+              {
+                "text": "Liangxi",
+                "bbox": [
+                  191.36712,
+                  619.77072,
+                  220.211856,
+                  631.99152
+                ]
+              },
+              {
+                "text": "District,",
+                "bbox": [
+                  222.780048,
+                  619.77072,
+                  253.208016,
+                  631.99152
+                ]
+              },
+              {
+                "text": "Wuxi",
+                "bbox": [
+                  255.767088,
+                  619.77072,
+                  275.948736,
+                  631.99152
+                ]
+              },
+              {
+                "text": "City,",
+                "bbox": [
+                  278.516928,
+                  619.77072,
+                  296.749632,
+                  631.99152
+                ]
+              },
+              {
+                "text": "Jiangsu",
+                "bbox": [
+                  24.97998,
+                  635.61072,
+                  56.356428,
+                  647.83152
+                ]
+              },
+              {
+                "text": "Province,",
+                "bbox": [
+                  58.889964,
+                  635.61072,
+                  96.830988,
+                  647.83152
+                ]
+              },
+              {
+                "text": "China",
+                "bbox": [
+                  99.401004,
+                  635.61072,
+                  123.173196,
+                  647.83152
+                ]
+              },
+              {
+                "text": "Beneficiary",
+                "bbox": [
+                  24.97998,
+                  657.21072,
+                  70.06926,
+                  669.43152
+                ]
+              },
+              {
+                "text": "bank:",
+                "bbox": [
+                  72.451896,
+                  657.21072,
+                  94.70652,
+                  669.43152
+                ]
+              },
+              {
+                "text": "Industrial",
+                "bbox": [
+                  97.269288,
+                  657.21072,
+                  134.271864,
+                  669.43152
+                ]
+              },
+              {
+                "text": "&",
+                "bbox": [
+                  136.847352,
+                  657.21072,
+                  142.930392,
+                  669.43152
+                ]
+              },
+              {
+                "text": "Commercial",
+                "bbox": [
+                  145.45116,
+                  657.21072,
+                  193.935816,
+                  669.43152
+                ]
+              },
+              {
+                "text": "Bank",
+                "bbox": [
+                  196.511304,
+                  657.21072,
+                  217.241976,
+                  669.43152
+                ]
+              },
+              {
+                "text": "of",
+                "bbox": [
+                  219.780984,
+                  657.21072,
+                  227.375208,
+                  669.43152
+                ]
+              },
+              {
+                "text": "China",
+                "bbox": [
+                  229.941576,
+                  657.21072,
+                  253.724712,
+                  669.43152
+                ]
+              },
+              {
+                "text": "Beneficiary",
+                "bbox": [
+                  24.97998,
+                  678.81072,
+                  70.06926,
+                  691.03152
+                ]
+              },
+              {
+                "text": "bank",
+                "bbox": [
+                  72.451896,
+                  678.81072,
+                  92.177544,
+                  691.03152
+                ]
+              },
+              {
+                "text": "address:",
+                "bbox": [
+                  94.718376,
+                  678.81072,
+                  129.630648,
+                  691.03152
+                ]
+              },
+              {
+                "text": "55",
+                "bbox": [
+                  132.188712,
+                  678.81072,
+                  142.314648,
+                  691.03152
+                ]
+              },
+              {
+                "text": "Fuxingmennei",
+                "bbox": [
+                  144.84636,
+                  678.81072,
+                  201.949416,
+                  691.03152
+                ]
+              },
+              {
+                "text": "Avenue,",
+                "bbox": [
+                  204.517608,
+                  678.81072,
+                  237.876744,
+                  691.03152
+                ]
+              },
+              {
+                "text": "Beijing,",
+                "bbox": [
+                  240.435816,
+                  678.81072,
+                  270.322968,
+                  691.03152
+                ]
+              },
+              {
+                "text": "China",
+                "bbox": [
+                  272.88204,
+                  678.81072,
+                  296.659704,
+                  691.03152
+                ]
+              },
+              {
+                "text": "Beneficiary",
+                "bbox": [
+                  24.97998,
+                  700.41072,
+                  70.06926,
+                  712.63152
+                ]
+              },
+              {
+                "text": "bank",
+                "bbox": [
+                  72.451896,
+                  700.41072,
+                  92.177544,
+                  712.63152
+                ]
+              },
+              {
+                "text": "swift",
+                "bbox": [
+                  94.71876,
+                  700.41072,
+                  112.553832,
+                  712.63152
+                ]
+              },
+              {
+                "text": "code:",
+                "bbox": [
+                  114.868896,
+                  700.41072,
+                  136.707648,
+                  712.63152
+                ]
+              },
+              {
+                "text": "ICBKCNBJ",
+                "bbox": [
+                  139.085688,
+                  700.41072,
+                  183.289416,
+                  712.63152
+                ]
+              },
+              {
+                "text": "Beneficiary",
+                "bbox": [
+                  24.97998,
+                  722.25072,
+                  70.06926,
+                  734.47152
+                ]
+              },
+              {
+                "text": "country:",
+                "bbox": [
+                  72.451896,
+                  722.25072,
+                  104.488632,
+                  734.47152
+                ]
+              },
+              {
+                "text": "CN",
+                "bbox": [
+                  106.96656,
+                  722.25072,
+                  120.051024,
+                  734.47152
+                ]
+              },
+              {
+                "text": "Postal",
+                "bbox": [
+                  24.479981,
+                  744.09072,
+                  49.718815,
+                  756.31152
+                ]
+              },
+              {
+                "text": "code:",
+                "bbox": [
+                  52.29444,
+                  744.09072,
+                  74.534472,
+                  756.31152
+                ]
+              },
+              {
+                "text": "100140",
+                "bbox": [
+                  77.111808,
+                  744.09072,
+                  107.458608,
+                  756.31152
+                ]
+              },
+              {
+                "text": "DATE:",
+                "bbox": [
+                  306.42984,
+                  730.89072,
+                  333.36864,
+                  743.11152
+                ]
+              },
+              {
+                "text": "MAR",
+                "bbox": [
+                  335.94312,
+                  731.04384,
+                  355.48824,
+                  743.35152
+                ]
+              },
+              {
+                "text": "28,",
+                "bbox": [
+                  357.80832,
+                  731.04384,
+                  370.51464,
+                  743.35152
+                ]
+              },
+              {
+                "text": "2024",
+                "bbox": [
+                  372.857232,
+                  731.04384,
+                  393.32064,
+                  743.35152
+                ]
+              }
+            ],
+            "geometry_status": "available",
+            "warnings": []
+          }
+        }
+      ],
+      "detected_type": {
+        "kind": "commercial_invoice",
+        "type": "commercial_invoice",
+        "role": null,
+        "confidence": null,
+        "signals": [
+          {
+            "kind": "commercial_invoice",
+            "page": 1,
+            "quote": "COMMERCIAL INVOICE",
+            "signal": "heading",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "signal": "schema_fields",
+            "fields": [
+              "amount",
+              "declared_code",
+              "name",
+              "net_weight",
+              "origin",
+              "packages",
+              "port_of_discharge",
+              "port_of_loading",
+              "quantity",
+              "unit_price"
+            ]
+          }
+        ],
+        "status": "needs_review",
+        "label": "Commercial Invoice (Hóa đơn thương mại)",
+        "classification_status": "supported",
+        "alternatives": []
+      },
+      "role": "transaction_evidence",
+      "kind": "commercial_invoice",
+      "document_type": "commercial_invoice",
+      "document_type_name": "Commercial Invoice (Hóa đơn thương mại)",
+      "confidence": null,
+      "type_confidence": null,
+      "signals": [
+        {
+          "kind": "commercial_invoice",
+          "page": 1,
+          "quote": "COMMERCIAL INVOICE",
+          "signal": "heading",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "signal": "schema_fields",
+          "fields": [
+            "amount",
+            "declared_code",
+            "name",
+            "net_weight",
+            "origin",
+            "packages",
+            "port_of_discharge",
+            "port_of_loading",
+            "quantity",
+            "unit_price"
+          ]
+        }
+      ],
+      "filename": "opaque.pdf",
+      "text_content": "COMMERCIAL INVOICE\n\nDATE OF EXPORTATION. APR 01, 2024          INVOICE No. 20240328009                     B/L NO. 333021547\n\n\nSHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+      "text": "COMMERCIAL INVOICE\n\nDATE OF EXPORTATION. APR 01, 2024          INVOICE No. 20240328009                     B/L NO. 333021547\n\n\nSHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+      "_kind": "commercial_invoice"
+    }
+  ],
+  "skus": [
+    {
+      "id": "cand_a5b4c27fdec7",
+      "identifiers": {},
+      "sku_code": "cand_a5b4c27fdec7",
+      "name": "COLD-ROLLED STAINLESS STEEL SHEET 310S 2B",
+      "description": "COLD-ROLLED STAINLESS STEEL SHEET 310S 2B",
+      "facts": [
+        {
+          "id": "fact_4b46ec1d",
+          "field": "name",
+          "value": "COLD-ROLLED STAINLESS STEEL SHEET 310S 2B",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "name",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 1,
+          "source_cell_bbox": [
+            77.75999999999999,
+            390.21913043478264,
+            198.48000000000002,
+            537.3808695652173
+          ],
+          "source_header": "DESCRIPTION OF GOODS",
+          "source_header_page": 1,
+          "value_fragments": [
+            "COLD-ROLLED STAINLESS",
+            "STEEL SHEET 310S 2B"
+          ],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        },
+        {
+          "id": "fact_0ea6b8ff",
+          "field": "declared_code",
+          "value": "72193300",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "declared_code",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 2,
+          "source_cell_bbox": [
+            198.48000000000002,
+            390.21913043478264,
+            247.92000000000002,
+            537.3808695652173
+          ],
+          "source_header": "HS CODE",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        },
+        {
+          "id": "fact_2189d7ff",
+          "field": "origin",
+          "value": "CHINA",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "origin",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 3,
+          "source_cell_bbox": [
+            247.92000000000002,
+            390.21913043478264,
+            304.90666666666664,
+            537.3808695652173
+          ],
+          "source_header": "COUNTRY OF ORIGIN",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        },
+        {
+          "id": "fact_4cbd129b",
+          "field": "quantity",
+          "value": "70",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "quantity",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 4,
+          "source_cell_bbox": [
+            304.90666666666664,
+            390.21913043478264,
+            354.24,
+            537.3808695652173
+          ],
+          "source_header": "QUANTITY (PCS)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        },
+        {
+          "id": "fact_0d526800",
+          "field": "packages",
+          "value": "7",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "packages",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 5,
+          "source_cell_bbox": [
+            354.24,
+            390.21913043478264,
+            389.76,
+            537.3808695652173
+          ],
+          "source_header": "NO. OF PKGS",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        },
+        {
+          "id": "fact_18e1a155",
+          "field": "net_weight",
+          "value": "23100",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "net_weight",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 7,
+          "source_cell_bbox": [
+            389.76,
+            390.21913043478264,
+            453.6,
+            537.3808695652173
+          ],
+          "source_header": "NET WEIGHT (KGS)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        },
+        {
+          "id": "fact_5b7c0d70",
+          "field": "unit_price",
+          "value": "$0.88",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "unit_price",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 8,
+          "source_cell_bbox": [
+            453.6,
+            390.21913043478264,
+            517.2,
+            537.3808695652173
+          ],
+          "source_header": "UNIT PRICE(USD)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        },
+        {
+          "id": "fact_36a894bf",
+          "field": "amount",
+          "value": "$20 328",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "amount",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 9,
+          "source_cell_bbox": [
+            517.2,
+            390.21913043478264,
+            587.16,
+            537.3808695652173
+          ],
+          "source_header": "TOTAL VALUE",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        }
+      ],
+      "source_document_id": "doc_ca8c45e92cc3",
+      "source_page": 1,
+      "product_family": "general",
+      "declared_code": "72193300",
+      "status": "needs_review",
+      "identity_status": "needs_review",
+      "matching": [],
+      "source_members": [
+        {
+          "document_id": "doc_ca8c45e92cc3",
+          "page": 1,
+          "local_id": "g0r0"
+        }
+      ],
+      "resolved_fields": {
+        "name": "COLD-ROLLED STAINLESS STEEL SHEET 310S 2B",
+        "model": null,
+        "part_number": null,
+        "function": null,
+        "construction": null,
+        "material": null,
+        "specifications": null,
+        "manufacturing": null,
+        "condition": null,
+        "packaging": null,
+        "origin": "CHINA",
+        "quantity": "70",
+        "unit": null,
+        "unit_price": "$0.88",
+        "amount": "$20 328",
+        "currency": null,
+        "gross_weight": null,
+        "net_weight": "23100",
+        "packages": "7",
+        "declared_code": "72193300"
+      },
+      "declared_code_sources": [
+        {
+          "id": "fact_0ea6b8ff",
+          "field": "declared_code",
+          "value": "72193300",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "declared_code",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 2,
+          "source_cell_bbox": [
+            198.48000000000002,
+            390.21913043478264,
+            247.92000000000002,
+            537.3808695652173
+          ],
+          "source_header": "HS CODE",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        }
+      ],
+      "origin_sources": [
+        {
+          "id": "fact_2189d7ff",
+          "field": "origin",
+          "value": "CHINA",
+          "unit": null,
+          "document_id": "doc_ca8c45e92cc3",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "origin",
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_page": 1,
+          "source_quote": "SHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 3,
+          "source_cell_bbox": [
+            247.92000000000002,
+            390.21913043478264,
+            304.90666666666664,
+            537.3808695652173
+          ],
+          "source_header": "COUNTRY OF ORIGIN",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b5",
+            "b7",
+            "b8",
+            "b9",
+            "b13",
+            "b15",
+            "b17",
+            "b19",
+            "b21",
+            "b23",
+            "b28",
+            "b29",
+            "b30",
+            "b36",
+            "b37",
+            "b39",
+            "b42",
+            "b43",
+            "b45",
+            "b47",
+            "b49",
+            "b53"
+          ],
+          "source_span": [
+            174,
+            2258
+          ],
+          "sku_id": "cand_a5b4c27fdec7"
+        }
+      ],
+      "missing_fields": [
+        "function",
+        "construction",
+        "specifications"
+      ],
+      "field_states": {
+        "name": "extracted",
+        "model": "missing",
+        "part_number": "missing",
+        "function": "missing",
+        "construction": "missing",
+        "material": "missing",
+        "specifications": "missing",
+        "manufacturing": "missing",
+        "condition": "missing",
+        "packaging": "missing",
+        "origin": "extracted",
+        "quantity": "extracted",
+        "unit": "missing",
+        "unit_price": "extracted",
+        "amount": "extracted",
+        "currency": "missing",
+        "gross_weight": "missing",
+        "net_weight": "extracted",
+        "packages": "extracted",
+        "declared_code": "extracted"
+      }
+    }
+  ],
+  "dossier_fields": {
+    "port_of_loading": {
+      "field": "port_of_loading",
+      "value": "SHANGHAI PORT, CHINA",
+      "unit": null,
+      "source_document_id": "doc_ca8c45e92cc3",
+      "source_document_name": "opaque.pdf",
+      "source_page": 1,
+      "source_excerpt": "PORT OF LOADING: SHANGHAI PORT, CHINA",
+      "field_name": "port_of_loading",
+      "source_quote": "PORT OF LOADING: SHANGHAI PORT, CHINA",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b13"
+      ],
+      "source_span": [
+        759,
+        796
+      ],
+      "source_document_type": "commercial_invoice",
+      "sources": [
+        {
+          "field": "port_of_loading",
+          "value": "SHANGHAI PORT, CHINA",
+          "unit": null,
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_document_name": "opaque.pdf",
+          "source_page": 1,
+          "source_excerpt": "PORT OF LOADING: SHANGHAI PORT, CHINA",
+          "field_name": "port_of_loading",
+          "source_quote": "PORT OF LOADING: SHANGHAI PORT, CHINA",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b13"
+          ],
+          "source_span": [
+            759,
+            796
+          ],
+          "source_document_type": "commercial_invoice"
+        }
+      ]
+    },
+    "port_of_discharge": {
+      "field": "port_of_discharge",
+      "value": "CATLAI PORT, VIETNAM",
+      "unit": null,
+      "source_document_id": "doc_ca8c45e92cc3",
+      "source_document_name": "opaque.pdf",
+      "source_page": 1,
+      "source_excerpt": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM",
+      "field_name": "port_of_discharge",
+      "source_quote": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b15"
+      ],
+      "source_span": [
+        872,
+        911
+      ],
+      "source_document_type": "commercial_invoice",
+      "sources": [
+        {
+          "field": "port_of_discharge",
+          "value": "CATLAI PORT, VIETNAM",
+          "unit": null,
+          "source_document_id": "doc_ca8c45e92cc3",
+          "source_document_name": "opaque.pdf",
+          "source_page": 1,
+          "source_excerpt": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM",
+          "field_name": "port_of_discharge",
+          "source_quote": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b15"
+          ],
+          "source_span": [
+            872,
+            911
+          ],
+          "source_document_type": "commercial_invoice"
+        }
+      ]
+    }
+  }
+}

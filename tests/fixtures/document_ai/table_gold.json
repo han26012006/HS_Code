@@ -1,0 +1,26 @@
+{
+  "annotation_status": "synthetic_author_labels_awaiting_independent_review",
+  "documents": {
+    "steel-inv": [
+      {"part_number":"ST-21","name":"Rolled steel sheet","quantity":"40","unit":"PCS","unit_price":"12.50","amount":"500.00","material":"Stainless steel"},
+      {"part_number":"ST-22","name":"Rolled steel sheet","quantity":"60","unit":"PCS","unit_price":"15.00","amount":"900.00","material":"Stainless steel"}
+    ],
+    "steel-pl": [
+      {"part_number":"ST-21","name":"Rolled steel sheet","quantity":"40","unit":"PCS","gross_weight":"25 kg","net_weight":"23 kg","packages":"2 cartons"},
+      {"part_number":"ST-22","name":"Rolled steel sheet","quantity":"60","unit":"PCS","gross_weight":"34 kg","net_weight":"32 kg","packages":"3 cartons"}
+    ],
+    "ct": [{"model":"WOOD-7","name":"Oak board","quantity":"200","unit":"M3"}],
+    "cat": [
+      {"model":"PUMP-1","name":"Water pump","specifications":["230 V","500 W"]},
+      {"model":"PUMP-2","name":"Water pump","specifications":["230 V","750 W"]}
+    ],
+    "cloth-i": [
+      {"model":"FAB-8","name":"Woven cotton fabric","quantity":"320","unit":"M","unit_price":"2.10","amount":"672.00"},
+      {"model":"FAB-9","name":"Woven cotton fabric","quantity":"180","unit":"M","unit_price":"3.00","amount":"540.00"}
+    ],
+    "cloth-p": [
+      {"model":"FAB-8","name":"Woven cotton fabric","quantity":"320","unit":"M"},
+      {"model":"FAB-9","name":"Woven cotton fabric","quantity":"180","unit":"M"}
+    ]
+  }
+}

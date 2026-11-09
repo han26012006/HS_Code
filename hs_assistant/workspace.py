@@ -5,6 +5,8 @@ from datetime import datetime,timezone,date
 from pathlib import Path
 
 FIELDS={'name':'Tên và bản chất hàng','function':'Công dụng chính','material':'Vật liệu / thành phần','construction':'Cấu tạo / nguyên lý','manufacturing':'Quy trình sản xuất','specifications':'Thông số và kích thước','condition':'Trạng thái khi nhập khẩu','packaging':'Quy cách đóng gói'}
+from .document_schema import PRODUCT_FIELDS
+FIELDS.update({field: field.replace('_',' ').title() for field in PRODUCT_FIELDS if field not in FIELDS})
 STATES={'draft','collecting','ready','in_review','approved','returned','archived'}
 
 def now():return datetime.now(timezone.utc).isoformat()
@@ -53,6 +55,11 @@ class Workspace:
             CREATE TABLE IF NOT EXISTS comparisons(id TEXT PRIMARY KEY,sku_id TEXT NOT NULL REFERENCES skus(id),sku_revision INTEGER NOT NULL,analysis_id TEXT,input_json TEXT NOT NULL,result_json TEXT NOT NULL,created_at TEXT NOT NULL);
             CREATE TABLE IF NOT EXISTS decision_snapshots(decision_id TEXT PRIMARY KEY REFERENCES decisions(id),snapshot_json TEXT NOT NULL,snapshot_sha256 TEXT NOT NULL,created_at TEXT NOT NULL);
             ''')
+            c.executescript("""
+            CREATE TABLE IF NOT EXISTS page_layouts(document_id TEXT NOT NULL REFERENCES documents(id) ON DELETE CASCADE,page_number INTEGER NOT NULL,layout_json TEXT NOT NULL,PRIMARY KEY(document_id,page_number));
+            CREATE TABLE IF NOT EXISTS fact_sources(fact_id TEXT PRIMARY KEY REFERENCES facts(id) ON DELETE CASCADE,provenance_json TEXT NOT NULL);
+            CREATE TABLE IF NOT EXISTS case_extracted_fields(id TEXT PRIMARY KEY,case_id TEXT NOT NULL REFERENCES cases(id) ON DELETE CASCADE,field TEXT NOT NULL,value TEXT NOT NULL,document_id TEXT REFERENCES documents(id) ON DELETE SET NULL,page_number INTEGER,quote TEXT NOT NULL,status TEXT NOT NULL,provenance_json TEXT NOT NULL);
+            """)
             # Additive migration: never rebuild or discard an existing workspace.
             for table,columns in {'cases':{'declaration_number':"TEXT NOT NULL DEFAULT ''",'declaration_registered_date':'TEXT','legal_hold':'INTEGER NOT NULL DEFAULT 0'},'evidence':{'target_codes_json':"TEXT NOT NULL DEFAULT '[]'",'resolution_note':"TEXT NOT NULL DEFAULT ''"}}.items():
                 present={r['name']for r in c.execute('PRAGMA table_info('+table+')')}
@@ -81,6 +88,7 @@ class Workspace:
             d=dict(r);d['skus']=[dict(x) for x in c.execute('SELECT * FROM skus WHERE case_id=? ORDER BY created_at',(i,))];d['documents']=[self.public_document(dict(x)) for x in c.execute('SELECT * FROM documents WHERE case_id=? ORDER BY created_at DESC',(i,))];d['events']=[self.public_event(dict(x)) for x in c.execute('SELECT * FROM events WHERE case_id=? ORDER BY id DESC LIMIT 60',(i,))]
             for s in d['skus']:
                 s['fact_count']=c.execute('SELECT count(*) FROM facts WHERE sku_id=?',(s['id'],)).fetchone()[0];s['verified_facts']=c.execute("SELECT count(*) FROM facts WHERE sku_id=? AND status='verified'",(s['id'],)).fetchone()[0]
+            d['extracted_fields']=[{**decode(r['provenance_json'],{}),**{k:r[k] for k in r.keys() if k!='provenance_json'}} for r in c.execute('SELECT * FROM case_extracted_fields WHERE case_id=? ORDER BY field,id',(i,))]
             d['retention']=retention_for_case(d);return d
     @staticmethod
     def public_document(d):d.pop('path',None);return d
@@ -88,6 +96,27 @@ class Workspace:
     def public_event(d):d['payload']=decode(d['payload'],{});return d
     @staticmethod
     def public_evidence(d):d['target_codes']=decode(d.pop('target_codes_json','[]'),[]);return d
+    def save_extracted_fields(self,case_id,fields,document_mapping):
+        with self.lock,self.connect() as c:
+            for field,candidate in fields.items():
+                for fact in candidate.get('sources',candidate.get('alternatives',[candidate])):
+                    value=fact.get('value','')
+                    if not value:continue
+                    original_doc=fact.get('source_document_id')
+                    doc_id=document_mapping.get(original_doc)
+                    if not doc_id:raise WorkspaceError('Thiếu chứng từ gốc cho thông tin hồ sơ.')
+                    page=c.execute('SELECT text FROM pages WHERE document_id=? AND number=?',(doc_id,fact.get('source_page'))).fetchone()
+                    quote=fact.get('source_quote') or fact.get('source_excerpt','')
+                    from .document_layout import norm
+                    if not page or not quote or norm(quote) not in norm(page['text']):raise WorkspaceError('Thông tin hồ sơ sai trích dẫn nguồn.')
+                    status='conflict' if candidate.get('status')=='conflicting' else 'unverified'
+                    provenance={**fact,'source_document_id':doc_id,'value_origin':fact.get('source_kind','document_extracted')}
+                    duplicate=c.execute('SELECT id FROM case_extracted_fields WHERE case_id=? AND field=? AND value=? AND document_id=? AND page_number=? AND quote=?',(case_id,field,value,doc_id,fact['source_page'],quote)).fetchone()
+                    if duplicate:
+                        if status=='conflict':c.execute("UPDATE case_extracted_fields SET status='conflict' WHERE id=?",(duplicate['id'],))
+                        continue
+                    c.execute('INSERT INTO case_extracted_fields VALUES(?,?,?,?,?,?,?,?,?)',(uid('cf_'),case_id,field,value,doc_id,fact['source_page'],quote,status,encode(provenance)))
+
     def add_sku(self,case_id,sku_code,name,description='',declared_code=None,product_family=''):
         self.get_case(case_id);stamp=now();i=uid('sku_')
         with self.lock,self.connect() as c:
@@ -103,35 +132,77 @@ class Workspace:
         with self.connect() as c:
             r=c.execute('SELECT * FROM skus WHERE id=?',(i,)).fetchone()
             if not r:raise KeyError(i)
-            d=dict(r);d['facts']=[dict(x) for x in c.execute('SELECT * FROM facts WHERE sku_id=? ORDER BY created_at',(i,))];d['evidence']=[self.public_evidence(dict(x)) for x in c.execute('SELECT * FROM evidence WHERE sku_id=? ORDER BY created_at DESC',(i,))];a=c.execute('SELECT * FROM analyses WHERE id=?',(d.get('analysis_id'),)).fetchone();d['analysis']=decode(a['result_json']) if a else None;dec=c.execute('SELECT * FROM decisions WHERE sku_id=? AND superseded_at IS NULL ORDER BY created_at DESC LIMIT 1',(i,)).fetchone();d['decision']=dict(dec) if dec else None
+            d=dict(r)
+            d['facts'] = self._sku_records(c, 'facts', d, 'ASC')
+            d['evidence'] = [self.public_evidence(row) for row in self._sku_records(c, 'evidence', d, 'DESC')]
+            analysis=c.execute('SELECT * FROM analyses WHERE id=?',(d.get('analysis_id'),)).fetchone()
+            d['analysis']=decode(analysis['result_json']) if analysis else None
+            decision=c.execute('SELECT * FROM decisions WHERE sku_id=? AND superseded_at IS NULL ORDER BY created_at DESC LIMIT 1',(i,)).fetchone()
+            d['decision']=dict(decision) if decision else None
             if d['decision']:d['decision']['evidence_ids']=decode(d['decision']['evidence_ids'],[])
             if d['decision']:
                 frozen=c.execute('SELECT snapshot_sha256,created_at FROM decision_snapshots WHERE decision_id=?',(d['decision']['id'],)).fetchone()
                 d['decision']['snapshot']=dict(frozen)if frozen else None
             d['readiness']=self.readiness(d);return d
-    def readiness(self,sku):
-        verified={f['field'] for f in sku['facts'] if f['status']=='verified'}
+    @staticmethod
+    def _sku_records(connection, table, sku, order):
+        rows = connection.execute(f'''
+            SELECT record.*,
+                   CASE WHEN record.document_id IS NOT NULL AND
+                     (document.id IS NULL OR document.case_id != ? OR
+                       (document.sku_id IS NOT NULL AND document.sku_id != ?))
+                   THEN 1 ELSE 0 END AS document_scope_mismatch
+            FROM {table} AS record LEFT JOIN documents AS document ON document.id=record.document_id
+            WHERE record.sku_id=? ORDER BY record.created_at {order}
+        ''', (sku['case_id'], sku['id'], sku['id']))
+        result=[dict(row) for row in rows]
+        if table=='facts':
+            for record in result:
+                source=connection.execute('SELECT provenance_json FROM fact_sources WHERE fact_id=?',(record['id'],)).fetchone()
+                if source:
+                    metadata=decode(source[0],{})
+                    record.update({k:v for k,v in metadata.items() if k not in record})
+        return result
+
+    @staticmethod
+    def _require_scoped_document(connection, document_id, sku):
+        doc = connection.execute('SELECT case_id,sku_id FROM documents WHERE id=?',(document_id,)).fetchone()
+        if not doc or doc['case_id'] != sku['case_id'] or doc['sku_id'] not in (None,sku['id']):
+            raise WorkspaceError('Chứng từ không thuộc SKU này hoặc không phải chứng từ dùng chung của hồ sơ.')
+
+    @staticmethod
+    def readiness(sku):
+        conflict_fields={f['field'] for f in sku['facts'] if f['status']=='conflict'}
+        verified={f['field'] for f in sku['facts'] if f['status']=='verified' and f['field'] not in conflict_fields and not f.get('document_scope_mismatch')}
         required={'name','function'}
         if sku.get('product_family') in {'steel','feed','chemical'}:required|={'material','specifications'}
         if sku.get('product_family') in {'steel','feed'}:required|={'manufacturing'}
         if sku.get('product_family') in {'machine','laser','electronic'}:required|={'construction','specifications'}
         if sku.get('product_family')=='food':required|={'material','manufacturing'}
-        missing=sorted(required-verified);unverified=[f['id'] for f in sku['facts'] if f['status']!='verified']
-        return {'verified_fields':sorted(verified),'required_fields':sorted(required),'missing_fields':missing,'unverified_fact_ids':unverified,'can_analyze':{'name','function'}<=verified,'human_review_required':True}
-    def add_fact(self,sku_id,field,value,document_id=None,page_number=None,quote='',status='unverified',reviewer=None,source_kind='document'):
+        missing=sorted(required-verified);unverified=[f['id'] for f in sku['facts'] if f['status']!='verified' or f.get('document_scope_mismatch')]
+        return {'verified_fields':sorted(verified),'required_fields':sorted(required),'missing_fields':missing,'unverified_fact_ids':unverified,'can_analyze':{'name','function'}<=verified and not conflict_fields,'conflicting_fields':sorted(conflict_fields),'human_review_required':True}
+    def add_fact(self,sku_id,field,value,document_id=None,page_number=None,quote='',status='unverified',reviewer=None,source_kind='document',provenance=None):
         if field not in FIELDS:raise WorkspaceError('Thuộc tính không hợp lệ.')
         if status not in {'verified','unverified','conflict'}:raise WorkspaceError('Trạng thái thuộc tính không hợp lệ.')
         if not value.strip():raise WorkspaceError('Giá trị thuộc tính không được để trống.')
         sku=self.get_sku(sku_id);stamp=now();i=uid('fact_')
         with self.lock,self.connect() as c:
             if document_id:
-                d=c.execute('SELECT * FROM documents WHERE id=?',(document_id,)).fetchone()
-                if not d or d['case_id']!=sku['case_id']:raise WorkspaceError('Chứng từ không thuộc hồ sơ này.')
+                self._require_scoped_document(c, document_id, sku)
+                kind=c.execute('SELECT kind FROM documents WHERE id=?',(document_id,)).fetchone()[0]
+                if kind=='legal_reference':raise WorkspaceError('Tài liệu pháp lý không cung cấp thuộc tính thực tế của sản phẩm.')
                 page=c.execute('SELECT text FROM pages WHERE document_id=? AND number=?',(document_id,page_number)).fetchone()
-                if not page or not quote.strip() or quote.strip() not in page['text']:raise WorkspaceError('Trích đoạn phải có trên đúng trang chứng từ được chọn.')
+                from .document_layout import norm
+                if page:
+                    from .extractor import DocumentTypeDetector
+                    if DocumentTypeDetector.detect(page['text'])['kind']=='legal_reference':raise WorkspaceError('Trang pháp lý không cung cấp thuộc tính sản phẩm.')
+                if not page or not quote.strip() or norm(quote) not in norm(page['text']):raise WorkspaceError('Trích đoạn phải có trên đúng trang chứng từ được chọn.')
             if status=='verified' and (not reviewer or (not document_id and source_kind!='manual_declaration')):raise WorkspaceError('Cần người xác minh và nguồn chứng từ hoặc xác nhận trực tiếp.')
             if source_kind=='manual_declaration' and status=='verified' and len(quote.strip())<10:raise WorkspaceError('Ghi căn cứ xác nhận trực tiếp trước khi đánh dấu đã kiểm tra.')
             c.execute('INSERT INTO facts VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',(i,sku_id,field,value.strip(),document_id,page_number,quote,status,reviewer,source_kind,stamp,stamp));self._invalidate(c,sku,reviewer or 'Người nhập','Thêm thuộc tính '+field)
+            if provenance:
+                source={**provenance,'sku_id':sku_id,'source_document_id':document_id,'source_page':page_number,'source_quote':quote,'value_origin':provenance.get('source_kind','document_extracted')}
+                c.execute('INSERT INTO fact_sources VALUES(?,?)',(i,encode(source)))
         return self.get_sku(sku_id)
     def update_fact(self,sku_id,fact_id,status,reviewer):
         sku=self.get_sku(sku_id)
@@ -142,11 +213,13 @@ class Workspace:
             if status=='verified':
                 if not reviewer.strip() or not f['quote'].strip():raise WorkspaceError('Cần người kiểm tra và trích đoạn nguồn.')
                 if f['document_id']:
+                    self._require_scoped_document(c, f['document_id'], sku)
                     p=c.execute('SELECT text FROM pages WHERE document_id=? AND number=?',(f['document_id'],f['page_number'])).fetchone()
                     if not p or f['quote'].strip()not in p['text']:raise WorkspaceError('Trích đoạn không còn có trên đúng trang; ghi lại thuộc tính với nguồn hiện tại.')
                 elif f['source_kind']!='manual_declaration' or len(f['quote'].strip())<10:raise WorkspaceError('Thuộc tính thiếu chứng từ không được nâng thành đã xác minh; ghi xác nhận trực tiếp có căn cứ.')
             c.execute('UPDATE facts SET status=?,reviewer=?,updated_at=? WHERE id=?',(status,reviewer,now(),fact_id));self._invalidate(c,sku,reviewer,'Cập nhật xác minh thuộc tính')
         return self.get_sku(sku_id)
+
     def delete_fact(self,sku_id,fact_id):
         sku=self.get_sku(sku_id)
         with self.lock,self.connect() as c:
@@ -155,6 +228,7 @@ class Workspace:
             c.execute('DELETE FROM facts WHERE id=? AND sku_id=?',(fact_id,sku_id))
             self._invalidate(c,sku,'Người dùng','Xóa thuộc tính '+f['field'])
         return self.get_sku(sku_id)
+
     def delete_evidence(self,sku_id,evidence_id):
         sku=self.get_sku(sku_id)
         with self.lock,self.connect() as c:
@@ -163,6 +237,7 @@ class Workspace:
             c.execute('DELETE FROM evidence WHERE id=? AND sku_id=?',(evidence_id,sku_id))
             self._invalidate(c,sku,'Người dùng','Xóa căn cứ '+ev['title'])
         return self.get_sku(sku_id)
+
     def delete_sku(self,sku_id):
         with self.lock,self.connect() as c:
             sku=c.execute('SELECT * FROM skus WHERE id=?',(sku_id,)).fetchone()
@@ -181,6 +256,7 @@ class Workspace:
             self.event(c,case_id,sku_id,'sku_deleted','Người dùng',{'sku_code':sku['sku_code'],'name':sku['name']})
             self._case_status(c,case_id)
         return {'deleted':True,'case_id':case_id}
+
     def delete_case(self,case_id):
         with self.lock,self.connect() as c:
             cs=c.execute('SELECT * FROM cases WHERE id=?',(case_id,)).fetchone()
@@ -188,15 +264,8 @@ class Workspace:
             skus=c.execute('SELECT id FROM skus WHERE case_id=?',(case_id,)).fetchall()
             for s in skus:
                 sku_id=s[0]
-                dec_ids=[r[0] for r in c.execute('SELECT id FROM decisions WHERE sku_id=?',(sku_id,)).fetchall()]
-                for did in dec_ids:c.execute('DELETE FROM decision_snapshots WHERE decision_id=?',(did,))
-                c.execute('DELETE FROM decisions WHERE sku_id=?',(sku_id,))
-                c.execute('DELETE FROM tax_scenarios WHERE sku_id=?',(sku_id,))
-                c.execute('DELETE FROM comparisons WHERE sku_id=?',(sku_id,))
-                c.execute('DELETE FROM analyses WHERE sku_id=?',(sku_id,))
                 c.execute('DELETE FROM facts WHERE sku_id=?',(sku_id,))
                 c.execute('DELETE FROM evidence WHERE sku_id=?',(sku_id,))
-            c.execute('DELETE FROM skus WHERE case_id=?',(case_id,))
             docs=c.execute('SELECT id,path FROM documents WHERE case_id=?',(case_id,)).fetchall()
             for doc in docs:
                 c.execute('DELETE FROM pages WHERE document_id=?',(doc['id'],))
@@ -205,9 +274,19 @@ class Workspace:
                     if p.exists():p.unlink(missing_ok=True)
                 except Exception:pass
             c.execute('DELETE FROM documents WHERE case_id=?',(case_id,))
+            for s in skus:
+                sku_id=s[0]
+                dec_ids=[r[0] for r in c.execute('SELECT id FROM decisions WHERE sku_id=?',(sku_id,)).fetchall()]
+                for did in dec_ids:c.execute('DELETE FROM decision_snapshots WHERE decision_id=?',(did,))
+                c.execute('DELETE FROM decisions WHERE sku_id=?',(sku_id,))
+                c.execute('DELETE FROM tax_scenarios WHERE sku_id=?',(sku_id,))
+                c.execute('DELETE FROM comparisons WHERE sku_id=?',(sku_id,))
+                c.execute('DELETE FROM analyses WHERE sku_id=?',(sku_id,))
+            c.execute('DELETE FROM skus WHERE case_id=?',(case_id,))
             c.execute('DELETE FROM events WHERE case_id=?',(case_id,))
             c.execute('DELETE FROM cases WHERE id=?',(case_id,))
         return {'deleted':True,'id':case_id}
+
     def delete_document(self,document_id):
         with self.lock,self.connect() as c:
             doc=c.execute('SELECT * FROM documents WHERE id=?',(document_id,)).fetchone()
@@ -222,6 +301,7 @@ class Workspace:
             except Exception:pass
             self.event(c,doc['case_id'],doc['sku_id'],'document_deleted','Người dùng',{'name':doc['name'],'document_id':document_id})
         return {'deleted':True,'id':document_id}
+
     def add_evidence(self,sku_id,data):
         sku=self.get_sku(sku_id);i=uid('ev_');stamp=now()
         if data['kind'] not in {'tariff','chapter_note','section_note','ruling','technical','other'}:raise WorkspaceError('Loại căn cứ không hợp lệ.')
@@ -230,9 +310,9 @@ class Workspace:
         if data.get('lifecycle') not in {'not_checked','active','withdrawn','superseded'}:raise WorkspaceError('Trạng thái hiệu lực không hợp lệ.')
         if data.get('document_id'):
             with self.connect() as c:
-                d=c.execute('SELECT case_id FROM documents WHERE id=?',(data['document_id'],)).fetchone()
+                self._require_scoped_document(c, data['document_id'], sku)
                 p=c.execute('SELECT text FROM pages WHERE document_id=? AND number=?',(data['document_id'],data.get('page_number'))).fetchone()
-            if not d or d['case_id']!=sku['case_id'] or not p or data['quote'] not in p['text']:raise WorkspaceError('Căn cứ phải trích từ đúng trang trong hồ sơ.')
+            if not p or data['quote'] not in p['text']:raise WorkspaceError('Căn cứ phải trích từ đúng trang trong hồ sơ.')
         if data.get('reviewer') and data.get('lifecycle')=='not_checked':raise WorkspaceError('Kiểm tra trạng thái nguồn trước khi đánh dấu căn cứ đã đối chiếu.')
         with self.lock,self.connect() as c:
             c.execute('INSERT INTO evidence(id,sku_id,kind,title,source_url,document_id,page_number,quote,role,jurisdiction,nomenclature,effective_from,effective_to,lifecycle,reviewer,verified_at,created_at,target_codes_json) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',(i,sku_id,data['kind'],data['title'],data.get('source_url',''),data.get('document_id'),data.get('page_number'),data['quote'],data['role'],data.get('jurisdiction','VN'),data.get('nomenclature','AHTN2022'),data.get('effective_from'),data.get('effective_to'),data.get('lifecycle','not_checked'),data.get('reviewer'),stamp if data.get('reviewer') else None,stamp,encode(data.get('target_codes',[]))));self._invalidate(c,sku,data.get('reviewer') or 'Người nhập','Bổ sung căn cứ')
@@ -244,6 +324,8 @@ class Workspace:
         with self.lock,self.connect()as c:
             old=c.execute('SELECT * FROM evidence WHERE id=? AND sku_id=?',(evidence_id,sku_id)).fetchone()
             if not old:raise KeyError(evidence_id)
+            if role in {'supports','excludes'} and old['document_id']:
+                self._require_scoped_document(c, old['document_id'], sku)
             c.execute('UPDATE evidence SET role=?,lifecycle=?,reviewer=?,verified_at=?,resolution_note=?,target_codes_json=? WHERE id=?',(role,lifecycle,reviewer,now(),resolution_note,encode(target_codes),evidence_id))
             self.event(c,sku['case_id'],sku_id,'evidence_reviewed',reviewer,{'evidence_id':evidence_id,'prior_role':old['role'],'prior_lifecycle':old['lifecycle'],'role':role,'lifecycle':lifecycle,'reason':resolution_note})
             self._invalidate(c,sku,reviewer,'Đối chiếu lại vai trò/hiệu lực căn cứ')
@@ -254,7 +336,7 @@ class Workspace:
         i=uid('ana_');result=dict(result,analysis_id=i,sku_revision=sku['revision']);stamp=now()
         with self.lock,self.connect() as c:
             if c.execute('SELECT revision FROM skus WHERE id=?',(sku_id,)).fetchone()[0]!=sku['revision']:raise ConflictError('Hồ sơ vừa thay đổi; kết quả cũ không được áp dụng.')
-            c.execute('UPDATE decisions SET superseded_at=? WHERE sku_id=? AND superseded_at IS NULL',(stamp,sku_id));c.execute('INSERT INTO analyses VALUES(?,?,?,?,?,?,?,?)',(i,sku_id,sku['revision'],result['input_hash'],result['engine'],result['model_version'],encode(result),stamp));c.execute("UPDATE skus SET analysis_id=?,status='in_review',updated_at=? WHERE id=?",(i,stamp,sku_id));self.event(c,sku['case_id'],sku_id,'analysis_completed','Hệ thống',{'engine':result['engine'],'model_version':result['model_version'],'candidates':[x['code'] for x in result['candidates']],'revision':sku['revision']});self._case_status(c,sku['case_id'])
+            c.execute('UPDATE decisions SET superseded_at=? WHERE sku_id=? AND superseded_at IS NULL',(stamp,sku_id));c.execute('INSERT INTO analyses VALUES(?,?,?,?,?,?,?,?)',(i,sku_id,sku['revision'],result['input_hash'],result['engine'],result['model_version'],encode(result),stamp));c.execute("UPDATE skus SET analysis_id=?,status='in_review',updated_at=? WHERE id=?",(i,stamp,sku_id));self.event(c,sku['case_id'],sku_id,'analysis_completed','Hệ thống',{'engine':result['engine'],'model_version':result['model_version'],'candidates':[x['code'] for x in result['candidates']],'manual_candidate_codes':result.get('manual_candidate_codes',[]),'revision':sku['revision']});self._case_status(c,sku['case_id'])
         return self.get_sku(sku_id)
     def review(self,sku_id,code,reason,reviewer,preparer,evidence_ids,expected_revision,catalogue,action='approve',alternative_code='',alternative_reason='',classification_basis_confirmed=False,source_context=None,expected_analysis_id=None):
         sku=self.get_sku(sku_id)
@@ -276,16 +358,32 @@ class Workspace:
         evidence={x['id']:x for x in sku['evidence']};chosen=[evidence.get(i) for i in evidence_ids]
         if not chosen or any(x is None for x in chosen):raise WorkspaceError('Chọn căn cứ thuộc đúng SKU này.')
         case=self.get_case(sku['case_id']);day=case['classification_date']
+        from .legal import AHTN2022_START
+        if day < AHTN2022_START:raise WorkspaceError('Danh mục AHTN 2022 không áp dụng cho ngày phân loại trước 30/12/2022.')
         applicable=[]
         for e in chosen:
-            if e['jurisdiction']!='VN' or e['nomenclature']!='AHTN2022':continue
-            if e['lifecycle']!='active' or not e['reviewer'] or e['role'] not in {'supports','excludes'}:continue
-            if not e['effective_from'] or not (e['source_url'] or e['document_id']):continue
-            if e['effective_from'] and day<e['effective_from']:continue
-            if e['effective_to'] and day>e['effective_to']:continue
-            applicable.append(e)
-        if any(e['role']=='conflict' for e in sku['evidence']):raise WorkspaceError('Hồ sơ còn căn cứ mâu thuẫn; phải ghi nhận xử lý, không được chỉ bỏ chọn căn cứ đó.')
-        if any(e['role'] in {'supports','excludes'} and e not in applicable for e in chosen):raise WorkspaceError('Có căn cứ được chọn chưa đạt yêu cầu về hiệu lực, vai trò hoặc phạm vi.')
+            if e.get('document_scope_mismatch'):
+                if e.get('role') in {'supports','excludes'}:
+                    raise WorkspaceError('Căn cứ trích từ chứng từ của SKU khác. Ghi lại căn cứ theo đúng SKU trước khi duyệt.')
+                continue
+            if e.get('jurisdiction') and e['jurisdiction']!='VN':continue
+            if e.get('nomenclature') and e['nomenclature']!='AHTN2022':continue
+            role = e.get('role', 'reference')
+            if role == 'reference' and any(code.startswith(t) for t in e.get('target_codes', [])):
+                role = 'supports'
+            eff_from = e.get('effective_from') or (AHTN2022_START if e.get('kind') in {'tariff','chapter_note','section_note'} else None)
+            has_source = bool(e.get('source_url') or e.get('document_id') or e.get('kind') in {'tariff','chapter_note','section_note'})
+            rev = e.get('reviewer') or reviewer
+            lc = e.get('lifecycle') or 'active'
+            if lc != 'active' or not rev or role not in {'supports','excludes'}:continue
+            if not eff_from or not has_source:continue
+            if eff_from and day < eff_from:continue
+            if e.get('effective_to') and day > e['effective_to']:continue
+            e_app = dict(e, role=role, effective_from=eff_from, reviewer=rev, lifecycle=lc)
+            applicable.append(e_app)
+        app_ids = {a['id'] for a in applicable}
+        if any(e.get('role')=='conflict' for e in sku['evidence']):raise WorkspaceError('Hồ sơ còn căn cứ mâu thuẫn; phải ghi nhận xử lý, không được chỉ bỏ chọn căn cứ đó.')
+        if any(e.get('role') in {'supports','excludes'} and e['id'] not in app_ids for e in chosen):raise WorkspaceError('Có căn cứ được chọn chưa đạt yêu cầu về hiệu lực, vai trò hoặc phạm vi.')
         if not any(e['kind'] in {'tariff','chapter_note','section_note','ruling'} and e['role']=='supports' and any(code.startswith(t)for t in e.get('target_codes',[])) for e in applicable):raise WorkspaceError('Cần căn cứ phân loại hỗ trợ đúng mã/phạm vi đã chọn, được đối chiếu về quốc gia, phiên bản và hiệu lực.')
         stamp=now();i=uid('dec_')
         with self.lock,self.connect() as c:

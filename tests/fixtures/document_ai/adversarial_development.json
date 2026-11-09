@@ -1,0 +1,231 @@
+[
+  {
+    "id": "composite-positive",
+    "split": "adversarial_development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "i1",
+        "name": "opaque.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "COMMERCIAL INVOICE\nInvoice No: CH-1\nProduct name: Hydraulic fitting\nQuantity: 24\nUnit: PCS\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "commercial_invoice",
+        "expected_fields": {},
+        "expected_rows": 0,
+        "expected_products": [
+          "g1"
+        ]
+      },
+      {
+        "id": "p1",
+        "name": "opaque.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "PACKING LIST\nProduct name: Hydraulic fitting\nQuantity: 24\nUnit: PCS\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "packing_list",
+        "expected_fields": {},
+        "expected_rows": 0,
+        "expected_products": [
+          "g1"
+        ]
+      }
+    ],
+    "products": [
+      {
+        "identifier": "g1",
+        "identifier_is_gold": true,
+        "members": [
+          {
+            "document_id": "i1",
+            "page": 1,
+            "local_id": "s0"
+          },
+          {
+            "document_id": "p1",
+            "page": 1,
+            "local_id": "s0"
+          }
+        ],
+        "fields": {
+          "name": "Hydraulic fitting",
+          "quantity": "24",
+          "unit": "PCS"
+        }
+      }
+    ]
+  },
+  {
+    "id": "conflicting-variant-negative",
+    "split": "adversarial_development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "i2",
+        "name": "opaque.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "COMMERCIAL INVOICE\nModel: VAL-4\nProduct name: Valve\nSpecifications: Diameter 30 mm\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "commercial_invoice",
+        "expected_fields": {},
+        "expected_rows": 0,
+        "expected_products": [
+          "g2a"
+        ]
+      },
+      {
+        "id": "d2",
+        "name": "opaque.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "TECHNICAL DATASHEET\nModel: VAL-4\nProduct name: Valve\nSpecifications: Diameter 50 mm\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "technical_spec",
+        "expected_fields": {},
+        "expected_rows": 0,
+        "expected_products": [
+          "g2b"
+        ]
+      }
+    ],
+    "products": [
+      {
+        "identifier": "g2a",
+        "identifier_is_gold": true,
+        "members": [
+          {
+            "document_id": "i2",
+            "page": 1,
+            "local_id": "s0"
+          }
+        ],
+        "fields": {
+          "name": "Valve",
+          "specifications": "Diameter 30 mm"
+        }
+      },
+      {
+        "identifier": "g2b",
+        "identifier_is_gold": true,
+        "members": [
+          {
+            "document_id": "d2",
+            "page": 1,
+            "local_id": "s0"
+          }
+        ],
+        "fields": {
+          "name": "Valve",
+          "specifications": "Diameter 50 mm"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ambiguous-duplicate-negative",
+    "split": "adversarial_development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "i3",
+        "name": "opaque.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "COMMERCIAL INVOICE\nInvoice No: CH-3\nProduct name: Gear\nQuantity: 12\nUnit: PCS\nProduct name: Gear\nQuantity: 12\nUnit: PCS\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "commercial_invoice",
+        "expected_fields": {},
+        "expected_rows": 0,
+        "expected_products": [
+          "g3a",
+          "g3b"
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "opaque.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "PACKING LIST\nProduct name: Gear\nQuantity: 12\nUnit: PCS\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "packing_list",
+        "expected_fields": {},
+        "expected_rows": 0,
+        "expected_products": [
+          "g3c"
+        ]
+      }
+    ],
+    "products": [
+      {
+        "identifier": "g3a",
+        "identifier_is_gold": true,
+        "members": [
+          {
+            "document_id": "i3",
+            "page": 1,
+            "local_id": "s0"
+          }
+        ],
+        "fields": {
+          "name": "Gear",
+          "quantity": "12",
+          "unit": "PCS"
+        }
+      },
+      {
+        "identifier": "g3b",
+        "identifier_is_gold": true,
+        "members": [
+          {
+            "document_id": "i3",
+            "page": 1,
+            "local_id": "s78"
+          }
+        ],
+        "fields": {
+          "name": "Gear",
+          "quantity": "12",
+          "unit": "PCS"
+        }
+      },
+      {
+        "identifier": "g3c",
+        "identifier_is_gold": true,
+        "members": [
+          {
+            "document_id": "p3",
+            "page": 1,
+            "local_id": "s0"
+          }
+        ],
+        "fields": {
+          "name": "Gear",
+          "quantity": "12",
+          "unit": "PCS"
+        }
+      }
+    ]
+  }
+]

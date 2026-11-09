@@ -20,7 +20,7 @@ def command(args,timeout=180):
 class DocumentService:
     def __init__(self,workspace,root):
         self.db=workspace;self.root=Path(root);self.root.mkdir(parents=True,exist_ok=True);self.pool=ThreadPoolExecutor(max_workers=2,thread_name_prefix='document-ocr');self.jobs=set();self.lock=threading.Lock()
-    def _store(self,case_id,name,content,sku_id=None,archive=None,member=None):
+    def _store(self,case_id,name,content,sku_id=None,archive=None,member=None,parsed_pages=None):
         name=Path(name.replace('\\','/')).name[:180];ext=Path(name).suffix.lower()
         if ext not in SUPPORTED:raise WorkspaceError('Định dạng chưa hỗ trợ: '+ext)
         if len(content)>MAX_UPLOAD:raise WorkspaceError('Tệp vượt giới hạn dung lượng đã cấu hình.')
@@ -39,15 +39,28 @@ class DocumentService:
             temporary.replace(path)
         with self.db.lock,self.db.connect() as c:
             old=c.execute('SELECT * FROM documents WHERE case_id=? AND sha256=?',(case_id,digest)).fetchone()
-            if old:return self.db.public_document(dict(old)),False
+            if old:
+                if old['sku_id'] is not None and old['sku_id'] != sku_id:
+                    raise WorkspaceError('Tệp đã được gắn riêng cho SKU khác trong hồ sơ; lần tải này không đổi phạm vi sử dụng.')
+                return self.db.public_document(dict(old)),False
             i=uid('doc_');c.execute('INSERT INTO documents(id,case_id,sku_id,name,mime,sha256,path,source_archive,member_path,created_at) VALUES(?,?,?,?,?,?,?,?,?,?)',(i,case_id,sku_id,name,MIMES[ext],digest,str(path),archive,member,now()));self.db.event(c,case_id,sku_id,'document_uploaded','Người nhập',{'document_id':i,'name':name,'sha256':digest,'archive':archive,'member':member})
-        self.schedule(i);return self.get(i),True
-    def upload(self,case_id,name,content,sku_id=None):
+        if parsed_pages is not None:
+            from .document_layout import ensure_layout
+            from .extractor import DocumentTypeDetector
+            from copy import deepcopy
+            pages=deepcopy(parsed_pages);doc=ensure_layout({'id':i,'pages':pages})
+            for page in pages:self._page(i,page['number'],page.get('text',''),page.get('method','text'),layout_override=page['layout'],warnings=page.get('warnings',[]))
+            with self.db.connect() as c:
+                c.execute("UPDATE documents SET status='needs_review',total_pages=?,kind=? WHERE id=?",(len(pages),DocumentTypeDetector.detect_type(doc)['kind'],i))
+                self.db.event(c,case_id,sku_id,'document_extracted','Hệ thống',{'document_id':i,'pages':len(pages),'reused_draft_parse':True,'requires_review':True})
+        else:self.schedule(i)
+        return self.get(i),True
+    def upload(self,case_id,name,content,sku_id=None,*,parsed_pages=None):
         self.db.get_case(case_id)
         if len(content)>MAX_UPLOAD:raise WorkspaceError(f'Tệp quá lớn; giới hạn {MAX_UPLOAD//1024**2} MB.')
         ext=Path(name).suffix.lower()
         if ext not in {'.zip','.rar'}:
-            row,created=self._store(case_id,name,content,sku_id);return {'documents':[row],'added':int(created),'skipped':[]}
+            row,created=self._store(case_id,name,content,sku_id,parsed_pages=parsed_pages);return {'documents':[row],'added':int(created),'skipped':[]}
         docs=[];skipped=[];total=0;count=0
         def accept(member,data,is_link=False):
             nonlocal total,count
@@ -91,7 +104,16 @@ class DocumentService:
         return dict(r) if private else self.db.public_document(dict(r))
     def pages(self,i):
         self.get(i)
-        with self.db.connect() as c:return [dict(x) for x in c.execute('SELECT * FROM pages WHERE document_id=? ORDER BY number',(i,))]
+        with self.db.connect() as c:
+            result=[]
+            for x in c.execute('SELECT p.*,l.layout_json FROM pages p LEFT JOIN page_layouts l ON p.document_id=l.document_id AND p.number=l.page_number WHERE p.document_id=? ORDER BY p.number',(i,)):
+                page=dict(x); raw=page.pop('layout_json',None)
+                from .document_layout import build_layout
+                page['layout']=json.loads(raw) if raw else build_layout(page['text'],page['number'],i)
+                result.append(page)
+            from .document_layout import ensure_layout
+            ensure_layout({'id':i,'pages':result})
+            return result
     def schedule(self,i):
         with self.lock:
             if i in self.jobs:return
@@ -116,13 +138,18 @@ class DocumentService:
     def resume(self):
         with self.db.connect() as c:ids=[x[0] for x in c.execute("SELECT id FROM documents WHERE status IN ('queued','processing')")]
         for i in ids:self.schedule(i)
-    def _page(self,i,number,text,method,confidence=None):
+    def _page(self,i,number,text,method,confidence=None,geometry=None,layout_override=None,warnings=None,table_geometry=None):
+        from .document_layout import build_layout
+        layout=layout_override or build_layout(text,number,i,geometry,table_geometry)
+        for warning in warnings or []:
+            if warning not in layout['warnings']:layout['warnings'].append(warning)
         with self.db.connect() as c:
+            c.execute('INSERT OR REPLACE INTO page_layouts VALUES(?,?,?)',(i,number,json.dumps(layout,ensure_ascii=False)))
             c.execute('INSERT OR REPLACE INTO pages VALUES(?,?,?,?,?,?,1)',(uid('pg_'),i,number,text,method,confidence));c.execute('UPDATE documents SET processed_pages=(SELECT count(*) FROM pages WHERE document_id=?) WHERE id=?',(i,i))
     def _ocr(self,path):
-        if not shutil.which('tesseract'):raise RuntimeError('Cần cài Tesseract để đọc tài liệu scan. Chưa có OCR không đồng nghĩa không có nội dung.')
-        langs=command(['tesseract','--list-langs']).split();lang='vie+eng' if 'vie' in langs and 'eng' in langs else ('vie' if 'vie' in langs else 'eng')
-        return command(['tesseract',path,'stdout','-l',lang,'--psm','6']),('ocr_vie_eng' if lang=='vie+eng' else 'ocr_'+lang+'_language_review')
+        from .ocr_layout import read_image
+        result=read_image(path)
+        return result['text'],result['method']
     def process(self,i):
         doc=self.get(i,True);path=Path(doc['path']);ext=path.suffix.lower()
         with self.db.connect() as c:c.execute("UPDATE documents SET status='processing',error=NULL WHERE id=?",(i,))
@@ -136,15 +163,12 @@ class DocumentService:
                 done={x['number'] for x in self.pages(i)}
                 for page in range(1,n+1):
                     if page in done:continue
-                    text=command(['pdftotext','-f',page,'-l',page,'-layout',path,'-']) if shutil.which('pdftotext') else (reader.pages[page-1].extract_text() or '')
-                    method='pdf_text'
-                    if sum(x.isalpha() for x in text)<120 or text.count('\ufffd')>max(2,len(text)*.01):
-                        if not shutil.which('pdftoppm'):raise RuntimeError('PDF scan cần Poppler/pdftoppm và Tesseract.')
-                        with tempfile.TemporaryDirectory() as td:
-                            prefix=Path(td)/'page';command(['pdftoppm','-f',page,'-l',page,'-singlefile','-r','300','-gray','-png',path,prefix]);text,method=self._ocr(str(prefix)+'.png')
-                    self._page(i,page,text,method)
+                    from .document_text import read_pdf_page
+                    parsed=read_pdf_page(path,page,reader)
+                    self._page(i,page,parsed['text'],parsed['method'],geometry=parsed['geometry'],warnings=parsed.get('warnings',[]),table_geometry=parsed.get('pdf_tables'))
             elif ext in {'.png','.jpg','.jpeg'}:
-                text,method=self._ocr(path);self._page(i,1,text,method)
+                from .ocr_layout import read_image
+                ocr=read_image(path);self._page(i,1,ocr['text'],ocr['method'],geometry=ocr['geometry'],warnings=ocr.get('warnings',[]))
             elif ext=='.docx':
                 from docx import Document
                 docx=Document(path);text='\n'.join([p.text for p in docx.paragraphs]+[' | '.join(cell.text for cell in row.cells) for table in docx.tables for row in table.rows]);self._page(i,1,text,'docx_body_and_tables')
@@ -174,21 +198,20 @@ class DocumentService:
                 wb=load_workbook(path,read_only=True,data_only=True,keep_links=False)
                 cells_seen=0
                 for index,sheet in enumerate(wb.worksheets,1):
-                    lines=[f'[{sheet.title}]']
-                    for row in sheet.iter_rows():
-                        cells_seen+=len(row)
-                        if cells_seen>1000000:raise RuntimeError('Bảng vượt 1 triệu ô; chia tệp trước khi trích xuất.')
-                        vals=[f'{c.coordinate}={c.value}' for c in row if c.value is not None]
-                        if vals:lines.append(' | '.join(vals))
-                    self._page(i,index,'\n'.join(lines),'xlsx_cells')
+                    from .spreadsheet_layout import sheet_page
+                    if sheet.max_row*sheet.max_column>1000000:raise RuntimeError('Bảng vượt 1 triệu ô.')
+                    page=sheet_page(sheet,index);self._page(i,index,page['text'],page['method'],layout_override=page['layout'])
                 wb.close()
             else:
                 b=path.read_bytes()
                 try:text=b.decode('utf-8-sig')
                 except UnicodeDecodeError:text=b.decode('cp1258')
                 self._page(i,1,text,'text')
-            pages=self.pages(i);full='\n'.join(p['text'] for p in pages)
-            kind='technical' if re.search('specification|thông số|certificate of analysis|datasheet|mill test',full,re.I) else ('declaration' if re.search('tờ khai|mã số hàng hóa',full,re.I) else ('invoice' if re.search('invoice|hóa đơn',full,re.I) else ('packing_list' if re.search('packing list',full,re.I) else 'other')))
+            pages=self.pages(i)
+            from .extractor import DocumentTypeDetector
+            kind=DocumentTypeDetector.detect_type({'pages':pages})['kind']
+            with self.db.connect() as c:
+                for page in pages:c.execute('INSERT OR REPLACE INTO page_layouts VALUES(?,?,?)',(i,page['number'],json.dumps(page['layout'],ensure_ascii=False)))
             with self.db.connect() as c:
                 c.execute("UPDATE documents SET status='needs_review',total_pages=?,kind=? WHERE id=?",(len(pages),kind,i));self.db.event(c,doc['case_id'],doc.get('sku_id'),'document_extracted','Hệ thống',{'document_id':i,'pages':len(pages),'methods':list({p['method'] for p in pages}),'requires_review':True})
         except Exception as e:

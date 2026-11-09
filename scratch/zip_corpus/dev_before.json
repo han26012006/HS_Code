@@ -1,0 +1,1847 @@
+[
+  {
+    "sha256": "9a91b2bde6b7ea5f528ce59a6d9f1c49af5b227b2a20da6256ac5fd5bc10c4bf",
+    "name": "Commercial Invoice.docx.pdf",
+    "group": "mặt hàng Muối",
+    "split": "development_real",
+    "kind": "commercial_invoice",
+    "skus": [
+      {
+        "id": "cand_4299a686ae98",
+        "identifiers": {},
+        "sku_code": "cand_4299a686ae98",
+        "name": "CIF CAT LAI",
+        "description": "CIF CAT LAI",
+        "facts": [
+          {
+            "id": "fact_ac4178ee",
+            "field": "name",
+            "value": "CIF CAT LAI",
+            "unit": null,
+            "document_id": "doc_11b963f1aa6e",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": "DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "name",
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_page": 1,
+            "source_quote": "DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI",
+            "extraction_status": "extracted",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_block_ids": [
+              "b28",
+              "b29"
+            ],
+            "source_span": [
+              1689,
+              1855
+            ],
+            "source_header": "DESCRIPTION OF GOODS",
+            "sku_id": "cand_4299a686ae98"
+          }
+        ],
+        "source_document_id": "doc_11b963f1aa6e",
+        "source_page": 1,
+        "product_family": "general",
+        "declared_code": null,
+        "status": "needs_review",
+        "identity_status": "needs_review",
+        "matching": [],
+        "source_members": [
+          {
+            "document_id": "doc_11b963f1aa6e",
+            "page": 1,
+            "local_id": "s0"
+          }
+        ],
+        "resolved_fields": {
+          "name": "CIF CAT LAI",
+          "model": null,
+          "part_number": null,
+          "function": null,
+          "construction": null,
+          "material": null,
+          "specifications": null,
+          "manufacturing": null,
+          "condition": null,
+          "packaging": null,
+          "origin": null,
+          "quantity": null,
+          "unit": null,
+          "unit_price": null,
+          "amount": null,
+          "currency": null,
+          "gross_weight": null,
+          "net_weight": null,
+          "packages": null,
+          "declared_code": null
+        },
+        "declared_code_sources": [],
+        "origin_sources": [],
+        "missing_fields": [
+          "function",
+          "construction",
+          "specifications"
+        ],
+        "field_states": {
+          "name": "extracted",
+          "model": "missing",
+          "part_number": "missing",
+          "function": "missing",
+          "construction": "missing",
+          "material": "missing",
+          "specifications": "missing",
+          "manufacturing": "missing",
+          "condition": "missing",
+          "packaging": "missing",
+          "origin": "missing",
+          "quantity": "missing",
+          "unit": "missing",
+          "unit_price": "missing",
+          "amount": "missing",
+          "currency": "missing",
+          "gross_weight": "missing",
+          "net_weight": "missing",
+          "packages": "missing",
+          "declared_code": "missing"
+        }
+      },
+      {
+        "id": "cand_70e582230f96",
+        "identifiers": {},
+        "sku_code": "cand_70e582230f96",
+        "name": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+        "description": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+        "facts": [
+          {
+            "id": "fact_f642fd67",
+            "field": "name",
+            "value": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+            "unit": null,
+            "document_id": "doc_11b963f1aa6e",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "name",
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_page": 1,
+            "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_status": "needs_review",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 0,
+            "source_header": "NAME OF GOODS",
+            "source_header_page": 1,
+            "value_fragments": [
+              "Himalayan Pink Salt, 2-5mm granules,",
+              "unprocessed, used in industry (25kg/bag)",
+              "New 100% Made in India"
+            ],
+            "source_block_ids": [
+              "b33",
+              "b34",
+              "b35"
+            ],
+            "source_span": [
+              2139,
+              2308
+            ],
+            "sku_id": "cand_70e582230f96"
+          },
+          {
+            "id": "fact_e69ec386",
+            "field": "quantity",
+            "value": "2000.00",
+            "unit": "BAGS",
+            "document_id": "doc_11b963f1aa6e",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "quantity",
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_page": 1,
+            "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_status": "needs_review",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 1,
+            "source_header": "QUANTITY (BAGS)",
+            "source_header_page": 1,
+            "value_fragments": [],
+            "source_block_ids": [
+              "b33",
+              "b34",
+              "b35"
+            ],
+            "source_span": [
+              2139,
+              2308
+            ],
+            "source_unit_quote": "(BAGS)",
+            "sku_id": "cand_70e582230f96"
+          },
+          {
+            "id": "fact_c65c591c",
+            "field": "gross_weight",
+            "value": "50,200.00",
+            "unit": "KGM",
+            "document_id": "doc_11b963f1aa6e",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "gross_weight",
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_page": 1,
+            "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_status": "needs_review",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 2,
+            "source_header": "GROSS WEIGHT (KGM)",
+            "source_header_page": 1,
+            "value_fragments": [],
+            "source_block_ids": [
+              "b33",
+              "b34",
+              "b35"
+            ],
+            "source_span": [
+              2139,
+              2308
+            ],
+            "source_unit_quote": "(KGM)",
+            "sku_id": "cand_70e582230f96"
+          },
+          {
+            "id": "fact_8833da58",
+            "field": "unit_price",
+            "value": "0.289",
+            "unit": "USD / KGM",
+            "document_id": "doc_11b963f1aa6e",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "unit_price",
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_page": 1,
+            "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_status": "needs_review",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 3,
+            "source_header": "UNIT PRICE (USD / KGM)",
+            "source_header_page": 1,
+            "value_fragments": [],
+            "source_block_ids": [
+              "b33",
+              "b34",
+              "b35"
+            ],
+            "source_span": [
+              2139,
+              2308
+            ],
+            "source_unit_quote": "(USD / KGM)",
+            "sku_id": "cand_70e582230f96"
+          },
+          {
+            "id": "fact_66999b98",
+            "field": "amount",
+            "value": "14,450.00",
+            "unit": "USD",
+            "document_id": "doc_11b963f1aa6e",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "amount",
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_page": 1,
+            "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+            "extraction_status": "needs_review",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 4,
+            "source_header": "AMOUNT (USD)",
+            "source_header_page": 1,
+            "value_fragments": [],
+            "source_block_ids": [
+              "b33",
+              "b34",
+              "b35"
+            ],
+            "source_span": [
+              2139,
+              2308
+            ],
+            "source_unit_quote": "(USD)",
+            "sku_id": "cand_70e582230f96"
+          },
+          {
+            "id": "fact_32411965",
+            "field": "origin",
+            "value": "India",
+            "unit": null,
+            "document_id": "doc_11b963f1aa6e",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": "New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "origin",
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_page": 1,
+            "source_quote": "New 100% Made in India",
+            "extraction_status": "extracted",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_block_ids": [
+              "b35"
+            ],
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_scope": "explicit_origin_statement",
+            "sku_id": "cand_70e582230f96"
+          },
+          {
+            "id": "fact_508a9790",
+            "field": "unit",
+            "value": "BAGS",
+            "unit": null,
+            "document_id": "doc_11b963f1aa6e",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": "(BAGS)",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "unit",
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_page": 1,
+            "source_quote": "(BAGS)",
+            "extraction_status": "extracted",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_block_ids": [
+              "b31"
+            ],
+            "source_scope": "table_header",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "sku_id": "cand_70e582230f96"
+          }
+        ],
+        "source_document_id": "doc_11b963f1aa6e",
+        "source_page": 1,
+        "product_family": "general",
+        "declared_code": null,
+        "status": "needs_review",
+        "identity_status": "needs_review",
+        "matching": [],
+        "source_members": [
+          {
+            "document_id": "doc_11b963f1aa6e",
+            "page": 1,
+            "local_id": "t0r0"
+          }
+        ],
+        "resolved_fields": {
+          "name": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+          "model": null,
+          "part_number": null,
+          "function": null,
+          "construction": null,
+          "material": null,
+          "specifications": null,
+          "manufacturing": null,
+          "condition": null,
+          "packaging": null,
+          "origin": "India",
+          "quantity": "2000.00",
+          "unit": "BAGS",
+          "unit_price": "0.289",
+          "amount": "14,450.00",
+          "currency": null,
+          "gross_weight": "50,200.00",
+          "net_weight": null,
+          "packages": null,
+          "declared_code": null
+        },
+        "declared_code_sources": [],
+        "origin_sources": [
+          {
+            "id": "fact_32411965",
+            "field": "origin",
+            "value": "India",
+            "unit": null,
+            "document_id": "doc_11b963f1aa6e",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": "New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "origin",
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_page": 1,
+            "source_quote": "New 100% Made in India",
+            "extraction_status": "extracted",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_block_ids": [
+              "b35"
+            ],
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_scope": "explicit_origin_statement",
+            "sku_id": "cand_70e582230f96"
+          }
+        ],
+        "missing_fields": [
+          "function",
+          "construction",
+          "specifications"
+        ],
+        "field_states": {
+          "name": "needs_review",
+          "model": "missing",
+          "part_number": "missing",
+          "function": "missing",
+          "construction": "missing",
+          "material": "missing",
+          "specifications": "missing",
+          "manufacturing": "missing",
+          "condition": "missing",
+          "packaging": "missing",
+          "origin": "extracted",
+          "quantity": "needs_review",
+          "unit": "extracted",
+          "unit_price": "needs_review",
+          "amount": "needs_review",
+          "currency": "missing",
+          "gross_weight": "needs_review",
+          "net_weight": "missing",
+          "packages": "missing",
+          "declared_code": "missing"
+        }
+      }
+    ],
+    "dossier_fields": {
+      "shipper": {
+        "field": "shipper",
+        "value": "SHREE SAI INDUSTRIES CO. LTD",
+        "unit": null,
+        "source_document_id": "doc_11b963f1aa6e",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+        "field_name": "shipper",
+        "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b3"
+        ],
+        "source_span": [
+          56,
+          97
+        ],
+        "source_document_type": "commercial_invoice",
+        "sources": [
+          {
+            "field": "shipper",
+            "value": "SHREE SAI INDUSTRIES CO. LTD",
+            "unit": null,
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+            "field_name": "shipper",
+            "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b3"
+            ],
+            "source_span": [
+              56,
+              97
+            ],
+            "source_document_type": "commercial_invoice"
+          }
+        ]
+      },
+      "invoice_number": {
+        "field": "invoice_number",
+        "value": "73/INV/ST",
+        "unit": null,
+        "source_document_id": "doc_11b963f1aa6e",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+        "field_name": "invoice_number",
+        "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b3",
+          "b4"
+        ],
+        "source_span": [
+          56,
+          236
+        ],
+        "source_document_type": "commercial_invoice",
+        "sources": [
+          {
+            "field": "invoice_number",
+            "value": "73/INV/ST",
+            "unit": null,
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+            "field_name": "invoice_number",
+            "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b3",
+              "b4"
+            ],
+            "source_span": [
+              56,
+              236
+            ],
+            "source_document_type": "commercial_invoice"
+          }
+        ]
+      },
+      "consignee": {
+        "field": "consignee",
+        "value": "AURORA HIMALAYA JOINT STOCK",
+        "unit": null,
+        "source_document_id": "doc_11b963f1aa6e",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+        "field_name": "consignee",
+        "source_quote": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b9"
+        ],
+        "source_span": [
+          469,
+          511
+        ],
+        "source_document_type": "commercial_invoice",
+        "sources": [
+          {
+            "field": "consignee",
+            "value": "AURORA HIMALAYA JOINT STOCK",
+            "unit": null,
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+            "field_name": "consignee",
+            "source_quote": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b9"
+            ],
+            "source_span": [
+              469,
+              511
+            ],
+            "source_document_type": "commercial_invoice"
+          }
+        ]
+      },
+      "port_of_loading": {
+        "field": "port_of_loading",
+        "value": "MUNDRA PORT, INDIA",
+        "unit": null,
+        "source_document_id": "doc_11b963f1aa6e",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+        "field_name": "port_of_loading",
+        "source_quote": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b21",
+          "b22"
+        ],
+        "source_span": [
+          1432,
+          1537
+        ],
+        "source_document_type": "commercial_invoice",
+        "sources": [
+          {
+            "field": "port_of_loading",
+            "value": "MUNDRA PORT, INDIA",
+            "unit": null,
+            "source_document_id": "doc_11b963f1aa6e",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+            "field_name": "port_of_loading",
+            "source_quote": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b21",
+              "b22"
+            ],
+            "source_span": [
+              1432,
+              1537
+            ],
+            "source_document_type": "commercial_invoice"
+          }
+        ]
+      }
+    },
+    "page_methods": [
+      "pdftotext"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "                                   COMMERCIAL INVOICE\n\n\n ① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024\n Morta,Ghaziabad - 201203, Uttar Pradesh, India\n Tel: +91 96 3496 3924                                        ⑨ No. & Date of Contract\n Fax: +91-98-10400646                                         06/2024/AURO & Date 01, APR, 2024\n\n ② Consignee : AURORA HIMALAYA JOINT STOCK                    ⑩ Remarks\n COMPANY                                                      Payment term: T/T within 60 days after\n\n 8/42 Dinh Bo Linh Street, Ward 24, Binh Thanh                delivery date\n District, Ho Chi Minh City, Vietnam                          Beneficiary: SHREE SAI INDUSTRIES\n Tel: +84 964 767 771                                                      CO. LTD\n Fax: +84 (8) 3823 3672                                       Banker: BANK OF INDIA - G Block\n                                                                        Bandra Kurla Complex,\n ③ Notify party :                                                       Bandra (East), Mumbai,\n                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India\n                                                                       Freight:               550.00 USD\n                                                                       Insurance:              49.65 USD\n                                                                       Total CIF:          15,049.65 USD\n(Say: Fifteen thousand forty-nine dollars and sixty-five cents.)\n* Gross weight of packing list does not include weight of empty container.\nShipping Marks                                                               SIGNED BY\nSHREE SAI                                                         SHREE SAI INDUSTRIES CO. LTD\nINDUSTRIES CO. LTD\n\f"
+      }
+    ]
+  },
+  {
+    "sha256": "6a9c2f429b2926b4e678d7962c1e92ffbf67c68675cc631f9170fe2906894ca2",
+    "name": "Packing List.pdf",
+    "group": "mặt hàng Muối",
+    "split": "development_real",
+    "kind": "packing_list",
+    "skus": [
+      {
+        "id": "cand_e34ef5f86e71",
+        "identifiers": {},
+        "sku_code": "cand_e34ef5f86e71",
+        "name": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+        "description": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+        "facts": [
+          {
+            "id": "fact_dec38687",
+            "field": "quantity",
+            "value": "2,000",
+            "unit": "BAGS",
+            "document_id": "doc_60d8721a1a0c",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "quantity",
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_page": 1,
+            "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+            "extraction_status": "needs_review",
+            "source_valid": true,
+            "source_document_type": "packing_list",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 1,
+            "source_header": "QUANTITY (BAGS)",
+            "source_header_page": 1,
+            "value_fragments": [],
+            "source_block_ids": [
+              "b31",
+              "b32",
+              "b33",
+              "b34",
+              "b35"
+            ],
+            "source_span": [
+              1209,
+              1425
+            ],
+            "source_unit_quote": "(BAGS)",
+            "sku_id": "cand_e34ef5f86e71"
+          },
+          {
+            "id": "fact_df5b74a3",
+            "field": "net_weight",
+            "value": "50,000",
+            "unit": "KGM",
+            "document_id": "doc_60d8721a1a0c",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "net_weight",
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_page": 1,
+            "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+            "extraction_status": "needs_review",
+            "source_valid": true,
+            "source_document_type": "packing_list",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 2,
+            "source_header": "NET WEIGHT (KGM)",
+            "source_header_page": 1,
+            "value_fragments": [],
+            "source_block_ids": [
+              "b31",
+              "b32",
+              "b33",
+              "b34",
+              "b35"
+            ],
+            "source_span": [
+              1209,
+              1425
+            ],
+            "source_unit_quote": "(KGM)",
+            "sku_id": "cand_e34ef5f86e71"
+          },
+          {
+            "id": "fact_9ec71228",
+            "field": "gross_weight",
+            "value": "50,200",
+            "unit": "KGM",
+            "document_id": "doc_60d8721a1a0c",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "gross_weight",
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_page": 1,
+            "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+            "extraction_status": "needs_review",
+            "source_valid": true,
+            "source_document_type": "packing_list",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 3,
+            "source_header": "GROSS WEIGHT (KGM)",
+            "source_header_page": 1,
+            "value_fragments": [],
+            "source_block_ids": [
+              "b31",
+              "b32",
+              "b33",
+              "b34",
+              "b35"
+            ],
+            "source_span": [
+              1209,
+              1425
+            ],
+            "source_unit_quote": "(KGM)",
+            "sku_id": "cand_e34ef5f86e71"
+          },
+          {
+            "id": "fact_e02557e1",
+            "field": "name",
+            "value": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+            "unit": null,
+            "document_id": "doc_60d8721a1a0c",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "name",
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_page": 1,
+            "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+            "extraction_status": "needs_review",
+            "source_valid": true,
+            "source_document_type": "packing_list",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 0,
+            "source_header": "Description",
+            "source_header_page": 1,
+            "value_fragments": [
+              "Himalayan Pink Salt, 2-5mm granules,",
+              "unprocessed, used in industry",
+              "(25kg/bag)",
+              "New 100% Made in India"
+            ],
+            "source_block_ids": [
+              "b31",
+              "b32",
+              "b33",
+              "b34",
+              "b35"
+            ],
+            "source_span": [
+              1209,
+              1425
+            ],
+            "sku_id": "cand_e34ef5f86e71"
+          },
+          {
+            "id": "fact_fe9d1607",
+            "field": "origin",
+            "value": "India",
+            "unit": null,
+            "document_id": "doc_60d8721a1a0c",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": "New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "origin",
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_page": 1,
+            "source_quote": "New 100% Made in India",
+            "extraction_status": "extracted",
+            "source_valid": true,
+            "source_document_type": "packing_list",
+            "source_block_ids": [
+              "b35"
+            ],
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_scope": "explicit_origin_statement",
+            "sku_id": "cand_e34ef5f86e71"
+          },
+          {
+            "id": "fact_a15b971a",
+            "field": "unit",
+            "value": "BAGS",
+            "unit": null,
+            "document_id": "doc_60d8721a1a0c",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": "(BAGS)",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "unit",
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_page": 1,
+            "source_quote": "(BAGS)",
+            "extraction_status": "extracted",
+            "source_valid": true,
+            "source_document_type": "packing_list",
+            "source_block_ids": [
+              "b29"
+            ],
+            "source_scope": "table_header",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "sku_id": "cand_e34ef5f86e71"
+          }
+        ],
+        "source_document_id": "doc_60d8721a1a0c",
+        "source_page": 1,
+        "product_family": "general",
+        "declared_code": null,
+        "status": "needs_review",
+        "identity_status": "needs_review",
+        "matching": [],
+        "source_members": [
+          {
+            "document_id": "doc_60d8721a1a0c",
+            "page": 1,
+            "local_id": "t0r0"
+          }
+        ],
+        "resolved_fields": {
+          "name": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+          "model": null,
+          "part_number": null,
+          "function": null,
+          "construction": null,
+          "material": null,
+          "specifications": null,
+          "manufacturing": null,
+          "condition": null,
+          "packaging": null,
+          "origin": "India",
+          "quantity": "2,000",
+          "unit": "BAGS",
+          "unit_price": null,
+          "amount": null,
+          "currency": null,
+          "gross_weight": "50,200",
+          "net_weight": "50,000",
+          "packages": null,
+          "declared_code": null
+        },
+        "declared_code_sources": [],
+        "origin_sources": [
+          {
+            "id": "fact_fe9d1607",
+            "field": "origin",
+            "value": "India",
+            "unit": null,
+            "document_id": "doc_60d8721a1a0c",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": "New 100% Made in India",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "origin",
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_page": 1,
+            "source_quote": "New 100% Made in India",
+            "extraction_status": "extracted",
+            "source_valid": true,
+            "source_document_type": "packing_list",
+            "source_block_ids": [
+              "b35"
+            ],
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_scope": "explicit_origin_statement",
+            "sku_id": "cand_e34ef5f86e71"
+          }
+        ],
+        "missing_fields": [
+          "function",
+          "construction",
+          "specifications"
+        ],
+        "field_states": {
+          "name": "needs_review",
+          "model": "missing",
+          "part_number": "missing",
+          "function": "missing",
+          "construction": "missing",
+          "material": "missing",
+          "specifications": "missing",
+          "manufacturing": "missing",
+          "condition": "missing",
+          "packaging": "missing",
+          "origin": "extracted",
+          "quantity": "needs_review",
+          "unit": "extracted",
+          "unit_price": "missing",
+          "amount": "missing",
+          "currency": "missing",
+          "gross_weight": "needs_review",
+          "net_weight": "needs_review",
+          "packages": "missing",
+          "declared_code": "missing"
+        }
+      }
+    ],
+    "dossier_fields": {
+      "shipper": {
+        "field": "shipper",
+        "value": "SHREE SAI INDUSTRIES CO. LTD",
+        "unit": null,
+        "source_document_id": "doc_60d8721a1a0c",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+        "field_name": "shipper",
+        "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b1"
+        ],
+        "source_span": [
+          52,
+          93
+        ],
+        "source_document_type": "packing_list",
+        "sources": [
+          {
+            "field": "shipper",
+            "value": "SHREE SAI INDUSTRIES CO. LTD",
+            "unit": null,
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+            "field_name": "shipper",
+            "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b1"
+            ],
+            "source_span": [
+              52,
+              93
+            ],
+            "source_document_type": "packing_list"
+          }
+        ]
+      },
+      "invoice_number": {
+        "field": "invoice_number",
+        "value": "73/INV/ST",
+        "unit": null,
+        "source_document_id": "doc_60d8721a1a0c",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                           ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,                    73/INV/ST & DATED 10, APR, 2024",
+        "field_name": "invoice_number",
+        "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                           ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,                    73/INV/ST & DATED 10, APR, 2024",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b1",
+          "b2"
+        ],
+        "source_span": [
+          52,
+          244
+        ],
+        "source_document_type": "packing_list",
+        "sources": [
+          {
+            "field": "invoice_number",
+            "value": "73/INV/ST",
+            "unit": null,
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                           ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,                    73/INV/ST & DATED 10, APR, 2024",
+            "field_name": "invoice_number",
+            "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                           ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,                    73/INV/ST & DATED 10, APR, 2024",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b1",
+              "b2"
+            ],
+            "source_span": [
+              52,
+              244
+            ],
+            "source_document_type": "packing_list"
+          }
+        ]
+      },
+      "consignee": {
+        "field": "consignee",
+        "value": "AURORA HIMALAYA JOINT STOCK",
+        "unit": null,
+        "source_document_id": "doc_60d8721a1a0c",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+        "field_name": "consignee",
+        "source_quote": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b7"
+        ],
+        "source_span": [
+          394,
+          436
+        ],
+        "source_document_type": "packing_list",
+        "sources": [
+          {
+            "field": "consignee",
+            "value": "AURORA HIMALAYA JOINT STOCK",
+            "unit": null,
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+            "field_name": "consignee",
+            "source_quote": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b7"
+            ],
+            "source_span": [
+              394,
+              436
+            ],
+            "source_document_type": "packing_list"
+          }
+        ]
+      },
+      "port_of_loading": {
+        "field": "port_of_loading",
+        "value": "MUNDRA PORT, INDIA",
+        "unit": null,
+        "source_document_id": "doc_60d8721a1a0c",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "④ Port of loading :                  ⑤ Final destination :\n MUNDRA PORT, INDIA                   CAT LAI PORT, VIETNAM",
+        "field_name": "port_of_loading",
+        "source_quote": "④ Port of loading :                  ⑤ Final destination :\n MUNDRA PORT, INDIA                   CAT LAI PORT, VIETNAM",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b17",
+          "b18"
+        ],
+        "source_span": [
+          615,
+          734
+        ],
+        "source_document_type": "packing_list",
+        "sources": [
+          {
+            "field": "port_of_loading",
+            "value": "MUNDRA PORT, INDIA",
+            "unit": null,
+            "source_document_id": "doc_60d8721a1a0c",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "④ Port of loading :                  ⑤ Final destination :\n MUNDRA PORT, INDIA                   CAT LAI PORT, VIETNAM",
+            "field_name": "port_of_loading",
+            "source_quote": "④ Port of loading :                  ⑤ Final destination :\n MUNDRA PORT, INDIA                   CAT LAI PORT, VIETNAM",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b17",
+              "b18"
+            ],
+            "source_span": [
+              615,
+              734
+            ],
+            "source_document_type": "packing_list"
+          }
+        ]
+      }
+    },
+    "page_methods": [
+      "pdftotext"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "                                       PACKING LIST\n ① Shipper : SHREE SAI INDUSTRIES CO. LTD                           ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,                    73/INV/ST & DATED 10, APR, 2024\n Morta,Ghaziabad - 201203, Uttar Pradesh, India\n Tel: +91 96 3496 3924                                              ⑨ Remarks\n Fax: +91-98-10400646\n\n ② Consignee : AURORA HIMALAYA JOINT STOCK\n COMPANY\n 8/42 Dinh Bo Linh Street, Ward 24, Binh Thanh District,\n Ho Chi Minh City, Vietnam\n Tel: +84 964 767 771\n Fax: +84 (8) 3823 3672\n\n ③ Notify party :\n SAME AS CONSIGNEE\n\n ④ Port of loading :                  ⑤ Final destination :\n MUNDRA PORT, INDIA                   CAT LAI PORT, VIETNAM\n\n ⑥ Carrier & Voyage                   ⑦ Sailing on or about\n AL NASRIYAH 029E                     14, APR, 2024\n\n\n\n                                     DESCRIPTION OF GOODS\n\n\n              NAME OF GOODS                      QUANTITY          NET           GROSS         MEASUREMENT\n                                                   (BAGS)        WEIGHT         WEIGHT            (CBM)\n                                                                  (KGM)          (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India\n TOTAL                                                 2,000         50,000         50,200                26.32\n* Gross weight of packing list does not include weight of empty container.\n\n  Shipping Marks                                                             SIGNED BY\n                                                                 SHREE SAI INDUSTRIES CO. LTD\n  SHREE SAI\n  INDUSTRIES CO. LTD\n\f"
+      }
+    ]
+  },
+  {
+    "sha256": "01a89645b1893e40f2bf2680f147b2689749d7b5dcf59c4e7779b609e80a555b",
+    "name": "1. COMERCIAL INVOICE.pdf",
+    "group": "mặt hàng Đồ chơi trẻ em",
+    "split": "development_real",
+    "kind": "commercial_invoice",
+    "skus": [
+      {
+        "id": "cand_9de1c3eef104",
+        "identifiers": {
+          "model": [
+            "G2029-32-02"
+          ]
+        },
+        "sku_code": "G2029-32-02",
+        "name": "",
+        "description": "",
+        "facts": [
+          {
+            "id": "fact_5ff743cc",
+            "field": "model",
+            "value": "G2029-32-02",
+            "unit": null,
+            "document_id": "doc_423ad56cff93",
+            "document_name": "source.pdf",
+            "page_number": 2,
+            "quote": "G2029-32-02",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "model",
+            "source_document_id": "doc_423ad56cff93",
+            "source_page": 2,
+            "source_quote": "G2029-32-02",
+            "extraction_status": "extracted",
+            "source_valid": true,
+            "source_document_type": "commercial_invoice",
+            "source_span": [
+              0,
+              1751
+            ],
+            "sku_id": "cand_9de1c3eef104"
+          }
+        ],
+        "source_document_id": "doc_423ad56cff93",
+        "source_page": 2,
+        "product_family": "general",
+        "declared_code": null,
+        "status": "needs_review",
+        "identity_status": "explicit_identifier",
+        "matching": [],
+        "source_members": [
+          {
+            "document_id": "doc_423ad56cff93",
+            "page": 2,
+            "local_id": "s0"
+          }
+        ],
+        "resolved_fields": {
+          "name": null,
+          "model": "G2029-32-02",
+          "part_number": null,
+          "function": null,
+          "construction": null,
+          "material": null,
+          "specifications": null,
+          "manufacturing": null,
+          "condition": null,
+          "packaging": null,
+          "origin": null,
+          "quantity": null,
+          "unit": null,
+          "unit_price": null,
+          "amount": null,
+          "currency": null,
+          "gross_weight": null,
+          "net_weight": null,
+          "packages": null,
+          "declared_code": null
+        },
+        "declared_code_sources": [],
+        "origin_sources": [],
+        "missing_fields": [
+          "name",
+          "function",
+          "construction",
+          "specifications"
+        ],
+        "field_states": {
+          "name": "missing",
+          "model": "extracted",
+          "part_number": "missing",
+          "function": "missing",
+          "construction": "missing",
+          "material": "missing",
+          "specifications": "missing",
+          "manufacturing": "missing",
+          "condition": "missing",
+          "packaging": "missing",
+          "origin": "missing",
+          "quantity": "missing",
+          "unit": "missing",
+          "unit_price": "missing",
+          "amount": "missing",
+          "currency": "missing",
+          "gross_weight": "missing",
+          "net_weight": "missing",
+          "packages": "missing",
+          "declared_code": "missing"
+        }
+      }
+    ],
+    "dossier_fields": {},
+    "page_methods": [
+      "pdftotext",
+      "pdftotext"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "     GUANGZHOU LELE TRADING CO.,LTD\n     ROOM 601-A287, NO.16, KEHUI FIRST STREET, HUANGPU DISTRICT, GUANGZHOU, CHINA\n                                                  INVOICE\n     HD4 IMPORT EXPORT COMPANY LIMITED\n     NO 01, LANE 40, PHAI LUONG STREET, CHI LANG WARD,                                         No.: VN-INV-ST11\n     LANG SON CITY, LANG SON PROVINCE. VIETNAM                                            Date: 1 April 2024\n     Sales Contract: VN-INV-ST11 Dated: 1 April 2024                         TERM : CIF CAT LAI PORT, HCM CITY\n                                                              SHIPPED FROM SHANTOU TO HOCHIMINH CAT LAI\n\n\n                           Description Of Goods      No.\nNo               Art No.                                          Quantity   Unit         U.Price       Amount\n                           TOY-CHINESE ORIGIN       Of Pkg.\n1 3385A                    MASK SET                       5 CTN       180    SET    USD        1.2             216.00\n\n2 88017A                   BEAUTY SET                     5 CTN         40   SET    USD        1.2              48.00\n\n3 HX312-3                  DOLL SET                       5 CTN       120    SET    USD             1          120.00\n\n4 8818/8818-8/8818-16      ROBOT                          7 CTN       504    PCS    USD        1.1             554.40\n\n5 601-3                    FISHING SET                    1 CTN         24   SET    USD        0.8              19.20\n\n6 588-7C                   DESSERT SET                    3 CTN       144    SET    USD             1          144.00\n\n7 36778-46                 TOOL SET                       2 CTN         48   SET    USD        1.2              57.60\n\n8 16854B                   KITCHEN SET                    4 CTN         40   SET    USD        1.6              64.00\n\n9 3302                     KITCHEN SET                    2 CTN       192    SET    USD        0.5              96.00\n\n10 8895                    SHOPPING SET                   2 CTN         36   SET    USD             1           36.00\n\n11 8896                    VILLA SET                      2 CTN         42   SET    USD             1           42.00\n\n12 CY-58                   KITCHEN SET                    2 CTN         48   SET    USD             1           48.00\n\n13 520-1/2/3/5             VENDING MACHINE SET            8 CTN       256    SET    USD             1          256.00\n\n14 8800-2/4                PLAY HOUSE SET                 4 CTN       168    SET    USD             1          168.00\n\n15 3702A                   ELECTRIC ORGAN                 7 CTN       126    PCS    USD        1.5             189.00\n\n16 8321                    TRUCK SET                      3 CTN         54   SET    USD        1.1              59.40\n\n17 8763A                   DISHWASHER SET                 2 CTN         48   SET    USD        1.1              52.80\n\n18 M869-2                  BEAUTY SET                    10 CTN       360    SET    USD             1          360.00\n\n19 3688-S53A               CAR                            2 CTN         72   PCS    USD             1           72.00\n\n20 898-905                 TOP SET                        5 CTN       600    SET    USD             1          600.00\n\n21 8585-4                  TRUCK SET                     10 CTN       360    SET    USD             1          360.00\n\n22 YSN-737-3               HOUSE PLAY SET                 5 CTN       100    SET    USD        1.2             120.00\n\n23 5007                    CAR                            3 CTN       216    PCS    USD             1          216.00\n\n24 3389-3B                 TRUCK SET                      2 CTN         96   SET    USD             1           96.00\n\n25 XJ13                    TANK                          10 CTN       240    PCS    USD        1.1             264.00\n\n26 506-37/56/74/83         KITCHEN SET                    7 CTN       272    SET    USD             1          272.00\n\n27 1607A/1608A             MAKE UP SET                    2 CTN       120    SET    USD             1          120.00\n\n28 666-1                   TRUCK SET                     20 CTN       480    SET    USD        1.1             528.00\n\n29 345-6                   SUPERMARKET SET                2 CTN         96   SET    USD             1           96.00\n\n30 T1016/T1020             BLOCK SET                      4 CTN       192    SET    USD             1          192.00\n\n31 JW567-093/146           CAR SET                        4 CTN       120    SET    USD        1.1             132.00\n\f"
+      },
+      {
+        "number": 2,
+        "text": "32 A380-238/258                    DOCTOR SET           4 CTN      216    SET   USD   1.1      237.60\n\n33 506A                            MASK SET            10 CTN      360    SET   USD   1.1      396.00\n\n34 NF789                           DINASOUR             3 CTN      108    PCS   USD    1       108.00\n\n35 KLX800-1                        TRUCK                2 CTN        64   PCS   USD    1        64.00\n\n36 8801                            REFRIGERATOR SET     2 CTN        72   SET   USD   0.9       64.80\n\n37 C10                             KITCHEN SET          2 CTN        96   SET   USD   1.2      115.20\n     G2001-08-02/G2009-16-02/\n38                                 ROBOT SET            9 CTN        54   SET   USD    2       108.00\n     G2029-32-02\n39 XJ-3985A/B/C                    BLOCK SET            6 CTN      216    SET   USD   1.1      237.60\n\n40 686/796/937/938                 BLOCK SET            8 CTN      336    SET   USD   1.1      369.60\n\n41 0993-5F                         BOXING SET           3 CTN        72   SET   USD   1.1       79.20\n\n42 X9915                           CAKE SET             5 CTN      180    SET   USD    1       180.00\n\n43 5699                            FOOD SET             2 CTN        72   SET   USD    1        72.00\n\n44 5693                            KITCHEN SET          2 CTN        72   SET   USD    1        72.00\n\n45 5676                            FOOT SET             2 CTN      144    SET   USD   0.8      115.20\n\n46 333-5                            BLOCK SET           2 CTN      192    SET   USD   0.8      153.60\n                                Total                 212   CTN   7,648         USD         7,971.20\n\n\n     REMARK :\n     1*40HQ\n     MSKU1715241 / ML-CN7140214\n\f"
+      }
+    ]
+  },
+  {
+    "sha256": "147f24566025c1a7fbf2a409277147ec38e04dc8a7a6065ecde4db9ce694eb18",
+    "name": "4. PACKING LIST.pdf",
+    "group": "mặt hàng Đồ chơi trẻ em",
+    "split": "development_real",
+    "kind": "other",
+    "skus": [],
+    "dossier_fields": {},
+    "page_methods": [
+      "pdftotext",
+      "pdftotext"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "GUANGZHOU LELE TRADING CO.,LTD\nROOM 601-A287, NO.16, KEHUI FIRST STREET, HUANGPU DISTRICT, GUANGZHOU, CHINA\n\n                                    PACKING LIST\nHD4 IMPORT EXPORT COMPANY LIMITED\nNO 01, LANE 40, PHAI LUONG STREET, CHI LANG WARD,\nLANG SON CITY, LANG SON PROVINCE. VIETNAM .                                        No.: VN-INV-ST11\nSales Contract: VN-INV-ST11 Dated: 1 April 2024                             Date: 1 April 2024\n                                                     SHIPPED FROM SHANTOU TO HOCHIMINH CAI LAI\n\n\n                                     Description Of Goods\n   No                     Art No.                            No. Of Pkg.       Quantity    Unit\n                                     TOY-CHINESE ORIGIN\n   1    3385A                        MASK SET                          5 CTN        180    SET\n   2    88017A                       BEAUTY SET                        5 CTN         40    SET\n   3    HX312-3                      DOLL SET                          5 CTN        120    SET\n   4    8818/8818-8/8818-16          ROBOT                             7 CTN        504    PCS\n   5    601-3                        FISHING SET                       1 CTN         24    SET\n   6    588-7C                       DESSERT SET                       3 CTN        144    SET\n   7    36778-46                     TOOL SET                          2 CTN         48    SET\n   8    16854B                       KITCHEN SET                       4 CTN         40    SET\n   9    3302                         KITCHEN SET                       2 CTN        192    SET\n   10   8895                         SHOPPING SET                      2 CTN         36    SET\n   11   8896                         VILLA SET                         2 CTN         42    SET\n   12   CY-58                        KITCHEN SET                       2 CTN         48    SET\n   13   520-1/2/3/5                  VENDING MACHINE SE                8 CTN        256    SET\n   14   8800-2/4                     PLAY HOUSE SET                    4 CTN        168    SET\n   15   3702A                        ELECTRIC ORGAN                    7 CTN        126    PCS\n   16   8321                         TRUCK SET                         3 CTN         54    SET\n   17   8763A                        DISHWASHER SET                    2 CTN         48    SET\n   18   M869-2                       BEAUTY SET                      10 CTN         360    SET\n   19   3688-S53A                    CAR                               2 CTN         72    PCS\n   20   898-905                      TOP SET                           5 CTN        600    SET\n   21   8585-4                       TRUCK SET                       10 CTN         360    SET\n   22   YSN-737-3                    HOUSE PLAY SET                    5 CTN        100    SET\n   23   5007                         CAR                               3 CTN        216    PCS\n   24   3389-3B                      TRUCK SET                         2 CTN         96    SET\n   25   XJ13                         TANK                            10 CTN         240    PCS\n   26   506-37/56/74/83              KITCHEN SET                       7 CTN        272    SET\n   27   1607A/1608A                  MAKE UP SET                       2 CTN        120    SET\n   28   666-1                        TRUCK SET                       20 CTN         480    SET\n   29   345-6                        SUPERMARKET SET                   2 CTN         96    SET\n   30   T1016/T1020                  BLOCK SET                         4 CTN        192    SET\n   31   JW567-093/146                CAR SET                           4 CTN        120    SET\n   32   A380-238/258                 DOCTOR SET                        4 CTN        216    SET\n   33   506A                         MASK SET                        10 CTN         360    SET\n   34   NF789                        DINASOUR                          3 CTN        108    PCS\n   35   KLX800-1                     TRUCK                             2 CTN         64    PCS\n   36   8801                         REFRIGERATOR SET                  2 CTN         72    SET\n   37   C10                          KITCHEN SET                       2 CTN         96    SET\n\f"
+      },
+      {
+        "number": 2,
+        "text": "         G2001-08-02/G2009-16-02/\n  38                                ROBOT SET       9 CTN      54   SET\n         G2029-32-02\n  39     XJ-3985A/B/C               BLOCK SET       6 CTN    216    SET\n  40     686/796/937/938            BLOCK SET       8 CTN    336    SET\n  41     0993-5F                    BOXING SET      3 CTN      72   SET\n  42     X9915                      CAKE SET        5 CTN    180    SET\n  43     5699                       FOOD SET        2 CTN      72   SET\n  44     5693                       KITCHEN SET     2 CTN      72   SET\n  45     5676                       FOOT SET        2 CTN    144    SET\n  46     333-5                      BLOCK SET       2 CTN    192    SET\n\n                    Total           4689.1   KG   212 CTN   7,648\n\nREMARK :\n1*40HQ\nMSKU1715241 / ML-CN7140214\n\f"
+      }
+    ]
+  },
+  {
+    "sha256": "254374c4e13aa73ca0d09a0b02c1d85eafb8f59fdc216dfcc74c53df44dde110",
+    "name": "PACKING LIST.pdf",
+    "group": "mặt hàng Bộ máy tính để bàn",
+    "split": "development_real",
+    "kind": "packing_list",
+    "skus": [
+      {
+        "id": "cand_3caa8477fe8b",
+        "identifiers": {
+          "model": [
+            "19\" AIO monitor /M19"
+          ]
+        },
+        "sku_code": "19\" AIO monitor /M19",
+        "name": "",
+        "description": "",
+        "facts": [
+          {
+            "id": "fact_977e4bbb",
+            "field": "model",
+            "value": "19\" AIO monitor /M19",
+            "unit": null,
+            "document_id": "doc_236801391be1",
+            "document_name": "source.pdf",
+            "page_number": 1,
+            "quote": "                                                   19\" AIO monitor /M19",
+            "extraction_method": "pdftotext:layout_schema",
+            "status": "unverified",
+            "reviewer": null,
+            "source_kind": "document_extracted",
+            "field_name": "model",
+            "source_document_id": "doc_236801391be1",
+            "source_page": 1,
+            "source_quote": "                                                   19\" AIO monitor /M19",
+            "extraction_status": "extracted",
+            "source_valid": true,
+            "source_document_type": "packing_list",
+            "source_table_id": "t0",
+            "source_row_id": "t0r0",
+            "source_column": 2,
+            "source_header": "Model",
+            "source_header_page": 1,
+            "value_fragments": [],
+            "source_block_ids": [
+              "b23"
+            ],
+            "source_span": [
+              1541,
+              1612
+            ],
+            "sku_id": "cand_3caa8477fe8b"
+          }
+        ],
+        "source_document_id": "doc_236801391be1",
+        "source_page": 1,
+        "product_family": "general",
+        "declared_code": null,
+        "status": "needs_review",
+        "identity_status": "explicit_identifier",
+        "matching": [],
+        "source_members": [
+          {
+            "document_id": "doc_236801391be1",
+            "page": 1,
+            "local_id": "t0r0"
+          }
+        ],
+        "resolved_fields": {
+          "name": null,
+          "model": "19\" AIO monitor /M19",
+          "part_number": null,
+          "function": null,
+          "construction": null,
+          "material": null,
+          "specifications": null,
+          "manufacturing": null,
+          "condition": null,
+          "packaging": null,
+          "origin": null,
+          "quantity": null,
+          "unit": null,
+          "unit_price": null,
+          "amount": null,
+          "currency": null,
+          "gross_weight": null,
+          "net_weight": null,
+          "packages": null,
+          "declared_code": null
+        },
+        "declared_code_sources": [],
+        "origin_sources": [],
+        "missing_fields": [
+          "name",
+          "function",
+          "construction",
+          "specifications"
+        ],
+        "field_states": {
+          "name": "missing",
+          "model": "extracted",
+          "part_number": "missing",
+          "function": "missing",
+          "construction": "missing",
+          "material": "missing",
+          "specifications": "missing",
+          "manufacturing": "missing",
+          "condition": "missing",
+          "packaging": "missing",
+          "origin": "missing",
+          "quantity": "missing",
+          "unit": "missing",
+          "unit_price": "missing",
+          "amount": "missing",
+          "currency": "missing",
+          "gross_weight": "missing",
+          "net_weight": "missing",
+          "packages": "missing",
+          "declared_code": "missing"
+        }
+      }
+    ],
+    "dossier_fields": {
+      "incoterms": {
+        "field": "incoterms",
+        "value": "FOB NANSHA",
+        "unit": null,
+        "source_document_id": "doc_236801391be1",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "TRADE TERMS: FOB NANSHA",
+        "field_name": "incoterms",
+        "source_quote": "TRADE TERMS: FOB NANSHA",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b9"
+        ],
+        "source_span": [
+          882,
+          905
+        ],
+        "source_document_type": "packing_list",
+        "sources": [
+          {
+            "field": "incoterms",
+            "value": "FOB NANSHA",
+            "unit": null,
+            "source_document_id": "doc_236801391be1",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "TRADE TERMS: FOB NANSHA",
+            "field_name": "incoterms",
+            "source_quote": "TRADE TERMS: FOB NANSHA",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b9"
+            ],
+            "source_span": [
+              882,
+              905
+            ],
+            "source_document_type": "packing_list"
+          }
+        ]
+      }
+    },
+    "page_methods": [
+      "pdftotext"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "                                                Heovose Technology Co., Limited\nAdd: Room 402, Building A, Fengsheng Industry Park, Shibei Industry Avenue, Huijiang, Dashi Subdistrict, Panyu District, Guangzhou, China\n\n                          Mobile: 86-13533194759           E-mail:carolchen@heovose.com\n\n                                                    PACKING LIST\nTO: SILICOM TECHNOLOGY JOINT STOCK COMPANY                                                                                NO: H20220420A\nADD: 5 Quoc Tu Giam Street, Van Chuong Ward, Dong Da Dist.                                                                 2024/04/01\n                                                                                                                     DATE: 2022/5/14\n,Hanoi City, Vietnam                                                                                     TRADE TERMS: FOB NANSHA\nTEL: +84904864711\n\n\nPAYMENT TERMS: 10% T/T DOWN PAYMENT, 90% BALANCE PAYMENT BEFORE SHIPMENT\nSHIPMENT FROM NANSHA,CHINA TO HAIPHONG,VIETNAM BY SEA\n\n\n\nContainer No. : FTAU1658552/E448020/20'GP/238 PACKAGES/2,900KGS/28.35CBM\n                                                                                         QTY                        N.W          G.W\n    Marks                   Description                           Model                  (pc)     PACKAGES                                  CBM\n                                                                                                                   (KGS)        (KGS)\n\n                                                   19\" AIO monitor /M19\n  SINGPC         SINGPC brand aio pc barebone with mainboard intergrated with             100          36            388          425       3.72\n                                                         i5-560M\n                                                   19\" AIO monitor /M19\n  SINGPC         SINGPC brand aio pc barebone with mainboard intergrated with             150          52            542          608       6.28\n                                                         i3-380M\n\n                                                         19\" AIO monitor /M19\n  SINGPC         SINGPC brand aio pc barebone                                             50           18            183        202.00      2.18\n                                                       with JW-H510 mainboard\n\n                                                         21.5\" AIO monitor /M22\n  SINGPC         SINGPC brand aio pc barebone                                             120          40            522          562       6.00\n                                                      with ONDA-H510 mainboard\n\n                                                     21.5” LED monitor for SingPC\n  SINGPC          SINGPC BRAND MONITOR                                                    280          56            849          905       8.15\n                                                             SGP215 IPS\n\n                                                     23.8” LED monitor for SingPC\n  SINGPC          SINGPC BRAND MONITOR                                                    50           30            162          170       1.80\n                                                             SGP238 IPS\n\n                                                     27.0” LED monitor for SingPC\n  SINGPC          SINGPC BRAND MONITOR                                                     5            5            20           23        0.19\n                                                             SGP270 VA\n\n  SINGPC            HEOVSE BRAND RAM                          RAM 4G/D3                   150\n                                                                                                        1             4            5        0.03\n  SINGPC             HEOVSE BRAND SSD                          SSD 128G                   300\n\n                                                                              TOTAL      1205          238          2670         2900       28.35\n\f"
+      }
+    ]
+  },
+  {
+    "sha256": "3b3cede5e57f2aed5b1655a64de87b03d0d9bab8de605192d778f83c19a8d412",
+    "name": "INVOICE.pdf",
+    "group": "mặt hàng Thép không gỉ cán nguội, dạng tấm",
+    "split": "development_real",
+    "kind": "commercial_invoice",
+    "skus": [],
+    "dossier_fields": {
+      "port_of_loading": {
+        "field": "port_of_loading",
+        "value": "SHANGHAI PORT, CHINA",
+        "unit": null,
+        "source_document_id": "doc_2b30d380a7ba",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "PORT OF LOADING: SHANGHAI PORT, CHINA",
+        "field_name": "port_of_loading",
+        "source_quote": "PORT OF LOADING: SHANGHAI PORT, CHINA",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b13"
+        ],
+        "source_span": [
+          759,
+          796
+        ],
+        "source_document_type": "commercial_invoice",
+        "sources": [
+          {
+            "field": "port_of_loading",
+            "value": "SHANGHAI PORT, CHINA",
+            "unit": null,
+            "source_document_id": "doc_2b30d380a7ba",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "PORT OF LOADING: SHANGHAI PORT, CHINA",
+            "field_name": "port_of_loading",
+            "source_quote": "PORT OF LOADING: SHANGHAI PORT, CHINA",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b13"
+            ],
+            "source_span": [
+              759,
+              796
+            ],
+            "source_document_type": "commercial_invoice"
+          }
+        ]
+      },
+      "port_of_discharge": {
+        "field": "port_of_discharge",
+        "value": "CATLAI PORT, VIETNAM",
+        "unit": null,
+        "source_document_id": "doc_2b30d380a7ba",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM",
+        "field_name": "port_of_discharge",
+        "source_quote": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b15"
+        ],
+        "source_span": [
+          872,
+          911
+        ],
+        "source_document_type": "commercial_invoice",
+        "sources": [
+          {
+            "field": "port_of_discharge",
+            "value": "CATLAI PORT, VIETNAM",
+            "unit": null,
+            "source_document_id": "doc_2b30d380a7ba",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM",
+            "field_name": "port_of_discharge",
+            "source_quote": "PORT OF DISCHARGE: CATLAI PORT, VIETNAM",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b15"
+            ],
+            "source_span": [
+              872,
+              911
+            ],
+            "source_document_type": "commercial_invoice"
+          }
+        ]
+      }
+    },
+    "page_methods": [
+      "pdftotext"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "                                               COMMERCIAL INVOICE\n\nDATE OF EXPORTATION. APR 01, 2024          INVOICE No. 20240328009                     B/L NO. 333021547\n\n\nSHIPPER                                                               CONSIGNEE\n\nCompany Name: WUXI WANHONGNUO STAINLESS STEEL CO., LTD                Company Name: N2 CO., LTD\nAddress: 168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY,               Address: 1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC,\nJIANGSU PROVINCE, CHINA                                               HO CHI MINH CITY, VIET NAM\nContact: MR. JOHNNY                                                   Contact: MR. DAN\nTelephone: : 86-177-0151-0738                                         Telephone: 84-94-634-2370\n\nPORT OF LOADING: SHANGHAI PORT, CHINA                                 TERMS OF PRICE: CIF CAT LAI PORT, VIETNAM\n\nPORT OF DISCHARGE: CATLAI PORT, VIETNAM                               TERMS OF PAYMENT: TT IN ADVANCE\n\nFINAL DESTINATION: CATLAI PORT\n\n  MARKS               DESCRIPTION             HS          COUNTRY     QUANTITY NO. OF NET WEIGHT               UNIT         TOTAL\n    &                                        CODE\n                       OF GOODS                         OF ORIGIN          (PCS)   PKGS        (KGS)       PRICE(USD)       VALUE\n NUMBER\n    S\n\n\n\n\n             COLD-ROLLED STAINLESS\n    SP                                     72193300 CHINA             70           7       23100           $0.88        $20 328\n             STEEL SHEET 310S 2B\n\n\n\n\nTT payment:\n                                                                      COMPANY NAME: WUXI WANHONGNUO STAINLESS STEEL CO., LTD\nBeneficiary name: WUXI WANHONGNUO STAINLESS STEEL\nCO., LTD\n                                                                      SIGNATURE OF SHIPPER\nBeneficiary account number: 0101000111902562381\n\nBeneficiary address: 168 Qiangao Road, Liangxi District, Wuxi City,\nJiangsu Province, China\n\nBeneficiary bank: Industrial & Commercial Bank of China\n\nBeneficiary bank address: 55 Fuxingmennei Avenue, Beijing, China\n\nBeneficiary bank swift code: ICBKCNBJ\n\nBeneficiary country: CN\n                                                                      DATE: MAR 28, 2024\nPostal code: 100140\n\f"
+      }
+    ]
+  },
+  {
+    "sha256": "b53e37f6b22c4eefeac2e59fde166e00fed8649c5c5bdd847284c63f6f7f9dad",
+    "name": "PACKING LIST.pdf",
+    "group": "mặt hàng Thép không gỉ cán nguội, dạng tấm",
+    "split": "development_real",
+    "kind": "packing_list",
+    "skus": [],
+    "dossier_fields": {
+      "total_net_weight": {
+        "field": "total_net_weight",
+        "value": "23100KGS GROSS WEIGHT: 23590KGS.",
+        "unit": null,
+        "source_document_id": "doc_9f4b8a9e8b1b",
+        "source_document_name": "source.pdf",
+        "source_page": 1,
+        "source_excerpt": "NET WEIGHT: 23100KGS GROSS WEIGHT: 23590KGS.",
+        "field_name": "total_net_weight",
+        "source_quote": "NET WEIGHT: 23100KGS GROSS WEIGHT: 23590KGS.",
+        "status": "extracted",
+        "source_kind": "document_extracted",
+        "extraction_method": "explicit_label",
+        "verification_status": "pending_review",
+        "verified_by": null,
+        "verified_at": null,
+        "source_block_ids": [
+          "b31"
+        ],
+        "source_span": [
+          1754,
+          1798
+        ],
+        "source_document_type": "packing_list",
+        "sources": [
+          {
+            "field": "total_net_weight",
+            "value": "23100KGS GROSS WEIGHT: 23590KGS.",
+            "unit": null,
+            "source_document_id": "doc_9f4b8a9e8b1b",
+            "source_document_name": "source.pdf",
+            "source_page": 1,
+            "source_excerpt": "NET WEIGHT: 23100KGS GROSS WEIGHT: 23590KGS.",
+            "field_name": "total_net_weight",
+            "source_quote": "NET WEIGHT: 23100KGS GROSS WEIGHT: 23590KGS.",
+            "status": "extracted",
+            "source_kind": "document_extracted",
+            "extraction_method": "explicit_label",
+            "verification_status": "pending_review",
+            "verified_by": null,
+            "verified_at": null,
+            "source_block_ids": [
+              "b31"
+            ],
+            "source_span": [
+              1754,
+              1798
+            ],
+            "source_document_type": "packing_list"
+          }
+        ]
+      }
+    },
+    "page_methods": [
+      "pdftotext"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "                                     WUXI WANHONGNUO STAINLESS STEEL CO., LTD\n                                   168 QIANGAO ROAD, LIANGXI DISTRICT, WUXI CITY, JIANGSU PROVINCE, CHINA\n                                                            TEL: 86-177-0151-0738\n\nTO: N2 CO., LTD\n1 VO VAN NGAN STREET, LINH CHIEU WARD, THU DUC, HO CHI MINH, VIET NAM\nTEL: 84-94-634-2370\n\n\n                                                          PACKING LIST\n                                                                 (No: 28/03/SP-12)                                      Date: MAR 28, 2024\n\n                                                                             QUANTITY                 WEIGHT          TOTAL WEIGHT\nCONTAINER              PACKING              DESCRIPTION OF                                         (KGS/PALLET)          (KGS)\n     NO.                                          GOODS\n                                                                          PCS        PALLETS     NET        TARE       N.W       G.W\n\nFESU2130516     TOTAL 7 WOODEN PALLETS    COLD-ROLLED STAINLESS\n                                                                           70           7       3300.00     70.00    23100.00   23590.00\nSEAL GP17582   1 X 40FT FCL               STEEL SHEET 310S 2B\n                                          H.S.CODE: 7219.33.00\n                                          SIZE: 9032x1552x2.95MM\n                                          ORIGIN: CHINA\n\n\n\n\n                                         TOTAL                                                 23100.00     490.00   23100.00   23590.00\n\nDESTINATION: CATLAI PORT, VIET NAM QUANTITY: 7 PALLETS.                                  WUXI WANHONGNUO STAINLESS STEEL CO., LTD\n\nNET WEIGHT: 23100KGS GROSS WEIGHT: 23590KGS.                                                        AUTHORIZED SIGNATORY\n\nPACKING: EXPORT STANDARD PACKING WITH SEAWORTHY WOODEN PALLETS,\nWATER PROOF PAPER, PVC FILM, INTERLEAVING PAPER, 10 PCS/PACKAGE,\nTOTAL 7 PACKAGES (PALLETS).\n\f"
+      }
+    ]
+  },
+  {
+    "sha256": "28862cb221cab5a50e5d3580b7bdb10315ebe01da0ed46db3c3710a9920717c5",
+    "name": "ToKhaiHQ7N_.xlsx",
+    "group": "mặt hàng Tôm hùm giống",
+    "split": "development_real",
+    "kind": "other",
+    "skus": [],
+    "dossier_fields": {},
+    "page_methods": [
+      "xlsx_sheet",
+      "xlsx_sheet"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "[TKN]\nC1=<IMP> | AF1=1/3\nF2=Bản xác nhận nội dung tờ khai hàng hóa nhập khẩu<In thử>\nAA3=**\nC4=Số tờ khai | L4=Số tờ khai đầu tiên | R4=  - | W4=/\nC5=Số tờ khai tạm nhập tái xuất tương ứng\nC6=Mã phân loại kiểm tra | L6=Mã loại hình | P6=A12       2  [ 4 ] | U6=Mã số hàng hóa đại diện của tờ khai | AE6=\nC7=Tên cơ quan Hải quan tiếp nhận tờ khai | L7= | T7=Mã bộ phận xử lý tờ khai | AE7=\nC8=Ngày đăng ký | G8=10/04/ 2024  | L8=Ngày thay đổi đăng ký | R8=/    /    | W8=Thời hạn tái nhập/ tái xuất | AE8= /    /\nC9=Người nhập khẩu\nD10=Mã | H10=0304096222\nD11=Tên | H11=CÔNG TY TNHH TIẾP VẬN TÂN NGUYÊN\nD13=Mã bưu chính | H13=\nD14=Địa chỉ | H14=56/5/25 Thạnh Xuân 25, Phường Thạnh Xuân, Quận 12, Thành phố Hồ Chí Minh, Việt Nam\nD16=Số điện thoại | H16=0837160480\nC17=Người ủy thác nhập khẩu\nD18=Mã | H18=0314476819\nD19=Tên | H19=CÔNG TY TNHH NUÔI TRỒNG GIAO NHẬN THỦY SẢN HOÀNG QUÂN\nC21=Người xuất khẩu\nD22=Mã | H22=\nD23=Tên | H23=EBONY WONDER CO.,LTD \nD24=Mã bưu chính | H24=\nD25=Địa chỉ | H25=WISMA UOA11, SUITE 9-13, 9TH FLOOR | U25= B, 21, JALAN PINANG OPP TWINS \nH26=TOWER, 50450, KUALA LUMPUR,  | U26=MALAYSIA\nD27=Mã nước | H27=MY\nC28=Người ủy thác xuất khẩu | I28=\nC29=Đại lý Hải quan | G29=   | AA29=Mã nhân viên Hải quan | AF29=\nC30=Số vận đơn | R30=Địa điểm lưu kho | U30=02CIS01 | Z30=TONG CTY TAN CANG SG\nC31=1 | D31=060424SZLY21910025 | R31=Địa điểm dỡ hàng | U31=VNCLI | Z31=CANG CAT LAI (HCM)\nC32=2 | D32= | R32=Địa điểm xếp hàng | U32=MYPKG | Z32=PORT KELANG (SWETTEN\nC33=3 | D33= | R33=Phương tiện vận chuyển\nC34=4 | D34= | T34=9999 | Z34=CSCL SAO PAULO/059W\nC35=5 | D35= | R35=Ngày hàng đến | U35=12/04/2024\nC36=Số lượng | K36=100 | P36=BX | R36=Ký hiệu và số hiệu | U36=\nC37=Tổng trọng lượng hàng (Gross) | K37=2.022 | P37=KGM \nC38=Số lượng container | K38=1\nR39=Ngày được phép nhập kho đầu tiên\nR40=Mã văn bản pháp quy khác | Y40=FQ  GU      \nC41=Số hóa đơn | J41=A - 20240405001\nC42=Số tiếp nhận hóa đơn điện tử | J42=\nC43=Ngày phát hành | J43=05/04/2024\nC44=Phương thức thanh toán | J44=KC\nC45=Tổng trị giá hóa đơn | J45=A - FOB - USD -  | P45=45.000\nC46=Tổng trị giá tính thuế\nC47=Tổng hệ số phân bổ trị giá | X47= - \nC48=Mã kết quả kiểm tra nội dung | J48=A\nC49=Giấy phép nhập khẩu\nC50=1 | D50=GF0G | E50=- | F50=194 | O50=2 | P50=HT02 | Q50=- | R50=2758/GP-TCTS-TTKN | Y50=3 | AA50= | AB50=- | AC50=\nC51=4 | D51= | E51=- | F51= | O51=5 | P51= | Q51=- | R51=\nC52=Mã phân loại khai trị giá | I52=6\nC53=Khai trị giá tổng hợp | I53= | O53= -  | Q53=- | R53= | Y53=    | AB53=-\nC54=Các khoản điều chỉnh\nC55=Phí vận chuyển | I55=A - VND -  | L55=1.120.000\nC56=Phí bảo hiểm | I56=D -  -  | V56= - \nD57=Mã tên | G57=Mã phân loại | N57=Trị giá khoản điều chỉnh | U57=Tổng hệ số phân bổ\nC58=1 | D58=  | E58=- | G58= | J58=- | K58= | M58=-\nC59=2 | D59=  | E59=- | G59= | J59=- | K59= | M59=-\nC60=3 | D60=  | E60=- | G60= | J60=- | K60= | M60=-\nC61=4 | D61=  | E61=- | G61= | J61=- | K61= | M61=-\nC62=5 | D62= | E62=- | G62= | J62=- | K62= | M62=-\nC63=Chi tiết khai trị giá\nD64=PHÍ VẬN CHUYỂN ĐÃ BAO GỒM PHÍ VAT 10%\nD67=Tên sắc thuế | H67=Tổng tiền thuế | M67=Số dòng tổng\nC68=1 | D68=   | L68=VND | N68= | R68=Tổng tiền thuế phải nộp | AE68=VND\nC69=2 | D69=   | L69=VND | N69= | R69=Số tiền bảo lãnh | AE69=VND\nC70=3 | D70=   | L70=VND | N70= | R70=Tỷ giá tính thuế | X70= | AA70=-\nC71=4 | D71=   | L71=VND | N71= | X71= | AA71=-\nC72=5 | D72=   | L72=VND | N72= | X72= | AA72=-\nC73=6 | D73=   | L73=VND | N73= | R73=Mã xác định thời hạn nộp thuế | X73=D | AB73=Người nộp thuế | AF73=1\nR74=Mã lý do đề nghị BP | X74=  | AB74=Phân loại nộp thuế | AF74=\nO75=Tổng số trang của tờ khai | U75= | X75=Tổng số dòng hàng của tờ khai | AF75=2\nC76=<IMP> | AF76=2/3\nD77=Bản xác nhận nội dung tờ khai hàng hóa nhập khẩu<In thử>\nC79=Số tờ khai | L79=Số tờ khai đầu tiên | R79=  - | W79=/ | X79=\nC80=Số tờ khai tạm nhập tái xuất tương ứng\nC81=Mã phân loại kiểm tra | I81= | L81=Mã loại hình | P81=A12       2  [ 4 ] | U81=Mã số hàng hóa đại diện của tờ khai | AE81=\nC82=Tên cơ quan Hải quan tiếp nhận tờ khai | L82= | T82=Mã bộ phận xử lý tờ khai | AE82=\nC83=Ngày đăng ký | G83=/     / | L83=Ngày thay đổi đăng ký | R83=/    /    | W83=Thời hạn tái nhập/ tái xuất | AE83=/    /   \nC84=Số đính kèm khai báo điện tử | J84=1 | K84= -  | R84=2 | S84= -  | Y84=3 | Z84= - \nC85=Phần ghi chú | G85=231-01003-4#&02052023#&, PTTT: BY TT 100% DEBIT NOTE, CÓ C/O FORM D ngày 06/04/2024\nC87=Số quản lý của nội bộ doanh nghiệp | K87= | U87=Số quản lý người sử dụng | AC87=\nC88=Phân loại chỉ thị của Hải quan | I88= \nD89=Ngày | I89=Tên | P89=Nội dung\nC90=1 | D90=/   / | I90= | R90=\nC93=2 | D93=/   / | I93= | R93=\nC96=3 | D96=/   / | I96= | R96=\nC99=4 | D99=/   / | I99= | R99=\nC102=5 | D102=/   / | I102= | R102=\nC105=6 | D105=/   / | I105= | R105=\nC108=7 | D108=/   / | I108= | R108=\nC111=8 | D111=/   / | I111= | R111=\nC114=9 | D114=/   / | I114= | R114=\nC117=10 | D117=/   / | I117= | R117=\nC120=Mục thông báo của Hải quan\nD121=Ngày khai báo nộp thuế | K121=/      /   \nD122=Tổng số tiền thuế chậm nộp\nD123=\nD124= | E124= | P124= | R124=\nD125= | E125= | P125= | R125=\nD126= | E126= | P126= | R126=\nD127=Thời hạn cho phép vận chuyển bảo thuế (khởi hành) | R127=/   /\nL128=Địa điểm | P128=Ngày đến | U128=Ngày khởi hành\nD129=Thông tin trung chuyển | K129=1 | L129= | P129=/   /   | T129=~ | U129=/   /  \nK130=2 | L130= | P130=/   /   | T130=~ | U130=/   /  \nK131=3 | L131= | P131=/   /   | T131=~ | U131=/   /  \nD132=Địa điểm đích cho vận chuyển bảo thuế | L132=\nC133=<IMP> | AF133=3/3\nD134=Bản xác nhận nội dung tờ khai hàng hóa nhập khẩu<In thử>\nC136=Số tờ khai | L136=Số tờ khai đầu tiên | R136= -  | W136=/ | X136=\nC137=Số tờ khai tạm nhập tái xuất tương ứng\nC138=Mã phân loại kiểm tra | I138= | L138=Mã loại hình | P138=A12       2  [ 4 ] | U138=Mã số hàng hóa đại diện của tờ khai | AE138=\nC139=Tên cơ quan Hải quan tiếp nhận tờ khai | L139= | T139=Mã bộ phận xử lý tờ khai | AE139=\nC140=Ngày đăng ký | G140=/   / | L140=Ngày thay đổi đăng ký | R140=/    /    | W140=Thời hạn tái nhập/ tái xuất | AE140=/    /   \nC142=<01>\nC143=Mã số hàng hóa | G143=03063120 | L143=Mã quản lý riêng | Q143= | U143=Mã phân loại tái xác nhận giá | AC143=[  ]\nC144=Mô tả hàng hóa | G144=Tôm hùm bông sống (Panulirus Ornatus) 1 - 15 cm ; Đầu dưới 3g, 100 hộp, dùng làm giống thương mại , mới 100%\nS147=Số lượng (1) | V147=1.000 | AE147=KGM \nC148=Số của mục khai khoản điều chỉnh | J148=                | S148=Số lượng (2) | V148=1.000 | AE148=KGM \nC149=Trị giá hóa đơn | I149=45.000 | S149=Đơn giá hóa đơn | V149=45 | AB149=- | AC149=USD | AE149=KGM \nC150=Thuế nhập khẩu\nD151=Trị giá tính thuế (S) | I151=1.140.525.000 | P151=VND | S151=Trị giá tính thuế (M) | W151= | Y151=-\nD152=Số lượng tính thuế | P152= | S152=Đơn giá tính thuế | V152=1.140.525 | AB152=- | AC152=VND | AD152=- | AE152=\nD153=Thuế suất | H153= | I153=0% | O153=- | P153= | S153=Mã áp dụng thuế tuyệt đối | X153=\nD154=Số tiền thuế | I154=0 | P154=VND | S154=Nước xuất xứ | X154=MY | Y154=- | Z154=MALAYSIA | AB154=- | AC154=B04\nD155=Số tiền miễn giảm | P155=VND | S155=Mã ngoài hạn ngạch | W155=\nD156=Số thứ tự của dòng hàng trên tờ khai tạm nhập tái xuất tương ứng | S156=\nD157=Danh mục miễn thuế nhập khẩu | K157= | O157=- | P157=\nC158=Miễn / Giảm / Không chịu thuế nhập khẩu\nE159= | I159=\nC160=Thuế và thu khác\nC161=1 | D161=Tên | H161=Thuế GTGT | S161=Mã áp dụng thuế suất | W161=V\nD162=Trị giá tính thuế | I162=1.140.525.000 | P162=VND | S162=Số lượng tính thuế | AE162=\nD163=Thuế suất | I163=0% | S163=Miễn / Giảm / Không chịu thuế và thu khác\nD164=Số tiền thuế | I164=0 | P164=VND | S164= | U164=\nD165=Số tiền miễn giảm | P165=VND\nC166=2 | D166=Tên | H166= | S166=Mã áp dụng thuế suất | W166=\nD167=Trị giá tính thuế | P167=VND | S167=Số lượng tính thuế | AE167=\nD168=Thuế suất | I168= | S168=Miễn / Giảm / Không chịu thuế và thu khác\nD169=Số tiền thuế | P169=VND | S169= | U169=\nD170=Số tiền miễn giảm | P170=VND\nC171=3 | D171=Tên | H171= | S171=Mã áp dụng thuế suất | W171=\nD172=Trị giá tính thuế | P172=VND | S172=Số lượng tính thuế | AE172=\nD173=Thuế suất | I173= | S173=Miễn / Giảm / Không chịu thuế và thu khác\nD174=Số tiền thuế | P174=VND | S174= | U174=\nD175=Số tiền miễn giảm | P175=VND\nC176=4 | D176=Tên | H176= | S176=Mã áp dụng thuế suất | W176=\nD177=Trị giá tính thuế | P177=VND | S177=Số lượng tính thuế | AE177=\nD178=Thuế suất | I178= | S178=Miễn / Giảm / Không chịu thuế và thu khác\nD179=Số tiền thuế | P179=VND | S179= | U179=\nD180=Số tiền miễn giảm | P180=VND\nC181=5 | D181=Tên | H181= | S181=Mã áp dụng thuế suất | W181=\nD182=Trị giá tính thuế | P182=VND | S182=Số lượng tính thuế | AE182=\nD183=Thuế suất | I183= | S183=Miễn / Giảm / Không chịu thuế và thu khác\nD184=Số tiền thuế | P184=VND | S184= | U184=\nD185=Số tiền miễn giảm | P185=VND"
+      },
+      {
+        "number": 2,
+        "text": "[HANG]\nC1=<IMP>\nD2=Tờ khai hàng hóa nhập khẩu (thông báo kết quả phân luồng)\nC4=Số tờ khai | L4=Số tờ khai đầu tiên\nC5=Số tờ khai tạm nhập tái xuất tương ứng\nC6=Mã phân loại kiểm tra | L6=Mã loại hình | U6=Mã số hàng hóa đại diện của tờ khai\nC7=Tên cơ quan Hải quan tiếp nhận tờ khai | T7=Mã bộ phận xử lý tờ khai\nC8=Ngày đăng ký | G8=/   / | L8=Ngày thay đổi đăng ký | R8=/    /    | W8=Thời hạn tái nhập/ tái xuất | AE8=/    /   \nC11=Mã số hàng hóa | L11=Mã quản lý riêng | U11=Mã phân loại tái xác nhận giá\nC12=Mô tả hàng hóa\nS15=Số lượng (1)\nC16=Số của mục khai khoản điều chỉnh | S16=Số lượng (2)\nC17=Trị giá hóa đơn | S17=Đơn giá hóa đơn | AB17=-\nC18=Thuế nhập khẩu\nD19=Trị giá tính thuế (S) | P19=VND | S19=Trị giá tính thuế (M) | Y19=-\nD20=Số lượng tính thuế | S20=Đơn giá tính thuế | AB20=- | AC20=VND | AD20=-\nD21=Thuế suất | O21=- | S21=Mã áp dụng thuế tuyệt đối\nD22=Số tiền thuế | P22=VND | S22=Nước xuất xứ | Y22=- | AB22=-\nD23=Số tiền miễn giảm | P23=VND | S23=Mã ngoài hạn ngạch\nD24=Số thứ tự của dòng hàng trên tờ khai tạm nhập tái xuất tương ứng\nD25=Danh mục miễn thuế nhập khẩu | O25=-\nC26=Miễn / Giảm / Không chịu thuế nhập khẩu\nC28=Thuế và thu khác\nC29=1 | D29=Tên | S29=Mã áp dụng thuế suất\nD30=Trị giá tính thuế | P30=VND | S30=Số lượng tính thuế\nD31=Thuế suất | S31=Miễn / Giảm / Không chịu thuế và thu khác\nD32=Số tiền thuế | P32=VND\nD33=Số tiền miễn giảm | P33=VND\nC34=2 | D34=Tên | S34=Mã áp dụng thuế suất\nD35=Trị giá tính thuế | P35=VND | S35=Số lượng tính thuế\nD36=Thuế suất | S36=Miễn / Giảm / Không chịu thuế và thu khác\nD37=Số tiền thuế | P37=VND\nD38=Số tiền miễn giảm | P38=VND\nC39=3 | D39=Tên | S39=Mã áp dụng thuế suất\nD40=Trị giá tính thuế | P40=VND | S40=Số lượng tính thuế\nD41=Thuế suất | S41=Miễn / Giảm / Không chịu thuế và thu khác\nD42=Số tiền thuế | P42=VND\nD43=Số tiền miễn giảm | P43=VND\nC44=4 | D44=Tên | S44=Mã áp dụng thuế suất\nD45=Trị giá tính thuế | P45=VND | S45=Số lượng tính thuế\nD46=Thuế suất | S46=Miễn / Giảm / Không chịu thuế và thu khác\nD47=Số tiền thuế | P47=VND\nD48=Số tiền miễn giảm | P48=VND\nC49=5 | D49=Tên | S49=Mã áp dụng thuế suất\nD50=Trị giá tính thuế | P50=VND | S50=Số lượng tính thuế\nD51=Thuế suất | S51=Miễn / Giảm / Không chịu thuế và thu khác\nD52=Số tiền thuế | P52=VND\nD53=Số tiền miễn giảm | P53=VND"
+      }
+    ]
+  },
+  {
+    "sha256": "d3c1f36983c198fdf1cdbebc2502ce48cefc0d3f8ad539ad88c515c3b3cbcb43",
+    "name": "INVOICE.pdf",
+    "group": "mặt hàng Máy móc, thiết bị đã qua sử dụng",
+    "split": "development_real",
+    "kind": "other",
+    "skus": [],
+    "dossier_fields": {},
+    "page_methods": [
+      "pdftotext"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "01 Apr\n\f"
+      }
+    ]
+  },
+  {
+    "sha256": "ead5056dcf6268fdcdbe18c2868c2a6735ca8cef7208b034ebe32a65d5e77026",
+    "name": "PACKING LIST.pdf",
+    "group": "mặt hàng Máy móc, thiết bị đã qua sử dụng",
+    "split": "development_real",
+    "kind": "other",
+    "skus": [],
+    "dossier_fields": {},
+    "page_methods": [
+      "pdftotext"
+    ],
+    "warnings": [],
+    "pages": [
+      {
+        "number": 1,
+        "text": "     01 Apr\n\n\n\n\nIn\n\f"
+      }
+    ]
+  }
+]

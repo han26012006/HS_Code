@@ -1,0 +1,1041 @@
+     1	"""Intelligent Document Type Detection, Information Extraction, and Cross-Document Reconciliation.
+     2	
+     3	Pure local extraction: deterministic regex, dictionary matching, tabular scanning,
+     4	and exact text substring provenance (no external API calls or hallucinated quotes).
+     5	"""
+     6	from __future__ import annotations
+     7	
+     8	import io
+     9	import re
+    10	import uuid
+    11	import hashlib
+    12	import zipfile
+    13	import tempfile
+    14	import shutil
+    15	import subprocess
+    16	from datetime import datetime
+    17	from pathlib import Path
+    18	from typing import Dict, List, Optional, Any, Tuple
+    19	
+    20	# Supported Document Types
+    21	DOC_TYPES = {
+    22	    'commercial_invoice': 'Commercial Invoice (Hóa đơn thương mại)',
+    23	    'packing_list': 'Packing List (Bảng kê đóng gói)',
+    24	    'bill_of_lading': 'Bill of Lading (Vận đơn đường biển)',
+    25	    'air_waybill': 'Air Waybill (Vận đơn hàng không)',
+    26	    'certificate_of_origin': 'Certificate of Origin (Chứng nhận xuất xứ)',
+    27	    'technical_spec': 'Technical Specification (Tài liệu kỹ thuật / Datasheet)',
+    28	    'product_catalogue': 'Product Catalogue (Catalogue sản phẩm)',
+    29	    'customs_declaration': 'Customs Declaration (Tờ khai hải quan)',
+    30	    'mill_test': 'Mill Test Certificate (Chứng chỉ xuất xưởng)',
+    31	    'sales_contract': 'Sales Contract (Hợp đồng mua bán)',
+    32	    'regulatory_permit': 'Giấy phép / Công bố chuyên ngành',
+    33	    'legal_reference': 'Tài liệu pháp lý tham chiếu',
+    34	    'other': 'Chứng từ khác',
+    35	}
+    36	
+    37	# Signal Lexicon for Document Classification
+    38	DOC_TYPE_SIGNALS = {
+    39	    'commercial_invoice': [
+    40	        (r'\b(?:commercial|customs)\s+invoice\b', 12),
+    41	        (r'\binvoice\s+no\.?\b', 8),
+    42	        (r'\bhóa\s+đơn\s+thương\s+mại\b', 12),
+    43	        (r'\bpayment\s+terms?\b', 5),
+    44	        (r'\bconsignee\b', 4),
+    45	        (r'\bshipper\b', 4),
+    46	        (r'\bunit\s+price\b', 5),
+    47	        (r'\btotal\s+amount\b', 6),
+    48	        (r'发票号', 8),
+    49	    ],
+    50	    'packing_list': [
+    51	        (r'\bpacking\s+list\b', 14),
+    52	        (r'\bphiếu\s+đóng\s+gói\b', 12),
+    53	        (r'\bbảng\s+kê\s+đóng\s+gói\b', 12),
+    54	        (r'\bgross\s+weight\b', 8),
+    55	        (r'\bnet\s+weight\b', 8),
+    56	        (r'\bg\.?w\.?\b', 5),
+    57	        (r'\bn\.?w\.?\b', 5),
+    58	        (r'\bcartons?\b', 4),
+    59	        (r'\bpackages?\b', 4),
+    60	        (r'\bmeasurement\b', 5),
+    61	    ],
+    62	    'bill_of_lading': [
+    63	        (r'\bbill\s+of\s+lading\b', 14),
+    64	        (r'\bb/?l\s+no\.?\b', 10),
+    65	        (r'\bocean\s+bill\b', 10),
+    66	        (r'\bvận\s+đơn\s+đường\s+biển\b', 12),
+    67	        (r'\bport\s+of\s+loading\b', 7),
+    68	        (r'\bport\s+of\s+discharge\b', 7),
+    69	        (r'\bvessel\b', 6),
+    70	        (r'\bvoyage\b', 6),
+    71	    ],
+    72	    'air_waybill': [
+    73	        (r'\bair\s*waybill\b', 14),
+    74	        (r'\bawb\b', 8),
+    75	        (r'\bflight\s+no\.?\b', 8),
+    76	        (r'\bairport\s+of\s+departure\b', 8),
+    77	        (r'\bairport\s+of\s+destination\b', 8),
+    78	    ],
+    79	    'certificate_of_origin': [
+    80	        (r'\bcertificate\s+of\s+origin\b', 15),
+    81	        (r'\bchứng\s+nhận\s+xuất\s+xứ\b', 14),
+    82	        (r'\bform\s+(d|e|ak|aj|vj|cptpp|evfta|rcep)\b', 12),
+    83	        (r'\borigin\s+criteria\b', 8),
+    84	        (r'\bpreferential\s+treatment\b', 7),
+    85	    ],
+    86	    'mill_test': [
+    87	        (r'\bmill\s+test\s+certificate\b', 15),
+    88	        (r'\binspection\s+certificate\b', 10),
+    89	        (r'产\s*品\s*质\s*量\s*证\s*明\s*书', 15),
+    90	        (r'\bchemical\s+composition\b', 9),
+    91	        (r'\btensile\s+test\b', 9),
+    92	        (r'\bheat\s+no\.?\b', 8),
+    93	        (r'\byield\s+strength\b', 7),
+    94	        (r'\belongation\b', 7),
+    95	    ],
+    96	    'technical_spec': [
+    97	        (r'\btechnical\s+specifications?\b|hồ\s*sơ\s*kỹ\s*thuật', 14),
+    98	        (r'\bthông\s+số\s+kỹ\s+thuật\b', 14),
+    99	        (r'\bdatasheet\b', 12),
+   100	        (r'\bdata\s+sheet\b', 10),
+   101	        (r'\buser\s+manual\b', 10),
+   102	        (r'\bhướng\s+dẫn\s+sử\s+dụng\b', 10),
+   103	        (r'\boperating\s+instructions?\b', 9),
+   104	        (r'\bcông\s+bố\s+tiêu\s+chuẩn\b', 9),
+   105	        (r'\bpower\s+supply\b', 6),
+   106	        (r'\bwavelength\b', 7),
+   107	    ],
+   108	    'product_catalogue': [
+   109	        (r'\bcatalogue\b', 10),
+   110	        (r'\bcatalog\b', 10),
+   111	        (r'\bproduct\s+guide\b', 8),
+   112	        (r'\bbrochure\b', 8),
+   113	    ],
+   114	    'customs_declaration': [
+   115	        (r'\btờ\s+khai\s+hàng\s+hóa\s+(nhập|xuất)\s+khẩu\b', 15),
+   116	        (r'\bcustoms\s+declaration\b', 12),
+   117	        (r'\bsố\s+tờ\s+khai\b', 10),
+   118	        (r'\bmã\s+loại\s+hình\b', 9),
+   119	        (r'\bphân\s+luồng\b', 8),
+   120	        (r'<imp>', 10),
+   121	        (r'<exp>', 10),
+   122	    ],
+   123	    'sales_contract': [
+   124	        (r'\bsales\s+contract\b', 15),
+   125	        (r'\bhợp\s+đồng\s+mua\s+bán\b', 14),
+   126	        (r'\bcontract\s+no\.?\b', 10),
+   127	        (r'\bpurchase\s+agreement\b', 12),
+   128	        (r'\bthe\s+seller\b', 6),
+   129	        (r'\bthe\s+buyer\b', 6),
+   130	    ],
+   131	    'regulatory_permit': [
+   132	        (r'\bgiấy\s+phép\b', 10),
+   133	        (r'\bgiấy\s+đăng\s+ký\b', 9),
+   134	        (r'\bbộ\s+y\s+tế\b', 8),
+   135	        (r'\bbộ\s+nông\s+nghiệp\b', 8),
+   136	        (r'\bkiểm\s+dịch\b', 8),
+   137	    ],
+   138	}
+   139	
+   140	
+   141	def parse_file_bytes(filename: str, content: bytes) -> List[Dict[str, Any]]:
+   142	    """Extracts text pages from raw bytes of supported document formats with OCR fallback."""
+   143	    ext = Path(filename).suffix.lower()
+   144	    pages = []
+   145	
+   146	    if ext == '.pdf':
+   147	        tmp_pdf_path = None
+   148	        try:
+   149	            with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as tmp_f:
+   150	                tmp_f.write(content)
+   151	                tmp_pdf_path = tmp_f.name
+   152	
+   153	            from pypdf import PdfReader
+   154	            reader = PdfReader(tmp_pdf_path)
+   155	            total_pages = len(reader.pages)
+   156	            if total_pages == 0:
+   157	                total_pages = 1
+   158	
+   159	            # Detect available OCR & extraction engines
+   160	            tess_bin = shutil.which('tesseract')
+   161	            ppm_bin = shutil.which('pdftoppm')
+   162	            pdftotext_bin = shutil.which('pdftotext')
+   163	
+   164	            # Language for tesseract
+   165	            ocr_lang = 'eng'
+   166	            if tess_bin:
+   167	                try:
+   168	                    langs = subprocess.check_output([tess_bin, '--list-langs'], text=True).split()
+   169	                    if 'vie' in langs and 'eng' in langs:
+   170	                        ocr_lang = 'vie+eng'
+   171	                    elif 'vie' in langs:
+   172	                        ocr_lang = 'vie'
+   173	                    else:
+   174	                        ocr_lang = 'eng'
+   175	                except Exception:
+   176	                    pass
+   177	
+   178	            for i in range(1, total_pages + 1):
+   179	                txt = ''
+   180	                method = 'pdf_text'
+   181	                # 1. Try pypdf text extraction
+   182	                try:
+   183	                    if i <= len(reader.pages):
+   184	                        txt = reader.pages[i - 1].extract_text() or ''
+   185	                except Exception:
+   186	                    txt = ''
+   187	
+   188	                # 2. If text is too short, try pdftotext
+   189	                if sum(c.isalpha() for c in txt) < 40 and pdftotext_bin and tmp_pdf_path:
+   190	                    try:
+   191	                        p_res = subprocess.run([pdftotext_bin, '-f', str(i), '-l', str(i), '-layout', tmp_pdf_path, '-'],
+   192	                                               capture_output=True, text=True, timeout=20)
+   193	                        if p_res.returncode == 0 and len(p_res.stdout.strip()) > len(txt.strip()):
+   194	                            txt = p_res.stdout
+   195	                            method = 'pdftotext'
+   196	                    except Exception:
+   197	                        pass
+   198	
+   199	                # 3. If text is still too short and OCR tools are available, run OCR on scanned page
+   200	                if sum(c.isalpha() for c in txt) < 40 and tess_bin and ppm_bin and tmp_pdf_path:
+   201	                    try:
+   202	                        with tempfile.TemporaryDirectory() as td:
+   203	                            prefix = Path(td) / f"page_{i}"
+   204	                            cmd_ppm = [ppm_bin, '-f', str(i), '-l', str(i), '-singlefile', '-r', '200', '-png', tmp_pdf_path, str(prefix)]
+   205	                            p_ppm = subprocess.run(cmd_ppm, capture_output=True, timeout=30)
+   206	                            img_out = str(prefix) + '.png'
+   207	                            if Path(img_out).exists():
+   208	                                p_tess = subprocess.run([tess_bin, img_out, 'stdout', '-l', ocr_lang, '--psm', '6'],
+   209	                                                        capture_output=True, text=True, timeout=40)
+   210	                                if p_tess.returncode == 0 and len(p_tess.stdout.strip()) > len(txt.strip()):
+   211	                                    txt = p_tess.stdout
+   212	                                    method = f"ocr_{ocr_lang}"
+   213	                    except Exception:
+   214	                        pass
+   215	
+   216	                pages.append({'number': i, 'text': txt, 'method': method})
+   217	
+   218	        except Exception as exc:
+   219	            pages.append({'number': 1, 'text': '', 'method': 'parse_error', 'error': str(exc), 'status': 'needs_review'})
+   220	        finally:
+   221	            if tmp_pdf_path and Path(tmp_pdf_path).exists():
+   222	                Path(tmp_pdf_path).unlink(missing_ok=True)
+   223	
+   224	    elif ext == '.docx':
+   225	        try:
+   226	            import docx
+   227	            doc = docx.Document(io.BytesIO(content))
+   228	            lines = [p.text for p in doc.paragraphs]
+   229	            for table in doc.tables:
+   230	                for row in table.rows:
+   231	                    lines.append(' | '.join(c.text for c in row.cells))
+   232	            pages.append({'number': 1, 'text': '\n'.join(lines), 'method': 'docx_text'})
+   233	        except Exception:
+   234	            pages.append({'number': 1, 'text': '', 'method': 'docx_error'})
+   235	
+   236	    elif ext in ('.xlsx', '.xls'):
+   237	        try:
+   238	            import openpyxl
+   239	            wb = openpyxl.load_workbook(io.BytesIO(content), read_only=True, data_only=True)
+   240	            for idx, sheet in enumerate(wb.worksheets, 1):
+   241	                sheet_lines = [f"[{sheet.title}]"]
+   242	                for row in sheet.iter_rows():
+   243	                    vals = [f"{c.coordinate}={c.value}" for c in row if c.value is not None]
+   244	                    if vals:
+   245	                        sheet_lines.append(' | '.join(vals))
+   246	                pages.append({'number': idx, 'text': '\n'.join(sheet_lines), 'method': 'xlsx_sheet'})
+   247	            wb.close()
+   248	        except Exception:
+   249	            pages.append({'number': 1, 'text': '', 'method': 'xlsx_error'})
+   250	
+   251	    elif ext in ('.png', '.jpg', '.jpeg'):
+   252	        tess_bin = shutil.which('tesseract')
+   253	        if tess_bin:
+   254	            try:
+   255	                ocr_lang = 'eng'
+   256	                try:
+   257	                    langs = subprocess.check_output([tess_bin, '--list-langs'], text=True).split()
+   258	                    if 'vie' in langs and 'eng' in langs:
+   259	                        ocr_lang = 'vie+eng'
+   260	                    elif 'vie' in langs:
+   261	                        ocr_lang = 'vie'
+   262	                except Exception:
+   263	                    pass
+   264	
+   265	                with tempfile.NamedTemporaryFile(suffix=ext, delete=False) as tmp:
+   266	                    tmp.write(content)
+   267	                    tmp_path = tmp.name
+   268	                p = subprocess.run([tess_bin, tmp_path, 'stdout', '-l', ocr_lang, '--psm', '6'], capture_output=True, text=True, timeout=60)
+   269	                txt = p.stdout if p.returncode == 0 else ''
+   270	                Path(tmp_path).unlink(missing_ok=True)
+   271	                pages.append({'number': 1, 'text': txt, 'method': f"ocr_{ocr_lang}"})
+   272	            except Exception:
+   273	                pages.append({'number': 1, 'text': f"[Hình ảnh {filename}]", 'method': 'image_metadata'})
+   274	        else:
+   275	            pages.append({'number': 1, 'text': f"[Hình ảnh {filename} - Chưa có OCR engine]", 'method': 'image_metadata'})
+   276	
+   277	    elif ext in ('.txt', '.csv'):
+   278	        try:
+   279	            txt = content.decode('utf-8-sig')
+   280	        except UnicodeDecodeError:
+   281	            txt = content.decode('cp1258', errors='replace')
+   282	        pages.append({'number': 1, 'text': txt, 'method': 'plain_text'})
+   283	
+   284	    else:
+   285	        # Generic text extraction
+   286	        pages.append({'number': 1, 'text': content.decode('utf-8', errors='replace'), 'method': 'generic'})
+   287	
+   288	    return pages
+   289	
+   290	
+   291	class DocumentTypeDetector:
+   292	    """Classifies document type using rule-based scoring and evidence gathering."""
+   293	
+   294	    @classmethod
+   295	    def detect(cls, text: str) -> Dict[str, Any]:
+   296	        import unicodedata
+   297	        normalized = unicodedata.normalize('NFC', text).lower()
+   298	        if re.search(r'danh\s*mục\s*hàng\s*hóa\s*xuất\s*khẩu|\b\d+/\d{4}/TT-BTC\b|chú\s*giải\s*(?:HS|phân|chương)|harmonized\s*(?:system|tariff)|nghị\s*định\s*số', normalized, re.I):
+   299	            return dict(kind='legal_reference', type='legal_reference', confidence=None, signals=['legal_content'], status='needs_review', label=DOC_TYPES['legal_reference'])
+   300	        scores = {}
+   301	        matched_signals = {}
+   302	
+   303	        for doc_type, rules in DOC_TYPE_SIGNALS.items():
+   304	            score = 0
+   305	            signals = []
+   306	            for pattern, weight in rules:
+   307	                matches = re.findall(pattern, normalized, re.IGNORECASE)
+   308	                if matches:
+   309	                    score += weight * min(len(matches), 3)
+   310	                    signals.append(pattern)
+   311	            if score > 0:
+   312	                scores[doc_type] = score
+   313	                matched_signals[doc_type] = signals
+   314	
+   315	        if not scores:
+   316	            return {
+   317	                'kind': 'other',
+   318	                'type': 'other',
+   319	                'confidence': None,
+   320	                'signals': [],
+   321	                'status': 'unverified',
+   322	                'label': DOC_TYPES['other'],
+   323	            }
+   324	
+   325	        best_type = max(scores, key=scores.get)
+   326	        conf = None  # Rule scores are not calibrated probabilities.
+   327	
+   328	        return {
+   329	            'kind': best_type,
+   330	            'type': best_type,
+   331	            'confidence': conf,
+   332	            'signals': matched_signals[best_type][:5],
+   333	            'status': 'needs_review',
+   334	            'label': DOC_TYPES.get(best_type, best_type),
+   335	        }
+   336	
+   337	    @classmethod
+   338	    def detect_type(cls, doc: Dict[str, Any]) -> Dict[str, Any]:
+   339	        all_text = '\n'.join(p.get('text', '') for p in doc.get('pages', []))
+   340	        return cls.detect(all_text)
+   341	
+   342	
+   343	
+   344	class InformationExtractor:
+   345	    """Extracts field-level dossier, shipment, SKU, and technical facts with exact string provenance."""
+   346	
+   347	    @staticmethod
+   348	    def _find_exact_quote(page_text: str, match_text: str, context_len: int = 120) -> str:
+   349	        """Returns an exact substring from page_text containing match_text."""
+   350	        pos = page_text.find(match_text)
+   351	        if pos != -1:
+   352	            start = max(0, page_text.rfind('\n', 0, pos) + 1)
+   353	            end = page_text.find('\n', pos + len(match_text))
+   354	            if end == -1:
+   355	                end = len(page_text)
+   356	            snippet = page_text[start:end].strip()
+   357	            if len(snippet) > 200:
+   358	                snippet = page_text[max(0, pos - 20):min(len(page_text), pos + len(match_text) + 60)].strip()
+   359	            # Must strictly be a substring of page_text
+   360	            if snippet in page_text:
+   361	                return snippet
+   362	            return match_text if match_text in page_text else ""
+   363	        return ""
+   364	
+   365	    @classmethod
+   366	    def extract_dossier_fields(cls, docs):
+   367	        from .product_extraction import normalized
+   368	        fields = {}
+   369	        for doc in docs:
+   370	            for name, candidate in cls._extract_dossier_document_fields([doc]).items():
+   371	                if name not in fields:
+   372	                    fields[name] = candidate
+   373	                elif normalized(fields[name]['value']) != normalized(candidate['value']):
+   374	                    previous = fields[name]
+   375	                    alternatives = previous.get('alternatives', [dict(previous)])
+   376	                    alternatives.append(candidate)
+   377	                    fields[name] = {**previous, 'value': '', 'status': 'conflicting',
+   378	                                    'verification_status': 'pending_review', 'alternatives': alternatives}
+   379	        return fields
+   380	
+   381	    @classmethod
+   382	    def _extract_dossier_document_fields(cls, docs: List[Dict[str, Any]]) -> Dict[str, Any]:
+   383	        """Extracts shipment & dossier metadata from one or more documents."""
+   384	        fields = {}
+   385	
+   386	        from .product_extraction import role
+   387	        for doc in sorted(docs, key=lambda d: (d.get('sha256', ''), d.get('name', ''))):
+   388	            if role(doc) != 'transaction_evidence':
+   389	                continue
+   390	            doc_id = doc.get('id', '')
+   391	            doc_name = doc.get('name', 'Tài liệu')
+   392	            for page in doc.get('pages', []):
+   393	                p_num = page.get('number', 1)
+   394	                text = page.get('text', '')
+   395	
+   396	                # Document Number (Thông tư, Quyết định, Thông báo kết quả phân loại)
+   397	                if 'document_number' not in fields:
+   398	                    m = re.search(r'(?:thông\s*tư\s*số|số\s*thông\s*tư|thông\s*báo\s*số|số\s*thông\s*báo|quyết\s*định\s*số|số\s*quyết\s*định|số\s*văn\s*bản|số\s*công\s*văn|số\s*hđ|số|no\.?)[\s:=|]+([0-9]{1,6}\/[A-Za-z0-9\/\-_]+)', text, re.IGNORECASE)
+   399	                    if m:
+   400	                        val = m.group(1).strip()
+   401	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   402	                        if quote in text:
+   403	                            fields['document_number'] = cls._make_field('document_number', val, doc_id, doc_name, p_num, quote)
+   404	
+   405	                # Invoice No & Date
+   406	                if 'invoice_number' not in fields:
+   407	                    m = re.search(r'(?:invoice\s*no\.?|số\s*h[óo]a\s*đơn|发票号|hđ\s*số)[\s:=]+([A-Z0-9\/\-_]{3,30})', text, re.IGNORECASE)
+   408	                    if m:
+   409	                        val = m.group(1).strip()
+   410	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   411	                        if quote in text:
+   412	                            fields['invoice_number'] = cls._make_field('invoice_number', val, doc_id, doc_name, p_num, quote)
+   413	
+   414	                if 'invoice_date' not in fields:
+   415	                    m = re.search(r'(?:invoice\s*date|ngày\s*h[óo]a\s*đơn|date\s*of\s*delivery|发货日期)[\s:=]+([0-9]{4}[-/][0-9]{2}[-/][0-9]{2}|[0-9]{2}[-/][0-9]{2}[-/][0-9]{4})', text, re.IGNORECASE)
+   416	                    if m:
+   417	                        val = m.group(1).strip()
+   418	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   419	                        if quote in text:
+   420	                            fields['invoice_date'] = cls._make_field('invoice_date', val, doc_id, doc_name, p_num, quote)
+   421	
+   422	                # Declaration No & Date
+   423	                if 'declaration_number' not in fields:
+   424	                    m = re.search(r'(?:số\s*tờ\s*khai|tờ\s*khai\s*số)[\s:=|]+([0-9]{11,12})', text, re.IGNORECASE)
+   425	                    if m:
+   426	                        val = m.group(1).strip()
+   427	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   428	                        if quote in text:
+   429	                            fields['declaration_number'] = cls._make_field('declaration_number', val, doc_id, doc_name, p_num, quote)
+   430	
+   431	                # Exporter / Seller
+   432	                if 'exporter' not in fields:
+   433	                    m = re.search(r'(?:the\s*seller|seller|shipper|người\s*xuất\s*khẩu|deliver)[\s:=|]+([A-Za-z0-9\s,\u00C0-\u1EF9]{4,60})', text, re.IGNORECASE)
+   434	                    if m and not re.search(r'address|add:|tel|email|mã|phân\s*loại', m.group(1), re.IGNORECASE):
+   435	                        val = m.group(1).strip(' :|-')
+   436	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   437	                        if quote in text and len(val) >= 3:
+   438	                            fields['exporter'] = cls._make_field('exporter', val, doc_id, doc_name, p_num, quote)
+   439	
+   440	                # Importer / Consignee
+   441	                if 'importer' not in fields:
+   442	                    m = re.search(r'(?:the\s*buyer|buyer|consignee|customer|người\s*nhập\s*khẩu|khách\s*hàng)[\s:=|]+([A-Za-z0-9\s,\u00C0-\u1EF9]{4,60})', text, re.IGNORECASE)
+   443	                    if m and not re.search(r'address|add:|tel|email|mã|phân\s*loại', m.group(1), re.IGNORECASE):
+   444	                        val = m.group(1).strip(' :|-')
+   445	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   446	                        if quote in text and len(val) >= 3:
+   447	                            fields['importer'] = cls._make_field('importer', val, doc_id, doc_name, p_num, quote)
+   448	
+   449	                # Incoterms
+   450	                if 'incoterms' not in fields:
+   451	                    m = re.search(r'\b(CIF|FOB|CFR|EXW|DAP|DDP|FCA|CIP|CPT)\b(?:\s+([A-Za-z\s,]{3,35}))?', text, re.IGNORECASE)
+   452	                    if m:
+   453	                        val = m.group(0).strip()
+   454	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   455	                        if quote in text:
+   456	                            fields['incoterms'] = cls._make_field('incoterms', val.upper(), doc_id, doc_name, p_num, quote)
+   457	
+   458	                # Currency
+   459	                if 'currency' not in fields:
+   460	                    m = re.search(r'\b(USD|EUR|VND|JPY|CNY|RMB|SGD|GBP)\b', text)
+   461	                    if m:
+   462	                        val = m.group(1)
+   463	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   464	                        if quote in text:
+   465	                            fields['currency'] = cls._make_field('currency', val, doc_id, doc_name, p_num, quote)
+   466	
+   467	                # Total Weight (Gross & Net)
+   468	                if 'total_gross_weight' not in fields:
+   469	                    m = re.search(r'(?:gross\s*weight|g\.?w\.?|tổng\s*trọng\s*lượng|总毛重)[\s:=|]+([0-9,.]+)\s*(kg|kgs|mt|tons?)?', text, re.IGNORECASE)
+   470	                    if m:
+   471	                        val = m.group(1).strip() + (' ' + m.group(2) if m.group(2) else '')
+   472	                        quote = cls._find_exact_quote(text, m.group(1)) or m.group(0)
+   473	                        if quote in text:
+   474	                            fields['total_gross_weight'] = cls._make_field('total_gross_weight', val, doc_id, doc_name, p_num, quote, unit='kg')
+   475	
+   476	                if 'total_net_weight' not in fields:
+   477	                    m = re.search(r'(?:net\s*weight|n\.?w\.?|trọng\s*lượng\s*tịnh)[\s:=|]+([0-9,.]+)\s*(kg|kgs|mt|tons?)?', text, re.IGNORECASE)
+   478	                    if m:
+   479	                        val = m.group(1).strip() + (' ' + m.group(2) if m.group(2) else '')
+   480	                        quote = cls._find_exact_quote(text, m.group(1)) or m.group(0)
+   481	                        if quote in text:
+   482	                            fields['total_net_weight'] = cls._make_field('total_net_weight', val, doc_id, doc_name, p_num, quote, unit='kg')
+   483	
+   484	                # Ports
+   485	                if 'port_of_loading' not in fields:
+   486	                    m = re.search(r'(?:port\s*of\s*loading|cảng\s*xếp|cảng\s*đi|export\s*port)[\s:=|]+([A-Za-z\s\u00C0-\u1EF9]{3,35})', text, re.IGNORECASE)
+   487	                    if m:
+   488	                        val = m.group(1).strip()
+   489	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   490	                        if quote in text:
+   491	                            fields['port_of_loading'] = cls._make_field('port_of_loading', val, doc_id, doc_name, p_num, quote)
+   492	
+   493	                if 'port_of_discharge' not in fields:
+   494	                    m = re.search(r'(?:port\s*of\s*discharge|destination|cảng\s*dỡ|cảng\s*đến|đáo\s*trạm|到站港)[\s:=|]+([A-Za-z\s\u00C0-\u1EF9]{3,35})', text, re.IGNORECASE)
+   495	                    if m:
+   496	                        val = m.group(1).strip()
+   497	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   498	                        if quote in text:
+   499	                            fields['port_of_discharge'] = cls._make_field('port_of_discharge', val, doc_id, doc_name, p_num, quote)
+   500	
+   501	                # Total Value / Total Amount
+   502	                if 'total_value' not in fields:
+   503	                    m = re.search(r'(?:total\s*amount|total\s*value|grand\s*total|tổng\s*tiền|tổng\s*trị\s*giá)[\s:=|]+([0-9,.]+)', text, re.IGNORECASE)
+   504	                    if m:
+   505	                        val = m.group(1).strip()
+   506	                        quote = cls._find_exact_quote(text, val) or m.group(0)
+   507	                        if quote in text:
+   508	                            fields['total_value'] = cls._make_field('total_value', val, doc_id, doc_name, p_num, quote)
+   509	
+   510	        return fields
+   511	
+   512	    @classmethod
+   513	    def extract_candidate_skus(cls, docs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+   514	        """Identifies distinct candidate SKUs across documents and attaches field-level facts with strict provenance."""
+   515	        from .product_extraction import extract
+   516	        return extract(docs, cls._make_fact)
+   517	
+   518	    @classmethod
+   519	    def _extract_observed_hs(cls, text: str) -> List[str]:
+   520	        """Strictly extracts 8-digit or 6-digit HS codes observed in document text."""
+   521	        codes = []
+   522	        for m in re.finditer(r'\b([0-9]{4})\.([0-9]{2})\.([0-9]{2})\b', text):
+   523	            code = m.group(1) + m.group(2) + m.group(3)
+   524	            if code not in codes:
+   525	                codes.append(code)
+   526	        for m in re.finditer(r'(?:hs|mã\s*số|mã\s*hs)[\s:=|]*([0-9]{8})\b', text, re.IGNORECASE):
+   527	            code = m.group(1)
+   528	            if code not in codes:
+   529	                codes.append(code)
+   530	        return codes
+   531	
+   532	    @classmethod
+   533	    def _make_field(cls, field_name: str, value: str, doc_id: str, doc_name: str, page_num: int, quote: str, unit: Optional[str] = None) -> Dict[str, Any]:
+   534	        return {
+   535	            'field': field_name,
+   536	            'value': value,
+   537	            'unit': unit,
+   538	            'source_document_id': doc_id,
+   539	            'source_document_name': doc_name,
+   540	            'source_page': page_num,
+   541	            'source_excerpt': quote,
+   542	            'field_name': field_name,
+   543	            'source_quote': quote,
+   544	            'status': 'extracted',
+   545	            'source_kind': 'document_extracted',
+   546	            'extraction_method': 'explicit_label',
+   547	            'verification_status': 'pending_review',
+   548	            'verified_by': None,
+   549	            'verified_at': None,
+   550	        }
+   551	
+   552	    @classmethod
+   553	    def _make_fact(cls, field_name: str, value: str, doc_id: str, doc_name: str, page_num: int, quote: str, unit: Optional[str] = None) -> Dict[str, Any]:
+   554	        return {
+   555	            'id': f"fact_{uuid.uuid4().hex[:8]}",
+   556	            'field': field_name,
+   557	            'value': value,
+   558	            'unit': unit,
+   559	            'document_id': doc_id,
+   560	            'document_name': doc_name,
+   561	            'page_number': page_num,
+   562	            'quote': quote,
+   563	            'extraction_method': 'document_parser',
+   564	            'status': 'unverified',  # STRICT: never auto-verified
+   565	            'reviewer': None,
+   566	            'source_kind': 'document',
+   567	        }
+   568	
+   569	
+   570	class CrossDocumentReconciler:
+   571	    """Reconciles extracted data across multiple documents, highlighting matches and flagging conflicts."""
+   572	
+   573	    @classmethod
+   574	    def reconcile(cls, docs: List[Dict[str, Any]], skus: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+   575	        reconciliations = []
+   576	
+   577	        # 1. Compare total weights between invoice and packing list
+   578	        invoice_doc = next((d for d in docs if d.get('kind') in ('commercial_invoice', 'invoice')), None)
+   579	        pl_doc = next((d for d in docs if d.get('kind') == 'packing_list'), None)
+   580	
+   581	        if invoice_doc and pl_doc:
+   582	            inv_text = '\n'.join(p.get('text', '') for p in invoice_doc.get('pages', []))
+   583	            pl_text = '\n'.join(p.get('text', '') for p in pl_doc.get('pages', []))
+   584	
+   585	            # Weight extraction
+   586	            inv_gw = re.search(r'(?:gross\s*weight|g\.?w\.?)[\s:=|]+([0-9,.]+)', inv_text, re.IGNORECASE)
+   587	            pl_gw = re.search(r'(?:gross\s*weight|g\.?w\.?)[\s:=|]+([0-9,.]+)', pl_text, re.IGNORECASE)
+   588	
+   589	            if inv_gw and pl_gw:
+   590	                w1 = inv_gw.group(1).replace(',', '')
+   591	                w2 = pl_gw.group(1).replace(',', '')
+   592	                try:
+   593	                    is_match = abs(float(w1) - float(w2)) < 0.01
+   594	                    reconciliations.append({
+   595	                        'field': 'gross_weight',
+   596	                        'label': 'Tổng trọng lượng cả bì (Gross Weight)',
+   597	                        'status': 'match' if is_match else 'conflict',
+   598	                        'items': [
+   599	                            {'source': invoice_doc.get('name'), 'value': inv_gw.group(0), 'page': 1},
+   600	                            {'source': pl_doc.get('name'), 'value': pl_gw.group(0), 'page': 1},
+   601	                        ],
+   602	                        'description': 'Khớp trọng lượng cả bì giữa Invoice và Packing List.' if is_match else f"Mâu thuẫn trọng lượng: Invoice ghi {w1} nhưng Packing List ghi {w2}.",
+   603	                    })
+   604	                except ValueError:
+   605	                    pass
+   606	
+   607	        # 2. Check for specification conflicts across documents for each SKU
+   608	        for sku in skus:
+   609	            spec_facts = [f for f in sku.get('facts', []) if f['field'] == 'specifications']
+   610	            powers = {}
+   611	            for f in spec_facts:
+   612	                m_pwr = re.search(r'(\d{3,4})\s*w\b', f['value'], re.IGNORECASE)
+   613	                if m_pwr:
+   614	                    pwr_val = m_pwr.group(1)
+   615	                    doc_n = f.get('document_name', 'Tài liệu')
+   616	                    powers[doc_n] = (pwr_val, f)
+   617	
+   618	            if len(powers) > 1 and len(set(v[0] for v in powers.values())) > 1:
+   619	                vals = list(powers.items())
+   620	                reconciliations.append({
+   621	                    'field': 'power',
+   622	                    'label': f"Công suất kỹ thuật ({sku.get('sku_code')})",
+   623	                    'status': 'conflict',
+   624	                    'items': [{'source': k, 'value': v[1]['value'], 'page': v[1]['page_number']} for k, v in powers.items()],
+   625	                    'description': f"Mâu thuẫn công suất giữa các tài liệu cho cùng SKU: {vals[0][0]} ghi {vals[0][1][0]}W nhưng {vals[1][0]} ghi {vals[1][1][0]}W.",
+   626	                })
+   627	
+   628	        return reconciliations
+   629	
+   630	
+   631	class AutoFillDraftManager:
+   632	    """Manages draft state for Document-First onboarding and handles atomic commits."""
+   633	
+   634	    def __init__(self, workspace_db):
+   635	        self.db = workspace_db
+   636	        self.drafts: Dict[str, Dict[str, Any]] = {}
+   637	        self._draft_files: Dict[str, Dict[str, bytes]] = {}
+   638	
+   639	    def create_draft(self, files_or_tuples: Any, parsed_docs: Optional[List[Dict[str, Any]]] = None) -> Dict[str, Any]:
+   640	        draft_id = f"draft_{uuid.uuid4().hex[:12]}"
+   641	        now_str = datetime.now().isoformat()
+   642	        self._draft_files[draft_id] = {}
+   643	
+   644	        if parsed_docs is None:
+   645	            files_meta = []
+   646	            parsed_docs = []
+   647	            for item in files_or_tuples:
+   648	                if isinstance(item, tuple):
+   649	                    fname, content = item
+   650	                elif isinstance(item, dict):
+   651	                    fname = item.get('filename') or item.get('name')
+   652	                    content = item.get('content') or item.get('bytes')
+   653	                else:
+   654	                    continue
+   655	                f_sha = hashlib.sha256(content).hexdigest()
+   656	                files_meta.append({
+   657	                    'name': fname,
+   658	                    'size': len(content),
+   659	                    'sha256': f_sha
+   660	                })
+   661	                p_pages = parse_file_bytes(fname, content)
+   662	                doc_id = f"doc_{uuid.uuid4().hex[:12]}"
+   663	                self._draft_files[draft_id][doc_id] = content
+   664	                p_doc = {
+   665	                    'id': doc_id,
+   666	                    'name': fname,
+   667	                    'sha256': f_sha,
+   668	                    'size': len(content),
+   669	                    'pages': p_pages
+   670	                }
+   671	                parsed_docs.append(p_doc)
+   672	        else:
+   673	            files_meta = files_or_tuples
+   674	
+   675	        # 1. Detect document types & enrich metadata
+   676	        for doc in parsed_docs:
+   677	            all_text = '\n\n'.join(p.get('text', '') for p in doc.get('pages', [])).strip()
+   678	            detected = DocumentTypeDetector.detect(all_text)
+   679	            doc['detected_type'] = detected
+   680	            from .product_extraction import role
+   681	            doc['role'] = role(doc)
+   682	            doc['kind'] = detected['kind']
+   683	            doc['document_type'] = detected['kind']
+   684	            doc['document_type_name'] = DOC_TYPES.get(detected['kind'], 'Chưa xác định')
+   685	            doc['confidence'] = detected['confidence']
+   686	            doc['type_confidence'] = detected['confidence']
+   687	            doc['signals'] = detected.get('signals', [])
+   688	            doc['filename'] = doc.get('name', 'Tài liệu')
+   689	            doc['text_content'] = all_text
+   690	            doc['text'] = all_text
+   691	
+   692	        # 2. Extract dossier metadata
+   693	        dossier_fields = InformationExtractor.extract_dossier_fields(parsed_docs)
+   694	
+   695	        # 3. Extract candidate SKUs
+   696	        sku_candidates = InformationExtractor.extract_candidate_skus(parsed_docs)
+   697	
+   698	        # 4. Reconcile across documents
+   699	        reconciliations = CrossDocumentReconciler.reconcile(parsed_docs, sku_candidates)
+   700	
+   701	        # 5. Build flattened extracted_case for seamless UI binding
+   702	        doc_num = dossier_fields.get('document_number', {}).get('value')
+   703	        first_fname = files_meta[0]['name'] if files_meta else 'chứng từ'
+   704	        base_name = Path(first_fname).stem.replace('_', ' ').replace('-', ' ').strip()
+   705	
+   706	        case_title = ""
+   707	        if doc_num:
+   708	            case_title = f"Hồ sơ theo văn bản {doc_num}"
+   709	        elif dossier_fields.get('title', {}).get('value'):
+   710	            case_title = dossier_fields['title']['value']
+   711	        elif dossier_fields.get('importer', {}).get('value'):
+   712	            case_title = f"Hồ sơ nhập khẩu {dossier_fields['importer']['value']}"
+   713	        elif dossier_fields.get('exporter', {}).get('value'):
+   714	            case_title = f"Hồ sơ xuất khẩu {dossier_fields['exporter']['value']}"
+   715	        elif sku_candidates and sku_candidates[0].get('name'):
+   716	            case_title = f"Hồ sơ phân loại {sku_candidates[0]['name']}"
+   717	        else:
+   718	            case_title = f"Hồ sơ phân loại {base_name}"
+   719	
+   720	        extracted_case = {
+   721	            'title': case_title,
+   722	            'importer_name': dossier_fields.get('importer', {}).get('value', ''),
+   723	            'exporter_name': dossier_fields.get('exporter', {}).get('value', ''),
+   724	            'invoice_number': dossier_fields.get('invoice_number', {}).get('value', ''),
+   725	            'invoice_date': dossier_fields.get('invoice_date', {}).get('value', ''),
+   726	            'declaration_number': dossier_fields.get('declaration_number', {}).get('value', ''),
+   727	            'port_of_loading': dossier_fields.get('port_of_loading', {}).get('value', ''),
+   728	            'port_of_discharge': dossier_fields.get('port_of_discharge', {}).get('value', ''),
+   729	            'origin_country': dossier_fields.get('origin_country', {}).get('value', ''),
+   730	            'currency': dossier_fields.get('currency', {}).get('value', ''),
+   731	            'incoterms': dossier_fields.get('incoterms', {}).get('value', ''),
+   732	            'total_value': dossier_fields.get('total_value', {}).get('value', ''),
+   733	            'total_gross_weight': dossier_fields.get('total_gross_weight', {}).get('value', ''),
+   734	            'total_net_weight': dossier_fields.get('total_net_weight', {}).get('value', ''),
+   735	            'total_packages': dossier_fields.get('total_packages', {}).get('value', ''),
+   736	        }
+   737	
+   738	        draft = {
+   739	            'draft_id': draft_id,
+   740	            'created_at': now_str,
+   741	            'status': 'review_required',
+   742	            'files': files_meta,
+   743	            'documents': parsed_docs,
+   744	            'dossier_fields': dossier_fields,
+   745	            'extracted_case': extracted_case,
+   746	            'system_defaults': {'classification_date': 'user_review_required', 'title': case_title},
+   747	            'skus': sku_candidates,
+   748	            'proposed_skus': sku_candidates,
+   749	            'warnings': [{'document_id': d['id'], 'page': p.get('number'), 'status': 'needs_review', 'message': p.get('error') or 'Trang thiếu văn bản hoặc OCR cần kiểm tra'} for d in parsed_docs for p in d.get('pages', []) if not p.get('text', '').strip() or p.get('method', '').startswith(('ocr', 'parse_error', 'fallback'))],
+   750	            'reconciliations': reconciliations,
+   751	            'reconciliation': reconciliations,
+   752	            'summary': {
+   753	                'total_files': len(files_meta),
+   754	                'total_pages': sum(len(d.get('pages', [])) for d in parsed_docs),
+   755	                'total_skus': len(sku_candidates),
+   756	                'total_fields': len(dossier_fields) + sum(len(s.get('facts', [])) for s in sku_candidates),
+   757	                'conflicts_count': sum(1 for r in reconciliations if r['status'] == 'conflict'),
+   758	            }
+   759	        }
+   760	        self.drafts[draft_id] = draft
+   761	        return draft
+   762	
+   763	    def get_draft(self, draft_id: str) -> Optional[Dict[str, Any]]:
+   764	        return self.drafts.get(draft_id)
+   765	
+   766	    def update_draft(self, draft_id: str, updates: Dict[str, Any]) -> Dict[str, Any]:
+   767	        draft = self.get_draft(draft_id)
+   768	        if not draft:
+   769	            raise KeyError(f"Draft {draft_id} không tồn tại.")
+   770	        if 'dossier_fields' in updates:
+   771	            draft['dossier_fields'].update(updates['dossier_fields'])
+   772	        if 'skus' in updates:
+   773	            self._validate_reviewed_sources(draft, updates['skus'])
+   774	            draft['skus'] = updates['skus']
+   775	            draft['proposed_skus'] = draft['skus']
+   776	        return draft
+   777	
+   778	    @staticmethod
+   779	    def _validate_reviewed_sources(draft, skus):
+   780	        from .product_extraction import normalized, role
+   781	        docs = {d['id']: d for d in draft.get('documents', [])}
+   782	        for sku in skus:
+   783	            for fact in sku.get('facts', []):
+   784	                if not str(fact.get('value', '')).strip():
+   785	                    continue
+   786	                if fact.get('source_kind') == 'user_input' and not fact.get('document_id'):
+   787	                    continue
+   788	                doc = docs.get(fact.get('document_id'))
+   789	                page = next((p for p in (doc or {}).get('pages', []) if p.get('number') == fact.get('page_number')), None)
+   790	                quote = normalized(fact.get('quote', ''))
+   791	                if not doc or role(doc) not in {'product_evidence', 'transaction_evidence'} or not page or not quote or quote not in normalized(page['text']):
+   792	                    raise ValueError('Nguồn trích xuất không hợp lệ; kiểm tra tài liệu và trang.')
+   793	                original = next((s for s in draft.get('skus', []) if s['sku_code'] == sku['sku_code']), None)
+   794	                if not original or not any(f.get('field') == fact.get('field') and f.get('id') == fact.get('id') and f.get('quote') == fact.get('quote') and f.get('document_id') == fact.get('document_id') and f.get('page_number') == fact.get('page_number') for f in original.get('facts', [])):
+   795	                    raise ValueError('Trích dẫn không thuộc SKU đã trích xuất.')
+   796	                source = next(f for f in original['facts'] if f.get('id') == fact.get('id'))
+   797	                if normalized(source['value']) != normalized(fact['value']):
+   798	                    fact['source_kind'] = 'user_input'
+   799	                    fact['status'] = 'unverified'
+   800	
+   801	    def commit_draft(self, draft_id: str, payload: Dict[str, Any], doc_service) -> Dict[str, Any]:
+   802	        """Atomically commits reviewed draft into the actual cases, skus, documents, and facts tables."""
+   803	        draft = self.get_draft(draft_id)
+   804	        if not draft:
+   805	            raise KeyError(f"Draft {draft_id} không tồn tại.")
+   806	
+   807	        self._validate_reviewed_sources(draft, payload.get('skus', draft.get('skus', [])))
+   808	
+   809	        owner = payload.get('owner', 'Người lập')
+   810	        title = payload.get('title') or draft['dossier_fields'].get('importer', {}).get('value') or 'Hồ sơ tạo từ chứng từ'
+   811	        trade_type = payload.get('trade_type', 'import')
+   812	        classification_date = payload.get('classification_date') or datetime.now().strftime('%Y-%m-%d')
+   813	        declaration_number = payload.get('declaration_number', '')
+   814	        notes = payload.get('notes', 'Khởi tạo qua luồng Document-First & Tự động điền thông tin.')
+   815	
+   816	        # 1. Create Case
+   817	        case = self.db.create_case(
+   818	            title=title,
+   819	            owner=owner,
+   820	            trade_type=trade_type,
+   821	            classification_date=classification_date,
+   822	            notes=notes,
+   823	            declaration_number=declaration_number
+   824	        )
+   825	        case_id = case['id']
+   826	
+   827	        try:
+   828	            # 2. Attach Documents
+   829	            doc_id_mapping = {}  # temporary doc id in draft -> real DB doc id
+   830	            draft_files = self._draft_files.get(draft_id, {})
+   831	            for draft_doc in draft.get('documents', []):
+   832	                raw_content = draft_doc.get('raw_bytes') or draft_files.get(draft_doc.get('id'))
+   833	                name = draft_doc.get('name', 'document.pdf')
+   834	                if raw_content:
+   835	                    res = doc_service.upload(case_id, name, raw_content)
+   836	                    if res.get('documents'):
+   837	                        real_doc = res['documents'][0]
+   838	                        doc_service.process(real_doc['id'])
+   839	                        doc_id_mapping[draft_doc.get('id')] = real_doc['id']
+   840	                        # update kind in DB
+   841	                        with self.db.connect() as c:
+   842	                            c.execute('UPDATE documents SET kind=? WHERE id=?', (draft_doc.get('kind', 'other'), real_doc['id']))
+   843	
+   844	            # 3. Create SKUs and Facts
+   845	            reviewed_skus = payload.get('skus', draft.get('skus', []))
+   846	            for sku_data in reviewed_skus:
+   847	                code = sku_data.get('sku_code', 'SKU-001')
+   848	                name = sku_data.get('name', 'Mặt hàng')
+   849	                desc = sku_data.get('description', '')
+   850	                family = sku_data.get('product_family', 'general')
+   851	                declared_code = sku_data.get('declared_code')
+   852	
+   853	                created_sku = self.db.add_sku(case_id, code, name, description=desc, declared_code=declared_code, product_family=family)
+   854	                sku_id = created_sku['id']
+   855	
+   856	                # Add facts
+   857	                for fact in sku_data.get('facts', []):
+   858	                    field_name = fact.get('field')
+   859	                    val = fact.get('value', '').strip()
+   860	                    if not val or not field_name:
+   861	                        continue
+   862	
+   863	                    draft_d_id = fact.get('document_id')
+   864	                    real_d_id = doc_id_mapping.get(draft_d_id)
+   865	                    if draft_d_id and not real_d_id:
+   866	                        raise ValueError('Thiếu bản gốc chứng từ; không chuyển thành nguồn nhập tay.')
+   867	                    p_num = fact.get('page_number', 1)
+   868	                    quote = fact.get('quote', '').strip()
+   869	                    status = fact.get('status', 'unverified')
+   870	                    if fact.get('source_kind') == 'user_input':
+   871	                        status = 'unverified'
+   872	                    reviewer = owner if status == 'verified' else None
+   873	
+   874	                    try:
+   875	                        self.db.add_fact(
+   876	                            sku_id=sku_id,
+   877	                            field=field_name,
+   878	                            value=val,
+   879	                            document_id=real_d_id,
+   880	                            page_number=p_num,
+   881	                            quote=quote if quote else val,
+   882	                            status=status,
+   883	                            reviewer=reviewer,
+   884	                            source_kind='manual_declaration' if fact.get('source_kind') == 'user_input' else ('document' if real_d_id else 'manual_declaration')
+   885	                        )
+   886	                    except Exception as exc:
+   887	                        raise ValueError(f'Không lưu được nguồn cho {code}/{field_name}: {exc}') from exc
+   888	
+   889	        except Exception:
+   890	            # Compensate writes made by Workspace methods, which own connections.
+   891	            # Uploaded content is content-addressed and may be shared by other cases.
+   892	            with self.db.lock, self.db.connect() as conn:
+   893	                conn.execute('DELETE FROM facts WHERE sku_id IN (SELECT id FROM skus WHERE case_id=?)', (case_id,))
+   894	                conn.execute('DELETE FROM pages WHERE document_id IN (SELECT id FROM documents WHERE case_id=?)', (case_id,))
+   895	                conn.execute('DELETE FROM documents WHERE case_id=?', (case_id,))
+   896	                conn.execute('DELETE FROM skus WHERE case_id=?', (case_id,))
+   897	                conn.execute('DELETE FROM events WHERE case_id=?', (case_id,))
+   898	                conn.execute('DELETE FROM cases WHERE id=?', (case_id,))
+   899	            raise
+   900	
+   901	        del self.drafts[draft_id]
+   902	        self._draft_files.pop(draft_id, None)
+   903	        return self.db.get_case(case_id)
+   904	
+   905	    def extract_for_case(self, case_id: str, doc_service) -> Dict[str, Any]:
+   906	        """Extracts candidate fields, SKUs, and reconciliation for an existing case."""
+   907	        case = self.db.get_case(case_id)
+   908	        docs = case.get('documents', [])
+   909	        if not docs:
+   910	            return {
+   911	                'case_id': case_id,
+   912	                'dossier_fields': {},
+   913	                'skus': [],
+   914	                'reconciliations': [],
+   915	                'message': 'Hồ sơ chưa có chứng từ để trích xuất.'
+   916	            }
+   917	
+   918	        parsed_docs = []
+   919	        for d in docs:
+   920	            pages = doc_service.pages(d['id'])
+   921	            p_doc = {
+   922	                'id': d['id'],
+   923	                'name': d['name'],
+   924	                'sha256': d['sha256'],
+   925	                'mime': d['mime'],
+   926	                'kind': d.get('kind', 'other'),
+   927	                'pages': [{'number': p.get('number') or p.get('page_number', 1), 'page_number': p.get('number') or p.get('page_number', 1), 'text': p['text']} for p in pages]
+   928	            }
+   929	            det = DocumentTypeDetector.detect_type(p_doc)
+   930	            p_doc['detected_type'] = det['type']
+   931	            p_doc['type_confidence'] = det['confidence']
+   932	            p_doc['signals'] = det['signals']
+   933	            parsed_docs.append(p_doc)
+   934	
+   935	        dossier_fields = InformationExtractor.extract_dossier_fields(parsed_docs)
+   936	        candidate_skus = InformationExtractor.extract_candidate_skus(parsed_docs)
+   937	        reconciliations = CrossDocumentReconciler.reconcile(parsed_docs, candidate_skus)
+   938	
+   939	        # Annotate with existing case facts so we don't propose overwriting verified facts
+   940	        existing_skus = case.get('skus', [])
+   941	        for c_sku in candidate_skus:
+   942	            match = next((s for s in existing_skus if s['sku_code'] == c_sku['sku_code']), None)
+   943	            if match:
+   944	                c_sku['existing_sku_id'] = match['id']
+   945	                full_sku = self.db.get_sku(match['id'])
+   946	                existing_facts = full_sku.get('facts', [])
+   947	                for f in c_sku.get('facts', []):
+   948	                    ef = next((x for x in existing_facts if x['field'] == f['field']), None)
+   949	                    if ef:
+   950	                        f['existing_status'] = ef['status']
+   951	                        f['existing_value'] = ef['value']
+   952	                        if ef['status'] == 'verified':
+   953	                            f['skip_overwrite'] = True
+   954	
+   955	        return {
+   956	            'case_id': case_id,
+   957	            'dossier_fields': dossier_fields,
+   958	            'skus': candidate_skus,
+   959	            'reconciliations': reconciliations,
+   960	            'summary': {
+   961	                'total_documents': len(docs),
+   962	                'total_candidate_skus': len(candidate_skus),
+   963	                'total_fields': len(dossier_fields) + sum(len(s.get('facts', [])) for s in candidate_skus),
+   964	            }
+   965	        }
+   966	
+   967	    def apply_to_case(self, case_id: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+   968	        """Applies selected facts/SKUs to an existing case without overwriting verified facts."""
+   969	        case = self.db.get_case(case_id)
+   970	        existing_skus = {s['sku_code']: s for s in case.get('skus', [])}
+   971	        existing_skus_by_id = {s['id']: s for s in case.get('skus', [])}
+   972	
+   973	        source_docs = []
+   974	        with self.db.connect() as conn:
+   975	            for doc in case.get('documents', []):
+   976	                source_docs.append({**doc, 'pages': [dict(p) for p in conn.execute('SELECT number,text,method FROM pages WHERE document_id=?', (doc['id'],))]})
+   977	        # Re-extraction gives stable product identities and source-scoped candidates.
+   978	        originals = InformationExtractor.extract_candidate_skus(source_docs)
+   979	        # Compare source tuples; fact UUIDs are per extraction.
+   980	        for candidate in originals:
+   981	            incoming = next((s for s in payload.get('skus', []) if s['sku_code'] == candidate['sku_code']), {})
+   982	            for f in candidate['facts']:
+   983	                match = next((x for x in incoming.get('facts', []) if all(x.get(k) == f.get(k) for k in ('field', 'document_id', 'page_number', 'quote'))), None)
+   984	                if match: f['id'] = match.get('id')
+   985	        self._validate_reviewed_sources({'documents': source_docs, 'skus': originals}, payload.get('skus', []))
+   986	        items = payload.get('skus', [])
+   987	        for sku_data in items:
+   988	            target_sku_id = sku_data.get('existing_sku_id')
+   989	            if target_sku_id and target_sku_id not in existing_skus_by_id:
+   990	                raise ValueError('SKU không thuộc hồ sơ hiện tại.')
+   991	            if not target_sku_id and sku_data.get('sku_code') in existing_skus:
+   992	                target_sku_id = existing_skus[sku_data['sku_code']]['id']
+   993	
+   994	            if not target_sku_id:
+   995	                # Create as new SKU
+   996	                new_sku = self.db.add_sku(
+   997	                    case_id,
+   998	                    sku_data.get('sku_code', 'SKU-001'),
+   999	                    sku_data.get('name', 'Mặt hàng'),
+  1000	                    description=sku_data.get('description', ''),
+  1001	                    declared_code=sku_data.get('declared_code'),
+  1002	                    product_family=sku_data.get('product_family', 'general')
+  1003	                )
+  1004	                target_sku_id = new_sku['id']
+  1005	                current_sku = self.db.get_sku(target_sku_id)
+  1006	            else:
+  1007	                current_sku = self.db.get_sku(target_sku_id)
+  1008	
+  1009	            existing_facts = {f['field']: f for f in current_sku.get('facts', [])}
+  1010	
+  1011	            for fact in sku_data.get('facts', []):
+  1012	                field_name = fact.get('field')
+  1013	                val = fact.get('value', '').strip()
+  1014	                if not val or not field_name:
+  1015	                    continue
+  1016	
+  1017	                # Never overwrite verified facts
+  1018	                if field_name in existing_facts and existing_facts[field_name]['status'] == 'verified':
+  1019	                    continue
+  1020	
+  1021	                doc_id = fact.get('document_id')
+  1022	                p_num = fact.get('page_number', 1)
+  1023	                quote = fact.get('quote', '').strip()
+  1024	
+  1025	                try:
+  1026	                    self.db.add_fact(
+  1027	                        sku_id=target_sku_id,
+  1028	                        field=field_name,
+  1029	                        value=val,
+  1030	                        document_id=doc_id,
+  1031	                        page_number=p_num,
+  1032	                        quote=quote if quote else val,
+  1033	                        status='unverified',
+  1034	                        reviewer=None,
+  1035	                        source_kind='manual_declaration' if fact.get('source_kind') == 'user_input' else ('document' if doc_id else 'manual_declaration')
+  1036	                    )
+  1037	                except Exception as exc:
+  1038	                    raise ValueError(f'Không lưu được nguồn cho {field_name}: {exc}') from exc
+  1039	
+  1040	        return self.db.get_case(case_id)
+  1041	

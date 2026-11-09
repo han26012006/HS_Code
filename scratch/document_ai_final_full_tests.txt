@@ -1,0 +1,16 @@
+ssssssss................................................................ [ 58%]
+..................s.................................                     [100%]
+=============================== warnings summary ===============================
+../../../../Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/starlette/testclient.py:40
+  /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/starlette/testclient.py:40: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+tests/test_decision_support.py::test_chapter98_preserves_variants_and_never_uses_reference_as_unit
+  /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:520: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `decimal` - serialized value may not be as expected [field_name='additional_import_duties_vnd', input_value=0, input_type=int])
+    PydanticSerializationUnexpectedValue(Expected `decimal` - serialized value may not be as expected [field_name='excise_vnd', input_value=0, input_type=int])
+    PydanticSerializationUnexpectedValue(Expected `decimal` - serialized value may not be as expected [field_name='environmental_vnd', input_value=0, input_type=int])
+    return self.__pydantic_serializer__.to_python(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+115 passed, 9 skipped, 2 warnings in 90.73s (0:01:30)

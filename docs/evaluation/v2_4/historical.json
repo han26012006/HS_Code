@@ -1,0 +1,29 @@
+{
+  "guided_v1": {
+    "n": 94,
+    "hs8_top1": 11,
+    "recall30": 42,
+    "recall200": 68,
+    "hs4_top3": 46,
+    "unseen_n": 51,
+    "unseen_recall30": 15
+  },
+  "hybrid_plus_bigram": {
+    "n": 94,
+    "hs8_top1": 14,
+    "recall30": 54,
+    "recall200": 68,
+    "hs4_top3": 47,
+    "unseen_n": 51,
+    "unseen_recall30": 16
+  },
+  "bm25": {
+    "n": 94,
+    "hs8_top1": 0,
+    "recall30": 23,
+    "recall200": 41,
+    "hs4_top3": 41,
+    "unseen_n": 51,
+    "unseen_recall30": 10
+  }
+}

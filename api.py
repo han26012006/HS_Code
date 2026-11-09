@@ -1,5 +1,6 @@
 """HS Workspace: local Python API + built web app. No pretrained model downloads on startup."""
 from __future__ import annotations
+from hs_assistant import __version__
 import io,json,os,re,threading,zipfile
 from contextlib import asynccontextmanager
 from datetime import date,datetime
@@ -17,6 +18,7 @@ from hs_assistant.documents import DocumentService,MAX_UPLOAD
 from hs_assistant.catalogue import Catalogue,InferenceService
 from hs_assistant.model_registry import find_artifacts
 from hs_assistant.tax import TaxEngine,TaxError
+from hs_assistant.extractor import AutoFillDraftManager, DOC_TYPES
 
 ROOT=Path(__file__).resolve().parent
 API_KEY=os.environ.get('HS_API_KEY')
@@ -35,16 +37,19 @@ async def lifespan(app):
     state.update(db=db,catalogue=cat,documents=docs,inference=inference,dir=directory,tax=TaxEngine(ROOT/'data/tax'));docs.resume()
     from hs_assistant.precedents import PrecedentLibrary
     state['precedents']=PrecedentLibrary(ROOT/'data/precedent_index.jsonl')
+    from hs_assistant.retrieval_experiment import RetrievalExperiment
+    inference.guided=RetrievalExperiment(cat,state['precedents'])
     from hs_assistant.audit_log import AuditLog
     state['project_knowledge']=None
     if os.environ.get('HS_PROJECT_KNOWLEDGE_DIR'):
         from hs_assistant.project_knowledge import ProjectKnowledge
         state['project_knowledge']=ProjectKnowledge(os.environ['HS_PROJECT_KNOWLEDGE_DIR'])
     state['log']=AuditLog(os.environ.get('HS_LOG',str(directory/'legacy_decisions.sqlite')))
+    state['autofill']=AutoFillDraftManager(db)
     yield
     docs.close();state.clear()
 
-app=FastAPI(title='HS Workspace — Trợ lý phân loại có kiểm chứng',version='2.2.0',lifespan=lifespan)
+app=FastAPI(title='HS Workspace — Trợ lý phân loại có kiểm chứng',version=__version__,lifespan=lifespan)
 @app.exception_handler(ConflictError)
 async def conflict_handler(request,e):
     from fastapi.responses import JSONResponse
@@ -57,6 +62,25 @@ async def workspace_handler(request,e):
 async def missing_handler(request,e):
     from fastapi.responses import JSONResponse
     return JSONResponse({'detail':'Không tìm thấy bản ghi.'},status_code=404)
+
+class DraftUpdateIn(BaseModel):
+    match_confirmations: list[dict] = Field(default_factory=list)
+    dossier_fields: dict | None = None
+    skus: list[dict] | None = None
+
+class DraftCommitIn(BaseModel):
+    owner: str = 'Người lập'
+    title: str | None = None
+    trade_type: Literal['import', 'export'] = 'import'
+    classification_date: date | None = None
+    notes: str = ''
+    skus: list[dict] | None = None
+    declaration_number: str = ''
+    dossier_fields: dict | None = None
+
+class CaseAutofillApplyIn(BaseModel):
+    dossier_fields: dict | None = None
+    skus: list[dict] = Field(default_factory=list)
 
 class CaseIn(BaseModel):
     title:str=Field(min_length=3,max_length=250);owner:str=Field(min_length=2,max_length=100);trade_type:Literal['import','export']='import';classification_date:date=Field(default_factory=lambda:datetime.now(ZoneInfo("Asia/Ho_Chi_Minh")).date());notes:str=Field(default='',max_length=4000)
@@ -72,8 +96,9 @@ class EvidenceIn(BaseModel):
 class EvidenceReviewIn(BaseModel):
     role:Literal['reference','supports','excludes','not_applicable','conflict'];lifecycle:Literal['not_checked','active','withdrawn','superseded'];reviewer:str=Field(min_length=2,max_length=100);resolution_note:str=Field(min_length=10,max_length=4000);target_codes:list[str]=Field(default_factory=list,max_length=30)
 class AnalyzeIn(BaseModel):
-    engine:Literal['catalogue','model','qwen','openai']='catalogue'
+    engine:Literal['catalogue','guided','model','qwen','openai']='catalogue'
     allow_paid_api:bool=False
+    manual_codes:list[str]=Field(default_factory=list,max_length=3)
 class ReviewIn(BaseModel):
     code:str=Field(default='',max_length=8);reason:str=Field(min_length=5,max_length=8000);reviewer:str=Field(min_length=2,max_length=100);preparer:str=Field(min_length=2,max_length=100);evidence_ids:list[str]=Field(default_factory=list,max_length=100);expected_revision:int;action:Literal['approve','return']='approve'
     expected_analysis_id:str|None=Field(default=None,max_length=80);alternative_code:str=Field(default='',max_length=8);alternative_reason:str=Field(default='',max_length=4000);classification_basis_confirmed:bool=False
@@ -83,10 +108,10 @@ class Estimate(BaseModel):customs_value:float=Field(gt=0);items:list[EstimateIte
 
 @app.get('/health')
 def health():
-    s=state['inference'].status();return {'status':'ok','version':'2.2.0','phien_ban_mo_hinh':s['catalogue_version'],'so_dong_nhan':s['catalogue_rows'],'model_artifacts_available':s['model_artifacts_available'],'authentication_required':bool(API_KEY),'automatic_hs8_acceptance_enabled':False}
+    s=state['inference'].status();return {'status':'ok','version':__version__,'phien_ban_mo_hinh':s['catalogue_version'],'so_dong_nhan':s['catalogue_rows'],'model_artifacts_available':s['model_artifacts_available'],'authentication_required':bool(API_KEY),'automatic_hs8_acceptance_enabled':False}
 
 @app.get('/api/v2/status',dependencies=[Depends(check_key)])
-def status():return dict(state['inference'].status(),authentication_required=bool(API_KEY),identity_mode='shared_api_key' if API_KEY else 'local_operator_names_not_authenticated',workflow_version='2.2.0',jurisdiction='VN',nomenclature='AHTN2022')
+def status():return dict(state['inference'].status(),authentication_required=bool(API_KEY),identity_mode='shared_api_key' if API_KEY else 'local_operator_names_not_authenticated',workflow_version=__version__,jurisdiction='VN',nomenclature='AHTN2022')
 @app.get('/api/v2/summary',dependencies=[Depends(check_key)])
 def summary():return state['db'].summary()
 @app.get('/api/v2/cases',dependencies=[Depends(check_key)])
@@ -96,17 +121,82 @@ def create_case(inp:CaseIn):
     x=inp.model_dump(mode='json');return state['db'].create_case(**x)
 @app.get('/api/v2/cases/{case_id}',dependencies=[Depends(check_key)])
 def get_case(case_id:str):return state['db'].get_case(case_id)
+
+@app.delete('/api/v2/cases/{case_id}',dependencies=[Depends(check_key)])
+def delete_case(case_id:str):return state['db'].delete_case(case_id)
+
+@app.post('/api/v2/autofill/draft', dependencies=[Depends(check_key)])
+async def create_autofill_draft(files: list[UploadFile] = File(...)):
+    if len(files) > 30:
+        raise HTTPException(422, 'Tối đa 30 tệp mỗi lượt.')
+    file_tuples = []
+    for f in files:
+        content = await f.read(MAX_UPLOAD + 1)
+        if len(content) > MAX_UPLOAD:
+            raise HTTPException(422, f'Tệp {f.filename} vượt quá giới hạn {MAX_UPLOAD//1024**2}MB.')
+        file_tuples.append((f.filename or 'document', content))
+    try:
+        draft = state['autofill'].create_draft(file_tuples)
+        return draft
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(422, f'Lỗi phân tích chứng từ: {str(e)}')
+
+@app.get('/api/v2/autofill/draft/{draft_id}', dependencies=[Depends(check_key)])
+def get_autofill_draft(draft_id: str):
+    draft = state['autofill'].get_draft(draft_id)
+    if not draft:
+        raise HTTPException(404, 'Không tìm thấy bản nháp trích xuất.')
+    return draft
+
+@app.patch('/api/v2/autofill/draft/{draft_id}', dependencies=[Depends(check_key)])
+def update_autofill_draft(draft_id: str, inp: DraftUpdateIn):
+    try:
+        updated = state['autofill'].update_draft(draft_id, inp.model_dump(exclude_unset=True))
+        return updated
+    except KeyError as e:
+        raise HTTPException(404, str(e))
+    except ValueError as e:
+        raise HTTPException(422, str(e))
+
+@app.post('/api/v2/autofill/draft/{draft_id}/commit', dependencies=[Depends(check_key)])
+def commit_autofill_draft(draft_id: str, inp: DraftCommitIn):
+    payload = inp.model_dump(exclude_unset=True)
+    if payload.get('classification_date'):
+        payload['classification_date'] = str(payload['classification_date'])
+    try:
+        case = state['autofill'].commit_draft(draft_id, payload, state['documents'])
+        return case
+    except KeyError as e:
+        raise HTTPException(404, str(e))
+    except Exception as e:
+        raise HTTPException(422, f'Lỗi lưu hồ sơ từ chứng từ: {str(e)}')
+
+@app.api_route('/api/v2/cases/{case_id}/autofill', methods=['GET', 'POST'], dependencies=[Depends(check_key)])
+def autofill_existing_case(case_id: str):
+    return state['autofill'].extract_for_case(case_id, state['documents'])
+
+@app.post('/api/v2/cases/{case_id}/autofill/apply', dependencies=[Depends(check_key)])
+def apply_autofill_existing_case(case_id: str, inp: CaseAutofillApplyIn):
+    try:
+        return state['autofill'].apply_to_case(case_id, inp.model_dump())
+    except ValueError as e:
+        raise HTTPException(422, str(e))
+
 @app.patch('/api/v2/cases/{case_id}',dependencies=[Depends(check_key)])
 def edit_case(case_id:str,inp:CaseIn):
     x=inp.model_dump(mode='json');return state['db'].update_case(case_id,x,inp.owner)
-@app.delete('/api/v2/cases/{case_id}',dependencies=[Depends(check_key)])
-def delete_case(case_id:str):return state['db'].delete_case(case_id)
 @app.post('/api/v2/cases/{case_id}/skus',dependencies=[Depends(check_key)])
 def add_sku(case_id:str,inp:SKUIn):return state['db'].add_sku(case_id,**inp.model_dump())
-@app.delete('/api/v2/skus/{sku_id}',dependencies=[Depends(check_key)])
-def delete_sku(sku_id:str):return state['db'].delete_sku(sku_id)
 @app.get('/api/v2/skus/{sku_id}',dependencies=[Depends(check_key)])
 def get_sku(sku_id:str):return state['db'].get_sku(sku_id)
+@app.delete('/api/v2/skus/{sku_id}',dependencies=[Depends(check_key)])
+def delete_sku(sku_id:str):return state['db'].delete_sku(sku_id)
+@app.delete('/api/v2/skus/{sku_id}/facts/{fact_id}',dependencies=[Depends(check_key)])
+def delete_fact(sku_id:str,fact_id:str):return state['db'].delete_fact(sku_id,fact_id)
+@app.delete('/api/v2/skus/{sku_id}/evidence/{evidence_id}',dependencies=[Depends(check_key)])
+def delete_evidence(sku_id:str,evidence_id:str):return state['db'].delete_evidence(sku_id,evidence_id)
 @app.patch('/api/v2/skus/{sku_id}',dependencies=[Depends(check_key)])
 def edit_sku(sku_id:str,inp:SKUIn):return state['db'].update_sku(sku_id,inp.model_dump())
 @app.post('/api/v2/skus/{sku_id}/facts',dependencies=[Depends(check_key)])
@@ -116,8 +206,6 @@ def fact(sku_id:str,inp:FactIn):
     return state['db'].add_fact(sku_id,**inp.model_dump())
 @app.patch('/api/v2/skus/{sku_id}/facts/{fact_id}',dependencies=[Depends(check_key)])
 def fact_review(sku_id:str,fact_id:str,inp:FactReview):return state['db'].update_fact(sku_id,fact_id,inp.status,inp.reviewer)
-@app.delete('/api/v2/skus/{sku_id}/facts/{fact_id}',dependencies=[Depends(check_key)])
-def delete_fact(sku_id:str,fact_id:str):return state['db'].delete_fact(sku_id,fact_id)
 @app.post('/api/v2/skus/{sku_id}/evidence',dependencies=[Depends(check_key)])
 def add_evidence(sku_id:str,inp:EvidenceIn):
     data=inp.model_dump()
@@ -130,13 +218,21 @@ def validate_target_codes(codes):
 @app.patch('/api/v2/skus/{sku_id}/evidence/{evidence_id}',dependencies=[Depends(check_key)])
 def review_evidence(sku_id:str,evidence_id:str,inp:EvidenceReviewIn):
     validate_target_codes(inp.target_codes);return state['db'].review_evidence(sku_id,evidence_id,**inp.model_dump())
-@app.delete('/api/v2/skus/{sku_id}/evidence/{evidence_id}',dependencies=[Depends(check_key)])
-def delete_evidence(sku_id:str,evidence_id:str):return state['db'].delete_evidence(sku_id,evidence_id)
 @app.post('/api/v2/skus/{sku_id}/analyze',dependencies=[Depends(check_key)])
 def analyze(sku_id:str,inp:AnalyzeIn):
     sku=state['db'].get_sku(sku_id)
-    try:result=state['inference'].analyze(sku,inp.engine,inp.allow_paid_api)
+    if len(set(inp.manual_codes)) != len(inp.manual_codes) or any(code not in state['catalogue'].by_code for code in inp.manual_codes):
+        raise HTTPException(422,'Nhập tối đa 3 mã HS8 khác nhau có trong danh mục.')
+    try:result=state['inference'].analyze(sku,inp.engine,inp.allow_paid_api,
+        classification_date=state['db'].get_case(sku['case_id'])['classification_date'])
     except ValueError as e:raise HTTPException(409,str(e))
+    if inp.manual_codes:
+        listed={row['code'] for row in result['candidates']}
+        result['manual_candidate_codes']=inp.manual_codes
+        for code in inp.manual_codes:
+            if code not in listed:
+                result['candidates'].append(dict(state['catalogue'].by_code[code],
+                    rank=None,candidate_source='operator_catalogue_lookup',score_is_probability=False))
     result['base_revision']=sku['revision'];return state['db'].save_analysis(sku_id,result)
 @app.post('/api/v2/skus/{sku_id}/review',dependencies=[Depends(check_key)])
 def review(sku_id:str,inp:ReviewIn):
@@ -166,13 +262,13 @@ async def documents(case_id:str,files:list[UploadFile]=File(...),sku_id:str|None
     return result
 @app.get('/api/v2/documents/{document_id}',dependencies=[Depends(check_key)])
 def document(document_id:str):return dict(state['documents'].get(document_id),pages=state['documents'].pages(document_id))
+@app.delete('/api/v2/documents/{document_id}',dependencies=[Depends(check_key)])
+def delete_document(document_id:str):return state['db'].delete_document(document_id)
 @app.get('/api/v2/documents/{document_id}/file',dependencies=[Depends(check_key)])
 def document_file(document_id:str):
     d=state['documents'].get(document_id,True);return FileResponse(d['path'],media_type=d['mime'],filename=d['name'],content_disposition_type='inline' if d['mime'] in {'application/pdf','image/png','image/jpeg'} else 'attachment',headers={'X-Content-Type-Options':'nosniff','Cache-Control':'no-store'})
 @app.post('/api/v2/documents/{document_id}/retry',dependencies=[Depends(check_key)])
 def retry_document(document_id:str):state['documents'].retry(document_id);return {'status':'queued'}
-@app.delete('/api/v2/documents/{document_id}',dependencies=[Depends(check_key)])
-def delete_document(document_id:str):return state['db'].delete_document(document_id)
 
 @app.get('/api/v2/catalogue',dependencies=[Depends(check_key)])
 def catalogue(q:str='',chapter:str|None=None,limit:int=20):return {'rows':state['catalogue'].search(q,max(1,min(limit,100)),chapter),'total_catalogue':len(state['catalogue'].rows),'score_is_probability':False}
@@ -323,11 +419,23 @@ def project_knowledge(q:str='',limit:int=12):
 
 @app.get('/api/v2/quality',dependencies=[Depends(check_key)])
 def quality():
-    s=state['db'].summary();metrics={'label':'M0 · bộ kiểm thử lịch sử của dự án','n':109,'correct':32,'hs8_top1':32/109,'dataset':'legacy notices, labels provisional','independent_test':False,'applies_to_current_runtime':False,'source':'Báo cáo kiểm toán dữ liệu dự án 01/11/2026'}
-    if state['inference'].artifact and (state['inference'].artifact/'metrics.json').exists():
-        metrics['runtime_metrics_available']=True
-    multi=json.loads((ROOT/'data/multilevel_experiment.json').read_text());metrics.update(multi['historical_test']);metrics['correct']=metrics['hs8_correct']
-    return {'multilevel_experiment':{'models_evaluated':multi['models_evaluated'],'selected':multi['selected'],'production_ready':False},'operations':s,'historical':metrics,'production_auto_classification_ready':False,'target_hs8_top1':.8,'reason':'Chưa có cohort độc lập và calibration HS8 đủ điều kiện phát hành tự động.','approval_rate_is_accuracy':False,'model_registry':state['inference'].status()}
+    summary = state['db'].summary()
+    experiment = json.loads((ROOT/'data/multilevel_experiment.json').read_text())
+    registry = state['inference'].status()
+    metrics = dict(experiment['historical_test'])
+    metrics.update(label='M0 · test lịch sử giữ lại sau OCR V4',
+                   correct=metrics['hs8_correct'], dataset='provisional V4 notices',
+                   independent_test=False, applies_to_current_runtime=False,
+                   source=experiment['run_id'], frozen=experiment['frozen'])
+    artifact_matches = bool(registry.get('artifact_manifest_sha256')
+                            and registry['artifact_manifest_sha256']==experiment['artifact_manifest_sha256'])
+    return {'multilevel_experiment':{'models_evaluated':experiment['models_evaluated'],
+                                     'selected':experiment['selected'],'production_ready':False},
+            'research':json.loads((ROOT/'data/research_quality.json').read_text()),
+            'operations':summary,'historical':metrics,'evaluation_artifact_matches':artifact_matches,
+            'production_auto_classification_ready':False,
+            'reason':'Cần benchmark độc lập, nhãn chuyên gia và hiệu chuẩn theo phạm vi sử dụng.',
+            'approval_rate_is_accuracy':False,'model_registry':registry}
 
 @app.get('/api/v2/cases/{case_id}/export/{kind}',dependencies=[Depends(check_key)])
 def export_case(case_id:str,kind:Literal['json','pdf','xlsx','zip']):
@@ -395,8 +503,10 @@ def legacy_audit(inp:LegacyAuditIn):
 def legacy_estimate():
     raise HTTPException(410,'Cách ước tính thuế/phạt tự động cũ đã dừng vì nguồn thuế chưa đủ kiểm chứng. Dùng /api/v2/estimate với thuế suất do người dùng đối chiếu nhập vào.')
 
+if (ROOT/'assets'/'images').exists():
+    app.mount('/assets/images', StaticFiles(directory=ROOT/'assets'/'images'), name='root_images')
+
 web=ROOT/'web_dist'
-if (ROOT/'assets'/'images').exists():app.mount('/assets/images',StaticFiles(directory=ROOT/'assets'/'images'),name='root_images')
 if web.exists():app.mount('/assets',StaticFiles(directory=web/'assets'),name='assets')
 @app.get('/{path:path}',include_in_schema=False)
 def frontend(path:str):

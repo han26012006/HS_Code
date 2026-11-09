@@ -1,0 +1,13 @@
+{
+  "dataset_version": 1,
+  "scope": "synthetic tests only; no independent real-world holdout yet",
+  "annotation_status": "authored, awaiting independent review",
+  "splits": {
+    "adversarial_development.json": "f9d25dfa6f1745273df0fe9a1d9c38dfb1b6895b991164e0a49ef9c6d8b91ec2",
+    "development.json": "a1d523e4e79ab0585e0f9c1159312fdd923d82c0995dc60c9dafd0946431681f",
+    "table_gold.json": "69ffdcbd7bdffc0d231e2460d234363ede5277f65f766ff34631599f2eec28ff",
+    "reserved_synthetic.json": "11867c15a9f855ae2f2691385398e99ef4ccc1d982a4d6ddfb5ed86119bd70b9",
+    "real_development_exposure.json": "7b42da8239333b51a385b3387d4961f85cee0f34bc799c05790af51d170de41b"
+  },
+  "annotation_note": "Reserved synthetic cases were authored before implementation, but are not independent blind holdout. Adversarial development cases and table-cell labels added during development; never mix their results with real holdout accuracy."
+}

@@ -1,0 +1,1 @@
+PASS: JavaScript syntax; actual demo draft renders two SKU codes, correct power and source page; empty draft renders zero SKUs. DOM stub smoke test, not a full browser test.

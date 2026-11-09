@@ -1,0 +1,581 @@
+{
+  "scope": "original local PDF integration/development case; not independently labelled accuracy",
+  "files": [
+    {
+      "name": "Packing List.pdf",
+      "sha256": "6a9c2f429b2926b4e678d7962c1e92ffbf67c68675cc631f9170fe2906894ca2"
+    }
+  ],
+  "summary": {
+    "total_files": 1,
+    "total_pages": 1,
+    "total_skus": 1,
+    "total_fields": 10,
+    "conflicts_count": 0
+  },
+  "extracted_case": {
+    "title": "Hồ sơ phân loại Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+    "importer_name": "",
+    "exporter_name": "",
+    "invoice_number": "73/INV/ST",
+    "invoice_date": "",
+    "declaration_number": "",
+    "port_of_loading": "MUNDRA PORT, INDIA",
+    "port_of_discharge": "",
+    "origin_country": "",
+    "currency": "",
+    "incoterms": "",
+    "total_value": "",
+    "total_gross_weight": "",
+    "total_net_weight": "",
+    "total_packages": ""
+  },
+  "documents": [
+    {
+      "id": "doc_d78304b156cb",
+      "name": "Packing List.pdf",
+      "kind": "packing_list",
+      "pages": 1
+    }
+  ],
+  "skus": [
+    {
+      "id": "cand_e34ef5f86e71",
+      "identifiers": {},
+      "sku_code": "cand_e34ef5f86e71",
+      "name": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+      "description": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+      "facts": [
+        {
+          "id": "fact_389747b2",
+          "field": "quantity",
+          "value": "2,000",
+          "unit": "BAGS",
+          "document_id": "doc_d78304b156cb",
+          "document_name": "Packing List.pdf",
+          "page_number": 1,
+          "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "quantity",
+          "source_document_id": "doc_d78304b156cb",
+          "source_page": 1,
+          "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+          "extraction_status": "needs_review",
+          "source_valid": true,
+          "source_document_type": "packing_list",
+          "source_table_id": "t0",
+          "source_row_id": "t0r0",
+          "source_column": 1,
+          "source_header": "QUANTITY (BAGS)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b31",
+            "b32",
+            "b33",
+            "b34",
+            "b35"
+          ],
+          "source_span": [
+            1209,
+            1425
+          ],
+          "source_unit_quote": "(BAGS)",
+          "sku_id": "cand_e34ef5f86e71"
+        },
+        {
+          "id": "fact_2f9b06e9",
+          "field": "net_weight",
+          "value": "50,000",
+          "unit": "KGM",
+          "document_id": "doc_d78304b156cb",
+          "document_name": "Packing List.pdf",
+          "page_number": 1,
+          "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "net_weight",
+          "source_document_id": "doc_d78304b156cb",
+          "source_page": 1,
+          "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+          "extraction_status": "needs_review",
+          "source_valid": true,
+          "source_document_type": "packing_list",
+          "source_table_id": "t0",
+          "source_row_id": "t0r0",
+          "source_column": 2,
+          "source_header": "NET WEIGHT (KGM)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b31",
+            "b32",
+            "b33",
+            "b34",
+            "b35"
+          ],
+          "source_span": [
+            1209,
+            1425
+          ],
+          "source_unit_quote": "(KGM)",
+          "sku_id": "cand_e34ef5f86e71"
+        },
+        {
+          "id": "fact_795707b2",
+          "field": "gross_weight",
+          "value": "50,200",
+          "unit": "KGM",
+          "document_id": "doc_d78304b156cb",
+          "document_name": "Packing List.pdf",
+          "page_number": 1,
+          "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "gross_weight",
+          "source_document_id": "doc_d78304b156cb",
+          "source_page": 1,
+          "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+          "extraction_status": "needs_review",
+          "source_valid": true,
+          "source_document_type": "packing_list",
+          "source_table_id": "t0",
+          "source_row_id": "t0r0",
+          "source_column": 3,
+          "source_header": "GROSS WEIGHT (KGM)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b31",
+            "b32",
+            "b33",
+            "b34",
+            "b35"
+          ],
+          "source_span": [
+            1209,
+            1425
+          ],
+          "source_unit_quote": "(KGM)",
+          "sku_id": "cand_e34ef5f86e71"
+        },
+        {
+          "id": "fact_636a1953",
+          "field": "name",
+          "value": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+          "unit": null,
+          "document_id": "doc_d78304b156cb",
+          "document_name": "Packing List.pdf",
+          "page_number": 1,
+          "quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "name",
+          "source_document_id": "doc_d78304b156cb",
+          "source_page": 1,
+          "source_quote": " Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry\n                                                       2,000         50,000         50,200                26.32\n (25kg/bag)\n New 100% Made in India",
+          "extraction_status": "needs_review",
+          "source_valid": true,
+          "source_document_type": "packing_list",
+          "source_table_id": "t0",
+          "source_row_id": "t0r0",
+          "source_column": 0,
+          "source_header": "Description",
+          "source_header_page": 1,
+          "value_fragments": [
+            "Himalayan Pink Salt, 2-5mm granules,",
+            "unprocessed, used in industry",
+            "(25kg/bag)",
+            "New 100% Made in India"
+          ],
+          "source_block_ids": [
+            "b31",
+            "b32",
+            "b33",
+            "b34",
+            "b35"
+          ],
+          "source_span": [
+            1209,
+            1425
+          ],
+          "sku_id": "cand_e34ef5f86e71"
+        },
+        {
+          "id": "fact_2ba1a009",
+          "field": "origin",
+          "value": "India",
+          "unit": null,
+          "document_id": "doc_d78304b156cb",
+          "document_name": "Packing List.pdf",
+          "page_number": 1,
+          "quote": "New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "origin",
+          "source_document_id": "doc_d78304b156cb",
+          "source_page": 1,
+          "source_quote": "New 100% Made in India",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "packing_list",
+          "source_block_ids": [
+            "b35"
+          ],
+          "source_table_id": "t0",
+          "source_row_id": "t0r0",
+          "source_scope": "explicit_origin_statement",
+          "sku_id": "cand_e34ef5f86e71"
+        },
+        {
+          "id": "fact_df7a7ed5",
+          "field": "unit",
+          "value": "BAGS",
+          "unit": null,
+          "document_id": "doc_d78304b156cb",
+          "document_name": "Packing List.pdf",
+          "page_number": 1,
+          "quote": "(BAGS)",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "unit",
+          "source_document_id": "doc_d78304b156cb",
+          "source_page": 1,
+          "source_quote": "(BAGS)",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "packing_list",
+          "source_block_ids": [
+            "b29"
+          ],
+          "source_scope": "table_header",
+          "source_table_id": "t0",
+          "source_row_id": "t0r0",
+          "sku_id": "cand_e34ef5f86e71"
+        }
+      ],
+      "source_document_id": "doc_d78304b156cb",
+      "source_page": 1,
+      "product_family": "general",
+      "declared_code": null,
+      "status": "needs_review",
+      "identity_status": "needs_review",
+      "matching": [],
+      "source_members": [
+        {
+          "document_id": "doc_d78304b156cb",
+          "page": 1,
+          "local_id": "t0r0"
+        }
+      ],
+      "resolved_fields": {
+        "name": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+        "model": null,
+        "part_number": null,
+        "function": null,
+        "construction": null,
+        "material": null,
+        "specifications": null,
+        "manufacturing": null,
+        "condition": null,
+        "packaging": null,
+        "origin": "India",
+        "quantity": "2,000",
+        "unit": "BAGS",
+        "unit_price": null,
+        "amount": null,
+        "currency": null,
+        "gross_weight": "50,200",
+        "net_weight": "50,000",
+        "packages": null,
+        "declared_code": null
+      },
+      "declared_code_sources": [],
+      "origin_sources": [
+        {
+          "id": "fact_2ba1a009",
+          "field": "origin",
+          "value": "India",
+          "unit": null,
+          "document_id": "doc_d78304b156cb",
+          "document_name": "Packing List.pdf",
+          "page_number": 1,
+          "quote": "New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "origin",
+          "source_document_id": "doc_d78304b156cb",
+          "source_page": 1,
+          "source_quote": "New 100% Made in India",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "packing_list",
+          "source_block_ids": [
+            "b35"
+          ],
+          "source_table_id": "t0",
+          "source_row_id": "t0r0",
+          "source_scope": "explicit_origin_statement",
+          "sku_id": "cand_e34ef5f86e71"
+        }
+      ],
+      "missing_fields": [
+        "function",
+        "construction",
+        "specifications"
+      ],
+      "field_states": {
+        "name": "needs_review",
+        "model": "missing",
+        "part_number": "missing",
+        "function": "missing",
+        "construction": "missing",
+        "material": "missing",
+        "specifications": "missing",
+        "manufacturing": "missing",
+        "condition": "missing",
+        "packaging": "missing",
+        "origin": "extracted",
+        "quantity": "needs_review",
+        "unit": "extracted",
+        "unit_price": "missing",
+        "amount": "missing",
+        "currency": "missing",
+        "gross_weight": "needs_review",
+        "net_weight": "needs_review",
+        "packages": "missing",
+        "declared_code": "missing"
+      }
+    }
+  ],
+  "dossier_fields": {
+    "shipper": {
+      "field": "shipper",
+      "value": "SHREE SAI INDUSTRIES CO. LTD",
+      "unit": null,
+      "source_document_id": "doc_d78304b156cb",
+      "source_document_name": "Packing List.pdf",
+      "source_page": 1,
+      "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+      "field_name": "shipper",
+      "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b1"
+      ],
+      "source_span": [
+        52,
+        93
+      ],
+      "source_document_type": "packing_list",
+      "sources": [
+        {
+          "field": "shipper",
+          "value": "SHREE SAI INDUSTRIES CO. LTD",
+          "unit": null,
+          "source_document_id": "doc_d78304b156cb",
+          "source_document_name": "Packing List.pdf",
+          "source_page": 1,
+          "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+          "field_name": "shipper",
+          "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b1"
+          ],
+          "source_span": [
+            52,
+            93
+          ],
+          "source_document_type": "packing_list"
+        }
+      ]
+    },
+    "invoice_number": {
+      "field": "invoice_number",
+      "value": "73/INV/ST",
+      "unit": null,
+      "source_document_id": "doc_d78304b156cb",
+      "source_document_name": "Packing List.pdf",
+      "source_page": 1,
+      "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                           ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,                    73/INV/ST & DATED 10, APR, 2024",
+      "field_name": "invoice_number",
+      "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                           ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,                    73/INV/ST & DATED 10, APR, 2024",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b1",
+        "b2"
+      ],
+      "source_span": [
+        52,
+        244
+      ],
+      "source_document_type": "packing_list",
+      "sources": [
+        {
+          "field": "invoice_number",
+          "value": "73/INV/ST",
+          "unit": null,
+          "source_document_id": "doc_d78304b156cb",
+          "source_document_name": "Packing List.pdf",
+          "source_page": 1,
+          "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                           ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,                    73/INV/ST & DATED 10, APR, 2024",
+          "field_name": "invoice_number",
+          "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                           ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,                    73/INV/ST & DATED 10, APR, 2024",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b1",
+            "b2"
+          ],
+          "source_span": [
+            52,
+            244
+          ],
+          "source_document_type": "packing_list"
+        }
+      ]
+    },
+    "consignee": {
+      "field": "consignee",
+      "value": "AURORA HIMALAYA JOINT STOCK",
+      "unit": null,
+      "source_document_id": "doc_d78304b156cb",
+      "source_document_name": "Packing List.pdf",
+      "source_page": 1,
+      "source_excerpt": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+      "field_name": "consignee",
+      "source_quote": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b7"
+      ],
+      "source_span": [
+        394,
+        436
+      ],
+      "source_document_type": "packing_list",
+      "sources": [
+        {
+          "field": "consignee",
+          "value": "AURORA HIMALAYA JOINT STOCK",
+          "unit": null,
+          "source_document_id": "doc_d78304b156cb",
+          "source_document_name": "Packing List.pdf",
+          "source_page": 1,
+          "source_excerpt": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+          "field_name": "consignee",
+          "source_quote": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b7"
+          ],
+          "source_span": [
+            394,
+            436
+          ],
+          "source_document_type": "packing_list"
+        }
+      ]
+    },
+    "port_of_loading": {
+      "field": "port_of_loading",
+      "value": "MUNDRA PORT, INDIA",
+      "unit": null,
+      "source_document_id": "doc_d78304b156cb",
+      "source_document_name": "Packing List.pdf",
+      "source_page": 1,
+      "source_excerpt": "④ Port of loading :                  ⑤ Final destination :\n MUNDRA PORT, INDIA                   CAT LAI PORT, VIETNAM",
+      "field_name": "port_of_loading",
+      "source_quote": "④ Port of loading :                  ⑤ Final destination :\n MUNDRA PORT, INDIA                   CAT LAI PORT, VIETNAM",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b17",
+        "b18"
+      ],
+      "source_span": [
+        615,
+        734
+      ],
+      "source_document_type": "packing_list",
+      "sources": [
+        {
+          "field": "port_of_loading",
+          "value": "MUNDRA PORT, INDIA",
+          "unit": null,
+          "source_document_id": "doc_d78304b156cb",
+          "source_document_name": "Packing List.pdf",
+          "source_page": 1,
+          "source_excerpt": "④ Port of loading :                  ⑤ Final destination :\n MUNDRA PORT, INDIA                   CAT LAI PORT, VIETNAM",
+          "field_name": "port_of_loading",
+          "source_quote": "④ Port of loading :                  ⑤ Final destination :\n MUNDRA PORT, INDIA                   CAT LAI PORT, VIETNAM",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b17",
+            "b18"
+          ],
+          "source_span": [
+            615,
+            734
+          ],
+          "source_document_type": "packing_list"
+        }
+      ]
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,56 @@
+{
+  "validation_hybrid": {
+    "n": 97,
+    "m0_recall200": 79,
+    "hybrid_recall200": 88,
+    "m0_hs8": 23,
+    "selected": "M0",
+    "challengers": {
+      "logistic": 4,
+      "lambdarank": 0,
+      "m0_logistic_blend": 22,
+      "m0_rank_blend": 11
+    }
+  },
+  "openai_pilot": {
+    "n": 12,
+    "accepted": 10,
+    "m0_hs8": 3,
+    "pipeline_hs8": 5,
+    "passed_pilot": true,
+    "estimated_cost_usd": 0.1039755,
+    "run_id": "llm_v5_db3b9e86a3753d919faf"
+  },
+  "scope": {
+    "historical_provisional_labels": true,
+    "independent_gold": false,
+    "applies_to_current_runtime": false,
+    "production_ready": false
+  },
+  "guided_replay": {
+    "bm25": {
+      "n": 94,
+      "hs4_top1": 20,
+      "hs4_top3": 41,
+      "hs8_top1": 0,
+      "recall30": 23,
+      "recall200": 41
+    },
+    "guided": {
+      "n": 94,
+      "hs4_top1": 30,
+      "hs4_top3": 46,
+      "hs8_top1": 11,
+      "recall30": 42,
+      "recall200": 68
+    },
+    "scope": "archived_provisional_descriptions_not_verified_facts"
+  },
+  "openai_validation": {
+    "n": 97,
+    "hs8": 45,
+    "baseline": 23,
+    "scope": "experimental_hybrid_pool_not_app_bm25",
+    "independent_test": false
+  }
+}

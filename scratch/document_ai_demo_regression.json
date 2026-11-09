@@ -1,0 +1,516 @@
+{
+  "validation_note": "Technical text retained from DB; original technical PDF still missing. Legal pages previously parsed from original 103-page PDF.",
+  "skus": [
+    {
+      "id": "cand_808050bf269c",
+      "identifiers": {
+        "model": [
+          "DEMO-DRY-1200"
+        ]
+      },
+      "sku_code": "DEMO-DRY-1200",
+      "name": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+      "description": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+      "facts": [
+        {
+          "id": "fact_ec00889a",
+          "field": "name",
+          "value": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 1,
+          "quote": "Tên và bản chất hàng\nMáy sấy tóc cầm tay gia dụng, dùng điện.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "name",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 1,
+          "source_quote": "Tên và bản chất hàng\nMáy sấy tóc cầm tay gia dụng, dùng điện.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b7",
+            "b8"
+          ],
+          "source_span": [
+            118,
+            179
+          ],
+          "source_header": "Tên và bản chất hàng",
+          "sku_id": "cand_808050bf269c"
+        },
+        {
+          "id": "fact_d44c9d27",
+          "field": "function",
+          "value": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 1,
+          "quote": "Công dụng chính\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "function",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 1,
+          "source_quote": "Công dụng chính\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b11",
+            "b12"
+          ],
+          "source_span": [
+            182,
+            256
+          ],
+          "source_header": "Công dụng chính",
+          "sku_id": "cand_808050bf269c"
+        },
+        {
+          "id": "fact_5b6cf86a",
+          "field": "construction",
+          "value": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 1,
+          "quote": "Cấu tạo và nguyên lý\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "construction",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 1,
+          "source_quote": "Cấu tạo và nguyên lý\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b15",
+            "b16"
+          ],
+          "source_span": [
+            259,
+            341
+          ],
+          "source_header": "Cấu tạo và nguyên lý",
+          "sku_id": "cand_808050bf269c"
+        },
+        {
+          "id": "fact_5ae2d0f2",
+          "field": "specifications",
+          "value": "Điện áp 220 V; tần số 50 Hz; công suất 1200 W.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 1,
+          "quote": "Thông số và kích thước\nĐiện áp 220 V; tần số 50 Hz; công suất 1200 W.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "specifications",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 1,
+          "source_quote": "Thông số và kích thước\nĐiện áp 220 V; tần số 50 Hz; công suất 1200 W.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b19",
+            "b20"
+          ],
+          "source_span": [
+            344,
+            413
+          ],
+          "source_header": "Thông số và kích thước",
+          "sku_id": "cand_808050bf269c"
+        },
+        {
+          "id": "fact_176e849e",
+          "field": "packaging",
+          "value": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 1,
+          "quote": "Quy cách đóng gói\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "packaging",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 1,
+          "source_quote": "Quy cách đóng gói\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b23",
+            "b24"
+          ],
+          "source_span": [
+            416,
+            484
+          ],
+          "source_header": "Quy cách đóng gói",
+          "sku_id": "cand_808050bf269c"
+        },
+        {
+          "id": "fact_5a5e90fd",
+          "field": "model",
+          "value": "DEMO-DRY-1200",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 1,
+          "quote": "DEMO-DRY-1200 |",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "model",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 1,
+          "source_quote": "DEMO-DRY-1200 |",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_span": [
+            0,
+            668
+          ],
+          "sku_id": "cand_808050bf269c"
+        }
+      ],
+      "source_document_id": "doc_b9643c6486bd4243",
+      "source_page": 1,
+      "product_family": "general",
+      "declared_code": null,
+      "status": "needs_review",
+      "identity_status": "explicit_identifier",
+      "matching": [],
+      "source_members": [
+        {
+          "document_id": "doc_b9643c6486bd4243",
+          "page": 1,
+          "local_id": "s0"
+        }
+      ],
+      "resolved_fields": {
+        "name": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+        "model": "DEMO-DRY-1200",
+        "part_number": null,
+        "function": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+        "construction": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+        "material": null,
+        "specifications": "Điện áp 220 V; tần số 50 Hz; công suất 1200 W.",
+        "manufacturing": null,
+        "condition": null,
+        "packaging": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+        "origin": null,
+        "quantity": null,
+        "unit": null,
+        "unit_price": null,
+        "amount": null,
+        "currency": null,
+        "gross_weight": null,
+        "net_weight": null,
+        "packages": null,
+        "declared_code": null
+      },
+      "declared_code_sources": [],
+      "origin_sources": [],
+      "missing_fields": [],
+      "field_states": {
+        "name": "extracted",
+        "model": "extracted",
+        "part_number": "missing",
+        "function": "extracted",
+        "construction": "extracted",
+        "material": "missing",
+        "specifications": "extracted",
+        "manufacturing": "missing",
+        "condition": "missing",
+        "packaging": "extracted",
+        "origin": "missing",
+        "quantity": "missing",
+        "unit": "missing",
+        "unit_price": "missing",
+        "amount": "missing",
+        "currency": "missing",
+        "gross_weight": "missing",
+        "net_weight": "missing",
+        "packages": "missing",
+        "declared_code": "missing"
+      }
+    },
+    {
+      "id": "cand_5933011a93b1",
+      "identifiers": {
+        "model": [
+          "DEMO-DRY-1600"
+        ]
+      },
+      "sku_code": "DEMO-DRY-1600",
+      "name": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+      "description": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+      "facts": [
+        {
+          "id": "fact_6bf79c90",
+          "field": "name",
+          "value": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 2,
+          "quote": "Tên và bản chất hàng\nMáy sấy tóc cầm tay gia dụng, dùng điện.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "name",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 2,
+          "source_quote": "Tên và bản chất hàng\nMáy sấy tóc cầm tay gia dụng, dùng điện.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b7",
+            "b8"
+          ],
+          "source_span": [
+            118,
+            179
+          ],
+          "source_header": "Tên và bản chất hàng",
+          "sku_id": "cand_5933011a93b1"
+        },
+        {
+          "id": "fact_73b58f24",
+          "field": "function",
+          "value": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 2,
+          "quote": "Công dụng chính\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "function",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 2,
+          "source_quote": "Công dụng chính\nSấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b11",
+            "b12"
+          ],
+          "source_span": [
+            182,
+            256
+          ],
+          "source_header": "Công dụng chính",
+          "sku_id": "cand_5933011a93b1"
+        },
+        {
+          "id": "fact_ecf0aebb",
+          "field": "construction",
+          "value": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 2,
+          "quote": "Cấu tạo và nguyên lý\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "construction",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 2,
+          "source_quote": "Cấu tạo và nguyên lý\nMáy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b15",
+            "b16"
+          ],
+          "source_span": [
+            259,
+            341
+          ],
+          "source_header": "Cấu tạo và nguyên lý",
+          "sku_id": "cand_5933011a93b1"
+        },
+        {
+          "id": "fact_55c894fc",
+          "field": "specifications",
+          "value": "Điện áp 220 V; tần số 50 Hz; công suất 1600 W.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 2,
+          "quote": "Thông số và kích thước\nĐiện áp 220 V; tần số 50 Hz; công suất 1600 W.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "specifications",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 2,
+          "source_quote": "Thông số và kích thước\nĐiện áp 220 V; tần số 50 Hz; công suất 1600 W.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b19",
+            "b20"
+          ],
+          "source_span": [
+            344,
+            413
+          ],
+          "source_header": "Thông số và kích thước",
+          "sku_id": "cand_5933011a93b1"
+        },
+        {
+          "id": "fact_c23fadd1",
+          "field": "packaging",
+          "value": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 2,
+          "quote": "Quy cách đóng gói\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "packaging",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 2,
+          "source_quote": "Quy cách đóng gói\nMột máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_block_ids": [
+            "b23",
+            "b24"
+          ],
+          "source_span": [
+            416,
+            484
+          ],
+          "source_header": "Quy cách đóng gói",
+          "sku_id": "cand_5933011a93b1"
+        },
+        {
+          "id": "fact_76ee158e",
+          "field": "model",
+          "value": "DEMO-DRY-1600",
+          "unit": null,
+          "document_id": "doc_b9643c6486bd4243",
+          "document_name": "01_Ho_so_ky_thuat_DEMO.pdf",
+          "page_number": 2,
+          "quote": "DEMO-DRY-1600 |",
+          "extraction_method": "pdf_text:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "model",
+          "source_document_id": "doc_b9643c6486bd4243",
+          "source_page": 2,
+          "source_quote": "DEMO-DRY-1600 |",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "technical_spec",
+          "source_span": [
+            0,
+            668
+          ],
+          "sku_id": "cand_5933011a93b1"
+        }
+      ],
+      "source_document_id": "doc_b9643c6486bd4243",
+      "source_page": 2,
+      "product_family": "general",
+      "declared_code": null,
+      "status": "needs_review",
+      "identity_status": "explicit_identifier",
+      "matching": [],
+      "source_members": [
+        {
+          "document_id": "doc_b9643c6486bd4243",
+          "page": 2,
+          "local_id": "s0"
+        }
+      ],
+      "resolved_fields": {
+        "name": "Máy sấy tóc cầm tay gia dụng, dùng điện.",
+        "model": "DEMO-DRY-1600",
+        "part_number": null,
+        "function": "Sấy khô tóc bằng luồng không khí nóng, gia nhiệt điện trở.",
+        "construction": "Máy hoàn chỉnh có quạt điện và điện trở, không có bộ uốn tóc.",
+        "material": null,
+        "specifications": "Điện áp 220 V; tần số 50 Hz; công suất 1600 W.",
+        "manufacturing": null,
+        "condition": null,
+        "packaging": "Một máy trong một hộp giấy, kèm hướng dẫn sử dụng.",
+        "origin": null,
+        "quantity": null,
+        "unit": null,
+        "unit_price": null,
+        "amount": null,
+        "currency": null,
+        "gross_weight": null,
+        "net_weight": null,
+        "packages": null,
+        "declared_code": null
+      },
+      "declared_code_sources": [],
+      "origin_sources": [],
+      "missing_fields": [],
+      "field_states": {
+        "name": "extracted",
+        "model": "extracted",
+        "part_number": "missing",
+        "function": "extracted",
+        "construction": "extracted",
+        "material": "missing",
+        "specifications": "extracted",
+        "manufacturing": "missing",
+        "condition": "missing",
+        "packaging": "extracted",
+        "origin": "missing",
+        "quantity": "missing",
+        "unit": "missing",
+        "unit_price": "missing",
+        "amount": "missing",
+        "currency": "missing",
+        "gross_weight": "missing",
+        "net_weight": "missing",
+        "packages": "missing",
+        "declared_code": "missing"
+      }
+    }
+  ],
+  "dossier_fields": {}
+}

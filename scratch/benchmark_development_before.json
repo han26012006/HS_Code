@@ -1,0 +1,400 @@
+{
+  "dataset": "tests/fixtures/document_ai/development.json",
+  "dataset_sha256": "a1d523e4e79ab0585e0f9c1159312fdd923d82c0995dc60c9dafd0946431681f",
+  "table_gold_sha256": "69ffdcbd7bdffc0d231e2460d234363ede5277f65f766ff34631599f2eec28ff",
+  "evaluator_sha256": "e9f60c734cf323780ccd1af7c3030486f4a0d1ae66b9408420639d8be1fdb169",
+  "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+  "metrics": {
+    "document_classification_accuracy": 0.846154,
+    "field_precision": 0.769231,
+    "field_recall": 0.37037,
+    "field_f1": 0.5,
+    "identifier_exact_match": 0.48,
+    "table_row_exact_recall": 0.0,
+    "table_row_exact_precision": null,
+    "table_row_identity_accuracy": 0.0,
+    "sku_precision": 0.888889,
+    "sku_recall": 1.0,
+    "cross_document_matching_case_accuracy": 1.0,
+    "cross_document_membership_jaccard": 1.0,
+    "citation_correctness": 1.0,
+    "unsupported_value_rate": 0.0,
+    "autofill_coverage": 0.37037
+  },
+  "counts": {
+    "class_correct": 11,
+    "documents": 13,
+    "field_tp": 20,
+    "field_fp": 6,
+    "field_fn": 34,
+    "id_correct": 12,
+    "id_total": 25,
+    "sku_tp": 8,
+    "sku_fp": 1,
+    "sku_fn": 0,
+    "citations_correct": 21,
+    "citations_total": 21,
+    "unsupported": 0,
+    "rows_correct": 0,
+    "rows_total": 7,
+    "rows_exact": 0,
+    "rows_predicted": 0,
+    "pair_tp": 12,
+    "pair_fp": 0,
+    "pair_fn": 0,
+    "matching_cases_correct": 10,
+    "matching_cases_total": 10,
+    "coverage_hits": 20,
+    "coverage_total": 54
+  },
+  "details": [
+    {
+      "case_id": "steel-trade",
+      "expected_skus": [
+        "ST-21",
+        "ST-22"
+      ],
+      "actual_skus": [
+        "ST-21",
+        "ST-22"
+      ],
+      "missing_fields": [
+        [
+          "document",
+          "steel-inv",
+          "contract_number",
+          "CT-800"
+        ],
+        [
+          "document",
+          "steel-inv",
+          "exporter",
+          "Alloy Works Ltd"
+        ],
+        [
+          "document",
+          "steel-inv",
+          "importer",
+          "Metro Fabrication Ltd"
+        ],
+        [
+          "product",
+          "ST-21",
+          "amount",
+          "500.00"
+        ],
+        [
+          "product",
+          "ST-21",
+          "gross_weight",
+          "25 kg"
+        ],
+        [
+          "product",
+          "ST-21",
+          "material",
+          "Stainless steel"
+        ],
+        [
+          "product",
+          "ST-21",
+          "net_weight",
+          "23 kg"
+        ],
+        [
+          "product",
+          "ST-21",
+          "packages",
+          "2 cartons"
+        ],
+        [
+          "product",
+          "ST-21",
+          "quantity",
+          "40"
+        ],
+        [
+          "product",
+          "ST-21",
+          "unit",
+          "PCS"
+        ],
+        [
+          "product",
+          "ST-21",
+          "unit_price",
+          "12.50"
+        ],
+        [
+          "product",
+          "ST-22",
+          "amount",
+          "900.00"
+        ],
+        [
+          "product",
+          "ST-22",
+          "gross_weight",
+          "34 kg"
+        ],
+        [
+          "product",
+          "ST-22",
+          "material",
+          "Stainless steel"
+        ],
+        [
+          "product",
+          "ST-22",
+          "net_weight",
+          "32 kg"
+        ],
+        [
+          "product",
+          "ST-22",
+          "packages",
+          "3 cartons"
+        ],
+        [
+          "product",
+          "ST-22",
+          "quantity",
+          "60"
+        ],
+        [
+          "product",
+          "ST-22",
+          "unit",
+          "PCS"
+        ],
+        [
+          "product",
+          "ST-22",
+          "unit_price",
+          "15.00"
+        ]
+      ],
+      "unexpected_fields": [
+        [
+          "document",
+          "steel-inv",
+          "exporter",
+          "Alloy Works Ltd\nBuyer"
+        ],
+        [
+          "document",
+          "steel-inv",
+          "importer",
+          "Metro Fabrication Ltd\nContract No"
+        ]
+      ]
+    },
+    {
+      "case_id": "chemical-certificates",
+      "expected_skus": [
+        "RES-51"
+      ],
+      "actual_skus": [
+        "RES-51"
+      ],
+      "missing_fields": [
+        [
+          "product",
+          "RES-51",
+          "specifications",
+          "Density 0.90 g/cm3"
+        ]
+      ],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "food-origin",
+      "expected_skus": [
+        "FD-51"
+      ],
+      "actual_skus": [
+        "FD-51"
+      ],
+      "missing_fields": [
+        [
+          "document",
+          "food-co",
+          "invoice_number",
+          "FOOD-51"
+        ],
+        [
+          "product",
+          "FD-51",
+          "quantity",
+          "100"
+        ],
+        [
+          "product",
+          "FD-51",
+          "unit",
+          "KG"
+        ]
+      ],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "transport",
+      "expected_skus": [],
+      "actual_skus": [],
+      "missing_fields": [
+        [
+          "document",
+          "bl",
+          "bl_number",
+          "OCEAN-96"
+        ],
+        [
+          "document",
+          "bl",
+          "consignee",
+          "Textile Import Ltd"
+        ],
+        [
+          "document",
+          "bl",
+          "port_of_discharge",
+          "Haiphong"
+        ],
+        [
+          "document",
+          "bl",
+          "port_of_loading",
+          "Bangkok"
+        ],
+        [
+          "document",
+          "bl",
+          "shipper",
+          "Textile Export Ltd"
+        ],
+        [
+          "document",
+          "bl",
+          "total_packages",
+          "20 cartons"
+        ]
+      ],
+      "unexpected_fields": [
+        [
+          "document",
+          "bl",
+          "port_of_discharge",
+          "Haiphong\nPackages"
+        ],
+        [
+          "document",
+          "bl",
+          "port_of_loading",
+          "Bangkok\nPort of discharge"
+        ]
+      ]
+    },
+    {
+      "case_id": "contract",
+      "expected_skus": [
+        "WOOD-7"
+      ],
+      "actual_skus": [
+        "WOOD-7"
+      ],
+      "missing_fields": [
+        [
+          "document",
+          "ct",
+          "contract_number",
+          "CN-25"
+        ],
+        [
+          "document",
+          "ct",
+          "exporter",
+          "Wood Export Ltd"
+        ],
+        [
+          "document",
+          "ct",
+          "importer",
+          "Furniture Ltd"
+        ],
+        [
+          "product",
+          "WOOD-7",
+          "quantity",
+          "200"
+        ],
+        [
+          "product",
+          "WOOD-7",
+          "unit",
+          "M3"
+        ]
+      ],
+      "unexpected_fields": [
+        [
+          "document",
+          "ct",
+          "exporter",
+          "Wood Export Ltd\nBuyer"
+        ],
+        [
+          "document",
+          "ct",
+          "importer",
+          "Furniture Ltd\nSKU"
+        ]
+      ]
+    },
+    {
+      "case_id": "catalogue",
+      "expected_skus": [
+        "PUMP-1",
+        "PUMP-2"
+      ],
+      "actual_skus": [
+        "PUMP-1",
+        "PUMP-2"
+      ],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "customs",
+      "expected_skus": [
+        "CP-2"
+      ],
+      "actual_skus": [
+        "CP-2"
+      ],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "legal-negative",
+      "expected_skus": [],
+      "actual_skus": [],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "unknown-negative",
+      "expected_skus": [],
+      "actual_skus": [],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "single-signal-negative",
+      "expected_skus": [],
+      "actual_skus": [
+        "A-1"
+      ],
+      "missing_fields": [],
+      "unexpected_fields": []
+    }
+  ]
+}

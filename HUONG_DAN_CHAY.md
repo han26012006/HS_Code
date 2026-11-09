@@ -82,7 +82,7 @@ export HS_ART=/path/to/HSCode_AIProject/03_MoHinh/artifacts_v4
 python serve.py
 ```
 
-PowerShell dùng `$env:HS_ART="C:\...\03_MoHinh\artifacts_v4"`. Nếu chưa tái tạo v4, có thể chủ động trỏ `HS_ART` tới `artifacts` cũ; đây là nhánh legacy chưa đạt kiểm chứng mới. **Không trộn ranker/embedding/index giữa hai phiên bản.** Manifest v4 được kiểm tra hash trước nạp. Lõi dùng tiền lệ train, không dùng valid/test làm ví dụ mặc định. Không nạp `final.json` cũ trừ khi có freeze đúng manifest; không đổi sang baseline âm thầm khi model lỗi.
+PowerShell dùng `$env:HS_ART="C:\...\03_MoHinh\artifacts_v4"`. Nếu chưa tái tạo v4, có thể chủ động trỏ `HS_ART` tới `artifacts` cũ; đây là nhánh legacy chưa đạt kiểm chứng mới. **Không trộn ranker/embedding/index giữa hai phiên bản.** Để kiểm đúng snapshot mới nhất, dùng thư mục artifact đồng bộ từ run 03/11 UTC có SHA manifest bắt đầu e3eacfec; /api/v2/status phải báo artifact_integrity_verified và /api/v2/quality phải báo evaluation_artifact_matches. Dù manifest khớp, chạy parity trước khi diễn giải điểm offline cho model đang phục vụ. Manifest v4 được kiểm tra hash trước nạp. Lõi dùng tiền lệ train, không dùng valid/test làm ví dụ mặc định. Không nạp `final.json` cũ trừ khi có freeze đúng manifest; không đổi sang baseline âm thầm khi model lỗi.
 
 Ứng dụng không chứa encoder/trọng số vài GB. Chuẩn bị cache model đúng phiên bản trước; model chỉ được nạp khi chọn phương pháp. `HS_MODEL_ALLOW_DOWNLOAD=1` cho phép tải encoder khi người vận hành chủ động cấu hình. Điểm ranker, softmax và confidence HS4 không hiển thị thành xác suất đúng HS8.
 
@@ -96,7 +96,7 @@ Hai model chỉ dẫn dùng pool tối đa 200 mã BM25, full đường dẫn da
 
 Tra cứu mã và các dòng cùng HS6; đọc chú giải/nguồn pháp lý; rà soát CSV/XLSX tối đa 5.000 SKU với mô tả gần nhau và mã khác nhau. Tương đồng không chứng minh sai mã, không tự đổi danh mục. Mã CSV giữ dạng chuỗi và số 0 đầu. Báo cáo Excel giữ văn bản thành literal, không thực thi công thức do nội dung nguồn chèn vào.
 
-Màn hình chất lượng báo HS2/4/6/8, macro F1, recall và seen/unseen. Kết quả M0 lịch sử 32/109 (29,4%) chưa đại diện cho độ đúng của ứng dụng trên một bộ SKU độc lập. Tỷ lệ duyệt hồ sơ không phải accuracy. Phần Biểu thuế & kịch bản dùng snapshot có nguồn và đầu vào do người dùng đối chiếu; chưa chứng nhận toàn bộ mức thuế hiện hành. API ước tính cũ vẫn chỉ là phép tính theo đầu vào, không dùng để chọn mã hoặc tính tiền phạt.
+Màn hình chất lượng báo HS2/4/6/8, macro F1, recall và seen/unseen. Kết quả M0 run 03/11 UTC đạt 24/94 trên test giữ lại và 24/109 theo mẫu số đóng băng; đây là kết quả offline, không phải độ chính xác runtime. Tỷ lệ duyệt hồ sơ không phải accuracy. Phần Biểu thuế & kịch bản dùng snapshot có nguồn và đầu vào do người dùng đối chiếu; chưa chứng nhận toàn bộ mức thuế hiện hành. API ước tính cũ vẫn chỉ là phép tính theo đầu vào, không dùng để chọn mã hoặc tính tiền phạt.
 
 ## Phát triển, kiểm thử và lưu dữ liệu
 

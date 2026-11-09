@@ -1,0 +1,197 @@
+[
+  {
+    "id": "textile-shipment",
+    "split": "reserved_synthetic",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "cloth-i",
+        "name": "opaque-cloth-i.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "COMMERCIAL INVOICE\nInvoice No: TX-88\nCurrency: EUR\nItem Code\tGoods Description\tQty\tUOM\tUnit Price\tLine Total\nFAB-8\tWoven cotton fabric\t320\tM\t2.10\t672.00\nFAB-9\tWoven cotton fabric\t180\tM\t3.00\t540.00\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "commercial_invoice",
+        "expected_products": [
+          "FAB-8",
+          "FAB-9"
+        ],
+        "expected_fields": {
+          "invoice_number": "TX-88"
+        },
+        "expected_rows": 2
+      },
+      {
+        "id": "cloth-p",
+        "name": "opaque-cloth-p.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "PACKING LIST\nInvoice No: TX-88\nItem Code\tGoods Description\tQty\tUOM\nFAB-8\tWoven cotton fabric\t320\tM\nFAB-9\tWoven cotton fabric\t180\tM\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "packing_list",
+        "expected_products": [
+          "FAB-8",
+          "FAB-9"
+        ],
+        "expected_fields": {},
+        "expected_rows": 2
+      }
+    ],
+    "products": [
+      {
+        "identifier": "FAB-8",
+        "name": "Woven cotton fabric",
+        "fields": {
+          "name": "Woven cotton fabric",
+          "quantity": "320",
+          "unit": "M",
+          "unit_price": "2.10",
+          "amount": "672.00"
+        }
+      },
+      {
+        "identifier": "FAB-9",
+        "name": "Woven cotton fabric",
+        "fields": {
+          "name": "Woven cotton fabric",
+          "quantity": "180",
+          "unit": "M",
+          "unit_price": "3.00",
+          "amount": "540.00"
+        }
+      }
+    ]
+  },
+  {
+    "id": "optics",
+    "split": "reserved_synthetic",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "opt-q",
+        "name": "opaque-opt-q.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "CERTIFICATE OF QUALITY\nCertificate No: QO-26\nPart number: OPT-30\nProduct name: Optical lens\nMaterial: Glass\nTechnical specifications: Diameter 30 mm\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "certificate_of_quality",
+        "expected_products": [
+          "OPT-30"
+        ],
+        "expected_fields": {},
+        "expected_rows": 0
+      },
+      {
+        "id": "opt-d",
+        "name": "opaque-opt-d.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "TECHNICAL SPECIFICATION\nPart number: OPT-30\nProduct name: Optical lens\nMaterial: Glass\nTechnical specifications: Diameter 30 mm\nFunction: Focus light\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "technical_spec",
+        "expected_products": [
+          "OPT-30"
+        ],
+        "expected_fields": {},
+        "expected_rows": 0
+      }
+    ],
+    "products": [
+      {
+        "identifier": "OPT-30",
+        "name": "Optical lens",
+        "fields": {
+          "name": "Optical lens",
+          "material": "Glass",
+          "specifications": "Diameter 30 mm",
+          "function": "Focus light"
+        }
+      }
+    ]
+  },
+  {
+    "id": "air-shipment",
+    "split": "reserved_synthetic",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "air",
+        "name": "opaque-air.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "AIR WAYBILL\nAWB No: AIR-880\nShipper: Device Export Ltd\nConsignee: Laboratory Ltd\nAirport of departure: Hanoi\nAirport of destination: Tokyo\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "air_waybill",
+        "expected_products": [],
+        "expected_fields": {
+          "bl_number": "AIR-880",
+          "shipper": "Device Export Ltd",
+          "consignee": "Laboratory Ltd"
+        },
+        "expected_rows": 0
+      }
+    ],
+    "products": []
+  },
+  {
+    "id": "legal-en",
+    "split": "reserved_synthetic",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "tariff",
+        "name": "opaque-tariff.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "HARMONIZED TARIFF SCHEDULE\nChapter 85\n8516.31.00 Hair dryers\nSection XVI notes\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "legal_reference",
+        "expected_products": [],
+        "expected_fields": {},
+        "expected_rows": 0
+      }
+    ],
+    "products": []
+  },
+  {
+    "id": "unknown-ocr",
+    "split": "reserved_synthetic",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "ocr",
+        "name": "opaque-ocr.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "xx?? ��\nSKU? aa\n... 00l1",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "other",
+        "expected_products": [],
+        "expected_fields": {},
+        "expected_rows": 0
+      }
+    ],
+    "products": []
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Thuốc lá điếu/Bộ chứng từ/COMMERCIAL INVOICE.pdf",
+    "group": "mặt hàng Thuốc lá điếu",
+    "name": "COMMERCIAL INVOICE.pdf",
+    "size": 156267,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "2c652bc8a248df44400301fca781d40b01924ff06f537e9b7b279fb7d65928c4",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/2c652bc8a248df44400301fca781d40b01924ff06f537e9b7b279fb7d65928c4.pdf",
+    "candidate": true,
+    "split": "fresh_group_holdout_v2"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Thuốc lá điếu/Bộ chứng từ/PACKING LIST.pdf",
+    "group": "mặt hàng Thuốc lá điếu",
+    "name": "PACKING LIST.pdf",
+    "size": 91639,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "358ff07001d26c92ab9d4632af33f19fb2bbd64a8c721ad99f8785ec45702948",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/358ff07001d26c92ab9d4632af33f19fb2bbd64a8c721ad99f8785ec45702948.pdf",
+    "candidate": true,
+    "split": "fresh_group_holdout_v2"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Thuốc lá điếu/Bộ chứng từ/SALES CONTRACT.pdf",
+    "group": "mặt hàng Thuốc lá điếu",
+    "name": "SALES CONTRACT.pdf",
+    "size": 193605,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "3e0d01935da7d1a6e7c82f09cb9429f7c1a27b4110b6e54cd85433f3755cf560",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/3e0d01935da7d1a6e7c82f09cb9429f7c1a27b4110b6e54cd85433f3755cf560.pdf",
+    "candidate": true,
+    "split": "fresh_group_holdout_v2"
+  }
+]

@@ -1,0 +1,20 @@
+TAP version 13
+# Subtest: classification date stays a calendar day under a foreign browser timezone
+ok 1 - classification date stays a calendar day under a foreign browser timezone
+  ---
+  duration_ms: 3.386792
+  ...
+# Subtest: timestamps and default business day use Vietnam time
+ok 2 - timestamps and default business day use Vietnam time
+  ---
+  duration_ms: 24.018875
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 85.912292

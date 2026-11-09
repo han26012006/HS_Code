@@ -1,0 +1,141 @@
+     1	"""Conservative semantic extraction, independent of PDF/OCR engines.
+     2	
+     3	Only explicit labels and bounded item sections supply facts. Unknown identities
+     4	stay separate until a reviewer can link them; legal references never supply facts.
+     5	"""
+     6	import hashlib
+     7	import re
+     8	import unicodedata
+     9	
+    10	PRODUCT = {'technical_spec', 'product_catalogue', 'mill_test'}
+    11	TRANSACTION = {'commercial_invoice', 'packing_list', 'bill_of_lading',
+    12	               'air_waybill', 'customs_declaration', 'sales_contract', 'certificate_of_origin'}
+    13	
+    14	
+    15	def role(doc):
+    16	    from .extractor import DocumentTypeDetector
+    17	    kind = DocumentTypeDetector.detect_type(doc)['kind']
+    18	    return 'legal_reference' if kind == 'legal_reference' else ('product_evidence' if kind in PRODUCT else ('transaction_evidence' if kind in TRANSACTION else 'unknown'))
+    19	
+    20	
+    21	def normalized(text):
+    22	    return ' '.join(unicodedata.normalize('NFC', text).split()).casefold()
+    23	
+    24	
+    25	MODEL = re.compile(r'\b(?:model|sku|part\s*(?:number|no\.?)|mã\s*(?:sản\s*phẩm|hàng)|kiểu\s*máy)\s*[:=\-]?\s*([A-Z0-9][A-Z0-9._/-]*\d[A-Z0-9._/-]*|[A-Z0-9]+-?[A-Z0-9]*)', re.I)
+    26	ITEM = re.compile(r'(?im)^\s*(?:item|sản\s*phẩm|mặt\s*hàng)\s*\d+\s*[:.]')
+    27	LABELS = {
+    28	    'name': r'tên\s*(?:và\s*bản\s*chất\s*hàng|sản\s*phẩm|hàng(?:\s*hóa)?)|product(?:\s*name)?|item(?:\s*description)?|description(?:\s*of\s*goods)?',
+    29	    'function': r'công\s*dụng(?:\s*chính)?|chức\s*năng|function|intended\s*use|application',
+    30	    'construction': r'cấu\s*tạo(?:\s*và\s*nguyên\s*lý)?|kết\s*cấu|construction|structure',
+    31	    'material': r'chất\s*liệu|vật\s*liệu|thành\s*phần|material|composition',
+    32	    'specifications': r'thông\s*số(?:\s*(?:kỹ\s*thuật|và\s*kích\s*thước))?|rated\s*power|power(?:\s*consumption)?|công\s*suất|điện\s*áp|tần\s*số|voltage|frequency',
+    33	    'packaging': r'quy\s*cách\s*đóng\s*gói|đóng\s*gói|packaging',
+    34	    'manufacturing': r'quy\s*trình\s*sản\s*xuất|manufacturing',
+    35	    'condition': r'tình\s*trạng|condition',
+    36	    'origin': r'xuất\s*xứ|country\s*of\s*origin',
+    37	}
+    38	
+    39	
+    40	def segments(text):
+    41	    items = list(ITEM.finditer(text))
+    42	    anchors = items if items else list(MODEL.finditer(text))
+    43	    if not anchors:
+    44	        anchors = list(re.finditer(r'(?im)^\s*(?:product\s*name|tên\s*(?:sản\s*phẩm|hàng))\s*[:=]', text))
+    45	    if len(anchors) <= 1:
+    46	        return [text]
+    47	    starts = [text.rfind('\n', 0, m.start()) + 1 for m in anchors]
+    48	    starts = sorted(set(starts))
+    49	    return [text[start:(starts[i+1] if i+1 < len(starts) else len(text))] for i, start in enumerate(starts)]
+    50	
+    51	
+    52	def extract(docs, make_fact):
+    53	    entities = {}
+    54	    for doc in sorted(docs, key=lambda d: (d.get('sha256', ''), d.get('name', ''))):
+    55	        if role(doc) not in {'product_evidence', 'transaction_evidence'}:
+    56	            continue
+    57	        for page in doc.get('pages', []):
+    58	            text = page.get('text', '')
+    59	            table_rows = []
+    60	            header = None
+    61	            for line in text.splitlines():
+    62	                cells = [c.strip() for c in re.split(r'\s*\|\s*|\t|\s{2,}', line.strip())]
+    63	                if len(cells) > 1 and any(re.fullmatch(r'sku|model|part number', c, re.I) for c in cells):
+    64	                    header = [c.casefold() for c in cells]
+    65	                elif header and len(cells) == len(header):
+    66	                    table_rows.append((line, dict(zip(header, cells))))
+    67	            sections = [(s, None) for s in segments(text)] if not table_rows else table_rows
+    68	            for index, (section, row) in enumerate(sections):
+    69	                model = MODEL.search(section) or re.search(r'(?m)^\s*([A-Z][A-Z0-9]+(?:-[A-Z0-9]+)+)\s*(?:\||$)', section)
+    70	                values = []
+    71	                for field, labels in LABELS.items():
+    72	                    for match in re.finditer(r'(?im)^\s*(?:' + labels + r')[ \t]*(?:[:=][ \t]*|\n\s*)([^\n|]+)', section):
+    73	                        values.append((field, match.group(1).strip(), match.group(0).strip()))
+    74	                if row:
+    75	                    for column, value in row.items():
+    76	                        field = 'name' if column in {'description', 'product name', 'item description'} else ('specifications' if column in {'power', 'voltage', 'specifications'} else None)
+    77	                        if field and value: values.append((field, value, section.strip()))
+    78	                    row_code = next((row[k] for k in ('sku', 'model', 'part number') if row.get(k)), None)
+    79	                else:
+    80	                    row_code = None
+    81	                if not model and not row_code and not any(f == 'name' for f, _, _ in values):
+    82	                    continue
+    83	                code = row_code or (model.group(1).strip('.,') if model else None)
+    84	                key = code.casefold() if code else f"{doc['id']}:{page.get('number', 1)}:{index}"
+    85	                sku = entities.get(key)
+    86	                if sku is None:
+    87	                    identifier = 'cand_' + hashlib.sha256(key.encode()).hexdigest()[:12]
+    88	                    name = next((v for f, v, _ in values if f == 'name'), '')
+    89	                    # An item line itself is explicit description evidence.
+    90	                    if not name:
+    91	                        item = re.search(r'(?im)^\s*item\s*\d*\s*:\s*([^\n]+)', section)
+    92	                        if item:
+    93	                            name = item.group(1).strip()
+    94	                            values.append(('name', name, item.group(0).strip()))
+    95	                    sku = dict(id=identifier, sku_code=code or identifier, name=name,
+    96	                               description=name, product_family='general', declared_code=None,
+    97	                               facts=[], source_document_id=doc['id'], source_page=page.get('number', 1),
+    98	                               status='needs_review', identity_status='explicit_model' if code else 'needs_review')
+    99	                    entities[key] = sku
+   100	                # Inline numerical ratings remain exact evidence, without invented descriptions.
+   101	                if not any(f == 'specifications' for f, _, _ in values):
+   102	                    for line in section.splitlines():
+   103	                        if re.search(r'\b\d+(?:[.,]\d+)?\s*(?:W|V|Hz|mm|nm)\b', line, re.I):
+   104	                            values.append(('specifications', line.strip(), line.strip()))
+   105	                hs = re.search(r'(?:HS\s*(?:code)?|mã\s*HS)\s*[:=]\s*(\d{4}\.?\d{2}\.?\d{2})\b', section, re.I)
+   106	                if hs:
+   107	                    values.append(('declared_code', hs.group(1), hs.group(0)))
+   108	                for field, value, quote in values:
+   109	                    if normalized(value) not in normalized(quote) or normalized(quote) not in normalized(section):
+   110	                        continue
+   111	                    fact = make_fact(field, value, doc['id'], doc['name'], page.get('number', 1), quote)
+   112	                    fact.update(field_name=field, sku_id=sku['id'], source_document_id=doc['id'],
+   113	                                source_page=page.get('number', 1), source_quote=quote,
+   114	                                source_kind='document_extracted', extraction_status='extracted', source_valid=True,
+   115	                                extraction_method=page.get('method', 'text') + ':explicit_section')
+   116	                    if field == 'origin':
+   117	                        sku.setdefault('origin_sources', []).append(fact)
+   118	                        continue
+   119	                    if field == 'declared_code':
+   120	                        fact['value'] = value.replace('.', '')
+   121	                        sku['declared_code'] = fact['value']
+   122	                        sku.setdefault('declared_code_sources', []).append(fact)
+   123	                        continue
+   124	                    if not any(f['field'] == field and f['value'] == value and f['document_id'] == doc['id'] and f['page_number'] == fact['page_number'] for f in sku['facts']):
+   125	                        sku['facts'].append(fact)
+   126	                    if field == 'name' and not sku['name']:
+   127	                        sku['name'] = value
+   128	    for sku in entities.values():
+   129	        for field in LABELS:
+   130	            facts = [f for f in sku['facts'] if f['field'] == field]
+   131	            if field != 'specifications' and len({normalized(f['value']) for f in facts}) > 1:
+   132	                for fact in facts:
+   133	                    fact.update(status='conflict', extraction_status='conflicting')
+   134	        spec_facts = [f for f in sku['facts'] if f['field'] == 'specifications']
+   135	        for unit in ('W', 'V', 'Hz'):
+   136	            amounts = {m.group(1).replace(',', '.') for f in spec_facts for m in re.finditer(r'(\d+(?:[.,]\d+)?)\s*' + unit + r'\b', f['value'], re.I)}
+   137	            if len(amounts) > 1:
+   138	                for fact in spec_facts:
+   139	                    fact.update(status='conflict', extraction_status='conflicting')
+   140	        sku['missing_fields'] = [f for f in ('name', 'function', 'construction', 'specifications') if not any(x['field'] == f for x in sku['facts'])]
+   141	    return sorted(entities.values(), key=lambda s: s['sku_code'].casefold())

@@ -1,0 +1,74 @@
+[
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng hóa chất/BỘ CHỨNG TỪ/INVOICE.pdf",
+    "group": "mặt hàng hóa chất",
+    "name": "INVOICE.pdf",
+    "size": 131885,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "38127cb8b624cb4b2152e33c8a178cc39e298e23628698601c11f51e32bf715f",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/38127cb8b624cb4b2152e33c8a178cc39e298e23628698601c11f51e32bf715f.pdf",
+    "candidate": true,
+    "split": "reserved_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng hóa chất/BỘ CHỨNG TỪ/PACKING LIST.pdf",
+    "group": "mặt hàng hóa chất",
+    "name": "PACKING LIST.pdf",
+    "size": 84910,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "82826136c5a458f47df7d9996b3fc94eb047694c8b8038413ada1c859d4f791c",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/82826136c5a458f47df7d9996b3fc94eb047694c8b8038413ada1c859d4f791c.pdf",
+    "candidate": true,
+    "split": "reserved_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Thức ăn cho chó và mèo/BỘ CHỨNG TỪ/COMMERCIAL INVOICE NHA VAT YEU.pdf",
+    "group": "mặt hàng Thức ăn cho chó và mèo",
+    "name": "COMMERCIAL INVOICE NHA VAT YEU.pdf",
+    "size": 185950,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "d1b8b756634e80a6ca093555a4228b6212d3519e45cee29e1b8d7e60ce82213f",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/d1b8b756634e80a6ca093555a4228b6212d3519e45cee29e1b8d7e60ce82213f.pdf",
+    "candidate": true,
+    "split": "reserved_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Thức ăn cho chó và mèo/BỘ CHỨNG TỪ/PACKING LIST FWUSOW-original.pdf",
+    "group": "mặt hàng Thức ăn cho chó và mèo",
+    "name": "PACKING LIST FWUSOW-original.pdf",
+    "size": 2037749,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "645773e4ba29d719ae274f09c509d45b682f1d421e611cd522c47fd7285234e9",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/645773e4ba29d719ae274f09c509d45b682f1d421e611cd522c47fd7285234e9.pdf",
+    "candidate": true,
+    "split": "reserved_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Vật liệu xây dựng/BỘ CHỨNG TỪ/ToKhaiHQ7N_.xlsx - TKN.pdf",
+    "group": "mặt hàng Vật liệu xây dựng",
+    "name": "ToKhaiHQ7N_.xlsx - TKN.pdf",
+    "size": 185354,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "4838af4a3ce304e6aeb023a44ba77ad6ee05298366d1f20f7c9774c4eef2c286",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/4838af4a3ce304e6aeb023a44ba77ad6ee05298366d1f20f7c9774c4eef2c286.pdf",
+    "candidate": true,
+    "split": "reserved_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Phế liệu giấy/Bộ chứng từ/B_L.docx.pdf",
+    "group": "mặt hàng Phế liệu giấy",
+    "name": "B_L.docx.pdf",
+    "size": 1219703,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "41482a93a8437e03aa85fb4c7906e7fcca44f955f678d29900aa3a03a471bb08",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/41482a93a8437e03aa85fb4c7906e7fcca44f955f678d29900aa3a03a471bb08.pdf",
+    "candidate": true,
+    "split": "reserved_real"
+  }
+]

@@ -1,0 +1,1223 @@
+{
+  "dataset_sha256": "0fa6db512eb0ab5b355f62b24dd00282d0938504c224d4dd7ede2aab0adb5155",
+  "manifest_sha256": "e3eacfecb3274aa50d0b67d9daf947a9e6859f4684008aa9b7664ddba3f5fc83",
+  "catalogue_sha256": "319a18ba1bd1acf066ed043f5678e8c8d7a22bc6b3ad490c1759f217907501bc",
+  "splits": {
+    "test": {
+      "cases": 94,
+      "dates": [
+        "2025-12-29",
+        "2026-09-21"
+      ],
+      "label_status": {
+        "provisional_extracted": 69,
+        "provisional_manual_agrees": 25
+      },
+      "missing_company_group": 1,
+      "connected_to_earlier_window": 28,
+      "strict_slice_cases": 65,
+      "strict_slice_unseen_hs8": 44,
+      "strict_slice_case_ids": [
+        513,
+        514,
+        515,
+        516,
+        517,
+        518,
+        519,
+        520,
+        522,
+        524,
+        525,
+        526,
+        527,
+        528,
+        530,
+        532,
+        534,
+        535,
+        536,
+        538,
+        540,
+        542,
+        544,
+        545,
+        546,
+        548,
+        549,
+        550,
+        552,
+        553,
+        554,
+        555,
+        556,
+        557,
+        559,
+        560,
+        561,
+        568,
+        569,
+        572,
+        573,
+        574,
+        575,
+        576,
+        577,
+        578,
+        580,
+        581,
+        582,
+        583,
+        584,
+        585,
+        586,
+        587,
+        588,
+        589,
+        592,
+        593,
+        596,
+        597,
+        598,
+        601,
+        602,
+        603,
+        604
+      ]
+    },
+    "train": {
+      "cases": 414,
+      "dates": [
+        "2023-01-05",
+        "2025-04-21"
+      ],
+      "label_status": {
+        "provisional_extracted": 383,
+        "provisional_manual_agrees": 31
+      },
+      "missing_company_group": 10,
+      "connected_to_earlier_window": 0,
+      "strict_slice_cases": 404,
+      "strict_slice_unseen_hs8": 0,
+      "strict_slice_case_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413
+      ]
+    },
+    "valid": {
+      "cases": 97,
+      "dates": [
+        "2025-04-25",
+        "2025-12-17"
+      ],
+      "label_status": {
+        "provisional_extracted": 91,
+        "provisional_manual_agrees": 6
+      },
+      "missing_company_group": 2,
+      "connected_to_earlier_window": 18,
+      "strict_slice_cases": 77,
+      "strict_slice_unseen_hs8": 41,
+      "strict_slice_case_ids": [
+        414,
+        415,
+        416,
+        417,
+        418,
+        420,
+        421,
+        422,
+        424,
+        425,
+        426,
+        428,
+        429,
+        430,
+        431,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        441,
+        442,
+        443,
+        449,
+        450,
+        451,
+        452,
+        453,
+        454,
+        455,
+        456,
+        457,
+        461,
+        462,
+        463,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472,
+        473,
+        474,
+        475,
+        476,
+        478,
+        479,
+        480,
+        481,
+        482,
+        483,
+        484,
+        485,
+        486,
+        487,
+        488,
+        489,
+        490,
+        491,
+        492,
+        493,
+        494,
+        495,
+        496,
+        497,
+        498,
+        499,
+        500,
+        504,
+        505,
+        507,
+        508,
+        509,
+        510
+      ]
+    }
+  },
+  "duplicate_pdf_rows": 0,
+  "literal_target_code_in_query_count": 0,
+  "similarity_method": "char_wb TF-IDF (3,5) cosine on normalized descriptions",
+  "similarity_threshold": 0.9,
+  "near_pairs_by_splits": {
+    "train|train": 61,
+    "test|train": 1,
+    "train|valid": 5,
+    "valid|valid": 14,
+    "test|test": 6
+  },
+  "exact_text_conflicting_label_pairs": [],
+  "known_source_successors_in_snapshot": 1,
+  "label_count_gold": 0,
+  "strict_slice_is_independent_future_test": false,
+  "review_queue": [
+    {
+      "row_id": 511,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 512,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 521,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 523,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 529,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 531,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 533,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 537,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 539,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 541,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 543,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 547,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 551,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 558,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 562,
+      "split": "test",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 563,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 564,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 565,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 566,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 567,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 570,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 571,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 579,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 590,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 591,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 594,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 595,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 599,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 600,
+      "split": "test",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 29,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 71,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 98,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 134,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 178,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 196,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 278,
+      "split": "train",
+      "reasons": [
+        "source_has_official_successor"
+      ]
+    },
+    {
+      "row_id": 279,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 296,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 364,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 375,
+      "split": "train",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 419,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 423,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 427,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 432,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 439,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 440,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 444,
+      "split": "valid",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 445,
+      "split": "valid",
+      "reasons": [
+        "company_group_unknown"
+      ]
+    },
+    {
+      "row_id": 446,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 447,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 448,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 458,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 459,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 460,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 464,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 477,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 501,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 502,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 503,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    },
+    {
+      "row_id": 506,
+      "split": "valid",
+      "reasons": [
+        "overlap_earlier_company_or_near_text"
+      ]
+    }
+  ],
+  "coverage_ledger": {
+    "sha256": "195bd609ca5f8edb4757bd5fdb48f34e347b7067446a9a5b7697537c5bca7bc4",
+    "files": 966,
+    "excluded": 361,
+    "included": 605,
+    "exclusion_reason_counts_not_mutually_exclusive": {
+      "old_edition_needs_exact_crosswalk": 191,
+      "outside_frozen_cohort_quarantine": 168,
+      "insufficient_product_facts": 104,
+      "invalid_or_missing_current_hs8": 158,
+      "missing_or_multiple_explicit_labels": 141,
+      "missing_section_boundary": 104,
+      "unsafe_or_empty_input": 104,
+      "referenced_by_lifecycle_event_needs_scope_review": 15,
+      "revocation_or_amendment": 10,
+      "manual_vs_ocr_conflict": 16,
+      "heading_label_conflict": 11,
+      "conflicting_or_invalid_manual_observations": 1,
+      "ocr_code_disagreement": 4,
+      "label_changed_requires_adjudication": 5,
+      "pdf_missing_or_read_error": 5
+    },
+    "priority_recovery_count": 26,
+    "priority_recovery": [
+      {
+        "file": "102_TB-TCHQ_2023-01-06.pdf",
+        "ocr_hs8_for_review_only": "39269099",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "14061_TB-CHQ_2026-03-18.pdf",
+        "ocr_hs8_for_review_only": "85371099",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "17478_TB-CHQ_2026-06-15.pdf",
+        "ocr_hs8_for_review_only": "85176249",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "18172_TB-CHQ_2025-08-07.pdf",
+        "ocr_hs8_for_review_only": "85177999",
+        "label_status": "provisional_manual_agrees",
+        "auto_train": false
+      },
+      {
+        "file": "18387_TB-CHQ_2026-07-01.pdf",
+        "ocr_hs8_for_review_only": "19019099",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "23591_TB-CHQ_2025-09-11.pdf",
+        "ocr_hs8_for_review_only": "85176259",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "23956_TB-CHQ_2025-09-12.pdf",
+        "ocr_hs8_for_review_only": "87046029",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "3245_TB-TCHQ_2024-07-05.pdf",
+        "ocr_hs8_for_review_only": "85177999",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "3246_TB-TCHQ_2024-07-05.pdf",
+        "ocr_hs8_for_review_only": "85177999",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "3313_TB-TCHQ_2024-07-08.pdf",
+        "ocr_hs8_for_review_only": "39269099",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "3349_TB-TCHQ_2024-07-10.pdf",
+        "ocr_hs8_for_review_only": "38170000",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "3526_TB-CHQ_2025-04-26.pdf",
+        "ocr_hs8_for_review_only": "85371092",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "37692_TB-CHQ_2025-11-21.pdf",
+        "ocr_hs8_for_review_only": "85176259",
+        "label_status": "provisional_manual_agrees",
+        "auto_train": false
+      },
+      {
+        "file": "4142_TB-TCHQ_2023-08-08.pdf",
+        "ocr_hs8_for_review_only": "73269099",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "4402_TB-TCHQ_2023-08-23.pdf",
+        "ocr_hs8_for_review_only": "85176259",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "4814_TB-TCHQ_2024-10-04.pdf",
+        "ocr_hs8_for_review_only": "85389019",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "49_TB-TCHQ_2024-01-03.pdf",
+        "ocr_hs8_for_review_only": "85176299",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "5146_TB-TCHQ_2023-10-05.pdf",
+        "ocr_hs8_for_review_only": "39199092",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "5757_TB-TCHQ_2022-12-30.pdf",
+        "ocr_hs8_for_review_only": "30049099",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "5760_TB-TCHQ_2022-12-30.pdf",
+        "ocr_hs8_for_review_only": "30049099",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "6326_TB-TCHQ_2024-12-17.pdf",
+        "ocr_hs8_for_review_only": "85371099",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "6441_TB-TCHQ_2024-12-23.pdf",
+        "ocr_hs8_for_review_only": "85176259",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "6443_TB-TCHQ_2024-12-23.pdf",
+        "ocr_hs8_for_review_only": "85176259",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "7204_TB-CHQ_2025-06-02.pdf",
+        "ocr_hs8_for_review_only": "85318029",
+        "label_status": "provisional_manual_agrees",
+        "auto_train": false
+      },
+      {
+        "file": "8976_TB-CHQ_2025-06-12.pdf",
+        "ocr_hs8_for_review_only": "39072990",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      },
+      {
+        "file": "974_TB-CHQ_2025-04-02.pdf",
+        "ocr_hs8_for_review_only": "85371019",
+        "label_status": "provisional_extracted",
+        "auto_train": false
+      }
+    ]
+  }
+}

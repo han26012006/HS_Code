@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-02",
+  "as_of": "2026-11-04",
   "rules": [
     {
       "id": "85/2026/TT-BTC",
@@ -28,7 +28,10 @@
       ],
       "use_as_hs8_label": false,
       "packaged_official_pdf": true,
-      "sha256": "cdcc49a24087f571f22abe4d660a1232fb0df10e6500bf8961620cfbb4febc55"
+      "sha256": "cdcc49a24087f571f22abe4d660a1232fb0df10e6500bf8961620cfbb4febc55",
+      "effective_from": "2026-02-01",
+      "official_metadata": "https://vanban.chinhphu.vn/?docid=216623&pageid=27160",
+      "note": "Phụ lục VI có mẫu thông báo, sửa đổi hoặc thay thế, và hủy. Giữ các văn bản cùng chuỗi trong cùng nhóm khi chia dữ liệu."
     },
     {
       "id": "117/QD-CHQ",
@@ -69,10 +72,12 @@
       "effective_from": "2027-03-01",
       "issued_on": "2026-08-23",
       "source": "https://vanban.chinhphu.vn/?classid=0&docid=219299&pageid=27160",
-      "role": "future_law_metadata_reference",
+      "role": "future_law_official_reference",
       "use_as_hs8_label": false,
-      "packaged_official_pdf": false,
-      "note": "Đã ban hành nhưng chưa có hiệu lực vào ngày 02/11/2026; không áp dụng sớm sửa đổi Điều 77."
+      "packaged_official_pdf": true,
+      "note": "Đã ban hành nhưng chưa có hiệu lực vào ngày 02/11/2026; không áp dụng sớm sửa đổi Điều 77.",
+      "local_file": "Luat11_2026_QH16_official.pdf",
+      "sha256": "d7a55171465d12627ba1136a9c5df7fea89065af453a4810d906c677cce630b5"
     },
     {
       "id": "54/VBHN-VPQH-2026",
@@ -82,6 +87,47 @@
       "use_as_hs8_label": false,
       "packaged_official_pdf": false,
       "note": "Bản hợp nhất không tự tạo ngày hiệu lực mới; đối chiếu hiệu lực từng luật sửa đổi. Điều 18(2)(đ), Điều 77(3) là căn cứ mốc lưu/kiểm tra 5 năm."
+    },
+    {
+      "id": "31/2022/TT-BTC",
+      "source": "https://congbaocdn.chinhphu.vn/CongBaoCP/CongBao/2022/7/37448/41055-1-557-558.pdf",
+      "local_file": "TT31_2022_CB557_558.pdf",
+      "role": "official_general_classification_rules_reference",
+      "use_as_hs8_label": false,
+      "packaged_official_pdf": true,
+      "sha256": "e54b9be03cdf897fb63f06596a939d519552d457b994bdb011593d7ae2dd89de",
+      "source_scope": "Công báo 557–558, Phụ lục II từ trang 50",
+      "applicability_requires_review": true,
+      "effective_from": "2022-12-30",
+      "catalogue_status_source": "https://mof.gov.vn/phap-luat-tai-chinh/van-ban-moi/mofucm260556",
+      "note": "Mốc áp dụng tính sau thời gian ngưng hiệu lực theo Thông tư 72/2022/TT-BTC."
+    },
+    {
+      "id": "86/2026/TT-BTC",
+      "source": "https://vanban.chinhphu.vn/?docid=218821&pageid=27160",
+      "role": "official_customs_tax_administration_reference",
+      "packaged_official_pdf": false,
+      "use_as_hs8_label": false,
+      "note": "Quản lý thuế hàng xuất nhập khẩu. Không dùng làm bảng thuế suất hoặc nhãn phân loại.",
+      "effective_from": "2026-07-01"
+    },
+    {
+      "id": "73/2026/VBHN-TT-BCT",
+      "source": "https://vanban.chinhphu.vn/?docid=219509&pageid=27160",
+      "role": "official_consolidated_sectoral_scope_reference",
+      "packaged_official_pdf": false,
+      "use_as_hs8_label": false,
+      "note": "Dùng để truy vết quy định chuyên ngành. Bản hợp nhất không tự tạo ngày hiệu lực mới.",
+      "consolidated_on": "2026-09-14"
+    },
+    {
+      "id": "74/2026/VBHN-TT-BCT",
+      "source": "https://vanban.chinhphu.vn/?docid=219510&pageid=27160",
+      "role": "official_consolidated_sectoral_scope_reference",
+      "packaged_official_pdf": false,
+      "use_as_hs8_label": false,
+      "note": "Đối chiếu phạm vi hàng hóa và các văn bản gốc. Không dùng như bộ mã HS8 chuẩn.",
+      "consolidated_on": "2026-09-14"
     }
   ],
   "warning": "Apply law by relevant transaction/notice date; source verification does not certify no later amendment."

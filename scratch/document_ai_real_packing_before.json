@@ -1,0 +1,174 @@
+{
+  "scope": "original local PDF integration/development case; not independently labelled accuracy",
+  "files": [
+    {
+      "name": "Packing List.pdf",
+      "sha256": "6a9c2f429b2926b4e678d7962c1e92ffbf67c68675cc631f9170fe2906894ca2"
+    }
+  ],
+  "summary": {
+    "total_files": 1,
+    "total_pages": 1,
+    "total_skus": 1,
+    "total_fields": 6,
+    "conflicts_count": 0
+  },
+  "extracted_case": {
+    "title": "Hồ sơ nhập khẩu AURORA HIMALAYA JOINT STOCK \nCOMPANY \n8",
+    "importer_name": "AURORA HIMALAYA JOINT STOCK \nCOMPANY \n8",
+    "exporter_name": "SHREE SAI INDUSTRIES CO",
+    "invoice_number": "",
+    "invoice_date": "",
+    "declaration_number": "",
+    "port_of_loading": "MUNDRA PORT",
+    "port_of_discharge": "CAT LAI PORT",
+    "origin_country": "",
+    "currency": "",
+    "incoterms": "",
+    "total_value": "",
+    "total_gross_weight": "",
+    "total_net_weight": "",
+    "total_packages": ""
+  },
+  "documents": [
+    {
+      "id": "doc_e0ab23accbd6",
+      "name": "Packing List.pdf",
+      "kind": "packing_list",
+      "pages": 1
+    }
+  ],
+  "skus": [
+    {
+      "id": "cand_e389cd1aa624",
+      "sku_code": "cand_e389cd1aa624",
+      "name": "NAME OF GOODS QUANTITY",
+      "description": "NAME OF GOODS QUANTITY",
+      "product_family": "general",
+      "declared_code": null,
+      "facts": [
+        {
+          "id": "fact_a0ca1bc0",
+          "field": "name",
+          "value": "NAME OF GOODS QUANTITY",
+          "unit": null,
+          "document_id": "doc_e0ab23accbd6",
+          "document_name": "Packing List.pdf",
+          "page_number": 1,
+          "quote": "DESCRIPTION OF GOODS \n \nNAME OF GOODS QUANTITY",
+          "extraction_method": "pdf_text:explicit_section",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "name",
+          "sku_id": "cand_e389cd1aa624",
+          "source_document_id": "doc_e0ab23accbd6",
+          "source_page": 1,
+          "source_quote": "DESCRIPTION OF GOODS \n \nNAME OF GOODS QUANTITY",
+          "extraction_status": "extracted",
+          "source_valid": true
+        },
+        {
+          "id": "fact_4cf7a0c8",
+          "field": "specifications",
+          "value": "Himalayan Pink Salt, 2-5mm granules,",
+          "unit": null,
+          "document_id": "doc_e0ab23accbd6",
+          "document_name": "Packing List.pdf",
+          "page_number": 1,
+          "quote": "Himalayan Pink Salt, 2-5mm granules,",
+          "extraction_method": "pdf_text:explicit_section",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "specifications",
+          "sku_id": "cand_e389cd1aa624",
+          "source_document_id": "doc_e0ab23accbd6",
+          "source_page": 1,
+          "source_quote": "Himalayan Pink Salt, 2-5mm granules,",
+          "extraction_status": "extracted",
+          "source_valid": true
+        }
+      ],
+      "source_document_id": "doc_e0ab23accbd6",
+      "source_page": 1,
+      "status": "needs_review",
+      "identity_status": "needs_review",
+      "missing_fields": [
+        "function",
+        "construction"
+      ]
+    }
+  ],
+  "dossier_fields": {
+    "exporter": {
+      "field": "exporter",
+      "value": "SHREE SAI INDUSTRIES CO",
+      "unit": null,
+      "source_document_id": "doc_e0ab23accbd6",
+      "source_document_name": "Packing List.pdf",
+      "source_page": 1,
+      "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+      "field_name": "exporter",
+      "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null
+    },
+    "importer": {
+      "field": "importer",
+      "value": "AURORA HIMALAYA JOINT STOCK \nCOMPANY \n8",
+      "unit": null,
+      "source_document_id": "doc_e0ab23accbd6",
+      "source_document_name": "Packing List.pdf",
+      "source_page": 1,
+      "source_excerpt": "② Consignee : AURORA HIMALAYA JOINT STOCK \nCOMPANY \n8/42 Dinh Bo Linh Street, Ward 24, Binh Thanh District,",
+      "field_name": "importer",
+      "source_quote": "② Consignee : AURORA HIMALAYA JOINT STOCK \nCOMPANY \n8/42 Dinh Bo Linh Street, Ward 24, Binh Thanh District,",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null
+    },
+    "port_of_loading": {
+      "field": "port_of_loading",
+      "value": "MUNDRA PORT",
+      "unit": null,
+      "source_document_id": "doc_e0ab23accbd6",
+      "source_document_name": "Packing List.pdf",
+      "source_page": 1,
+      "source_excerpt": "MUNDRA PORT, INDIA",
+      "field_name": "port_of_loading",
+      "source_quote": "MUNDRA PORT, INDIA",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null
+    },
+    "port_of_discharge": {
+      "field": "port_of_discharge",
+      "value": "CAT LAI PORT",
+      "unit": null,
+      "source_document_id": "doc_e0ab23accbd6",
+      "source_document_name": "Packing List.pdf",
+      "source_page": 1,
+      "source_excerpt": "CAT LAI PORT, VIETNAM",
+      "field_name": "port_of_discharge",
+      "source_quote": "CAT LAI PORT, VIETNAM",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null
+    }
+  },
+  "warnings": []
+}

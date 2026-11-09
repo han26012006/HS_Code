@@ -1,0 +1,122 @@
+[
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Muối/Bộ Chứng Từ Nhập Khẩu Muối Himalaya New/Commercial Invoice.docx.pdf",
+    "group": "mặt hàng Muối",
+    "name": "Commercial Invoice.docx.pdf",
+    "size": 93393,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "9a91b2bde6b7ea5f528ce59a6d9f1c49af5b227b2a20da6256ac5fd5bc10c4bf",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/9a91b2bde6b7ea5f528ce59a6d9f1c49af5b227b2a20da6256ac5fd5bc10c4bf.pdf",
+    "candidate": true,
+    "split": "development_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Muối/Bộ Chứng Từ Nhập Khẩu Muối Himalaya New/Packing List.pdf",
+    "group": "mặt hàng Muối",
+    "name": "Packing List.pdf",
+    "size": 41108,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "6a9c2f429b2926b4e678d7962c1e92ffbf67c68675cc631f9170fe2906894ca2",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/6a9c2f429b2926b4e678d7962c1e92ffbf67c68675cc631f9170fe2906894ca2.pdf",
+    "candidate": true,
+    "split": "development_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Đồ chơi trẻ em/BỘ CHỨNG TỪ NHẬP KHẨU/1. COMERCIAL INVOICE.pdf",
+    "group": "mặt hàng Đồ chơi trẻ em",
+    "name": "1. COMERCIAL INVOICE.pdf",
+    "size": 75747,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "01a89645b1893e40f2bf2680f147b2689749d7b5dcf59c4e7779b609e80a555b",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/01a89645b1893e40f2bf2680f147b2689749d7b5dcf59c4e7779b609e80a555b.pdf",
+    "candidate": true,
+    "split": "development_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Đồ chơi trẻ em/BỘ CHỨNG TỪ NHẬP KHẨU/4. PACKING LIST.pdf",
+    "group": "mặt hàng Đồ chơi trẻ em",
+    "name": "4. PACKING LIST.pdf",
+    "size": 60245,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "147f24566025c1a7fbf2a409277147ec38e04dc8a7a6065ecde4db9ce694eb18",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/147f24566025c1a7fbf2a409277147ec38e04dc8a7a6065ecde4db9ce694eb18.pdf",
+    "candidate": true,
+    "split": "development_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Bộ máy tính để bàn/BỘ CHỨNG TỪ/PACKING LIST.pdf",
+    "group": "mặt hàng Bộ máy tính để bàn",
+    "name": "PACKING LIST.pdf",
+    "size": 142602,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "254374c4e13aa73ca0d09a0b02c1d85eafb8f59fdc216dfcc74c53df44dde110",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/254374c4e13aa73ca0d09a0b02c1d85eafb8f59fdc216dfcc74c53df44dde110.pdf",
+    "candidate": true,
+    "split": "development_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Thép không gỉ cán nguội, dạng tấm/BỘ CHỨNG TỪ/Bộ chứng từ XNK/INVOICE.pdf",
+    "group": "mặt hàng Thép không gỉ cán nguội, dạng tấm",
+    "name": "INVOICE.pdf",
+    "size": 150783,
+    "ext": ".pdf",
+    "depth": 5,
+    "sha256": "3b3cede5e57f2aed5b1655a64de87b03d0d9bab8de605192d778f83c19a8d412",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/3b3cede5e57f2aed5b1655a64de87b03d0d9bab8de605192d778f83c19a8d412.pdf",
+    "candidate": true,
+    "split": "development_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Thép không gỉ cán nguội, dạng tấm/BỘ CHỨNG TỪ/Bộ chứng từ XNK/PACKING LIST.pdf",
+    "group": "mặt hàng Thép không gỉ cán nguội, dạng tấm",
+    "name": "PACKING LIST.pdf",
+    "size": 140795,
+    "ext": ".pdf",
+    "depth": 5,
+    "sha256": "b53e37f6b22c4eefeac2e59fde166e00fed8649c5c5bdd847284c63f6f7f9dad",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/b53e37f6b22c4eefeac2e59fde166e00fed8649c5c5bdd847284c63f6f7f9dad.pdf",
+    "candidate": true,
+    "split": "development_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Tôm hùm giống/Bộ Chứng từ/ToKhaiHQ7N_.xlsx",
+    "group": "mặt hàng Tôm hùm giống",
+    "name": "ToKhaiHQ7N_.xlsx",
+    "size": 51225,
+    "ext": ".xlsx",
+    "depth": 4,
+    "sha256": "28862cb221cab5a50e5d3580b7bdb10315ebe01da0ed46db3c3710a9920717c5",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/28862cb221cab5a50e5d3580b7bdb10315ebe01da0ed46db3c3710a9920717c5.xlsx",
+    "candidate": true,
+    "split": "development_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Máy móc, thiết bị đã qua sử dụng/BỘ CHỨNG TỪ/INVOICE.pdf",
+    "group": "mặt hàng Máy móc, thiết bị đã qua sử dụng",
+    "name": "INVOICE.pdf",
+    "size": 221285,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "d3c1f36983c198fdf1cdbebc2502ce48cefc0d3f8ad539ad88c515c3b3cbcb43",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/d3c1f36983c198fdf1cdbebc2502ce48cefc0d3f8ad539ad88c515c3b3cbcb43.pdf",
+    "candidate": true,
+    "split": "development_real"
+  },
+  {
+    "member": "20 BỘ CHỨNG TỪ/mặt hàng Máy móc, thiết bị đã qua sử dụng/BỘ CHỨNG TỪ/PACKING LIST.pdf",
+    "group": "mặt hàng Máy móc, thiết bị đã qua sử dụng",
+    "name": "PACKING LIST.pdf",
+    "size": 148918,
+    "ext": ".pdf",
+    "depth": 4,
+    "sha256": "ead5056dcf6268fdcdbe18c2868c2a6735ca8cef7208b034ebe32a65d5e77026",
+    "path": "/Users/hanna/Downloads/hs-assistant 2/scratch/zip_corpus/ead5056dcf6268fdcdbe18c2868c2a6735ca8cef7208b034ebe32a65d5e77026.pdf",
+    "candidate": true,
+    "split": "development_real"
+  }
+]

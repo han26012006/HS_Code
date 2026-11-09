@@ -1,0 +1,86 @@
+{
+  "dataset": "tests/fixtures/document_ai/adversarial_development.json",
+  "dataset_sha256": "f9d25dfa6f1745273df0fe9a1d9c38dfb1b6895b991164e0a49ef9c6d8b91ec2",
+  "scope": "synthetic author-labelled; no independent reviewed real holdout; field scores cover explicitly annotated document/product fields",
+  "metrics": {
+    "document_classification_accuracy": 1.0,
+    "field_precision": 1.0,
+    "field_recall": 1.0,
+    "field_f1": 1.0,
+    "identifier_exact_match": null,
+    "table_row_exact_recall": null,
+    "table_row_exact_precision": null,
+    "table_row_identity_accuracy": null,
+    "sku_precision": 1.0,
+    "sku_recall": 1.0,
+    "cross_document_membership_jaccard": 1.0,
+    "citation_correctness": 1.0,
+    "unsupported_value_rate": 0.0,
+    "autofill_coverage": 1.0
+  },
+  "counts": {
+    "class_correct": 6,
+    "documents": 6,
+    "field_tp": 16,
+    "field_fp": 0,
+    "field_fn": 0,
+    "id_correct": 0,
+    "id_total": 0,
+    "sku_tp": 6,
+    "sku_fp": 0,
+    "sku_fn": 0,
+    "citations_correct": 21,
+    "citations_total": 21,
+    "unsupported": 0,
+    "rows_correct": 0,
+    "rows_total": 0,
+    "rows_exact": 0,
+    "rows_predicted": 0,
+    "pair_tp": 7,
+    "pair_fp": 0,
+    "pair_fn": 0,
+    "coverage_hits": 16,
+    "coverage_total": 16
+  },
+  "details": [
+    {
+      "case_id": "composite-positive",
+      "expected_skus": [
+        "g1"
+      ],
+      "actual_skus": [
+        "g1"
+      ],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "conflicting-variant-negative",
+      "expected_skus": [
+        "g2a",
+        "g2b"
+      ],
+      "actual_skus": [
+        "g2a",
+        "g2b"
+      ],
+      "missing_fields": [],
+      "unexpected_fields": []
+    },
+    {
+      "case_id": "ambiguous-duplicate-negative",
+      "expected_skus": [
+        "g3a",
+        "g3b",
+        "g3c"
+      ],
+      "actual_skus": [
+        "g3a",
+        "g3b",
+        "g3c"
+      ],
+      "missing_fields": [],
+      "unexpected_fields": []
+    }
+  ]
+}

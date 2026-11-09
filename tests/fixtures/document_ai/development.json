@@ -1,0 +1,416 @@
+[
+  {
+    "id": "steel-trade",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "steel-inv",
+        "name": "opaque-steel-inv.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "COMMERCIAL INVOICE\nInvoice No: IV-800\nInvoice Date: 2026-10-03\nSeller: Alloy Works Ltd\nBuyer: Metro Fabrication Ltd\nContract No: CT-800\nCurrency: USD\nPart Number | Description | Quantity | Unit | Unit Price | Amount | Material\nST-21 | Rolled steel sheet | 40 | PCS | 12.50 | 500.00 | Stainless steel\nST-22 | Rolled steel sheet | 60 | PCS | 15.00 | 900.00 | Stainless steel\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "commercial_invoice",
+        "expected_products": [
+          "ST-21",
+          "ST-22"
+        ],
+        "expected_fields": {
+          "invoice_number": "IV-800",
+          "invoice_date": "2026-10-03",
+          "exporter": "Alloy Works Ltd",
+          "importer": "Metro Fabrication Ltd",
+          "contract_number": "CT-800"
+        },
+        "expected_rows": 2
+      },
+      {
+        "id": "steel-pl",
+        "name": "opaque-steel-pl.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "PACKING LIST\nInvoice No: IV-800\nPart Number | Description | Quantity | Unit | Gross Weight | Net Weight | Packages\nST-21 | Rolled steel sheet | 40 | PCS | 25 kg | 23 kg | 2 cartons\nST-22 | Rolled steel sheet | 60 | PCS | 34 kg | 32 kg | 3 cartons\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "packing_list",
+        "expected_products": [
+          "ST-21",
+          "ST-22"
+        ],
+        "expected_fields": {},
+        "expected_rows": 2
+      }
+    ],
+    "products": [
+      {
+        "identifier": "ST-21",
+        "name": "Rolled steel sheet",
+        "fields": {
+          "name": "Rolled steel sheet",
+          "quantity": "40",
+          "unit": "PCS",
+          "unit_price": "12.50",
+          "amount": "500.00",
+          "material": "Stainless steel",
+          "gross_weight": "25 kg",
+          "net_weight": "23 kg",
+          "packages": "2 cartons"
+        }
+      },
+      {
+        "identifier": "ST-22",
+        "name": "Rolled steel sheet",
+        "fields": {
+          "name": "Rolled steel sheet",
+          "quantity": "60",
+          "unit": "PCS",
+          "unit_price": "15.00",
+          "amount": "900.00",
+          "material": "Stainless steel",
+          "gross_weight": "34 kg",
+          "net_weight": "32 kg",
+          "packages": "3 cartons"
+        }
+      }
+    ]
+  },
+  {
+    "id": "chemical-certificates",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "chem-q",
+        "name": "opaque-chem-q.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "CERTIFICATE OF QUALITY\nCertificate No: CQ-51\nModel: RES-51\nProduct name: Resin pellets\nComposition: Polypropylene\nTechnical specifications: Density 0.90 g/cm3\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "certificate_of_quality",
+        "expected_products": [
+          "RES-51"
+        ],
+        "expected_fields": {},
+        "expected_rows": 0
+      },
+      {
+        "id": "chem-d",
+        "name": "opaque-chem-d.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "TECHNICAL DATASHEET\nModel: RES-51\nProduct name: Resin pellets\nComposition: Polypropylene\nTechnical specifications: Density 0.90 g/cm3\nFunction: Injection moulding\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "technical_spec",
+        "expected_products": [
+          "RES-51"
+        ],
+        "expected_fields": {},
+        "expected_rows": 0
+      }
+    ],
+    "products": [
+      {
+        "identifier": "RES-51",
+        "name": "Resin pellets",
+        "fields": {
+          "name": "Resin pellets",
+          "material": "Polypropylene",
+          "specifications": "Density 0.90 g/cm3",
+          "function": "Injection moulding"
+        }
+      }
+    ]
+  },
+  {
+    "id": "food-origin",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "food-inv",
+        "name": "opaque-food-inv.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "COMMERCIAL INVOICE\nInvoice No: FOOD-51\nModel: FD-51\nProduct name: Dried mango\nQuantity: 100\nUnit: KG\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "commercial_invoice",
+        "expected_products": [
+          "FD-51"
+        ],
+        "expected_fields": {
+          "invoice_number": "FOOD-51"
+        },
+        "expected_rows": 0
+      },
+      {
+        "id": "food-co",
+        "name": "opaque-food-co.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "CERTIFICATE OF ORIGIN\nCertificate No: CO-51\nInvoice No: FOOD-51\nModel: FD-51\nProduct name: Dried mango\nCountry of origin: Thailand\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "certificate_of_origin",
+        "expected_products": [
+          "FD-51"
+        ],
+        "expected_fields": {
+          "invoice_number": "FOOD-51"
+        },
+        "expected_rows": 0
+      }
+    ],
+    "products": [
+      {
+        "identifier": "FD-51",
+        "name": "Dried mango",
+        "fields": {
+          "name": "Dried mango",
+          "quantity": "100",
+          "unit": "KG",
+          "origin": "Thailand"
+        }
+      }
+    ]
+  },
+  {
+    "id": "transport",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "bl",
+        "name": "opaque-bl.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "BILL OF LADING\nB/L No: OCEAN-96\nShipper: Textile Export Ltd\nConsignee: Textile Import Ltd\nPort of loading: Bangkok\nPort of discharge: Haiphong\nPackages: 20 cartons\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "bill_of_lading",
+        "expected_products": [],
+        "expected_fields": {
+          "bl_number": "OCEAN-96",
+          "shipper": "Textile Export Ltd",
+          "consignee": "Textile Import Ltd",
+          "port_of_loading": "Bangkok",
+          "port_of_discharge": "Haiphong",
+          "total_packages": "20 cartons"
+        },
+        "expected_rows": 0
+      }
+    ],
+    "products": []
+  },
+  {
+    "id": "contract",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "ct",
+        "name": "opaque-ct.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "SALES CONTRACT\nContract No: CN-25\nSeller: Wood Export Ltd\nBuyer: Furniture Ltd\nSKU | Description | Quantity | Unit\nWOOD-7 | Oak board | 200 | M3\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "sales_contract",
+        "expected_products": [
+          "WOOD-7"
+        ],
+        "expected_fields": {
+          "contract_number": "CN-25",
+          "exporter": "Wood Export Ltd",
+          "importer": "Furniture Ltd"
+        },
+        "expected_rows": 1
+      }
+    ],
+    "products": [
+      {
+        "identifier": "WOOD-7",
+        "name": "Oak board",
+        "fields": {
+          "name": "Oak board",
+          "quantity": "200",
+          "unit": "M3"
+        }
+      }
+    ]
+  },
+  {
+    "id": "catalogue",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "cat",
+        "name": "opaque-cat.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "PRODUCT CATALOGUE\nModel | Description | Voltage | Power\nPUMP-1 | Water pump | 230 V | 500 W\nPUMP-2 | Water pump | 230 V | 750 W\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "product_catalogue",
+        "expected_products": [
+          "PUMP-1",
+          "PUMP-2"
+        ],
+        "expected_fields": {},
+        "expected_rows": 2
+      }
+    ],
+    "products": [
+      {
+        "identifier": "PUMP-1",
+        "name": "Water pump",
+        "fields": {
+          "name": "Water pump",
+          "specifications": [
+            "230 V",
+            "500 W"
+          ]
+        }
+      },
+      {
+        "identifier": "PUMP-2",
+        "name": "Water pump",
+        "fields": {
+          "name": "Water pump",
+          "specifications": [
+            "230 V",
+            "750 W"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "customs",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "decl",
+        "name": "opaque-decl.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "CUSTOMS DECLARATION\nSố tờ khai: 123456789012\nModel: CP-2\nProduct name: Control panel\nHS Code: 8537.10.99\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "customs_declaration",
+        "expected_products": [
+          "CP-2"
+        ],
+        "expected_fields": {
+          "declaration_number": "123456789012"
+        },
+        "expected_rows": 0
+      }
+    ],
+    "products": [
+      {
+        "identifier": "CP-2",
+        "name": "Control panel",
+        "fields": {
+          "name": "Control panel",
+          "declared_code": "85371099"
+        }
+      }
+    ]
+  },
+  {
+    "id": "legal-negative",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "law",
+        "name": "opaque-law.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "Danh mục hàng hóa xuất khẩu, nhập khẩu Việt Nam\nThông tư số 31/2022/TT-BTC\n8507.10.10 khởi động\n8516.31.00 Máy sấy tóc\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "legal_reference",
+        "expected_products": [],
+        "expected_fields": {},
+        "expected_rows": 0
+      }
+    ],
+    "products": []
+  },
+  {
+    "id": "unknown-negative",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "unk",
+        "name": "opaque-unk.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "Memo\nWe discussed the invoice yesterday.\nNo shipment or product records attached.\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "other",
+        "expected_products": [],
+        "expected_fields": {},
+        "expected_rows": 0
+      }
+    ],
+    "products": []
+  },
+  {
+    "id": "single-signal-negative",
+    "split": "development",
+    "annotation_status": "synthetic_author_labels",
+    "documents": [
+      {
+        "id": "amb",
+        "name": "opaque-amb.txt",
+        "pages": [
+          {
+            "number": 1,
+            "text": "A note\nModel: A-1\nCatalogue is only mentioned here.\n",
+            "method": "plain_text"
+          }
+        ],
+        "expected_kind": "other",
+        "expected_products": [],
+        "expected_fields": {},
+        "expected_rows": 0
+      }
+    ],
+    "products": []
+  }
+]

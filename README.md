@@ -44,15 +44,15 @@ Snapshot workbook ngày 05/04/2026 được đọc lại cả 39 sheet: **11.414
 
 Biểu tổng hợp không tự xác nhận toàn bộ mức thuế tháng 11/2026. Ký hiệu `*`, nhiều mức VAT, RCEP, thuế tuyệt đối/hỗn hợp và phòng vệ thương mại cần kiểm tra điều kiện. So sánh hệ quả chỉ tính thuế XNK theo tỷ lệ phần trăm đã đối chiếu; màn hình kịch bản thuế riêng hỗ trợ thêm VAT và khoản thuế do người dùng nhập.
 
-Registry ghi NĐ169/2026 từ 01/07/2026; NĐ128/2020 hết khoảng hiệu lực đã ghi từ ngày đó. Luật 11/2026/QH16 có hiệu lực **01/03/2027**, chưa áp dụng sớm vào 02/11/2026. Đây là registry có ngày đối chiếu, chưa phải hệ thống theo dõi tự động mọi thay đổi pháp luật.
+Registry ghi NĐ169/2026 từ 01/07/2026; NĐ128/2020 hết khoảng hiệu lực đã ghi từ ngày đó. Luật 11/2026/QH16 có hiệu lực **01/03/2027**, chưa có hiệu lực vào 04/11/2026. Đây là registry có ngày đối chiếu, chưa phải hệ thống theo dõi tự động mọi thay đổi pháp luật.
 
 ## Model và bằng chứng thực nghiệm
 
-M0 lịch sử: HS8 Top-1 **32/109 = 29,4%**; stack cũ **27/109 = 24,8%**. Tập test đã được xem trong phát triển và nhãn còn tạm thời. 16 cấu hình CPU của dự án giữ M0 theo gate VALID; thay đổi app không tạo ra một accuracy mới.
+Colab 03/11/2026 UTC, run `multilevel_v5_20261103_174530`: M0 HS8 Top-1 **24/94 (25,53%)** trên các ca giữ lại; **24/109 (22,02%)** trên mẫu số đóng băng. HS4 Top-3 **66/94 (70,21%)**. Nhãn tham chiếu chưa phải gold độc lập. 16 cấu hình V5.2 giữ M0 theo validation. Điểm này đo artifact offline, tách biệt với đường BM25 mặc định của app. Xem `docs/VALIDATION_V2_2_1.json`.
 
 Điểm truy hồi, softmax và HS4 confidence không phải xác suất đúng HS8 đã hiệu chuẩn. Không tự chốt mã, không dùng phiếu duyệt làm nhãn gold. Bộ ba nhóm trong UI là các tiền tố khác nhau từ danh sách HS8 truy hồi, không đồng nhất với Top-3 của một model HS4 riêng.
 
-Nhánh model dự án, Qwen và OpenAI vẫn là tùy chọn. Xem `HUONG_DAN_CHAY.md` về `HS_ART`, cache model và biến môi trường. API ngoài mặc định tắt; nhánh OpenAI cần xác nhận gửi thuộc tính cho từng lượt. Không có inference GPU hoặc API trả phí thật trong lần nâng cấp 2.2.
+Nhánh model dự án, Qwen và OpenAI vẫn là tùy chọn. Xem `HUONG_DAN_CHAY.md` về `HS_ART`, cache model và biến môi trường. API ngoài mặc định tắt; nhánh OpenAI cần xác nhận gửi thuộc tính cho từng lượt. Bản 2.2.1 đã kiểm đường mặc định, kiểm manifest và replay vector lưu. Lượt rà soát này không chạy GPU hoặc API trả phí.
 
 ## Nâng cấp và vận hành
 
@@ -73,3 +73,26 @@ npm run build
 ```
 
 Đọc `docs/REVIEW_BOARD_2026-11-02.md` để xem phản biện chín góc nhìn, đối chiếu pháp lý/nghiên cứu, ma trận tính năng và kế hoạch kiểm định. `docs/VALIDATION_V2_2.json` ghi kiểm tra thực tế cùng phần chưa chạy.
+
+## Bản 2.2.2 và bằng chứng nghiên cứu
+
+Màn hình Chất lượng tách kết quả Notebook 08 và pilot Notebook 07 khỏi số đo của hồ sơ đang dùng. Notebook 08 giữ M0 sau cổng validation. Pilot GPT 5/12 sau fallback dùng nhãn tạm. Bản app tiếp tục yêu cầu người duyệt. Báo cáo nghiên cứu không kích hoạt nhánh API.
+
+## Bản 2.3.0
+
+Chọn **Truy hồi kết hợp · có tham chiếu** trong bước Phân tích để dùng danh mục và thông báo trước ngày phân loại, chạy cục bộ. App hiển thị tín hiệu truy hồi, Quy tắc 1 và 6 và liên kết Công báo. Phê duyệt vẫn cần người duyệt và nguồn phù hợp.
+
+Xem `docs/evaluation/KIEM_TOAN_PIPELINE.md` để tái lập benchmark và chuẩn bị tập chuyên gia độc lập. Báo cáo Notebook 09 là đối chứng trên tập validation lịch sử với đầu vào và ứng viên khác runtime.
+
+## Bản 2.4.0
+
+- Trong màn hình phân tích, chọn **Truy hồi kết hợp · có tham chiếu** để dùng bộ xếp hạng CPU mới. Có thể nhập thêm tối đa ba mã từ danh mục. Mã nhập tay được ghi riêng trong nhật ký và hồ sơ, giữ nguyên thứ hạng máy và được dùng để đối chiếu.
+- Danh mục AHTN 2022 bị chặn cho hồ sơ trước 30/12/2022. Bộ tiền lệ loại thông báo 5523 khỏi truy hồi kể từ mốc thay thế được ghi trong `data/precedent_lifecycle.json`. Bản Luật 11/2026/QH16 có trong thư viện nguồn với mốc hiệu lực 01/03/2027.
+- Khi thiếu thuộc tính bắt buộc hoặc có mâu thuẫn, hệ thống chặn chạy nhánh Qwen/OpenAI. Phương pháp danh mục vẫn hỗ trợ đối chiếu khi đã xác minh tên và công dụng.
+- Notebook 11 tái lập benchmark CPU từ chính gói app này. Xem phân rã lỗi, bộ chỉ số và thứ tự chạy trong [kiểm toán 2.4.0](docs/evaluation/KIEM_TOAN_PIPELINE_V2_4.md).
+
+## Bản 2.5.0
+
+- Chứng từ gắn riêng cho một SKU chỉ dùng làm thuộc tính và căn cứ cho SKU đó. Tệp chung cấp hồ sơ có thể dùng cho các SKU trong hồ sơ. Nguồn gắn nhầm từ phiên bản trước được hiển thị cảnh báo và không dùng để duyệt mới.
+- Luồng truy hồi CPU giữ cấu hình 2.4.0. Đối chứng trên cùng Top 200 không chọn được reranker thay M0.
+- Notebook 12 tái lập audit và đối chứng CPU. Hướng dẫn đóng băng hồ sơ thật, chạy đúng engine đang phục vụ và chấm sau thẩm định nằm trong [báo cáo 2.5](docs/evaluation/KIEM_TOAN_PIPELINE_V2_5.md).

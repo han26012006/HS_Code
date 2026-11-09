@@ -1,0 +1,3963 @@
+{
+  "documents": [
+    {
+      "id": "doc_1ea79a0265a5",
+      "name": "opaque.pdf",
+      "sha256": "9a91b2bde6b7ea5f528ce59a6d9f1c49af5b227b2a20da6256ac5fd5bc10c4bf",
+      "size": 93393,
+      "pages": [
+        {
+          "pdf_tables": [
+            {
+              "id": "g0",
+              "page": 1,
+              "header": [
+                {
+                  "text": "NAME OF GOODS",
+                  "field": "name",
+                  "column": 0,
+                  "bbox": [
+                    72.5000000175,
+                    490.4999963285,
+                    280.5,
+                    542.499998
+                  ]
+                },
+                {
+                  "text": "QUANTITY (BAGS)",
+                  "field": "quantity",
+                  "column": 1,
+                  "bbox": [
+                    280.5,
+                    490.4999963285,
+                    342.499995,
+                    542.499998
+                  ]
+                },
+                {
+                  "text": "GROSS WEIGHT (KGM)",
+                  "field": "gross_weight",
+                  "column": 2,
+                  "bbox": [
+                    342.499995,
+                    490.4999963285,
+                    413.500005,
+                    542.499998
+                  ]
+                },
+                {
+                  "text": "UNIT PRICE (USD / KGM)",
+                  "field": "unit_price",
+                  "column": 3,
+                  "bbox": [
+                    413.500005,
+                    490.4999963285,
+                    484.5,
+                    542.499998
+                  ]
+                },
+                {
+                  "text": "AMOUNT (USD)",
+                  "field": "amount",
+                  "column": 4,
+                  "bbox": [
+                    484.5,
+                    490.4999963285,
+                    540.5000175,
+                    542.499998
+                  ]
+                }
+              ],
+              "header_block_id": null,
+              "header_block_ids": [],
+              "rows": [
+                {
+                  "id": "g0r0",
+                  "page": 1,
+                  "start": 1181,
+                  "end": 2308,
+                  "quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+                  "block_ids": [
+                    "b18",
+                    "b33",
+                    "b34",
+                    "b35"
+                  ],
+                  "bbox": [
+                    72.5000000175,
+                    542.499998,
+                    540.5000175,
+                    595.499996
+                  ],
+                  "cells": [
+                    {
+                      "field": "name",
+                      "text": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+                      "column": 0,
+                      "header": "NAME OF GOODS",
+                      "bbox": [
+                        72.5000000175,
+                        542.499998,
+                        280.5,
+                        595.499996
+                      ],
+                      "value_fragments": [
+                        "Himalayan Pink Salt, 2-5mm granules,",
+                        "unprocessed, used in industry (25kg/bag)",
+                        "New 100% Made in India"
+                      ],
+                      "source_block_id": "b18"
+                    },
+                    {
+                      "field": "quantity",
+                      "text": "2000.00",
+                      "column": 1,
+                      "header": "QUANTITY (BAGS)",
+                      "bbox": [
+                        280.5,
+                        542.499998,
+                        342.499995,
+                        595.499996
+                      ],
+                      "value_fragments": [
+                        "2000.00"
+                      ],
+                      "source_block_id": "b18",
+                      "header_unit": "BAGS"
+                    },
+                    {
+                      "field": "gross_weight",
+                      "text": "50,200.00",
+                      "column": 2,
+                      "header": "GROSS WEIGHT (KGM)",
+                      "bbox": [
+                        342.499995,
+                        542.499998,
+                        413.500005,
+                        595.499996
+                      ],
+                      "value_fragments": [
+                        "50,200.00"
+                      ],
+                      "source_block_id": "b18",
+                      "header_unit": "KGM"
+                    },
+                    {
+                      "field": "unit_price",
+                      "text": "0.289",
+                      "column": 3,
+                      "header": "UNIT PRICE (USD / KGM)",
+                      "bbox": [
+                        413.500005,
+                        542.499998,
+                        484.5,
+                        595.499996
+                      ],
+                      "value_fragments": [
+                        "0.289"
+                      ],
+                      "source_block_id": "b18",
+                      "header_unit": "USD / KGM"
+                    },
+                    {
+                      "field": "amount",
+                      "text": "14,450.00",
+                      "column": 4,
+                      "header": "AMOUNT (USD)",
+                      "bbox": [
+                        484.5,
+                        542.499998,
+                        540.5000175,
+                        595.499996
+                      ],
+                      "value_fragments": [
+                        "14,450.00"
+                      ],
+                      "source_block_id": "b18",
+                      "header_unit": "USD"
+                    }
+                  ],
+                  "document_id": "doc_1ea79a0265a5"
+                }
+              ],
+              "totals": [],
+              "continuation": false,
+              "header_source_page": 1,
+              "bbox": [
+                72.5000000175,
+                490.4999963285,
+                540.5000175,
+                595.499996
+              ],
+              "method": "pdf_ruled_cells",
+              "shared_cells": [],
+              "document_id": "doc_1ea79a0265a5"
+            }
+          ],
+          "number": 1,
+          "text": "                                   COMMERCIAL INVOICE\n\n\n ① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024\n Morta,Ghaziabad - 201203, Uttar Pradesh, India\n Tel: +91 96 3496 3924                                        ⑨ No. & Date of Contract\n Fax: +91-98-10400646                                         06/2024/AURO & Date 01, APR, 2024\n\n ② Consignee : AURORA HIMALAYA JOINT STOCK                    ⑩ Remarks\n COMPANY                                                      Payment term: T/T within 60 days after\n\n 8/42 Dinh Bo Linh Street, Ward 24, Binh Thanh                delivery date\n District, Ho Chi Minh City, Vietnam                          Beneficiary: SHREE SAI INDUSTRIES\n Tel: +84 964 767 771                                                      CO. LTD\n Fax: +84 (8) 3823 3672                                       Banker: BANK OF INDIA - G Block\n                                                                        Bandra Kurla Complex,\n ③ Notify party :                                                       Bandra (East), Mumbai,\n                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India\n                                                                       Freight:               550.00 USD\n                                                                       Insurance:              49.65 USD\n                                                                       Total CIF:          15,049.65 USD\n(Say: Fifteen thousand forty-nine dollars and sixty-five cents.)\n* Gross weight of packing list does not include weight of empty container.\nShipping Marks                                                               SIGNED BY\nSHREE SAI                                                         SHREE SAI INDUSTRIES CO. LTD\nINDUSTRIES CO. LTD\n\f",
+          "method": "pdftotext",
+          "warnings": [],
+          "layout": {
+            "version": 1,
+            "document_id": "doc_1ea79a0265a5",
+            "page": 1,
+            "blocks": [
+              {
+                "id": "b0",
+                "text": "                                   COMMERCIAL INVOICE",
+                "start": 0,
+                "end": 53,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b3",
+                "text": " ① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:",
+                "start": 56,
+                "end": 142,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b4",
+                "text": " Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+                "start": 143,
+                "end": 236,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b5",
+                "text": " Morta,Ghaziabad - 201203, Uttar Pradesh, India",
+                "start": 237,
+                "end": 284,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b6",
+                "text": " Tel: +91 96 3496 3924                                        ⑨ No. & Date of Contract",
+                "start": 285,
+                "end": 371,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b7",
+                "text": " Fax: +91-98-10400646                                         06/2024/AURO & Date 01, APR, 2024",
+                "start": 372,
+                "end": 467,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b9",
+                "text": " ② Consignee : AURORA HIMALAYA JOINT STOCK                    ⑩ Remarks",
+                "start": 469,
+                "end": 540,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b10",
+                "text": " COMPANY                                                      Payment term: T/T within 60 days after",
+                "start": 541,
+                "end": 641,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b12",
+                "text": " 8/42 Dinh Bo Linh Street, Ward 24, Binh Thanh                delivery date",
+                "start": 643,
+                "end": 718,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b13",
+                "text": " District, Ho Chi Minh City, Vietnam                          Beneficiary: SHREE SAI INDUSTRIES",
+                "start": 719,
+                "end": 814,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b14",
+                "text": " Tel: +84 964 767 771                                                      CO. LTD",
+                "start": 815,
+                "end": 897,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b15",
+                "text": " Fax: +84 (8) 3823 3672                                       Banker: BANK OF INDIA - G Block",
+                "start": 898,
+                "end": 991,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b16",
+                "text": "                                                                        Bandra Kurla Complex,",
+                "start": 992,
+                "end": 1085,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b17",
+                "text": " ③ Notify party :                                                       Bandra (East), Mumbai,",
+                "start": 1086,
+                "end": 1180,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b18",
+                "text": "                                                                        India",
+                "start": 1181,
+                "end": 1258,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b19",
+                "text": " SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900",
+                "start": 1259,
+                "end": 1345,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b20",
+                "text": "                                                              Swift code: BKIDINBBXXX",
+                "start": 1346,
+                "end": 1431,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b21",
+                "text": " ④ Port of loading :               ⑤ Final destination :",
+                "start": 1432,
+                "end": 1488,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b22",
+                "text": " MUNDRA PORT, INDIA                CAT LAI PORT,",
+                "start": 1489,
+                "end": 1537,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b23",
+                "text": "                                   VIETNAM",
+                "start": 1538,
+                "end": 1580,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b25",
+                "text": " ⑥ Carrier & Voyage                ⑦ Sailing on or about",
+                "start": 1582,
+                "end": 1638,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b26",
+                "text": " AL NASRIYAH 029E                  14, APR, 2024",
+                "start": 1639,
+                "end": 1687,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b28",
+                "text": "                                     DESCRIPTION OF GOODS",
+                "start": 1689,
+                "end": 1746,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b29",
+                "text": "                                                                                                 CIF CAT LAI",
+                "start": 1747,
+                "end": 1855,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b30",
+                "text": "              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT",
+                "start": 1856,
+                "end": 1960,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b31",
+                "text": "                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)",
+                "start": 1961,
+                "end": 2066,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b32",
+                "text": "                                                                  (KGM)",
+                "start": 2067,
+                "end": 2138,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b33",
+                "text": " Himalayan Pink Salt, 2-5mm granules,",
+                "start": 2139,
+                "end": 2176,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b34",
+                "text": " unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00",
+                "start": 2177,
+                "end": 2284,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b35",
+                "text": " New 100% Made in India",
+                "start": 2285,
+                "end": 2308,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b36",
+                "text": "                                                                       Freight:               550.00 USD",
+                "start": 2309,
+                "end": 2413,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b37",
+                "text": "                                                                       Insurance:              49.65 USD",
+                "start": 2414,
+                "end": 2518,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b38",
+                "text": "                                                                       Total CIF:          15,049.65 USD",
+                "start": 2519,
+                "end": 2623,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b39",
+                "text": "(Say: Fifteen thousand forty-nine dollars and sixty-five cents.)",
+                "start": 2624,
+                "end": 2688,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b40",
+                "text": "* Gross weight of packing list does not include weight of empty container.",
+                "start": 2689,
+                "end": 2763,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b41",
+                "text": "Shipping Marks                                                               SIGNED BY",
+                "start": 2764,
+                "end": 2850,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b42",
+                "text": "SHREE SAI                                                         SHREE SAI INDUSTRIES CO. LTD",
+                "start": 2851,
+                "end": 2945,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              },
+              {
+                "id": "b43",
+                "text": "INDUSTRIES CO. LTD",
+                "start": 2946,
+                "end": 2964,
+                "document_id": "doc_1ea79a0265a5",
+                "page": 1,
+                "bbox": null
+              }
+            ],
+            "tables": [
+              {
+                "id": "g0",
+                "page": 1,
+                "header": [
+                  {
+                    "text": "NAME OF GOODS",
+                    "field": "name",
+                    "column": 0,
+                    "bbox": [
+                      72.5000000175,
+                      490.4999963285,
+                      280.5,
+                      542.499998
+                    ]
+                  },
+                  {
+                    "text": "QUANTITY (BAGS)",
+                    "field": "quantity",
+                    "column": 1,
+                    "bbox": [
+                      280.5,
+                      490.4999963285,
+                      342.499995,
+                      542.499998
+                    ]
+                  },
+                  {
+                    "text": "GROSS WEIGHT (KGM)",
+                    "field": "gross_weight",
+                    "column": 2,
+                    "bbox": [
+                      342.499995,
+                      490.4999963285,
+                      413.500005,
+                      542.499998
+                    ]
+                  },
+                  {
+                    "text": "UNIT PRICE (USD / KGM)",
+                    "field": "unit_price",
+                    "column": 3,
+                    "bbox": [
+                      413.500005,
+                      490.4999963285,
+                      484.5,
+                      542.499998
+                    ]
+                  },
+                  {
+                    "text": "AMOUNT (USD)",
+                    "field": "amount",
+                    "column": 4,
+                    "bbox": [
+                      484.5,
+                      490.4999963285,
+                      540.5000175,
+                      542.499998
+                    ]
+                  }
+                ],
+                "header_block_id": null,
+                "header_block_ids": [],
+                "rows": [
+                  {
+                    "id": "g0r0",
+                    "page": 1,
+                    "start": 1181,
+                    "end": 2308,
+                    "quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+                    "block_ids": [
+                      "b18",
+                      "b33",
+                      "b34",
+                      "b35"
+                    ],
+                    "bbox": [
+                      72.5000000175,
+                      542.499998,
+                      540.5000175,
+                      595.499996
+                    ],
+                    "cells": [
+                      {
+                        "field": "name",
+                        "text": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+                        "column": 0,
+                        "header": "NAME OF GOODS",
+                        "bbox": [
+                          72.5000000175,
+                          542.499998,
+                          280.5,
+                          595.499996
+                        ],
+                        "value_fragments": [
+                          "Himalayan Pink Salt, 2-5mm granules,",
+                          "unprocessed, used in industry (25kg/bag)",
+                          "New 100% Made in India"
+                        ],
+                        "source_block_id": "b18"
+                      },
+                      {
+                        "field": "quantity",
+                        "text": "2000.00",
+                        "column": 1,
+                        "header": "QUANTITY (BAGS)",
+                        "bbox": [
+                          280.5,
+                          542.499998,
+                          342.499995,
+                          595.499996
+                        ],
+                        "value_fragments": [
+                          "2000.00"
+                        ],
+                        "source_block_id": "b18",
+                        "header_unit": "BAGS"
+                      },
+                      {
+                        "field": "gross_weight",
+                        "text": "50,200.00",
+                        "column": 2,
+                        "header": "GROSS WEIGHT (KGM)",
+                        "bbox": [
+                          342.499995,
+                          542.499998,
+                          413.500005,
+                          595.499996
+                        ],
+                        "value_fragments": [
+                          "50,200.00"
+                        ],
+                        "source_block_id": "b18",
+                        "header_unit": "KGM"
+                      },
+                      {
+                        "field": "unit_price",
+                        "text": "0.289",
+                        "column": 3,
+                        "header": "UNIT PRICE (USD / KGM)",
+                        "bbox": [
+                          413.500005,
+                          542.499998,
+                          484.5,
+                          595.499996
+                        ],
+                        "value_fragments": [
+                          "0.289"
+                        ],
+                        "source_block_id": "b18",
+                        "header_unit": "USD / KGM"
+                      },
+                      {
+                        "field": "amount",
+                        "text": "14,450.00",
+                        "column": 4,
+                        "header": "AMOUNT (USD)",
+                        "bbox": [
+                          484.5,
+                          542.499998,
+                          540.5000175,
+                          595.499996
+                        ],
+                        "value_fragments": [
+                          "14,450.00"
+                        ],
+                        "source_block_id": "b18",
+                        "header_unit": "USD"
+                      }
+                    ],
+                    "document_id": "doc_1ea79a0265a5"
+                  }
+                ],
+                "totals": [],
+                "continuation": false,
+                "header_source_page": 1,
+                "bbox": [
+                  72.5000000175,
+                  490.4999963285,
+                  540.5000175,
+                  595.499996
+                ],
+                "method": "pdf_ruled_cells",
+                "shared_cells": [],
+                "document_id": "doc_1ea79a0265a5"
+              }
+            ],
+            "key_values": [
+              {
+                "label": "① Shipper",
+                "value": "SHREE SAI INDUSTRIES CO. LTD",
+                "quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+                "block_ids": [
+                  "b3"
+                ],
+                "start": 56,
+                "end": 97
+              },
+              {
+                "label": "⑧ No. & Date of Invoice",
+                "value": "73/INV/ST & DATED 10, APR, 2024",
+                "quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+                "block_ids": [
+                  "b3",
+                  "b4"
+                ],
+                "start": 56,
+                "end": 236,
+                "layout_status": "needs_review"
+              },
+              {
+                "label": "Tel",
+                "value": "+91 96 3496 3924",
+                "quote": "Tel: +91 96 3496 3924",
+                "block_ids": [
+                  "b6"
+                ],
+                "start": 285,
+                "end": 307
+              },
+              {
+                "label": "Fax",
+                "value": "+91-98-10400646",
+                "quote": "Fax: +91-98-10400646",
+                "block_ids": [
+                  "b7"
+                ],
+                "start": 372,
+                "end": 393
+              },
+              {
+                "label": "② Consignee",
+                "value": "AURORA HIMALAYA JOINT STOCK",
+                "quote": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+                "block_ids": [
+                  "b9"
+                ],
+                "start": 469,
+                "end": 511
+              },
+              {
+                "label": "Payment term",
+                "value": "T/T within 60 days after",
+                "quote": "Payment term: T/T within 60 days after",
+                "block_ids": [
+                  "b10"
+                ],
+                "start": 603,
+                "end": 641
+              },
+              {
+                "label": "Beneficiary",
+                "value": "SHREE SAI INDUSTRIES",
+                "quote": "Beneficiary: SHREE SAI INDUSTRIES",
+                "block_ids": [
+                  "b13"
+                ],
+                "start": 781,
+                "end": 814
+              },
+              {
+                "label": "Tel",
+                "value": "+84 964 767 771",
+                "quote": "Tel: +84 964 767 771",
+                "block_ids": [
+                  "b14"
+                ],
+                "start": 815,
+                "end": 836
+              },
+              {
+                "label": "Fax",
+                "value": "+84 (8) 3823 3672",
+                "quote": "Fax: +84 (8) 3823 3672",
+                "block_ids": [
+                  "b15"
+                ],
+                "start": 898,
+                "end": 921
+              },
+              {
+                "label": "Banker",
+                "value": "BANK OF INDIA - G Block",
+                "quote": "Banker: BANK OF INDIA - G Block",
+                "block_ids": [
+                  "b15"
+                ],
+                "start": 960,
+                "end": 991
+              },
+              {
+                "label": "③ Notify party",
+                "value": "India",
+                "quote": "③ Notify party :                                                       Bandra (East), Mumbai,\n                                                                        India",
+                "block_ids": [
+                  "b17",
+                  "b18"
+                ],
+                "start": 1086,
+                "end": 1258,
+                "layout_status": "needs_review"
+              },
+              {
+                "label": "A/c",
+                "value": "4321 9876 5012 9900",
+                "quote": "A/c: 4321 9876 5012 9900",
+                "block_ids": [
+                  "b19"
+                ],
+                "start": 1321,
+                "end": 1345
+              },
+              {
+                "label": "Swift code",
+                "value": "BKIDINBBXXX",
+                "quote": "Swift code: BKIDINBBXXX",
+                "block_ids": [
+                  "b20"
+                ],
+                "start": 1408,
+                "end": 1431
+              },
+              {
+                "label": "④ Port of loading",
+                "value": "MUNDRA PORT, INDIA",
+                "quote": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+                "block_ids": [
+                  "b21",
+                  "b22"
+                ],
+                "start": 1432,
+                "end": 1537,
+                "layout_status": "needs_review"
+              },
+              {
+                "label": "⑤ Final destination",
+                "value": "CAT LAI PORT,",
+                "quote": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+                "block_ids": [
+                  "b21",
+                  "b22"
+                ],
+                "start": 1432,
+                "end": 1537,
+                "layout_status": "needs_review"
+              },
+              {
+                "label": "Freight",
+                "value": "Insurance:",
+                "quote": "Freight:               550.00 USD\n                                                                       Insurance:              49.65 USD",
+                "block_ids": [
+                  "b36",
+                  "b37"
+                ],
+                "start": 2309,
+                "end": 2518,
+                "layout_status": "needs_review"
+              },
+              {
+                "label": "Insurance",
+                "value": "Total CIF:",
+                "quote": "Insurance:              49.65 USD\n                                                                       Total CIF:          15,049.65 USD",
+                "block_ids": [
+                  "b37",
+                  "b38"
+                ],
+                "start": 2414,
+                "end": 2623,
+                "layout_status": "needs_review"
+              },
+              {
+                "label": "Total CIF",
+                "value": "(Say: Fifteen thousand forty-nine dollars and sixty-five cents.)",
+                "quote": "Total CIF:          15,049.65 USD\n(Say: Fifteen thousand forty-nine dollars and sixty-five cents.)",
+                "block_ids": [
+                  "b38",
+                  "b39"
+                ],
+                "start": 2519,
+                "end": 2688,
+                "layout_status": "needs_review"
+              },
+              {
+                "label": "(Say",
+                "value": "Fifteen thousand forty-nine dollars and sixty-five cents.)",
+                "quote": "(Say: Fifteen thousand forty-nine dollars and sixty-five cents.)",
+                "block_ids": [
+                  "b39"
+                ],
+                "start": 2624,
+                "end": 2688
+              },
+              {
+                "label": "COMMERCIAL INVOICE",
+                "value": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:",
+                "quote": "COMMERCIAL INVOICE\n\n\n ① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:",
+                "block_ids": [
+                  "b0",
+                  "b3"
+                ],
+                "start": 0,
+                "end": 142
+              },
+              {
+                "label": "Morta,Ghaziabad - 201203, Uttar Pradesh, India",
+                "value": "Tel: +91 96 3496 3924                                        ⑨ No. & Date of Contract",
+                "quote": "Morta,Ghaziabad - 201203, Uttar Pradesh, India\n Tel: +91 96 3496 3924                                        ⑨ No. & Date of Contract",
+                "block_ids": [
+                  "b5",
+                  "b6"
+                ],
+                "start": 237,
+                "end": 371
+              },
+              {
+                "label": "Bandra Kurla Complex,",
+                "value": "③ Notify party :                                                       Bandra (East), Mumbai,",
+                "quote": "Bandra Kurla Complex,\n ③ Notify party :                                                       Bandra (East), Mumbai,",
+                "block_ids": [
+                  "b16",
+                  "b17"
+                ],
+                "start": 992,
+                "end": 1180
+              },
+              {
+                "label": "MUNDRA PORT, INDIA                CAT LAI PORT,",
+                "value": "VIETNAM",
+                "quote": "MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM",
+                "block_ids": [
+                  "b22",
+                  "b23"
+                ],
+                "start": 1489,
+                "end": 1580
+              },
+              {
+                "label": "VIETNAM",
+                "value": "⑥ Carrier & Voyage                ⑦ Sailing on or about",
+                "quote": "VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about",
+                "block_ids": [
+                  "b23",
+                  "b25"
+                ],
+                "start": 1538,
+                "end": 1638
+              },
+              {
+                "label": "⑥ Carrier & Voyage                ⑦ Sailing on or about",
+                "value": "AL NASRIYAH 029E                  14, APR, 2024",
+                "quote": "⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024",
+                "block_ids": [
+                  "b25",
+                  "b26"
+                ],
+                "start": 1582,
+                "end": 1687
+              },
+              {
+                "label": "AL NASRIYAH 029E                  14, APR, 2024",
+                "value": "DESCRIPTION OF GOODS",
+                "quote": "AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS",
+                "block_ids": [
+                  "b26",
+                  "b28"
+                ],
+                "start": 1639,
+                "end": 1746
+              },
+              {
+                "label": "DESCRIPTION OF GOODS",
+                "value": "CIF CAT LAI",
+                "quote": "DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI",
+                "block_ids": [
+                  "b28",
+                  "b29"
+                ],
+                "start": 1689,
+                "end": 1855
+              },
+              {
+                "label": "CIF CAT LAI",
+                "value": "NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT",
+                "quote": "CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT",
+                "block_ids": [
+                  "b29",
+                  "b30"
+                ],
+                "start": 1747,
+                "end": 1960
+              },
+              {
+                "label": "(BAGS)        WEIGHT         (USD / KGM)         (USD)",
+                "value": "(KGM)",
+                "quote": "(BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)",
+                "block_ids": [
+                  "b31",
+                  "b32"
+                ],
+                "start": 1961,
+                "end": 2138
+              }
+            ],
+            "geometry": [
+              {
+                "text": "COMMERCIAL",
+                "bbox": [
+                  227.099235,
+                  72.458009,
+                  323.484763,
+                  88.098634
+                ]
+              },
+              {
+                "text": "INVOICE",
+                "bbox": [
+                  327.36747,
+                  72.458009,
+                  384.905987,
+                  88.098634
+                ]
+              },
+              {
+                "text": "①",
+                "bbox": [
+                  77.25,
+                  121.120605,
+                  87.25,
+                  131.120605
+                ]
+              },
+              {
+                "text": "Shipper",
+                "bbox": [
+                  89.777241,
+                  120.661621,
+                  124.23288,
+                  131.833495
+                ]
+              },
+              {
+                "text": ":",
+                "bbox": [
+                  127.00882,
+                  120.661621,
+                  129.78714,
+                  131.833495
+                ]
+              },
+              {
+                "text": "SHREE",
+                "bbox": [
+                  132.563301,
+                  119.756347,
+                  170.440033,
+                  132.04541
+                ]
+              },
+              {
+                "text": "SAI",
+                "bbox": [
+                  173.488804,
+                  119.756347,
+                  191.814865,
+                  132.04541
+                ]
+              },
+              {
+                "text": "INDUSTRIES",
+                "bbox": [
+                  194.866676,
+                  119.756347,
+                  261.442249,
+                  132.04541
+                ]
+              },
+              {
+                "text": "CO.",
+                "bbox": [
+                  264.491017,
+                  119.756347,
+                  284.035451,
+                  132.04541
+                ]
+              },
+              {
+                "text": "LTD",
+                "bbox": [
+                  287.087265,
+                  119.756347,
+                  307.643635,
+                  132.04541
+                ]
+              },
+              {
+                "text": "⑧",
+                "bbox": [
+                  342.75,
+                  120.182617,
+                  352.75,
+                  130.182617
+                ]
+              },
+              {
+                "text": "No.",
+                "bbox": [
+                  355.277241,
+                  119.723633,
+                  370.833782,
+                  130.895508
+                ]
+              },
+              {
+                "text": "&",
+                "bbox": [
+                  373.609943,
+                  119.723633,
+                  380.279865,
+                  130.895508
+                ]
+              },
+              {
+                "text": "Date",
+                "bbox": [
+                  383.054501,
+                  119.723633,
+                  404.171486,
+                  130.895508
+                ]
+              },
+              {
+                "text": "of",
+                "bbox": [
+                  406.94656,
+                  119.723633,
+                  415.284237,
+                  130.895508
+                ]
+              },
+              {
+                "text": "Invoice:",
+                "bbox": [
+                  418.060398,
+                  119.723633,
+                  452.51094,
+                  130.895508
+                ]
+              },
+              {
+                "text": "Plot",
+                "bbox": [
+                  77.25,
+                  138.729736,
+                  96.193298,
+                  151.018799
+                ]
+              },
+              {
+                "text": "No.",
+                "bbox": [
+                  99.24511,
+                  138.729736,
+                  116.352799,
+                  151.018799
+                ]
+              },
+              {
+                "text": "5,",
+                "bbox": [
+                  119.40461,
+                  138.729736,
+                  128.574093,
+                  151.018799
+                ]
+              },
+              {
+                "text": "Khasra",
+                "bbox": [
+                  131.625904,
+                  138.729736,
+                  166.458523,
+                  151.018799
+                ]
+              },
+              {
+                "text": "No.",
+                "bbox": [
+                  169.50816,
+                  138.729736,
+                  186.615849,
+                  151.018799
+                ]
+              },
+              {
+                "text": "1326,",
+                "bbox": [
+                  189.66766,
+                  138.729736,
+                  217.177136,
+                  151.018799
+                ]
+              },
+              {
+                "text": "Delhi",
+                "bbox": [
+                  220.22895,
+                  138.729736,
+                  245.279777,
+                  151.018799
+                ]
+              },
+              {
+                "text": "Meerut",
+                "bbox": [
+                  248.33202,
+                  138.729736,
+                  282.545227,
+                  151.018799
+                ]
+              },
+              {
+                "text": "Road,",
+                "bbox": [
+                  285.597037,
+                  138.729736,
+                  314.931388,
+                  151.018799
+                ]
+              },
+              {
+                "text": "Morta,Ghaziabad",
+                "bbox": [
+                  77.25,
+                  151.378662,
+                  161.574299,
+                  163.667725
+                ]
+              },
+              {
+                "text": "-",
+                "bbox": [
+                  164.623936,
+                  151.378662,
+                  168.287022,
+                  163.667725
+                ]
+              },
+              {
+                "text": "201203,",
+                "bbox": [
+                  171.338402,
+                  151.378662,
+                  211.074539,
+                  163.667725
+                ]
+              },
+              {
+                "text": "Uttar",
+                "bbox": [
+                  214.12635,
+                  151.378662,
+                  237.948936,
+                  163.667725
+                ]
+              },
+              {
+                "text": "Pradesh,",
+                "bbox": [
+                  241.00032,
+                  151.378662,
+                  284.998077,
+                  163.667725
+                ]
+              },
+              {
+                "text": "India",
+                "bbox": [
+                  288.049897,
+                  151.378662,
+                  311.890329,
+                  163.667725
+                ]
+              },
+              {
+                "text": "Tel:",
+                "bbox": [
+                  77.25,
+                  164.027588,
+                  94.356819,
+                  176.316651
+                ]
+              },
+              {
+                "text": "+91",
+                "bbox": [
+                  97.408631,
+                  164.027588,
+                  116.058903,
+                  176.316651
+                ]
+              },
+              {
+                "text": "96",
+                "bbox": [
+                  119.10854,
+                  164.027588,
+                  131.339546,
+                  176.316651
+                ]
+              },
+              {
+                "text": "3496",
+                "bbox": [
+                  134.389183,
+                  164.027588,
+                  158.846851,
+                  176.316651
+                ]
+              },
+              {
+                "text": "3924",
+                "bbox": [
+                  161.896488,
+                  164.027588,
+                  186.354156,
+                  176.316651
+                ]
+              },
+              {
+                "text": "Fax:",
+                "bbox": [
+                  77.25,
+                  176.676513,
+                  98.630043,
+                  188.965576
+                ]
+              },
+              {
+                "text": "+91-98-10400646",
+                "bbox": [
+                  101.681855,
+                  176.676513,
+                  188.786404,
+                  188.965576
+                ]
+              },
+              {
+                "text": "73/INV/ST",
+                "bbox": [
+                  342.75,
+                  136.972169,
+                  388.862331,
+                  148.144044
+                ]
+              },
+              {
+                "text": "&",
+                "bbox": [
+                  391.637191,
+                  136.972169,
+                  398.307113,
+                  148.144044
+                ]
+              },
+              {
+                "text": "DATED",
+                "bbox": [
+                  401.081749,
+                  136.972169,
+                  434.22076,
+                  148.144044
+                ]
+              },
+              {
+                "text": "10,",
+                "bbox": [
+                  436.995186,
+                  136.972169,
+                  450.89222,
+                  148.144044
+                ]
+              },
+              {
+                "text": "APR,",
+                "bbox": [
+                  453.668381,
+                  136.972169,
+                  477.000198,
+                  148.144044
+                ]
+              },
+              {
+                "text": "2024",
+                "bbox": [
+                  479.776358,
+                  136.972169,
+                  502.015951,
+                  148.144044
+                ]
+              },
+              {
+                "text": "②",
+                "bbox": [
+                  77.25,
+                  206.865231,
+                  87.25,
+                  216.865231
+                ]
+              },
+              {
+                "text": "Consignee",
+                "bbox": [
+                  89.777241,
+                  206.406247,
+                  137.573276,
+                  217.578121
+                ]
+              },
+              {
+                "text": ":",
+                "bbox": [
+                  140.348351,
+                  206.406247,
+                  143.126671,
+                  217.578121
+                ]
+              },
+              {
+                "text": "AURORA",
+                "bbox": [
+                  145.902832,
+                  205.500973,
+                  194.149578,
+                  217.790036
+                ]
+              },
+              {
+                "text": "HIMALAYA",
+                "bbox": [
+                  197.197918,
+                  205.500973,
+                  253.193573,
+                  217.790036
+                ]
+              },
+              {
+                "text": "JOINT",
+                "bbox": [
+                  256.24191,
+                  205.500973,
+                  288.616742,
+                  217.790036
+                ]
+              },
+              {
+                "text": "STOCK",
+                "bbox": [
+                  291.665955,
+                  205.500973,
+                  329.945527,
+                  217.790036
+                ]
+              },
+              {
+                "text": "⑩",
+                "bbox": [
+                  342.75,
+                  205.927243,
+                  352.75,
+                  215.927243
+                ]
+              },
+              {
+                "text": "Remarks",
+                "bbox": [
+                  355.277241,
+                  205.468259,
+                  395.268467,
+                  216.640134
+                ]
+              },
+              {
+                "text": "COMPANY",
+                "bbox": [
+                  77.25,
+                  224.474363,
+                  132.623478,
+                  236.763426
+                ]
+              },
+              {
+                "text": "Payment",
+                "bbox": [
+                  342.75,
+                  222.716799,
+                  382.198578,
+                  233.888674
+                ]
+              },
+              {
+                "text": "term:",
+                "bbox": [
+                  384.974739,
+                  222.716799,
+                  407.745258,
+                  233.888674
+                ]
+              },
+              {
+                "text": "T/T",
+                "bbox": [
+                  410.52142,
+                  222.716799,
+                  425.513077,
+                  233.888674
+                ]
+              },
+              {
+                "text": "within",
+                "bbox": [
+                  428.287937,
+                  222.716799,
+                  453.846558,
+                  233.888674
+                ]
+              },
+              {
+                "text": "60",
+                "bbox": [
+                  456.621632,
+                  222.716799,
+                  467.742511,
+                  233.888674
+                ]
+              },
+              {
+                "text": "days",
+                "bbox": [
+                  470.517585,
+                  222.716799,
+                  491.634345,
+                  233.888674
+                ]
+              },
+              {
+                "text": "after",
+                "bbox": [
+                  494.40963,
+                  222.716799,
+                  514.412903,
+                  233.888674
+                ]
+              },
+              {
+                "text": "8/42",
+                "bbox": [
+                  77.25,
+                  243.447753,
+                  98.648319,
+                  255.736816
+                ]
+              },
+              {
+                "text": "Dinh",
+                "bbox": [
+                  101.697956,
+                  243.447753,
+                  124.309281,
+                  255.736816
+                ]
+              },
+              {
+                "text": "Bo",
+                "bbox": [
+                  127.358918,
+                  243.447753,
+                  140.808297,
+                  255.736816
+                ]
+              },
+              {
+                "text": "Linh",
+                "bbox": [
+                  143.857933,
+                  243.447753,
+                  164.644382,
+                  255.736816
+                ]
+              },
+              {
+                "text": "Street,",
+                "bbox": [
+                  167.69402,
+                  243.447753,
+                  200.076985,
+                  255.736816
+                ]
+              },
+              {
+                "text": "Ward",
+                "bbox": [
+                  203.128793,
+                  243.447753,
+                  228.987035,
+                  255.736816
+                ]
+              },
+              {
+                "text": "24,",
+                "bbox": [
+                  232.036673,
+                  243.447753,
+                  247.319487,
+                  255.736816
+                ]
+              },
+              {
+                "text": "Binh",
+                "bbox": [
+                  250.3713,
+                  243.447753,
+                  272.376122,
+                  255.736816
+                ]
+              },
+              {
+                "text": "Thanh",
+                "bbox": [
+                  275.425755,
+                  243.447753,
+                  306.59789,
+                  255.736816
+                ]
+              },
+              {
+                "text": "District,",
+                "bbox": [
+                  77.25,
+                  256.096683,
+                  113.889217,
+                  268.385746
+                ]
+              },
+              {
+                "text": "Ho",
+                "bbox": [
+                  116.941028,
+                  256.096683,
+                  130.99691,
+                  268.385746
+                ]
+              },
+              {
+                "text": "Chi",
+                "bbox": [
+                  134.046547,
+                  256.096683,
+                  150.541931,
+                  268.385746
+                ]
+              },
+              {
+                "text": "Minh",
+                "bbox": [
+                  153.594177,
+                  256.096683,
+                  177.423874,
+                  268.385746
+                ]
+              },
+              {
+                "text": "City,",
+                "bbox": [
+                  180.473511,
+                  256.096683,
+                  201.643647,
+                  268.385746
+                ]
+              },
+              {
+                "text": "Vietnam",
+                "bbox": [
+                  204.69546,
+                  256.096683,
+                  244.827609,
+                  268.385746
+                ]
+              },
+              {
+                "text": "Tel:",
+                "bbox": [
+                  77.25,
+                  268.745603,
+                  94.356819,
+                  281.034666
+                ]
+              },
+              {
+                "text": "+84",
+                "bbox": [
+                  97.408631,
+                  268.745603,
+                  116.058903,
+                  281.034666
+                ]
+              },
+              {
+                "text": "964",
+                "bbox": [
+                  119.10854,
+                  268.745603,
+                  137.452877,
+                  281.034666
+                ]
+              },
+              {
+                "text": "767",
+                "bbox": [
+                  140.502514,
+                  268.745603,
+                  158.846851,
+                  281.034666
+                ]
+              },
+              {
+                "text": "771",
+                "bbox": [
+                  161.896488,
+                  268.745603,
+                  180.240826,
+                  281.034666
+                ]
+              },
+              {
+                "text": "Fax:",
+                "bbox": [
+                  77.25,
+                  281.394533,
+                  98.630043,
+                  293.683596
+                ]
+              },
+              {
+                "text": "+84",
+                "bbox": [
+                  101.681855,
+                  281.394533,
+                  120.332127,
+                  293.683596
+                ]
+              },
+              {
+                "text": "(8)",
+                "bbox": [
+                  123.381764,
+                  281.394533,
+                  136.818665,
+                  293.683596
+                ]
+              },
+              {
+                "text": "3823",
+                "bbox": [
+                  139.870045,
+                  281.394533,
+                  164.327713,
+                  293.683596
+                ]
+              },
+              {
+                "text": "3672",
+                "bbox": [
+                  167.37735,
+                  281.394533,
+                  191.835018,
+                  293.683596
+                ]
+              },
+              {
+                "text": "delivery",
+                "bbox": [
+                  342.75,
+                  239.965329,
+                  377.196529,
+                  251.137204
+                ]
+              },
+              {
+                "text": "date",
+                "bbox": [
+                  379.971817,
+                  239.965329,
+                  399.429294,
+                  251.137204
+                ]
+              },
+              {
+                "text": "③",
+                "bbox": [
+                  77.25,
+                  305.719723,
+                  87.25,
+                  315.719723
+                ]
+              },
+              {
+                "text": "Notify",
+                "bbox": [
+                  89.777241,
+                  305.260739,
+                  115.330761,
+                  316.432614
+                ]
+              },
+              {
+                "text": "party",
+                "bbox": [
+                  118.106048,
+                  305.260739,
+                  140.33078,
+                  316.432614
+                ]
+              },
+              {
+                "text": ":",
+                "bbox": [
+                  143.106067,
+                  305.260739,
+                  145.884388,
+                  316.432614
+                ]
+              },
+              {
+                "text": "SAME",
+                "bbox": [
+                  77.25,
+                  322.509279,
+                  105.581379,
+                  333.681154
+                ]
+              },
+              {
+                "text": "AS",
+                "bbox": [
+                  108.356015,
+                  322.509279,
+                  121.693253,
+                  333.681154
+                ]
+              },
+              {
+                "text": "CONSIGNEE",
+                "bbox": [
+                  124.467888,
+                  322.509279,
+                  184.456852,
+                  333.681154
+                ]
+              },
+              {
+                "text": "④",
+                "bbox": [
+                  77.25,
+                  351.466793,
+                  87.25,
+                  361.466793
+                ]
+              },
+              {
+                "text": "Port",
+                "bbox": [
+                  89.777241,
+                  351.007809,
+                  108.111011,
+                  362.179684
+                ]
+              },
+              {
+                "text": "of",
+                "bbox": [
+                  110.887173,
+                  351.007809,
+                  119.22485,
+                  362.179684
+                ]
+              },
+              {
+                "text": "loading",
+                "bbox": [
+                  122.001011,
+                  351.007809,
+                  154.241596,
+                  362.179684
+                ]
+              },
+              {
+                "text": ":",
+                "bbox": [
+                  157.01667,
+                  351.007809,
+                  159.79499,
+                  362.179684
+                ]
+              },
+              {
+                "text": "⑤",
+                "bbox": [
+                  225.75,
+                  351.466793,
+                  235.75,
+                  361.466793
+                ]
+              },
+              {
+                "text": "Final",
+                "bbox": [
+                  238.277241,
+                  351.007809,
+                  259.944469,
+                  362.179684
+                ]
+              },
+              {
+                "text": "destination",
+                "bbox": [
+                  262.720848,
+                  351.007809,
+                  311.073318,
+                  362.179684
+                ]
+              },
+              {
+                "text": ":",
+                "bbox": [
+                  313.848392,
+                  351.007809,
+                  316.626712,
+                  362.179684
+                ]
+              },
+              {
+                "text": "MUNDRA",
+                "bbox": [
+                  77.25,
+                  368.256349,
+                  121.122204,
+                  379.428224
+                ]
+              },
+              {
+                "text": "PORT,",
+                "bbox": [
+                  123.89684,
+                  368.256349,
+                  153.153584,
+                  379.428224
+                ]
+              },
+              {
+                "text": "INDIA",
+                "bbox": [
+                  155.929745,
+                  368.256349,
+                  182.591877,
+                  379.428224
+                ]
+              },
+              {
+                "text": "CAT",
+                "bbox": [
+                  225.75,
+                  368.256349,
+                  245.002395,
+                  379.428224
+                ]
+              },
+              {
+                "text": "LAI",
+                "bbox": [
+                  247.777256,
+                  368.256349,
+                  262.78225,
+                  379.428224
+                ]
+              },
+              {
+                "text": "PORT,",
+                "bbox": [
+                  265.558411,
+                  368.256349,
+                  294.815155,
+                  379.428224
+                ]
+              },
+              {
+                "text": "⑨",
+                "bbox": [
+                  342.75,
+                  165.929688,
+                  352.75,
+                  175.929688
+                ]
+              },
+              {
+                "text": "No.",
+                "bbox": [
+                  355.277241,
+                  165.470704,
+                  370.833782,
+                  176.642579
+                ]
+              },
+              {
+                "text": "&",
+                "bbox": [
+                  373.609943,
+                  165.470704,
+                  380.279865,
+                  176.642579
+                ]
+              },
+              {
+                "text": "Date",
+                "bbox": [
+                  383.054501,
+                  165.470704,
+                  404.171486,
+                  176.642579
+                ]
+              },
+              {
+                "text": "of",
+                "bbox": [
+                  406.94656,
+                  165.470704,
+                  415.284237,
+                  176.642579
+                ]
+              },
+              {
+                "text": "Contract",
+                "bbox": [
+                  418.060398,
+                  165.470704,
+                  455.839718,
+                  176.642579
+                ]
+              },
+              {
+                "text": "06/2024/AURO",
+                "bbox": [
+                  342.75,
+                  182.719239,
+                  410.543987,
+                  193.891114
+                ]
+              },
+              {
+                "text": "&",
+                "bbox": [
+                  413.318195,
+                  182.719239,
+                  419.988117,
+                  193.891114
+                ]
+              },
+              {
+                "text": "Date",
+                "bbox": [
+                  422.762753,
+                  182.719239,
+                  443.879738,
+                  193.891114
+                ]
+              },
+              {
+                "text": "01,",
+                "bbox": [
+                  446.654812,
+                  182.719239,
+                  460.551845,
+                  193.891114
+                ]
+              },
+              {
+                "text": "APR,",
+                "bbox": [
+                  463.328007,
+                  182.719239,
+                  486.659824,
+                  193.891114
+                ]
+              },
+              {
+                "text": "2024",
+                "bbox": [
+                  489.435983,
+                  182.719239,
+                  511.675576,
+                  193.891114
+                ]
+              },
+              {
+                "text": "Beneficiary:",
+                "bbox": [
+                  342.75,
+                  257.213869,
+                  394.97681,
+                  268.385744
+                ]
+              },
+              {
+                "text": "SHREE",
+                "bbox": [
+                  397.752972,
+                  257.213869,
+                  432.195255,
+                  268.385744
+                ]
+              },
+              {
+                "text": "SAI",
+                "bbox": [
+                  434.969891,
+                  257.213869,
+                  451.082844,
+                  268.385744
+                ]
+              },
+              {
+                "text": "INDUSTRIES",
+                "bbox": [
+                  453.859005,
+                  257.213869,
+                  514.399517,
+                  268.385744
+                ]
+              },
+              {
+                "text": "CO.",
+                "bbox": [
+                  396.75,
+                  268.712889,
+                  414.522472,
+                  279.884764
+                ]
+              },
+              {
+                "text": "LTD",
+                "bbox": [
+                  417.298633,
+                  268.712889,
+                  435.443504,
+                  279.884764
+                ]
+              },
+              {
+                "text": "Banker:",
+                "bbox": [
+                  342.081722,
+                  280.211919,
+                  376.532253,
+                  291.383794
+                ]
+              },
+              {
+                "text": "BANK",
+                "bbox": [
+                  379.308415,
+                  280.211919,
+                  406.531834,
+                  291.383794
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  409.306469,
+                  280.211919,
+                  423.190155,
+                  291.383794
+                ]
+              },
+              {
+                "text": "INDIA",
+                "bbox": [
+                  425.965016,
+                  280.211919,
+                  452.627148,
+                  291.383794
+                ]
+              },
+              {
+                "text": "-",
+                "bbox": [
+                  455.401783,
+                  280.211919,
+                  458.731861,
+                  291.383794
+                ]
+              },
+              {
+                "text": "G",
+                "bbox": [
+                  461.507801,
+                  280.211919,
+                  469.286121,
+                  291.383794
+                ]
+              },
+              {
+                "text": "Block",
+                "bbox": [
+                  472.060327,
+                  280.211919,
+                  496.505865,
+                  291.383794
+                ]
+              },
+              {
+                "text": "Bandra",
+                "bbox": [
+                  387.75,
+                  291.710939,
+                  419.985687,
+                  302.882814
+                ]
+              },
+              {
+                "text": "Kurla",
+                "bbox": [
+                  422.760761,
+                  291.710939,
+                  446.098553,
+                  302.882814
+                ]
+              },
+              {
+                "text": "Complex,",
+                "bbox": [
+                  448.873627,
+                  291.710939,
+                  491.09457,
+                  302.882814
+                ]
+              },
+              {
+                "text": "Bandra",
+                "bbox": [
+                  387.75,
+                  303.209959,
+                  419.985687,
+                  314.381834
+                ]
+              },
+              {
+                "text": "(East),",
+                "bbox": [
+                  422.760761,
+                  303.209959,
+                  452.198597,
+                  314.381834
+                ]
+              },
+              {
+                "text": "Mumbai,",
+                "bbox": [
+                  454.974758,
+                  303.209959,
+                  493.305615,
+                  314.381834
+                ]
+              },
+              {
+                "text": "India",
+                "bbox": [
+                  387.75,
+                  314.708989,
+                  409.428295,
+                  325.880864
+                ]
+              },
+              {
+                "text": "A/c:",
+                "bbox": [
+                  342.75,
+                  326.208009,
+                  359.970924,
+                  337.379884
+                ]
+              },
+              {
+                "text": "4321",
+                "bbox": [
+                  362.747086,
+                  326.208009,
+                  384.986679,
+                  337.379884
+                ]
+              },
+              {
+                "text": "9876",
+                "bbox": [
+                  387.761753,
+                  326.208009,
+                  410.001347,
+                  337.379884
+                ]
+              },
+              {
+                "text": "5012",
+                "bbox": [
+                  412.776421,
+                  326.208009,
+                  435.016014,
+                  337.379884
+                ]
+              },
+              {
+                "text": "9900",
+                "bbox": [
+                  437.791088,
+                  326.208009,
+                  460.030682,
+                  337.379884
+                ]
+              },
+              {
+                "text": "Swift",
+                "bbox": [
+                  342.75,
+                  337.707029,
+                  364.412559,
+                  348.878904
+                ]
+              },
+              {
+                "text": "code:",
+                "bbox": [
+                  367.188721,
+                  337.707029,
+                  391.643158,
+                  348.878904
+                ]
+              },
+              {
+                "text": "BKIDINBBXXX",
+                "bbox": [
+                  394.41932,
+                  337.707029,
+                  461.08535,
+                  348.878904
+                ]
+              },
+              {
+                "text": "VIETNAM",
+                "bbox": [
+                  225.75,
+                  385.504879,
+                  270.18415,
+                  396.676754
+                ]
+              },
+              {
+                "text": "⑥",
+                "bbox": [
+                  77.25,
+                  414.462403,
+                  87.25,
+                  424.462403
+                ]
+              },
+              {
+                "text": "Carrier",
+                "bbox": [
+                  89.777241,
+                  414.003419,
+                  120.323269,
+                  425.175294
+                ]
+              },
+              {
+                "text": "&",
+                "bbox": [
+                  123.099209,
+                  414.003419,
+                  129.76913,
+                  425.175294
+                ]
+              },
+              {
+                "text": "Voyage",
+                "bbox": [
+                  132.543766,
+                  414.003419,
+                  165.896968,
+                  425.175294
+                ]
+              },
+              {
+                "text": "⑦",
+                "bbox": [
+                  225.75,
+                  414.462403,
+                  235.75,
+                  424.462403
+                ]
+              },
+              {
+                "text": "Sailing",
+                "bbox": [
+                  238.277241,
+                  414.003419,
+                  268.287247,
+                  425.175294
+                ]
+              },
+              {
+                "text": "on",
+                "bbox": [
+                  271.062321,
+                  414.003419,
+                  282.183201,
+                  425.175294
+                ]
+              },
+              {
+                "text": "or",
+                "bbox": [
+                  284.958275,
+                  414.003419,
+                  293.847709,
+                  425.175294
+                ]
+              },
+              {
+                "text": "about",
+                "bbox": [
+                  296.623649,
+                  414.003419,
+                  321.639396,
+                  425.175294
+                ]
+              },
+              {
+                "text": "AL",
+                "bbox": [
+                  77.25,
+                  431.251949,
+                  89.47884,
+                  442.423824
+                ]
+              },
+              {
+                "text": "NASRIYAH",
+                "bbox": [
+                  92.253914,
+                  431.251949,
+                  142.617645,
+                  442.423824
+                ]
+              },
+              {
+                "text": "029E",
+                "bbox": [
+                  145.39207,
+                  431.251949,
+                  168.740062,
+                  442.423824
+                ]
+              },
+              {
+                "text": "14,",
+                "bbox": [
+                  225.75,
+                  431.251949,
+                  239.647034,
+                  442.423824
+                ]
+              },
+              {
+                "text": "APR,",
+                "bbox": [
+                  242.423195,
+                  431.251949,
+                  265.755013,
+                  442.423824
+                ]
+              },
+              {
+                "text": "2024",
+                "bbox": [
+                  268.531174,
+                  431.251949,
+                  290.770767,
+                  442.423824
+                ]
+              },
+              {
+                "text": "DESCRIPTION",
+                "bbox": [
+                  237.29346,
+                  454.533203,
+                  312.41954,
+                  466.822266
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  315.46788,
+                  454.533203,
+                  330.737194,
+                  466.822266
+                ]
+              },
+              {
+                "text": "GOODS",
+                "bbox": [
+                  333.78639,
+                  454.533203,
+                  374.711737,
+                  466.822266
+                ]
+              },
+              {
+                "text": "CIF",
+                "bbox": [
+                  482.439698,
+                  473.473879,
+                  498.544201,
+                  484.645754
+                ]
+              },
+              {
+                "text": "CAT",
+                "bbox": [
+                  501.319065,
+                  473.473879,
+                  521.123008,
+                  484.645754
+                ]
+              },
+              {
+                "text": "LAI",
+                "bbox": [
+                  523.89789,
+                  473.473879,
+                  540.001093,
+                  484.645754
+                ]
+              },
+              {
+                "text": "NAME",
+                "bbox": [
+                  133.485924,
+                  491.472409,
+                  162.368851,
+                  502.644284
+                ]
+              },
+              {
+                "text": "OF",
+                "bbox": [
+                  165.143486,
+                  491.472409,
+                  179.027172,
+                  502.644284
+                ]
+              },
+              {
+                "text": "GOODS",
+                "bbox": [
+                  181.802033,
+                  491.472409,
+                  219.016682,
+                  502.644284
+                ]
+              },
+              {
+                "text": "QUANTITY",
+                "bbox": [
+                  286.356537,
+                  491.472409,
+                  336.896068,
+                  502.644284
+                ]
+              },
+              {
+                "text": "GROSS",
+                "bbox": [
+                  359.947964,
+                  491.472409,
+                  396.054642,
+                  502.644284
+                ]
+              },
+              {
+                "text": "UNIT",
+                "bbox": [
+                  420.551085,
+                  491.472409,
+                  443.874452,
+                  502.644284
+                ]
+              },
+              {
+                "text": "PRICE",
+                "bbox": [
+                  446.649313,
+                  491.472409,
+                  477.201521,
+                  502.644284
+                ]
+              },
+              {
+                "text": "AMOUNT",
+                "bbox": [
+                  490.593412,
+                  491.472409,
+                  533.908968,
+                  502.644284
+                ]
+              },
+              {
+                "text": "(BAGS)",
+                "bbox": [
+                  294.407604,
+                  508.720949,
+                  328.843696,
+                  519.892824
+                ]
+              },
+              {
+                "text": "WEIGHT",
+                "bbox": [
+                  358.010239,
+                  508.720949,
+                  397.992142,
+                  519.892824
+                ]
+              },
+              {
+                "text": "(USD",
+                "bbox": [
+                  419.443125,
+                  508.720949,
+                  443.879762,
+                  519.892824
+                ]
+              },
+              {
+                "text": "/",
+                "bbox": [
+                  446.654189,
+                  508.720949,
+                  449.432509,
+                  519.892824
+                ]
+              },
+              {
+                "text": "KGM)",
+                "bbox": [
+                  452.20867,
+                  508.720949,
+                  478.308176,
+                  519.892824
+                ]
+              },
+              {
+                "text": "(USD)",
+                "bbox": [
+                  498.3687,
+                  508.720949,
+                  526.132601,
+                  519.892824
+                ]
+              },
+              {
+                "text": "(KGM)",
+                "bbox": [
+                  363.286508,
+                  525.969479,
+                  392.714792,
+                  537.141354
+                ]
+              },
+              {
+                "text": "Himalayan",
+                "bbox": [
+                  77.25,
+                  543.968019,
+                  127.257305,
+                  555.139894
+                ]
+              },
+              {
+                "text": "Pink",
+                "bbox": [
+                  130.032166,
+                  543.968019,
+                  151.144264,
+                  555.139894
+                ]
+              },
+              {
+                "text": "Salt,",
+                "bbox": [
+                  153.919338,
+                  543.968019,
+                  175.030349,
+                  555.139894
+                ]
+              },
+              {
+                "text": "2-5mm",
+                "bbox": [
+                  177.806511,
+                  543.968019,
+                  210.033737,
+                  555.139894
+                ]
+              },
+              {
+                "text": "granules,",
+                "bbox": [
+                  212.807513,
+                  543.968019,
+                  257.249285,
+                  555.139894
+                ]
+              },
+              {
+                "text": "unprocessed,",
+                "bbox": [
+                  77.25,
+                  561.216549,
+                  142.245281,
+                  572.388424
+                ]
+              },
+              {
+                "text": "used",
+                "bbox": [
+                  145.021442,
+                  561.216549,
+                  168.354572,
+                  572.388424
+                ]
+              },
+              {
+                "text": "in",
+                "bbox": [
+                  171.129433,
+                  561.216549,
+                  180.015072,
+                  572.388424
+                ]
+              },
+              {
+                "text": "industry",
+                "bbox": [
+                  182.789932,
+                  561.216549,
+                  222.224972,
+                  572.388424
+                ]
+              },
+              {
+                "text": "(25kg/bag)",
+                "bbox": [
+                  225.000045,
+                  561.216549,
+                  274.991622,
+                  572.388424
+                ]
+              },
+              {
+                "text": "2000.00",
+                "bbox": [
+                  301.366619,
+                  561.216549,
+                  337.502167,
+                  572.388424
+                ]
+              },
+              {
+                "text": "50,200.00",
+                "bbox": [
+                  363.530022,
+                  561.216549,
+                  408.002167,
+                  572.388424
+                ]
+              },
+              {
+                "text": "0.289",
+                "bbox": [
+                  454.235333,
+                  561.216549,
+                  479.252167,
+                  572.388424
+                ]
+              },
+              {
+                "text": "14,450.00",
+                "bbox": [
+                  490.280022,
+                  561.216549,
+                  534.752167,
+                  572.388424
+                ]
+              },
+              {
+                "text": "New",
+                "bbox": [
+                  77.25,
+                  578.465089,
+                  97.806541,
+                  589.636964
+                ]
+              },
+              {
+                "text": "100%",
+                "bbox": [
+                  100.580749,
+                  578.465089,
+                  126.150421,
+                  589.636964
+                ]
+              },
+              {
+                "text": "Made",
+                "bbox": [
+                  128.924194,
+                  578.465089,
+                  154.477917,
+                  589.636964
+                ]
+              },
+              {
+                "text": "in",
+                "bbox": [
+                  157.252991,
+                  578.465089,
+                  166.13863,
+                  589.636964
+                ]
+              },
+              {
+                "text": "India",
+                "bbox": [
+                  168.91349,
+                  578.465089,
+                  192.241531,
+                  589.636964
+                ]
+              },
+              {
+                "text": "Freight:",
+                "bbox": [
+                  384.0,
+                  596.463619,
+                  417.889244,
+                  607.635494
+                ]
+              },
+              {
+                "text": "Insurance:",
+                "bbox": [
+                  384.0,
+                  607.962649,
+                  430.677216,
+                  619.134524
+                ]
+              },
+              {
+                "text": "Total",
+                "bbox": [
+                  384.0,
+                  619.461669,
+                  405.115257,
+                  630.633544
+                ]
+              },
+              {
+                "text": "CIF:",
+                "bbox": [
+                  407.891648,
+                  619.461669,
+                  426.772091,
+                  630.633544
+                ]
+              },
+              {
+                "text": "550.00",
+                "bbox": [
+                  483.0,
+                  596.463619,
+                  513.576191,
+                  607.635494
+                ]
+              },
+              {
+                "text": "USD",
+                "bbox": [
+                  516.351285,
+                  596.463619,
+                  537.459145,
+                  607.635494
+                ]
+              },
+              {
+                "text": "49.65",
+                "bbox": [
+                  488.554507,
+                  607.962649,
+                  513.571342,
+                  619.134524
+                ]
+              },
+              {
+                "text": "USD",
+                "bbox": [
+                  516.346387,
+                  607.962649,
+                  537.454248,
+                  619.134524
+                ]
+              },
+              {
+                "text": "15,049.65",
+                "bbox": [
+                  468.75,
+                  619.461669,
+                  513.222145,
+                  630.633544
+                ]
+              },
+              {
+                "text": "USD",
+                "bbox": [
+                  515.99721,
+                  619.461669,
+                  537.10507,
+                  630.633544
+                ]
+              },
+              {
+                "text": "(Say:",
+                "bbox": [
+                  72.0,
+                  630.960689,
+                  96.444885,
+                  642.132564
+                ]
+              },
+              {
+                "text": "Fifteen",
+                "bbox": [
+                  99.220826,
+                  630.960689,
+                  131.988751,
+                  642.132564
+                ]
+              },
+              {
+                "text": "thousand",
+                "bbox": [
+                  134.763611,
+                  630.960689,
+                  179.743572,
+                  642.132564
+                ]
+              },
+              {
+                "text": "forty-nine",
+                "bbox": [
+                  182.518433,
+                  630.960689,
+                  228.611027,
+                  642.132564
+                ]
+              },
+              {
+                "text": "dollars",
+                "bbox": [
+                  231.3861,
+                  630.960689,
+                  264.163585,
+                  642.132564
+                ]
+              },
+              {
+                "text": "and",
+                "bbox": [
+                  266.938657,
+                  630.960689,
+                  284.71243,
+                  642.132564
+                ]
+              },
+              {
+                "text": "sixty-five",
+                "bbox": [
+                  287.487308,
+                  630.960689,
+                  330.827071,
+                  642.132564
+                ]
+              },
+              {
+                "text": "cents.)",
+                "bbox": [
+                  333.602145,
+                  630.960689,
+                  365.822329,
+                  642.132564
+                ]
+              },
+              {
+                "text": "*",
+                "bbox": [
+                  72.0,
+                  648.209229,
+                  75.891602,
+                  659.381104
+                ]
+              },
+              {
+                "text": "Gross",
+                "bbox": [
+                  78.667328,
+                  648.209229,
+                  105.328796,
+                  659.381104
+                ]
+              },
+              {
+                "text": "weight",
+                "bbox": [
+                  108.104084,
+                  648.209229,
+                  137.000157,
+                  659.381104
+                ]
+              },
+              {
+                "text": "of",
+                "bbox": [
+                  139.776317,
+                  648.209229,
+                  148.113994,
+                  659.381104
+                ]
+              },
+              {
+                "text": "packing",
+                "bbox": [
+                  150.890155,
+                  648.209229,
+                  185.34666,
+                  659.381104
+                ]
+              },
+              {
+                "text": "list",
+                "bbox": [
+                  188.121734,
+                  648.209229,
+                  200.339737,
+                  659.381104
+                ]
+              },
+              {
+                "text": "does",
+                "bbox": [
+                  203.1159,
+                  648.209229,
+                  224.79397,
+                  659.381104
+                ]
+              },
+              {
+                "text": "not",
+                "bbox": [
+                  227.569253,
+                  648.209229,
+                  241.466286,
+                  659.381104
+                ]
+              },
+              {
+                "text": "include",
+                "bbox": [
+                  244.24245,
+                  648.209229,
+                  275.921725,
+                  659.381104
+                ]
+              },
+              {
+                "text": "weight",
+                "bbox": [
+                  278.696798,
+                  648.209229,
+                  307.59287,
+                  659.381104
+                ]
+              },
+              {
+                "text": "of",
+                "bbox": [
+                  310.369035,
+                  648.209229,
+                  318.706712,
+                  659.381104
+                ]
+              },
+              {
+                "text": "empty",
+                "bbox": [
+                  321.482873,
+                  648.209229,
+                  348.705651,
+                  659.381104
+                ]
+              },
+              {
+                "text": "container.",
+                "bbox": [
+                  351.48093,
+                  648.209229,
+                  394.829162,
+                  659.381104
+                ]
+              },
+              {
+                "text": "Shipping",
+                "bbox": [
+                  72.0,
+                  665.457769,
+                  114.754268,
+                  676.629644
+                ]
+              },
+              {
+                "text": "Marks",
+                "bbox": [
+                  117.529129,
+                  665.457769,
+                  146.426277,
+                  676.629644
+                ]
+              },
+              {
+                "text": "SHREE",
+                "bbox": [
+                  72.0,
+                  682.706299,
+                  106.442283,
+                  693.878174
+                ]
+              },
+              {
+                "text": "SAI",
+                "bbox": [
+                  109.216919,
+                  682.706299,
+                  125.329872,
+                  693.878174
+                ]
+              },
+              {
+                "text": "INDUSTRIES",
+                "bbox": [
+                  72.0,
+                  699.954839,
+                  132.540512,
+                  711.126714
+                ]
+              },
+              {
+                "text": "CO.",
+                "bbox": [
+                  135.315148,
+                  699.954839,
+                  153.08762,
+                  711.126714
+                ]
+              },
+              {
+                "text": "LTD",
+                "bbox": [
+                  155.863781,
+                  699.954839,
+                  174.008652,
+                  711.126714
+                ]
+              },
+              {
+                "text": "SIGNED",
+                "bbox": [
+                  396.0,
+                  665.457769,
+                  434.327705,
+                  676.629644
+                ]
+              },
+              {
+                "text": "BY",
+                "bbox": [
+                  437.102145,
+                  665.457769,
+                  450.990931,
+                  676.629644
+                ]
+              },
+              {
+                "text": "SHREE",
+                "bbox": [
+                  360.0,
+                  682.706299,
+                  394.442283,
+                  693.878174
+                ]
+              },
+              {
+                "text": "SAI",
+                "bbox": [
+                  397.21692,
+                  682.706299,
+                  413.329873,
+                  693.878174
+                ]
+              },
+              {
+                "text": "INDUSTRIES",
+                "bbox": [
+                  416.10603,
+                  682.706299,
+                  476.646542,
+                  693.878174
+                ]
+              },
+              {
+                "text": "CO.",
+                "bbox": [
+                  479.421203,
+                  682.706299,
+                  497.193675,
+                  693.878174
+                ]
+              },
+              {
+                "text": "LTD",
+                "bbox": [
+                  499.9698,
+                  682.706299,
+                  518.114671,
+                  693.878174
+                ]
+              }
+            ],
+            "geometry_status": "available",
+            "warnings": []
+          }
+        }
+      ],
+      "detected_type": {
+        "kind": "commercial_invoice",
+        "type": "commercial_invoice",
+        "role": null,
+        "confidence": null,
+        "signals": [
+          {
+            "kind": "commercial_invoice",
+            "page": 1,
+            "quote": "COMMERCIAL INVOICE",
+            "signal": "heading",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "signal": "schema_fields",
+            "fields": [
+              "amount",
+              "consignee",
+              "gross_weight",
+              "invoice_number",
+              "name",
+              "port_of_loading",
+              "quantity",
+              "shipper",
+              "unit_price"
+            ]
+          }
+        ],
+        "status": "needs_review",
+        "label": "Commercial Invoice (Hóa đơn thương mại)",
+        "classification_status": "supported",
+        "alternatives": []
+      },
+      "role": "transaction_evidence",
+      "kind": "commercial_invoice",
+      "document_type": "commercial_invoice",
+      "document_type_name": "Commercial Invoice (Hóa đơn thương mại)",
+      "confidence": null,
+      "type_confidence": null,
+      "signals": [
+        {
+          "kind": "commercial_invoice",
+          "page": 1,
+          "quote": "COMMERCIAL INVOICE",
+          "signal": "heading",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "signal": "schema_fields",
+          "fields": [
+            "amount",
+            "consignee",
+            "gross_weight",
+            "invoice_number",
+            "name",
+            "port_of_loading",
+            "quantity",
+            "shipper",
+            "unit_price"
+          ]
+        }
+      ],
+      "filename": "opaque.pdf",
+      "text_content": "COMMERCIAL INVOICE\n\n\n ① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024\n Morta,Ghaziabad - 201203, Uttar Pradesh, India\n Tel: +91 96 3496 3924                                        ⑨ No. & Date of Contract\n Fax: +91-98-10400646                                         06/2024/AURO & Date 01, APR, 2024\n\n ② Consignee : AURORA HIMALAYA JOINT STOCK                    ⑩ Remarks\n COMPANY                                                      Payment term: T/T within 60 days after\n\n 8/42 Dinh Bo Linh Street, Ward 24, Binh Thanh                delivery date\n District, Ho Chi Minh City, Vietnam                          Beneficiary: SHREE SAI INDUSTRIES\n Tel: +84 964 767 771                                                      CO. LTD\n Fax: +84 (8) 3823 3672                                       Banker: BANK OF INDIA - G Block\n                                                                        Bandra Kurla Complex,\n ③ Notify party :                                                       Bandra (East), Mumbai,\n                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India\n                                                                       Freight:               550.00 USD\n                                                                       Insurance:              49.65 USD\n                                                                       Total CIF:          15,049.65 USD\n(Say: Fifteen thousand forty-nine dollars and sixty-five cents.)\n* Gross weight of packing list does not include weight of empty container.\nShipping Marks                                                               SIGNED BY\nSHREE SAI                                                         SHREE SAI INDUSTRIES CO. LTD\nINDUSTRIES CO. LTD",
+      "text": "COMMERCIAL INVOICE\n\n\n ① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024\n Morta,Ghaziabad - 201203, Uttar Pradesh, India\n Tel: +91 96 3496 3924                                        ⑨ No. & Date of Contract\n Fax: +91-98-10400646                                         06/2024/AURO & Date 01, APR, 2024\n\n ② Consignee : AURORA HIMALAYA JOINT STOCK                    ⑩ Remarks\n COMPANY                                                      Payment term: T/T within 60 days after\n\n 8/42 Dinh Bo Linh Street, Ward 24, Binh Thanh                delivery date\n District, Ho Chi Minh City, Vietnam                          Beneficiary: SHREE SAI INDUSTRIES\n Tel: +84 964 767 771                                                      CO. LTD\n Fax: +84 (8) 3823 3672                                       Banker: BANK OF INDIA - G Block\n                                                                        Bandra Kurla Complex,\n ③ Notify party :                                                       Bandra (East), Mumbai,\n                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India\n                                                                       Freight:               550.00 USD\n                                                                       Insurance:              49.65 USD\n                                                                       Total CIF:          15,049.65 USD\n(Say: Fifteen thousand forty-nine dollars and sixty-five cents.)\n* Gross weight of packing list does not include weight of empty container.\nShipping Marks                                                               SIGNED BY\nSHREE SAI                                                         SHREE SAI INDUSTRIES CO. LTD\nINDUSTRIES CO. LTD",
+      "_kind": "commercial_invoice"
+    }
+  ],
+  "skus": [
+    {
+      "id": "cand_59a3f5e2da6f",
+      "identifiers": {},
+      "sku_code": "cand_59a3f5e2da6f",
+      "name": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+      "description": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+      "facts": [
+        {
+          "id": "fact_0cb57f06",
+          "field": "name",
+          "value": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+          "unit": null,
+          "document_id": "doc_1ea79a0265a5",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "name",
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_page": 1,
+          "source_quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 0,
+          "source_cell_bbox": [
+            72.5000000175,
+            542.499998,
+            280.5,
+            595.499996
+          ],
+          "source_header": "NAME OF GOODS",
+          "source_header_page": 1,
+          "value_fragments": [
+            "Himalayan Pink Salt, 2-5mm granules,",
+            "unprocessed, used in industry (25kg/bag)",
+            "New 100% Made in India"
+          ],
+          "source_block_ids": [
+            "b18",
+            "b33",
+            "b34",
+            "b35"
+          ],
+          "source_span": [
+            1181,
+            2308
+          ],
+          "sku_id": "cand_59a3f5e2da6f"
+        },
+        {
+          "id": "fact_b4b6a8a2",
+          "field": "quantity",
+          "value": "2000.00",
+          "unit": null,
+          "document_id": "doc_1ea79a0265a5",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "quantity",
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_page": 1,
+          "source_quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 1,
+          "source_cell_bbox": [
+            280.5,
+            542.499998,
+            342.499995,
+            595.499996
+          ],
+          "source_header": "QUANTITY (BAGS)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b18",
+            "b33",
+            "b34",
+            "b35"
+          ],
+          "source_span": [
+            1181,
+            2308
+          ],
+          "sku_id": "cand_59a3f5e2da6f"
+        },
+        {
+          "id": "fact_cdc4b015",
+          "field": "gross_weight",
+          "value": "50,200.00",
+          "unit": null,
+          "document_id": "doc_1ea79a0265a5",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "gross_weight",
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_page": 1,
+          "source_quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 2,
+          "source_cell_bbox": [
+            342.499995,
+            542.499998,
+            413.500005,
+            595.499996
+          ],
+          "source_header": "GROSS WEIGHT (KGM)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b18",
+            "b33",
+            "b34",
+            "b35"
+          ],
+          "source_span": [
+            1181,
+            2308
+          ],
+          "sku_id": "cand_59a3f5e2da6f"
+        },
+        {
+          "id": "fact_1e006485",
+          "field": "unit_price",
+          "value": "0.289",
+          "unit": null,
+          "document_id": "doc_1ea79a0265a5",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "unit_price",
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_page": 1,
+          "source_quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 3,
+          "source_cell_bbox": [
+            413.500005,
+            542.499998,
+            484.5,
+            595.499996
+          ],
+          "source_header": "UNIT PRICE (USD / KGM)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b18",
+            "b33",
+            "b34",
+            "b35"
+          ],
+          "source_span": [
+            1181,
+            2308
+          ],
+          "sku_id": "cand_59a3f5e2da6f"
+        },
+        {
+          "id": "fact_fe15358a",
+          "field": "amount",
+          "value": "14,450.00",
+          "unit": null,
+          "document_id": "doc_1ea79a0265a5",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "amount",
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_page": 1,
+          "source_quote": "                                                                        India\n SAME AS CONSIGNEE                                            A/c: 4321 9876 5012 9900\n                                                              Swift code: BKIDINBBXXX\n ④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,\n                                   VIETNAM\n\n ⑥ Carrier & Voyage                ⑦ Sailing on or about\n AL NASRIYAH 029E                  14, APR, 2024\n\n                                     DESCRIPTION OF GOODS\n                                                                                                 CIF CAT LAI\n              NAME OF GOODS                      QUANTITY         GROSS          UNIT PRICE       AMOUNT\n                                                   (BAGS)        WEIGHT         (USD / KGM)         (USD)\n                                                                  (KGM)\n Himalayan Pink Salt, 2-5mm granules,\n unprocessed, used in industry (25kg/bag)           2000.00       50,200.00              0.289    14,450.00\n New 100% Made in India",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_column": 4,
+          "source_cell_bbox": [
+            484.5,
+            542.499998,
+            540.5000175,
+            595.499996
+          ],
+          "source_header": "AMOUNT (USD)",
+          "source_header_page": 1,
+          "value_fragments": [],
+          "source_block_ids": [
+            "b18",
+            "b33",
+            "b34",
+            "b35"
+          ],
+          "source_span": [
+            1181,
+            2308
+          ],
+          "sku_id": "cand_59a3f5e2da6f"
+        },
+        {
+          "id": "fact_dab48514",
+          "field": "origin",
+          "value": "India",
+          "unit": null,
+          "document_id": "doc_1ea79a0265a5",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "origin",
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_page": 1,
+          "source_quote": "New 100% Made in India",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_block_ids": [
+            "b35"
+          ],
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_scope": "explicit_origin_statement",
+          "sku_id": "cand_59a3f5e2da6f"
+        }
+      ],
+      "source_document_id": "doc_1ea79a0265a5",
+      "source_page": 1,
+      "product_family": "general",
+      "declared_code": null,
+      "status": "needs_review",
+      "identity_status": "needs_review",
+      "matching": [],
+      "source_members": [
+        {
+          "document_id": "doc_1ea79a0265a5",
+          "page": 1,
+          "local_id": "g0r0"
+        }
+      ],
+      "resolved_fields": {
+        "name": "Himalayan Pink Salt, 2-5mm granules, unprocessed, used in industry (25kg/bag) New 100% Made in India",
+        "model": null,
+        "part_number": null,
+        "function": null,
+        "construction": null,
+        "material": null,
+        "specifications": null,
+        "manufacturing": null,
+        "condition": null,
+        "packaging": null,
+        "origin": "India",
+        "quantity": "2000.00",
+        "unit": null,
+        "unit_price": "0.289",
+        "amount": "14,450.00",
+        "currency": null,
+        "gross_weight": "50,200.00",
+        "net_weight": null,
+        "packages": null,
+        "declared_code": null
+      },
+      "declared_code_sources": [],
+      "origin_sources": [
+        {
+          "id": "fact_dab48514",
+          "field": "origin",
+          "value": "India",
+          "unit": null,
+          "document_id": "doc_1ea79a0265a5",
+          "document_name": "opaque.pdf",
+          "page_number": 1,
+          "quote": "New 100% Made in India",
+          "extraction_method": "pdftotext:layout_schema",
+          "status": "unverified",
+          "reviewer": null,
+          "source_kind": "document_extracted",
+          "field_name": "origin",
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_page": 1,
+          "source_quote": "New 100% Made in India",
+          "extraction_status": "extracted",
+          "source_valid": true,
+          "source_document_type": "commercial_invoice",
+          "source_block_ids": [
+            "b35"
+          ],
+          "source_table_id": "g0",
+          "source_row_id": "g0r0",
+          "source_scope": "explicit_origin_statement",
+          "sku_id": "cand_59a3f5e2da6f"
+        }
+      ],
+      "missing_fields": [
+        "function",
+        "construction",
+        "specifications"
+      ],
+      "field_states": {
+        "name": "extracted",
+        "model": "missing",
+        "part_number": "missing",
+        "function": "missing",
+        "construction": "missing",
+        "material": "missing",
+        "specifications": "missing",
+        "manufacturing": "missing",
+        "condition": "missing",
+        "packaging": "missing",
+        "origin": "extracted",
+        "quantity": "extracted",
+        "unit": "missing",
+        "unit_price": "extracted",
+        "amount": "extracted",
+        "currency": "missing",
+        "gross_weight": "extracted",
+        "net_weight": "missing",
+        "packages": "missing",
+        "declared_code": "missing"
+      }
+    }
+  ],
+  "dossier_fields": {
+    "shipper": {
+      "field": "shipper",
+      "value": "SHREE SAI INDUSTRIES CO. LTD",
+      "unit": null,
+      "source_document_id": "doc_1ea79a0265a5",
+      "source_document_name": "opaque.pdf",
+      "source_page": 1,
+      "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+      "field_name": "shipper",
+      "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b3"
+      ],
+      "source_span": [
+        56,
+        97
+      ],
+      "source_document_type": "commercial_invoice",
+      "sources": [
+        {
+          "field": "shipper",
+          "value": "SHREE SAI INDUSTRIES CO. LTD",
+          "unit": null,
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_document_name": "opaque.pdf",
+          "source_page": 1,
+          "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+          "field_name": "shipper",
+          "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b3"
+          ],
+          "source_span": [
+            56,
+            97
+          ],
+          "source_document_type": "commercial_invoice"
+        }
+      ]
+    },
+    "invoice_number": {
+      "field": "invoice_number",
+      "value": "73/INV/ST",
+      "unit": null,
+      "source_document_id": "doc_1ea79a0265a5",
+      "source_document_name": "opaque.pdf",
+      "source_page": 1,
+      "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+      "field_name": "invoice_number",
+      "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b3",
+        "b4"
+      ],
+      "source_span": [
+        56,
+        236
+      ],
+      "source_document_type": "commercial_invoice",
+      "sources": [
+        {
+          "field": "invoice_number",
+          "value": "73/INV/ST",
+          "unit": null,
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_document_name": "opaque.pdf",
+          "source_page": 1,
+          "source_excerpt": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+          "field_name": "invoice_number",
+          "source_quote": "① Shipper : SHREE SAI INDUSTRIES CO. LTD                     ⑧ No. & Date of Invoice:\n Plot No. 5, Khasra No. 1326, Delhi Meerut Road,              73/INV/ST & DATED 10, APR, 2024",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b3",
+            "b4"
+          ],
+          "source_span": [
+            56,
+            236
+          ],
+          "source_document_type": "commercial_invoice"
+        }
+      ]
+    },
+    "consignee": {
+      "field": "consignee",
+      "value": "AURORA HIMALAYA JOINT STOCK",
+      "unit": null,
+      "source_document_id": "doc_1ea79a0265a5",
+      "source_document_name": "opaque.pdf",
+      "source_page": 1,
+      "source_excerpt": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+      "field_name": "consignee",
+      "source_quote": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b9"
+      ],
+      "source_span": [
+        469,
+        511
+      ],
+      "source_document_type": "commercial_invoice",
+      "sources": [
+        {
+          "field": "consignee",
+          "value": "AURORA HIMALAYA JOINT STOCK",
+          "unit": null,
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_document_name": "opaque.pdf",
+          "source_page": 1,
+          "source_excerpt": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+          "field_name": "consignee",
+          "source_quote": "② Consignee : AURORA HIMALAYA JOINT STOCK",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b9"
+          ],
+          "source_span": [
+            469,
+            511
+          ],
+          "source_document_type": "commercial_invoice"
+        }
+      ]
+    },
+    "port_of_loading": {
+      "field": "port_of_loading",
+      "value": "MUNDRA PORT, INDIA",
+      "unit": null,
+      "source_document_id": "doc_1ea79a0265a5",
+      "source_document_name": "opaque.pdf",
+      "source_page": 1,
+      "source_excerpt": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+      "field_name": "port_of_loading",
+      "source_quote": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+      "status": "extracted",
+      "source_kind": "document_extracted",
+      "extraction_method": "explicit_label",
+      "verification_status": "pending_review",
+      "verified_by": null,
+      "verified_at": null,
+      "source_block_ids": [
+        "b21",
+        "b22"
+      ],
+      "source_span": [
+        1432,
+        1537
+      ],
+      "source_document_type": "commercial_invoice",
+      "sources": [
+        {
+          "field": "port_of_loading",
+          "value": "MUNDRA PORT, INDIA",
+          "unit": null,
+          "source_document_id": "doc_1ea79a0265a5",
+          "source_document_name": "opaque.pdf",
+          "source_page": 1,
+          "source_excerpt": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+          "field_name": "port_of_loading",
+          "source_quote": "④ Port of loading :               ⑤ Final destination :\n MUNDRA PORT, INDIA                CAT LAI PORT,",
+          "status": "extracted",
+          "source_kind": "document_extracted",
+          "extraction_method": "explicit_label",
+          "verification_status": "pending_review",
+          "verified_by": null,
+          "verified_at": null,
+          "source_block_ids": [
+            "b21",
+            "b22"
+          ],
+          "source_span": [
+            1432,
+            1537
+          ],
+          "source_document_type": "commercial_invoice"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "catalogue_codes": 11414,
+  "cohorts": {
+    "test": {
+      "n": 94,
+      "distinct_hs8": 66,
+      "distinct_known_org_groups": 61,
+      "org_groups_missing": 1,
+      "from": "2025-12-29",
+      "to": "2026-09-21",
+      "in_train_org_group_count": 19,
+      "label_status": {
+        "provisional_extracted": 69,
+        "provisional_manual_agrees": 25
+      }
+    },
+    "train": {
+      "n": 414,
+      "distinct_hs8": 211,
+      "distinct_known_org_groups": 202,
+      "org_groups_missing": 10,
+      "from": "2023-01-05",
+      "to": "2025-04-21",
+      "in_train_org_group_count": null,
+      "label_status": {
+        "provisional_extracted": 383,
+        "provisional_manual_agrees": 31
+      }
+    },
+    "valid": {
+      "n": 97,
+      "distinct_hs8": 57,
+      "distinct_known_org_groups": 59,
+      "org_groups_missing": 2,
+      "from": "2025-04-25",
+      "to": "2025-12-17",
+      "in_train_org_group_count": 14,
+      "label_status": {
+        "provisional_extracted": 91,
+        "provisional_manual_agrees": 6
+      }
+    }
+  },
+  "train_codes_with_one_notice": 140,
+  "train_codes_in_catalogue": 211,
+  "seen_by_prior_cutoff": "test and validation both follow latest train date",
+  "validation_clean_bridge": {
+    "07_hybrid": {
+      "n": 97,
+      "recall30": 67,
+      "top1": 23,
+      "hs4_top3": 66,
+      "unseen_recall30": 22
+    },
+    "guided_v1": {
+      "n": 97,
+      "recall30": 44,
+      "top1": 6,
+      "hs4_top3": 47,
+      "unseen_recall30": 12
+    },
+    "guided_v2": {
+      "n": 97,
+      "recall30": 61,
+      "top1": 11,
+      "hs4_top3": 52,
+      "unseen_recall30": 19
+    },
+    "union_07_and_v2_oracle_not_deployable": {
+      "hits": 72
+    }
+  },
+  "paired_recall_07_vs_guided_v2": {
+    "v2_only": 5,
+    "07_only": 11
+  }
+}
